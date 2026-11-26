@@ -1,0 +1,192 @@
+1
+00:00:00,340 --> 00:00:05,663
+Before we ask Copilot to change a file, we
+open Source Control and check the working
+
+2
+00:00:05,663 --> 00:00:08,008
+tree on a disposable training branch.
+
+3
+00:00:08,188 --> 00:00:11,707
+In this example, the repo begins with no
+changes.
+
+4
+00:00:11,887 --> 00:00:16,611
+If you already have edits of your own,
+identify them before an agent session so
+
+5
+00:00:16,611 --> 00:00:19,481
+you can tell what came from the proposed
+change.
+
+6
+00:00:19,661 --> 00:00:21,916
+This gives us a baseline for review.
+
+7
+00:00:23,382 --> 00:00:27,669
+The proposed diff changes the validator
+and adds a regression test.
+
+8
+00:00:27,849 --> 00:00:31,913
+It also includes an unrelated rename in a
+training notes file.
+
+9
+00:00:32,093 --> 00:00:36,040
+We inspect the exact lines instead of
+relying on the summary.
+
+10
+00:00:36,220 --> 00:00:39,454
+The comparison and test line belong to
+this issue.
+
+11
+00:00:39,634 --> 00:00:44,534
+The notes change does not help meet the
+acceptance criteria, so we will remove it
+
+12
+00:00:44,534 --> 00:00:46,470
+before running the final checks.
+
+13
+00:00:47,923 --> 00:00:53,339
+Review the earlier failing run and confirm
+the test failed for the specific boundary,
+
+14
+00:00:53,339 --> 00:00:54,995
+because zero was accepted.
+
+15
+00:00:55,175 --> 00:00:59,953
+Then rerun the suite with the corrected
+condition in the approved environment.
+
+16
+00:01:00,133 --> 00:01:03,779
+We expect the zero test and the existing
+tests to pass.
+
+17
+00:01:03,959 --> 00:01:08,759
+Use the same test command for both runs
+and keep the evidence with the change.
+
+18
+00:01:10,215 --> 00:01:15,422
+In Source Control, open the diff for the
+training notes file and confirm that the
+
+19
+00:01:15,422 --> 00:01:17,607
+edit came only from this exercise.
+
+20
+00:01:17,787 --> 00:01:22,932
+Then discard that one file's change or
+revert just the unwanted hunk with the
+
+21
+00:01:22,932 --> 00:01:24,603
+available editor control.
+
+22
+00:01:24,783 --> 00:01:29,604
+If the file contains work you want to
+keep, revert only those specific lines.
+
+23
+00:01:29,784 --> 00:01:32,962
+A broad discard can remove unrelated work.
+
+24
+00:01:34,423 --> 00:01:37,103
+After undo, open Source Control again.
+
+25
+00:01:37,283 --> 00:01:41,495
+The diff should now include only the
+validator and the regression test.
+
+26
+00:01:41,675 --> 00:01:46,613
+Run the suite once more if the recovery
+touched the implementation or the tests.
+
+27
+00:01:46,793 --> 00:01:52,192
+The post recovery check matters because an
+undo action can affect more than intended
+
+28
+00:01:52,192 --> 00:01:54,057
+if you pick the wrong target.
+
+29
+00:01:54,237 --> 00:01:57,269
+Keep the changed files and test result
+together.
+
+30
+00:01:58,715 --> 00:02:03,770
+Some agent sessions offer a checkpoint or
+a way to undo a proposed edit.
+
+31
+00:02:03,950 --> 00:02:07,398
+Check which files that action would
+restore before using it.
+
+32
+00:02:07,578 --> 00:02:13,030
+For a single unrelated hunk, a precise
+editor undo often fits the work better.
+
+33
+00:02:13,210 --> 00:02:18,061
+For a session wide rollback in this
+practice branch, first confirm the changes
+
+34
+00:02:18,061 --> 00:02:21,232
+are contained and preserve any work you
+still need.
+
+35
+00:02:22,673 --> 00:02:28,316
+Practice on a sample branch that has one
+correct change and one clearly identified
+
+36
+00:02:28,316 --> 00:02:29,073
+extra edit.
+
+37
+00:02:29,253 --> 00:02:33,485
+Keep the fix, undo the extra edit, and
+review the resulting diff.
+
+38
+00:02:33,665 --> 00:02:36,089
+Then explain the result in three parts.
+
+39
+00:02:36,269 --> 00:02:41,145
+Describe the requirement, identify the
+lines you kept, and show which tests
+
+40
+00:02:41,145 --> 00:02:42,381
+verify the outcome.
+
+41
+00:02:42,561 --> 00:02:45,646
+You now have evidence another developer
+can review.
