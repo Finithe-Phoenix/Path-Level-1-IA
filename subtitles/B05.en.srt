@@ -1,203 +1,208 @@
 1
-00:00:00,340 --> 00:00:03,821
-We start with a simple request about the
-order validator.
+00:00:00,422 --> 00:00:03,401
+Take one request about the order
+validator.
 
 2
-00:00:04,001 --> 00:00:07,013
-A chat response can explain the code you
-provide.
+00:00:03,481 --> 00:00:07,909
+If you supply the function, Copilot can
+explain its comparison.
 
 3
-00:00:07,193 --> 00:00:11,685
-An agent session can also search the
-workspace, propose edits, and run
+00:00:07,990 --> 00:00:12,391
+In an agent session, it may also choose
+an available tool to find the file,
 
 4
-00:00:11,685 --> 00:00:14,765
-permitted checks, depending on the tools
-it has.
+00:00:12,472 --> 00:00:15,062
+read it, or validate a proposed change.
 
 5
-00:00:14,945 --> 00:00:19,511
-Open an approved training workspace and
-look at the actions shown in the session.
+00:00:15,708 --> 00:00:18,821
+Open the training workspace and look at
+the session.
 
 6
-00:00:19,691 --> 00:00:23,925
-The proposed answer and the actions taken
-are both worth reviewing.
+00:00:18,875 --> 00:00:22,546
+Can you point to an actual tool event
+and the information it returned?
 
 7
-00:00:25,382 --> 00:00:27,218
-An agent works through a loop.
+00:00:24,694 --> 00:00:26,653
+Watch the order of events.
 
 8
-00:00:27,398 --> 00:00:32,769
-It collects relevant information, proposes
-or takes an allowed action, looks at the
+00:00:26,707 --> 00:00:29,686
+The agent reads that zero should be
+rejected,
 
 9
-00:00:32,769 --> 00:00:36,198
-result, and decides whether another action
-is needed.
+00:00:29,740 --> 00:00:33,708
+then opens the validator and sees
+greater than or equal to zero.
 
 10
-00:00:36,378 --> 00:00:41,654
-In our case, it reads the issue, inspects
-the validator, and finds the missing test.
+00:00:34,355 --> 00:00:38,675
+That result gives it a reason to inspect
+the tests for a zero case.
 
 11
-00:00:41,834 --> 00:00:46,974
-We can follow each step because the task
-has a narrow scope and a clear place to
+00:00:38,756 --> 00:00:41,976
+Each next step depends on what the tool
+returns.
 
 12
-00:00:46,974 --> 00:00:47,295
-stop.
+00:00:42,057 --> 00:00:44,902
+Check the event that led the agent to
+its conclusion.
 
 13
-00:00:48,757 --> 00:00:54,086
-Ask the agent to investigate why zero is
-accepted and to suggest the smallest
+00:00:46,880 --> 00:00:49,644
+Give Plan a task with a clear stopping
+point.
 
 14
-00:00:54,086 --> 00:00:54,570
-change.
+00:00:49,725 --> 00:00:53,616
+“Find why zero passes and describe one
+regression test.
 
 15
-00:00:54,750 --> 00:00:57,441
-Keep the task at planning in the approved
-session.
+00:00:53,670 --> 00:00:56,603
+Preserve the function signature and stop
+after the plan.”
 
 16
-00:00:57,621 --> 00:01:02,111
-We expect the agent to point to one
-comparison and describe one test.
+00:00:57,260 --> 00:01:00,776
+Review the named files and the reason
+for the test.
 
 17
-00:01:02,291 --> 00:01:07,090
-If it suggests redesigning validation,
-steer it back to the boundary case.
+00:01:00,856 --> 00:01:04,694
+If the plan adds a dependency or changes
+other behavior,
 
 18
-00:01:07,270 --> 00:01:10,801
-Check what tools the session can use, even
-during planning.
+00:01:04,775 --> 00:01:07,259
+narrow it before moving on to
+implementation.
 
 19
-00:01:12,257 --> 00:01:16,844
-Now the training agent proposes running
-the unit tests in the authorized
+00:01:09,527 --> 00:01:14,814
+If the session asks to run tests, read
+the command and the working directory.
 
 20
-00:01:16,844 --> 00:01:17,481
-workspace.
+00:01:14,868 --> 00:01:18,954
+Our example uses Python’s unittest
+discovery in the training checkout.
 
 21
-00:01:17,661 --> 00:01:22,249
-Read the command, its working directory,
-and the reason before deciding.
+00:01:19,600 --> 00:01:21,827
+That matches the agreed check.
 
 22
-00:01:22,429 --> 00:01:26,983
-The command should match the task and
-operate on the sample repository.
+00:01:21,908 --> 00:01:25,853
+Verify where the process will actually
+run and use the approved runner for this
 
 23
-00:01:27,163 --> 00:01:32,372
-Pause when an action would touch unrelated
-paths or make an unrequested external
+00:01:25,906 --> 00:01:26,846
+lab.
 
 24
-00:01:32,372 --> 00:01:32,827
-change.
+00:01:26,926 --> 00:01:30,898
+If a command targets a different project
+or publishes changes,
 
 25
-00:01:33,007 --> 00:01:37,241
-The approval controls available to you
-depend on company settings.
+00:01:30,979 --> 00:01:33,011
+stop and inspect what prompted it.
 
 26
-00:01:38,715 --> 00:01:42,928
-The test run is useful when it reports the
-assertion we meant to check.
+00:01:35,255 --> 00:01:39,361
+Our run reports that the zero test
+failed because true was returned where
 
 27
-00:01:43,108 --> 00:01:48,049
-In this synthetic example, the original
-condition accepts zero and the new
+00:01:39,441 --> 00:01:41,132
+false was expected.
 
 28
-00:01:48,049 --> 00:01:49,518
-regression test fails.
+00:01:41,213 --> 00:01:42,802
+Find that line in the output.
 
 29
-00:01:49,698 --> 00:01:54,349
-We read the reported test name and failure
-to confirm it matches the issue.
+00:01:43,462 --> 00:01:47,755
+A chat message that says “tested” does
+not tell you which case ran.
 
 30
-00:01:54,529 --> 00:01:59,224
-If a setup problem caused the failure
-instead, diagnose that problem before
+00:01:47,809 --> 00:01:51,217
+The assertion helps you check the
+proposed diagnosis.
 
 31
-00:01:59,224 --> 00:02:00,726
-interpreting the result.
+00:01:51,298 --> 00:01:54,925
+Keep the output with the revision so a
+teammate can replay the result.
 
 32
-00:02:02,173 --> 00:02:05,703
-Keep track of the environment when you
-move between sessions.
+00:01:57,157 --> 00:02:02,036
+In this workplace, Copilot in VS Code is
+the local entry point.
 
 33
-00:02:05,883 --> 00:02:11,961
-In this course, Copilot is in VS Code, and
-Claude Code or OpenCode can be available
+00:02:02,116 --> 00:02:06,493
+Claude Code and OpenCode run in the
+managed G C P workspace.
 
 34
-00:02:11,961 --> 00:02:14,670
-inside the approved remote workspace.
+00:02:07,140 --> 00:02:10,951
+Open the approved environment for the
+tool you are using and confirm the
 
 35
-00:02:14,850 --> 00:02:18,594
-A visible tool approval belongs to the
-session that offered it.
+00:02:11,004 --> 00:02:12,480
+working folder.
 
 36
-00:02:18,774 --> 00:02:24,443
-Verify the repository and environment
-before letting an agent touch files or run
+00:02:12,561 --> 00:02:15,902
+A tool call uses the permissions and
+runtime of its session.
 
 37
-00:02:24,443 --> 00:02:24,939
-checks.
+00:02:16,555 --> 00:02:21,244
+Check those before assuming a local file
+or command is available remotely.
 
 38
-00:02:26,382 --> 00:02:28,921
-Give the training agent a bounded task.
+00:02:23,214 --> 00:02:25,898
+Try a small read-and-report task.
 
 39
-00:02:29,101 --> 00:02:34,464
-Say what files it may inspect, what action
-it can take, what evidence to return, and
+00:02:25,978 --> 00:02:29,279
+Ask the agent to inspect the validator
+and tests,
 
 40
-00:02:34,464 --> 00:02:35,294
-when to stop.
+00:02:29,359 --> 00:02:34,163
+identify the line causing the behavior,
+and stop with the file path and relevant
 
 41
-00:02:35,474 --> 00:02:39,272
-Then review the actual output and explain
-what it established.
+00:02:34,217 --> 00:02:34,861
+evidence.
 
 42
-00:02:39,452 --> 00:02:44,667
-For this exercise, success is a focused
-plan and the expected test evidence.
+00:02:35,531 --> 00:02:37,839
+Review the actual steps it took.
 
 43
-00:02:44,847 --> 00:02:48,612
-Any further publication can be treated as
-a separate decision.
+00:02:37,919 --> 00:02:41,650
+If it starts editing or proposes an
+unrelated command,
+
+44
+00:02:41,730 --> 00:02:44,499
+pause and bring the request back to the
+stated goal.

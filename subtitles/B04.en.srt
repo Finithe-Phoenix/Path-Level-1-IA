@@ -1,203 +1,222 @@
 1
-00:00:00,340 --> 00:00:03,403
-We will compare models using a synthetic
-issue.
+00:00:00,428 --> 00:00:03,166
+Let’s compare two models on the same
+bug.
 
 2
-00:00:03,583 --> 00:00:08,639
-The order validator accepts zero even
-though an order needs at least one item.
+00:00:03,217 --> 00:00:05,674
+The baseline function accepts zero.
 
 3
-00:00:08,819 --> 00:00:10,305
-Our target is clear.
+00:00:05,725 --> 00:00:09,957
+The issue says one and five should pass,
+while zero and negative one should fail.
 
 4
-00:00:10,485 --> 00:00:15,117
-Find the cause, suggest a small change,
-and propose a regression test while
+00:00:10,575 --> 00:00:14,260
+We ask for a cause, a small fix, and one
+regression test.
 
 5
-00:00:15,117 --> 00:00:17,217
-preserving the function signature.
+00:00:14,311 --> 00:00:18,139
+Before opening either chat, write these
+expectations down.
 
 6
-00:00:17,397 --> 00:00:22,701
-A task with an observable outcome makes
-the comparison easier to evaluate than an
+00:00:18,216 --> 00:00:20,491
+That gives both answers the same
+standard.
 
 7
-00:00:22,701 --> 00:00:24,011
-open ended question.
+00:00:22,360 --> 00:00:25,201
+Open the model picker in Copilot Chat.
 
 8
-00:00:25,465 --> 00:00:30,074
-In VS Code, open Copilot Chat and look at
-the model selector.
+00:00:25,252 --> 00:00:29,295
+Choose two options actually available in
+your managed workspace and record their
 
 9
-00:00:30,254 --> 00:00:33,498
-Pick two workplace approved options if you
-have them.
+00:00:29,346 --> 00:00:29,863
+labels.
 
 10
-00:00:33,678 --> 00:00:38,308
-One might favor speed and the other may be
-oriented toward harder reasoning.
+00:00:30,525 --> 00:00:33,059
+Use the same session mode for both.
 
 11
-00:00:38,488 --> 00:00:43,998
-If your account exposes only one model,
-compare two runs with that model and label
+00:00:33,136 --> 00:00:37,051
+If your account offers one model, run it
+twice to see whether the answer stays
 
 12
-00:00:43,998 --> 00:00:45,678
-the exercise accordingly.
+00:00:37,102 --> 00:00:37,872
+consistent.
 
 13
-00:00:45,858 --> 00:00:49,282
-The important part is recording your
-starting conditions.
+00:00:38,543 --> 00:00:41,285
+Record those as two attempts with the
+same model.
 
 14
-00:00:50,757 --> 00:00:56,225
-We attach the issue, source, and tests in
-each new chat, then give each option the
+00:00:43,491 --> 00:00:46,511
+Use two fresh Plan sessions on the same
+revision.
 
 15
-00:00:56,225 --> 00:00:57,092
-same request.
+00:00:46,588 --> 00:00:50,308
+In each, attach the issue, the
+validator, and its tests.
 
 16
-00:00:57,272 --> 00:01:01,671
-Keep the task in an explanation or
-planning mode to avoid changing the
+00:00:50,385 --> 00:00:51,584
+Paste the same prompt.
 
 17
-00:01:01,671 --> 00:01:03,619
-working tree during comparison.
+00:00:52,227 --> 00:00:57,472
+Ask why zero passes, then request a
+minimal fix and one regression test.
 
 18
-00:01:03,799 --> 00:01:09,045
-Changing the attached files, agent mode,
-or requirements would change the task.
+00:00:57,575 --> 00:00:59,852
+Leave edits out of this comparison.
 
 19
-00:01:09,225 --> 00:01:13,546
-Keep those inputs stable and record any
-differences you cannot avoid.
+00:00:59,929 --> 00:01:02,949
+If a run sees more source or uses a
+different mode,
 
 20
-00:01:15,007 --> 00:01:19,410
-Look for the line responsible for
-accepting zero and check whether the
+00:01:03,000 --> 00:01:05,731
+record that difference before
+interpreting its result.
 
 21
-00:01:19,410 --> 00:01:22,303
-proposed test would fail on the original
-code.
+00:01:07,924 --> 00:01:11,685
+Example A identifies equality, proposes
+a zero test,
 
 22
-00:01:22,483 --> 00:01:27,465
-Note how long each response takes and
-whether a response adds unnecessary work.
+00:01:11,829 --> 00:01:14,081
+and keeps the existing interface.
 
 23
-00:01:27,645 --> 00:01:29,993
-The results on screen are illustrative.
+00:01:14,183 --> 00:01:18,969
+Example B also finds the cause, but adds
+a refactor the issue never asked for.
 
 24
-00:01:30,173 --> 00:01:34,355
-Try the exercise yourself and record the
-outcome you actually saw.
+00:01:19,584 --> 00:01:21,324
+Both may sound polished.
 
 25
-00:01:34,535 --> 00:01:40,006
-One run gives a useful observation, with
-limited evidence for broader conclusions.
+00:01:21,401 --> 00:01:23,193
+Score the substance first.
 
 26
-00:01:41,465 --> 00:01:46,550
-For this small boundary bug, a fast option
-may be enough once tests confirm the
+00:01:23,269 --> 00:01:26,186
+Only then look at the example response
+times.
 
 27
-00:01:46,550 --> 00:01:47,001
-result.
+00:01:26,263 --> 00:01:29,820
+Those numbers describe these
+illustrative runs and can vary across
 
 28
-00:01:47,181 --> 00:01:51,807
-When a change spans packages, has
-ambiguous requirements, or requires
+00:01:29,871 --> 00:01:31,018
+attempts and sessions.
 
 29
-00:01:51,807 --> 00:01:56,769
-comparing several designs, you might
-evaluate a stronger reasoning option.
+00:01:33,194 --> 00:01:37,749
+For this task, the smaller proposal is
+easier to review because the expected
 
 30
-00:01:56,949 --> 00:02:01,107
-A broader change still needs clear context
-and independent checks.
+00:01:37,800 --> 00:01:39,924
+behavior is explicit.
 
 31
-00:02:01,287 --> 00:02:04,082
-The model label does not replace either
-one.
+00:01:40,001 --> 00:01:44,044
+A larger migration may justify
+evaluating a stronger reasoning option
 
 32
-00:02:05,548 --> 00:02:09,056
-One answer suggests testing one, which
-already passes.
+00:01:44,095 --> 00:01:45,545
+on a representative task.
 
 33
-00:02:09,236 --> 00:02:13,633
-Another adds the test for zero, which
-fails against the original code.
+00:01:46,171 --> 00:01:50,445
+You can make that choice from several
+runs and the evidence they produce.
 
 34
-00:02:13,813 --> 00:02:17,951
-The second test directly exercises the
-behavior in the issue.
+00:01:50,521 --> 00:01:54,744
+In this small exercise, the best signal
+is whether the suggested regression
 
 35
-00:02:18,131 --> 00:02:23,122
-To compare responses, inspect those
-details and run the relevant checks in the
+00:01:54,820 --> 00:01:55,967
+catches the defect.
 
 36
-00:02:23,122 --> 00:02:25,042
-approved training environment.
+00:01:57,819 --> 00:01:59,866
+Compare two test ideas.
 
 37
-00:02:25,222 --> 00:02:29,938
-This tells you more than whether the
-generated explanation sounded confident.
+00:01:59,943 --> 00:02:03,884
+A test that expects one to pass stays
+green on the buggy revision.
 
 38
-00:02:31,382 --> 00:02:34,890
-Run the benchmark and write one sentence
-about your choice.
+00:02:03,961 --> 00:02:07,789
+A test that expects zero to fail exposes
+the equality bug.
 
 39
-00:02:35,070 --> 00:02:39,993
-Include which model you used, what it got
-right or missed, and the test you would
+00:02:08,432 --> 00:02:12,424
+Run the chosen assertion on the original
+code in an approved runner.
 
 40
-00:02:39,993 --> 00:02:41,938
-use to verify a proposed change.
+00:02:12,500 --> 00:02:15,418
+Then apply the small fix and repeat the
+test.
 
 41
-00:02:42,118 --> 00:02:47,240
-If both results fall short, adjust the
-brief or fix the missing context before
+00:02:15,520 --> 00:02:19,665
+Seeing red first and green afterward
+makes the model comparison concrete.
 
 42
-00:02:47,240 --> 00:02:48,422
-increasing effort.
+00:02:21,882 --> 00:02:24,799
+Write a short decision a teammate can
+repeat.
 
 43
-00:02:48,602 --> 00:02:53,390
-Keep the comparison small enough that you
-can redo it when the catalog changes.
+00:02:24,876 --> 00:02:28,115
+Name the two model labels, the task, the
+shared inputs,
+
+44
+00:02:28,274 --> 00:02:29,530
+and the evidence you used.
+
+45
+00:02:30,179 --> 00:02:33,608
+You might say Example A was easier to
+review because it preserved the
+
+46
+00:02:33,659 --> 00:02:37,245
+signature and produced a test that
+failed on the original.
+
+47
+00:02:37,883 --> 00:02:42,592
+Repeat the comparison on another small
+task before treating one result as a
+
+48
+00:02:42,643 --> 00:02:43,749
+general preference.

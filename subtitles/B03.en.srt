@@ -1,219 +1,226 @@
 1
-00:00:00,340 --> 00:00:04,648
-The same model can appear in a vendor
-catalog and in products from other
+00:00:00,399 --> 00:00:04,295
+When the dropdown says Claude, you might
+ask who makes the model, where it runs,
 
 2
-00:00:04,648 --> 00:00:05,246
-companies.
+00:00:04,321 --> 00:00:06,089
+and which tool you're using.
 
 3
-00:00:05,426 --> 00:00:07,135
-We will look at three levels.
+00:00:06,166 --> 00:00:07,546
+Those are three questions.
 
 4
-00:00:07,315 --> 00:00:12,338
-The company develops a model, a platform
-makes it available, and an application
+00:00:08,175 --> 00:00:12,379
+The maker publishes the model, a
+provider or platform offers access,
 
 5
-00:00:12,338 --> 00:00:13,801
-exposes it to the user.
+00:00:12,491 --> 00:00:14,747
+and the client gives you a workflow.
 
 6
-00:00:13,981 --> 00:00:18,855
-The examples on screen were checked on
-November twenty sixth, twenty twenty six.
+00:00:14,824 --> 00:00:17,809
+In this lesson, the catalogs are a dated
+snapshot.
 
 7
-00:00:19,035 --> 00:00:22,842
-Your workplace settings determine what you
-can actually choose.
+00:00:18,480 --> 00:00:21,578
+Your approved picker tells you what is
+available for work.
 
 8
-00:00:24,298 --> 00:00:30,854
-The OpenAI API catalog describes GPT six
-point two Sol as a starting point for
+00:00:23,486 --> 00:00:28,510
+Open the OpenAI model catalog and
+compare the entries for GPT six point
 
 9
-00:00:30,854 --> 00:00:33,460
-everyday coding and agent work.
+00:00:28,587 --> 00:00:30,458
+two Sol and Astra.
 
 10
-00:00:33,640 --> 00:00:37,290
-Astra is an option for more demanding
-reasoning and code.
+00:00:30,535 --> 00:00:34,654
+In the snapshot, Sol is positioned for
+everyday coding and agent work.
 
 11
-00:00:37,470 --> 00:00:42,017
-The catalog also lists models for
-specialized tasks such as image
+00:00:35,276 --> 00:00:38,967
+Astra is positioned for more demanding
+reasoning and coding.
 
 12
-00:00:42,017 --> 00:00:44,606
-generation, audio, and transcription.
+00:00:39,070 --> 00:00:42,299
+Notice the input and output section on
+each card.
 
 13
-00:00:44,786 --> 00:00:48,614
-Confirm the endpoint and current status if
-you need details.
+00:00:42,376 --> 00:00:45,170
+If you need transcription or image
+generation,
 
 14
-00:00:48,794 --> 00:00:52,731
-A catalog entry alone gives no guarantee
-for your editor.
+00:00:45,247 --> 00:00:48,344
+read the relevant entry instead of
+inferring it from the name.
 
 15
-00:00:54,173 --> 00:00:57,831
-Anthropic's catalog groups several current
-Claude models.
+00:00:50,221 --> 00:00:54,809
+In Anthropic’s catalog, find Haiku,
+Sonnet, Opus, and Fable.
 
 16
-00:00:58,011 --> 00:01:00,819
-Haiku emphasizes latency and price.
+00:00:54,860 --> 00:00:58,753
+Their cards describe different speed,
+workload, and capability tradeoffs.
 
 17
-00:01:00,999 --> 00:01:04,839
-Sonnet balances speed and capability for
-everyday work.
+00:00:59,367 --> 00:01:03,366
+The provider table matters when you use
+Claude Code remotely.
 
 18
-00:01:05,019 --> 00:01:07,899
-Opus handles complex, longer tasks.
+00:01:03,443 --> 00:01:07,365
+Two environments can show the same
+family name while resolving a shortcut
 
 19
-00:01:08,079 --> 00:01:12,302
-Fable is positioned for high capability
-and long agent runs.
+00:01:07,416 --> 00:01:07,937
+differently.
 
 20
-00:01:12,482 --> 00:01:15,769
-In Claude Code, provider and managed
-settings matter.
+00:01:08,602 --> 00:01:13,524
+Record the exact model ID or selector
+label you can verify in the approved
 
 21
-00:01:15,949 --> 00:01:20,257
-Use the model selector to see what your
-corporate remote session offers.
+00:01:13,575 --> 00:01:14,014
+session.
 
 22
-00:01:21,715 --> 00:01:25,554
-Microsoft develops families such as MAI
-and Phi.
+00:01:15,929 --> 00:01:20,337
+In Microsoft Foundry, inspect the
+publisher on a model card.
 
 23
-00:01:25,734 --> 00:01:30,545
-MAI Code two and Code two Flash are
-examples focused on coding.
+00:01:20,389 --> 00:01:24,618
+The catalog includes models published by
+Microsoft as well as models from other
 
 24
-00:01:30,725 --> 00:01:36,407
-Microsoft Foundry is a deployment and
-catalog surface with models from multiple
+00:01:24,669 --> 00:01:25,387
+providers.
 
 25
-00:01:36,407 --> 00:01:36,911
-makers.
+00:01:26,004 --> 00:01:29,695
+You may see Microsoft’s MAI or Phi
+families.
 
 26
-00:01:37,091 --> 00:01:40,474
-Open the publisher field to see who
-developed a model.
+00:01:29,772 --> 00:01:34,027
+MAI Code two Flash was a limited-access
+preview in the snapshot.
 
 27
-00:01:40,654 --> 00:01:45,280
-Also check the deployment and regional
-details when they matter to your
+00:01:34,104 --> 00:01:37,821
+Check the actual card and deployment
+conditions before you put a catalog
 
 28
-00:01:45,280 --> 00:01:47,170
-organization's configuration.
+00:01:37,872 --> 00:01:39,754
+model on your team's available list.
 
 29
-00:01:48,632 --> 00:01:52,952
-GitHub Copilot supports model options from
-several providers.
+00:01:41,742 --> 00:01:44,075
+Now return to the software you use.
 
 30
-00:01:53,132 --> 00:01:58,376
-The actual list you see in VS Code depends
-on your client version, plan, and
+00:01:44,152 --> 00:01:48,765
+Open Copilot Chat in VS Code and expand
+the model selector.
 
 31
-00:01:58,376 --> 00:01:59,894
-organization settings.
+00:01:48,842 --> 00:01:51,660
+Copy the exact label of one model you
+can select.
 
 32
-00:02:00,074 --> 00:02:05,192
-Claude Code and OpenCode run in the
-approved remote workspace in this course.
+00:01:52,289 --> 00:01:55,442
+For a separate check on Claude Code or
+OpenCode,
 
 33
-00:02:05,372 --> 00:02:08,914
-Their model options depend on the
-configured provider.
+00:01:55,494 --> 00:01:59,390
+use the approved G C P workspace and
+inspect its selector there.
 
 34
-00:02:09,094 --> 00:02:13,990
-A model appearing in one catalog does not
-establish access in another tool.
+00:02:00,061 --> 00:02:02,138
+Take the label from each surface.
 
 35
-00:02:15,465 --> 00:02:18,410
-Look for the release status beside a model
-name.
+00:02:02,240 --> 00:02:03,822
+Those two lists can differ.
 
 36
-00:02:18,590 --> 00:02:23,493
-A preview, general release, or retirement
-marker tells you something about its
+00:02:05,941 --> 00:02:09,683
+Pick a model card and compare its
+release status with the workplace
 
 37
-00:02:23,493 --> 00:02:25,127
-lifecycle on that surface.
+00:02:09,734 --> 00:02:10,632
+picker.
 
 38
-00:02:25,307 --> 00:02:27,922
-Versions and naming change over time.
+00:02:10,709 --> 00:02:13,460
+Preview on the card describes the
+provider’s offering.
 
 39
-00:02:28,102 --> 00:02:33,417
-For a training exercise, choose a model
-people can access and keep any unavailable
+00:02:14,078 --> 00:02:18,179
+Your company’s policy, plan, and
+configured provider determine whether
 
 40
-00:02:33,417 --> 00:02:35,686
-model as an example for discussion.
+00:02:18,230 --> 00:02:19,717
+you can select it.
 
 41
-00:02:35,866 --> 00:02:38,958
-Refresh the record when your work account
-changes.
+00:02:19,768 --> 00:02:22,178
+Put both observations in your note.
 
 42
-00:02:40,423 --> 00:02:45,255
-Pick one model you can see in a work tool
-and find its official documentation.
+00:02:22,255 --> 00:02:25,946
+A colleague can then tell the difference
+between a catalog announcement and an
 
 43
-00:02:45,435 --> 00:02:49,387
-Record the maker, exact name, tool, and
-the date you checked.
+00:02:25,997 --> 00:02:27,434
+option they can use today.
 
 44
-00:02:49,567 --> 00:02:54,427
-Then write the reason that model is a
-sensible candidate for a small coding
+00:02:29,367 --> 00:02:31,905
+Make one inventory entry for the class.
 
 45
-00:02:54,427 --> 00:02:54,751
-task.
+00:02:31,982 --> 00:02:36,360
+Include the maker, the exact version or
+label, the client and environment,
 
 46
-00:02:54,931 --> 00:03:00,083
-If you cannot find it in your approved
-session, treat it as a catalog example and
+00:02:36,524 --> 00:02:37,611
+and the date you checked.
 
 47
-00:03:00,083 --> 00:03:01,991
-choose a model you can access.
+00:02:38,261 --> 00:02:42,054
+If the picker changes later, repeat that
+short check.
+
+48
+00:02:42,106 --> 00:02:46,437
+With the available options in hand, the
+next lesson will compare models on a bug
+
+49
+00:02:46,489 --> 00:02:48,641
+whose behavior you can verify yourself.
