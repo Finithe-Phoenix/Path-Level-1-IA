@@ -1,0 +1,104 @@
+{
+  "id": "B06",
+  "title": "Prompt Engineering for Coding Tasks",
+  "subtitle": "Turn a request into a verifiable brief",
+  "scenes": [
+    {
+      "id": "vague",
+      "kind": "editor",
+      "eyebrow": "A VAGUE REQUEST",
+      "title": "See what is missing",
+      "body": "Clear instructions help bound the work and reduce guesswork.",
+      "narration": "First we enter a short request: fix validation. It says little about the problem, the affected files, or the result we need. A model might suggest several changes that all sound reasonable. Before we accept any proposal, we will turn that request into a brief that makes the defect, scope, and acceptance criteria easy to review.",
+      "code": "Fix validation.",
+      "result": "Missing: failing behavior, scope, and evidence.",
+      "durationFrames": 562,
+      "duration": 23.416666666666668
+    },
+    {
+      "id": "goal",
+      "kind": "github",
+      "eyebrow": "GOAL AND EVIDENCE",
+      "title": "Describe the observed defect",
+      "body": "Tie the question to the issue and the smallest relevant code.",
+      "narration": "Start with the behavior in the issue. An order with zero items currently passes. The documented rule says the quantity must be positive. We give the assistant the source function and its existing tests, using the approved training context. This lets it connect the actual comparison to the requirement. Avoid unexplained assumptions about the rest of the repository.",
+      "code": "Issue: zero passes but must be rejected.\nContext: validator and existing test file.\nFind the condition responsible.",
+      "result": "The comparison allows equality with zero.",
+      "durationFrames": 608,
+      "duration": 25.333333333333332
+    },
+    {
+      "id": "scope",
+      "kind": "editor",
+      "eyebrow": "SCOPE AND ACCEPTANCE",
+      "title": "State what may change",
+      "body": "Use observable inputs and preserve the public interface.",
+      "narration": "Next, state the boundaries. Keep the validator's signature. Limit the work to the validator and its test file. The inputs one and five should pass. Zero and negative one should fail. These examples give a reviewer a concrete way to judge the result. They also help the assistant notice if its suggested fix misses a boundary.",
+      "code": "Keep the existing signature.\nLimit edits to the validator and its tests.\nAccept: 1, 5. Reject: 0, -1.",
+      "result": "The acceptance criteria are testable.",
+      "durationFrames": 550,
+      "duration": 22.916666666666668
+    },
+    {
+      "id": "output",
+      "kind": "editor",
+      "eyebrow": "REQUEST A DELIVERABLE",
+      "title": "Ask for a plan and proof",
+      "body": "An answer format can make the result easier to review.",
+      "narration": "Now specify what you want back. Ask for the cause, a list of proposed files, and the regression test before seeking implementation. If relevant information is missing, tell the assistant to say what it needs. Once you approve the plan, ask it to report the exact test command and outcome. The format serves your review process.",
+      "code": "Return: cause, changed files, planned test.\nAsk if the relevant requirement is missing.\nWait for approval before editing.",
+      "result": "Review the plan before authorizing changes.",
+      "durationFrames": 548,
+      "duration": 22.833333333333332
+    },
+    {
+      "id": "iterate",
+      "kind": "decision",
+      "eyebrow": "STEER BASED ON THE RESPONSE",
+      "title": "Correct a concrete mismatch",
+      "body": "Point to the requirement the response missed.",
+      "narration": "Suppose the assistant suggests renaming the function and refactoring callers. We can point to the unchanged signature requirement and request a revised plan. Useful follow ups give precise feedback about the mismatch. After the second response, check that the proposed test would fail against the original implementation. Keep the brief available so the next turn stays tied to the same scope.",
+      "code": "The plan changes the public signature.\nPreserve the signature.\nRevise only the proposed comparison and test.",
+      "result": "Check the updated plan against the issue.",
+      "durationFrames": 624,
+      "duration": 26.0
+    },
+    {
+      "id": "criteria",
+      "kind": "terminal",
+      "eyebrow": "MAKE IT CHECKABLE",
+      "title": "Write the verification line",
+      "body": "State what needs to fail and what needs to pass.",
+      "narration": "Write one line that you can verify after the change. The new zero test should fail on the starting code and pass on the proposed fix. The existing tests should still pass. This gives the assistant and the reviewer the same target. Keep the exact test command and the observed outcome separate from a proposed plan.",
+      "code": "Run the same test command before and after.\nBefore: the zero test fails for the defect.\nAfter: the zero and existing tests pass.",
+      "result": "Ask for observed output and specific errors.",
+      "durationFrames": 511,
+      "duration": 21.291666666666668
+    },
+    {
+      "id": "practice",
+      "kind": "decision",
+      "eyebrow": "YOUR TURN",
+      "title": "Build your own brief",
+      "body": "Save a short prompt you can adapt to a real task.",
+      "narration": "Choose another synthetic ticket. Write the goal, the relevant sources, the scope, the acceptance criteria, and the evidence you want back. Run your prompt in the approved tool and compare the response with those five pieces. If the response is weak, change one part of the brief and try again so you can see which change helped.",
+      "code": "Goal + source material\nScope + acceptance criteria\nRequested output and verification evidence",
+      "result": "A clear brief ready for the next training task.",
+      "durationFrames": 520,
+      "duration": 21.666666666666668
+    }
+  ],
+  "sources": [
+    {
+      "label": "VS Code AI best practices",
+      "url": "https://code.visualstudio.com/docs/agents/best-practices"
+    },
+    {
+      "label": "GitHub Copilot prompt engineering",
+      "url": "https://docs.github.com/en/copilot/concepts/prompting-and-context/prompt-engineering"
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720
+}

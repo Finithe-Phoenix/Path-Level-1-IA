@@ -1,0 +1,219 @@
+1
+00:00:00,340 --> 00:00:04,648
+The same model can appear in a vendor
+catalog and in products from other
+
+2
+00:00:04,648 --> 00:00:05,246
+companies.
+
+3
+00:00:05,426 --> 00:00:07,135
+We will look at three levels.
+
+4
+00:00:07,315 --> 00:00:12,338
+The company develops a model, a platform
+makes it available, and an application
+
+5
+00:00:12,338 --> 00:00:13,801
+exposes it to the user.
+
+6
+00:00:13,981 --> 00:00:18,855
+The examples on screen were checked on
+November twenty sixth, twenty twenty six.
+
+7
+00:00:19,035 --> 00:00:22,842
+Your workplace settings determine what you
+can actually choose.
+
+8
+00:00:24,298 --> 00:00:30,854
+The OpenAI API catalog describes GPT six
+point two Sol as a starting point for
+
+9
+00:00:30,854 --> 00:00:33,460
+everyday coding and agent work.
+
+10
+00:00:33,640 --> 00:00:37,290
+Astra is an option for more demanding
+reasoning and code.
+
+11
+00:00:37,470 --> 00:00:42,017
+The catalog also lists models for
+specialized tasks such as image
+
+12
+00:00:42,017 --> 00:00:44,606
+generation, audio, and transcription.
+
+13
+00:00:44,786 --> 00:00:48,614
+Confirm the endpoint and current status if
+you need details.
+
+14
+00:00:48,794 --> 00:00:52,731
+A catalog entry alone gives no guarantee
+for your editor.
+
+15
+00:00:54,173 --> 00:00:57,831
+Anthropic's catalog groups several current
+Claude models.
+
+16
+00:00:58,011 --> 00:01:00,819
+Haiku emphasizes latency and price.
+
+17
+00:01:00,999 --> 00:01:04,839
+Sonnet balances speed and capability for
+everyday work.
+
+18
+00:01:05,019 --> 00:01:07,899
+Opus handles complex, longer tasks.
+
+19
+00:01:08,079 --> 00:01:12,302
+Fable is positioned for high capability
+and long agent runs.
+
+20
+00:01:12,482 --> 00:01:15,769
+In Claude Code, provider and managed
+settings matter.
+
+21
+00:01:15,949 --> 00:01:20,257
+Use the model selector to see what your
+corporate remote session offers.
+
+22
+00:01:21,715 --> 00:01:25,554
+Microsoft develops families such as MAI
+and Phi.
+
+23
+00:01:25,734 --> 00:01:30,545
+MAI Code two and Code two Flash are
+examples focused on coding.
+
+24
+00:01:30,725 --> 00:01:36,407
+Microsoft Foundry is a deployment and
+catalog surface with models from multiple
+
+25
+00:01:36,407 --> 00:01:36,911
+makers.
+
+26
+00:01:37,091 --> 00:01:40,474
+Open the publisher field to see who
+developed a model.
+
+27
+00:01:40,654 --> 00:01:45,280
+Also check the deployment and regional
+details when they matter to your
+
+28
+00:01:45,280 --> 00:01:47,170
+organization's configuration.
+
+29
+00:01:48,632 --> 00:01:52,952
+GitHub Copilot supports model options from
+several providers.
+
+30
+00:01:53,132 --> 00:01:58,376
+The actual list you see in VS Code depends
+on your client version, plan, and
+
+31
+00:01:58,376 --> 00:01:59,894
+organization settings.
+
+32
+00:02:00,074 --> 00:02:05,192
+Claude Code and OpenCode run in the
+approved remote workspace in this course.
+
+33
+00:02:05,372 --> 00:02:08,914
+Their model options depend on the
+configured provider.
+
+34
+00:02:09,094 --> 00:02:13,990
+A model appearing in one catalog does not
+establish access in another tool.
+
+35
+00:02:15,465 --> 00:02:18,410
+Look for the release status beside a model
+name.
+
+36
+00:02:18,590 --> 00:02:23,493
+A preview, general release, or retirement
+marker tells you something about its
+
+37
+00:02:23,493 --> 00:02:25,127
+lifecycle on that surface.
+
+38
+00:02:25,307 --> 00:02:27,922
+Versions and naming change over time.
+
+39
+00:02:28,102 --> 00:02:33,417
+For a training exercise, choose a model
+people can access and keep any unavailable
+
+40
+00:02:33,417 --> 00:02:35,686
+model as an example for discussion.
+
+41
+00:02:35,866 --> 00:02:38,958
+Refresh the record when your work account
+changes.
+
+42
+00:02:40,423 --> 00:02:45,255
+Pick one model you can see in a work tool
+and find its official documentation.
+
+43
+00:02:45,435 --> 00:02:49,387
+Record the maker, exact name, tool, and
+the date you checked.
+
+44
+00:02:49,567 --> 00:02:54,427
+Then write the reason that model is a
+sensible candidate for a small coding
+
+45
+00:02:54,427 --> 00:02:54,751
+task.
+
+46
+00:02:54,931 --> 00:03:00,083
+If you cannot find it in your approved
+session, treat it as a catalog example and
+
+47
+00:03:00,083 --> 00:03:01,991
+choose a model you can access.

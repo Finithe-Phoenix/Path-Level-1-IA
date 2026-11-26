@@ -1,0 +1,205 @@
+1
+00:00:00,340 --> 00:00:05,185
+Imagine you have just opened a training
+repository and want to know how its order
+
+2
+00:00:05,185 --> 00:00:06,142
+validator works.
+
+3
+00:00:06,322 --> 00:00:09,524
+We ask a short question without attaching
+any code.
+
+4
+00:00:09,704 --> 00:00:14,949
+A language model can produce a plausible
+answer based on patterns it has learned,
+
+5
+00:00:14,949 --> 00:00:18,834
+but the question alone does not identify
+the implementation.
+
+6
+00:00:19,014 --> 00:00:24,091
+Watch how that changes when we supply the
+exact function we want to understand.
+
+7
+00:00:25,548 --> 00:00:31,209
+Before the model processes our request, a
+tokenizer converts text into pieces called
+
+8
+00:00:31,209 --> 00:00:31,680
+tokens.
+
+9
+00:00:31,860 --> 00:00:37,139
+Code, punctuation, spaces, and different
+languages can split in different ways.
+
+10
+00:00:37,319 --> 00:00:40,490
+The blocks on this screen are a sketch to
+show the idea.
+
+11
+00:00:40,670 --> 00:00:46,226
+Use the tokenizer or usage readout for the
+actual model if you need precise counts.
+
+12
+00:00:46,406 --> 00:00:48,754
+A word count is only an estimate.
+
+13
+00:00:50,215 --> 00:00:55,268
+The window holds material such as your
+prompt, selected code, and conversation
+
+14
+00:00:55,268 --> 00:00:58,119
+history that the product chooses to
+include.
+
+15
+00:00:58,299 --> 00:01:02,332
+Outputs and other limits also depend on
+the model and product.
+
+16
+00:01:02,512 --> 00:01:06,852
+On screen, the useful material is the
+issue and two small files.
+
+17
+00:01:07,032 --> 00:01:12,049
+Attaching a sprawling log might crowd out
+relevant material or add noise to the
+
+18
+00:01:12,049 --> 00:01:12,494
+answer.
+
+19
+00:01:13,965 --> 00:01:17,698
+Now we attach the small function and ask
+about two inputs.
+
+20
+00:01:17,878 --> 00:01:23,108
+The comparison checks whether the quantity
+is at least zero, so both zero and one
+
+21
+00:01:23,108 --> 00:01:23,883
+return true.
+
+22
+00:01:24,063 --> 00:01:28,781
+The function may be wrong for the business
+rule, even though we can explain precisely
+
+23
+00:01:28,781 --> 00:01:29,502
+what it does.
+
+24
+00:01:29,682 --> 00:01:34,479
+Notice the distinction between observing
+the code and deciding what the code should
+
+25
+00:01:34,479 --> 00:01:34,652
+do.
+
+26
+00:01:36,132 --> 00:01:39,227
+The assistant has identified the current
+behavior.
+
+27
+00:01:39,407 --> 00:01:43,279
+It still needs the requirement to decide
+whether zero should pass.
+
+28
+00:01:43,459 --> 00:01:46,692
+The issue says an order must have at least
+one item.
+
+29
+00:01:46,872 --> 00:01:51,033
+Now we have two distinct pieces of
+evidence, the code and the rule.
+
+30
+00:01:51,213 --> 00:01:56,615
+A helpful response names the mismatch and
+asks for clarification when the relevant
+
+31
+00:01:56,615 --> 00:01:57,932
+rule is unavailable.
+
+32
+00:01:59,382 --> 00:02:00,847
+Try this on screen.
+
+33
+00:02:01,027 --> 00:02:04,697
+In the first chat, attach just the source
+function and the issue.
+
+34
+00:02:04,877 --> 00:02:10,336
+In the second, include the same evidence
+along with several unrelated sample notes.
+
+35
+00:02:10,516 --> 00:02:13,080
+We can inspect which source the answer
+uses.
+
+36
+00:02:13,260 --> 00:02:18,524
+A larger window allows more material, but
+our task still benefits from relevant
+
+37
+00:02:18,524 --> 00:02:20,524
+context and a narrow question.
+
+38
+00:02:20,704 --> 00:02:22,540
+Check what each response cites.
+
+39
+00:02:24,007 --> 00:02:26,495
+Finish by running a small boundary check.
+
+40
+00:02:26,675 --> 00:02:31,636
+Here the original validator returns true
+for zero and false for negative one.
+
+41
+00:02:31,816 --> 00:02:34,678
+That output confirms what we read in the
+function.
+
+42
+00:02:34,858 --> 00:02:40,131
+In your own exercise, attach the smallest
+relevant code sample, ask for a reason
+
+43
+00:02:40,131 --> 00:02:42,900
+tied to a line, and verify the prediction.
+
+44
+00:02:43,080 --> 00:02:45,429
+Keep the test output as the evidence.

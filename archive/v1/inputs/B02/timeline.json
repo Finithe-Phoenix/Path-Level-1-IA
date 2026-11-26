@@ -1,0 +1,104 @@
+{
+  "id": "B02",
+  "title": "The Main Types of AI Models",
+  "subtitle": "Match the task, input, and output",
+  "scenes": [
+    {
+      "id": "map",
+      "kind": "diagram",
+      "eyebrow": "A TASK MAP",
+      "title": "Start with the output",
+      "body": "The deliverable tells you what capability to look for.",
+      "narration": "We have five tasks in this training workspace. Explain a function, find a related note, label a ticket, draw a training image, and turn a recording into text. Each expects a different result. Before looking at brands or version numbers, ask what goes in and what must come out. That simple question prevents a surprising amount of confusion.",
+      "code": "Explain code      → text\nFind similar notes → ranked matches\nLabel a ticket    → category\nCreate an image   → pixels\nTranscribe audio  → text",
+      "result": "Start with the work the model must perform.",
+      "durationFrames": 554,
+      "duration": 23.083333333333332
+    },
+    {
+      "id": "language",
+      "kind": "editor",
+      "eyebrow": "LANGUAGE GENERATION",
+      "title": "Explain and draft code",
+      "body": "A language model can generate explanations or candidate changes.",
+      "narration": "A language model can read the sample function and generate a plain English explanation. It can also suggest a test or draft a change when you ask. The output is text or code to review. For our validator, we still use the source and tests to check the answer. The generated explanation helps us decide what to inspect next.",
+      "code": "Explain this comparison for 0 and 1:\nreturn quantity >= 0",
+      "result": "0 passes the current comparison.\n1 also passes.",
+      "durationFrames": 553,
+      "duration": 23.041666666666668
+    },
+    {
+      "id": "embeddings",
+      "kind": "diagram",
+      "eyebrow": "EMBEDDINGS",
+      "title": "Find related notes",
+      "body": "Embeddings represent inputs as vectors for similarity lookup.",
+      "narration": "We can search a small set of synthetic notes for the phrase zero item order. An embedding model makes a numerical vector for each note and for the search phrase. A search system ranks nearby vectors and returns likely matches. Retrieve and read the original note before drawing a conclusion, because similarity only shows what may be related.",
+      "code": "Query: zero item order\nNotes: order rules, release dates, colors\nEmbed query + compare stored note vectors",
+      "result": "Top match: order acceptance rules.\nOpen the original note for evidence.",
+      "durationFrames": 567,
+      "duration": 23.625
+    },
+    {
+      "id": "classification",
+      "kind": "decision",
+      "eyebrow": "CLASSIFICATION",
+      "title": "Choose an allowed label",
+      "body": "A classification task has a defined set of outcomes.",
+      "narration": "A training triage queue uses three labels: defect, feature, and question. The input says that zero item orders are accepted, against a documented requirement. The output is the defect label. A dedicated classifier or a general model can perform this task. The important design choice is the label set and how you check it on new examples.",
+      "code": "Allowed: defect | feature | question\nTicket: zero items accepted against the rule.\nReturn one label.",
+      "result": "defect\nCheck the proposed label before applying it.",
+      "durationFrames": 581,
+      "duration": 24.208333333333332
+    },
+    {
+      "id": "media",
+      "kind": "diagram",
+      "eyebrow": "MEDIA AND MODALITIES",
+      "title": "Follow the input and output",
+      "body": "Image understanding, image creation, and transcription differ.",
+      "narration": "Now look at three media tasks. A vision capable model can describe a synthetic screenshot. An image generator can create a new training illustration. A transcription model turns approved audio into text. Some systems accept several modalities in one model. Check the tool's input and output support for the exact workflow before relying on it.",
+      "code": "Screenshot → description\nText brief → training illustration\nAudio clip → transcript",
+      "result": "Pick capabilities based on the required output.",
+      "durationFrames": 597,
+      "duration": 24.875
+    },
+    {
+      "id": "tool",
+      "kind": "diagram",
+      "eyebrow": "SYSTEM DESIGN",
+      "title": "See the parts of a search",
+      "body": "A system can combine several model types to answer one question.",
+      "narration": "One product may combine these capabilities. Our search demo turns a question into an embedding, retrieves a likely document, and passes that document to a language model. The final answer is generated from text supplied by the search step. Trace the steps on screen and check the source link. This is a useful example of several model types working together.",
+      "code": "Question → embedding → related note\nRelated note + question → language model\nAnswer → read the cited source",
+      "result": "Ask which step produced each piece of evidence.",
+      "durationFrames": 593,
+      "duration": 24.708333333333332
+    },
+    {
+      "id": "route",
+      "kind": "decision",
+      "eyebrow": "YOUR TURN",
+      "title": "Choose and verify",
+      "body": "Start with a task and define evidence of success.",
+      "narration": "Try three cards from this lesson. For explaining the validator, choose text generation and verify the explanation with test output. For finding a related policy note, choose embedding based retrieval and read the source it returns. For categorizing an issue, choose classification and compare against examples labeled by a person. Write down the success check before choosing the tool.",
+      "code": "Explain validator → compare with tests.\nFind related note → read the note.\nLabel an issue → compare to examples.",
+      "result": "A capability choice plus a verification method.",
+      "durationFrames": 634,
+      "duration": 26.416666666666668
+    }
+  ],
+  "sources": [
+    {
+      "label": "OpenAI full model catalog",
+      "url": "https://developers.openai.com/api/docs/models/all"
+    },
+    {
+      "label": "OpenAI embeddings guide",
+      "url": "https://developers.openai.com/api/docs/guides/embeddings"
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720
+}

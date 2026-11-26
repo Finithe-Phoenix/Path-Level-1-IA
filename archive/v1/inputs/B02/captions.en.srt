@@ -1,0 +1,214 @@
+1
+00:00:00,340 --> 00:00:02,935
+We have five tasks in this training
+workspace.
+
+2
+00:00:03,115 --> 00:00:08,474
+Explain a function, find a related note,
+label a ticket, draw a training image, and
+
+3
+00:00:08,474 --> 00:00:10,218
+turn a recording into text.
+
+4
+00:00:10,398 --> 00:00:12,353
+Each expects a different result.
+
+5
+00:00:12,533 --> 00:00:17,124
+Before looking at brands or version
+numbers, ask what goes in and what must
+
+6
+00:00:17,124 --> 00:00:17,675
+come out.
+
+7
+00:00:17,855 --> 00:00:21,973
+That simple question prevents a surprising
+amount of confusion.
+
+8
+00:00:23,423 --> 00:00:28,315
+A language model can read the sample
+function and generate a plain English
+
+9
+00:00:28,315 --> 00:00:29,109
+explanation.
+
+10
+00:00:29,289 --> 00:00:33,097
+It can also suggest a test or draft a
+change when you ask.
+
+11
+00:00:33,277 --> 00:00:35,829
+The output is text or code to review.
+
+12
+00:00:36,009 --> 00:00:40,309
+For our validator, we still use the source
+and tests to check the answer.
+
+13
+00:00:40,489 --> 00:00:44,989
+The generated explanation helps us decide
+what to inspect next.
+
+14
+00:00:46,465 --> 00:00:51,426
+We can search a small set of synthetic
+notes for the phrase zero item order.
+
+15
+00:00:51,606 --> 00:00:56,156
+An embedding model makes a numerical
+vector for each note and for the search
+
+16
+00:00:56,156 --> 00:00:56,575
+phrase.
+
+17
+00:00:56,755 --> 00:01:01,095
+A search system ranks nearby vectors and
+returns likely matches.
+
+18
+00:01:01,275 --> 00:01:06,626
+Retrieve and read the original note before
+drawing a conclusion, because similarity
+
+19
+00:01:06,626 --> 00:01:08,624
+only shows what may be related.
+
+20
+00:01:10,090 --> 00:01:15,050
+A training triage queue uses three labels:
+defect, feature, and question.
+
+21
+00:01:15,230 --> 00:01:19,911
+The input says that zero item orders are
+accepted, against a documented
+
+22
+00:01:19,911 --> 00:01:20,702
+requirement.
+
+23
+00:01:20,882 --> 00:01:23,060
+The output is the defect label.
+
+24
+00:01:23,240 --> 00:01:27,591
+A dedicated classifier or a general model
+can perform this task.
+
+25
+00:01:27,771 --> 00:01:32,827
+The important design choice is the label
+set and how you check it on new examples.
+
+26
+00:01:34,298 --> 00:01:36,338
+Now look at three media tasks.
+
+27
+00:01:36,518 --> 00:01:40,433
+A vision capable model can describe a
+synthetic screenshot.
+
+28
+00:01:40,613 --> 00:01:44,476
+An image generator can create a new
+training illustration.
+
+29
+00:01:44,656 --> 00:01:48,315
+A transcription model turns approved audio
+into text.
+
+30
+00:01:48,495 --> 00:01:51,910
+Some systems accept several modalities in
+one model.
+
+31
+00:01:52,090 --> 00:01:57,501
+Check the tool's input and output support
+for the exact workflow before relying on
+
+32
+00:01:57,501 --> 00:01:57,699
+it.
+
+33
+00:01:59,173 --> 00:02:02,075
+One product may combine these
+capabilities.
+
+34
+00:02:02,255 --> 00:02:07,416
+Our search demo turns a question into an
+embedding, retrieves a likely document,
+
+35
+00:02:07,416 --> 00:02:10,319
+and passes that document to a language
+model.
+
+36
+00:02:10,499 --> 00:02:14,967
+The final answer is generated from text
+supplied by the search step.
+
+37
+00:02:15,147 --> 00:02:18,157
+Trace the steps on screen and check the
+source link.
+
+38
+00:02:18,337 --> 00:02:22,435
+This is a useful example of several model
+types working together.
+
+39
+00:02:23,882 --> 00:02:25,902
+Try three cards from this lesson.
+
+40
+00:02:26,082 --> 00:02:31,691
+For explaining the validator, choose text
+generation and verify the explanation with
+
+41
+00:02:31,691 --> 00:02:32,492
+test output.
+
+42
+00:02:32,672 --> 00:02:37,896
+For finding a related policy note, choose
+embedding based retrieval and read the
+
+43
+00:02:37,896 --> 00:02:39,072
+source it returns.
+
+44
+00:02:39,252 --> 00:02:43,746
+For categorizing an issue, choose
+classification and compare against
+
+45
+00:02:43,746 --> 00:02:45,662
+examples labeled by a person.
+
+46
+00:02:45,842 --> 00:02:48,852
+Write down the success check before
+choosing the tool.

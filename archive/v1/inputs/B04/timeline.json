@@ -1,0 +1,108 @@
+{
+  "id": "B04",
+  "title": "Choose a Model for the Task",
+  "subtitle": "Compare approved options in GitHub Copilot for VS Code",
+  "scenes": [
+    {
+      "id": "ticket",
+      "kind": "github",
+      "eyebrow": "ONE TASK",
+      "title": "Define a small benchmark",
+      "body": "Compare options on work that you can independently verify.",
+      "narration": "We will compare models using a synthetic issue. The order validator accepts zero even though an order needs at least one item. Our target is clear. Find the cause, suggest a small change, and propose a regression test while preserving the function signature. A task with an observable outcome makes the comparison easier to evaluate than an open ended question.",
+      "code": "Issue: reject zero quantities.\nKeep the function signature.\nExpected: 1 and 5 pass, 0 and -1 fail.",
+      "result": "Score the response against those requirements.",
+      "durationFrames": 603,
+      "duration": 25.125
+    },
+    {
+      "id": "picker",
+      "kind": "editor",
+      "eyebrow": "VS CODE",
+      "title": "Check the Copilot model picker",
+      "body": "Choose from the options your work account exposes.",
+      "narration": "In VS Code, open Copilot Chat and look at the model selector. Pick two workplace approved options if you have them. One might favor speed and the other may be oriented toward harder reasoning. If your account exposes only one model, compare two runs with that model and label the exercise accordingly. The important part is recording your starting conditions.",
+      "code": "Open Copilot Chat.\nInspect the model selection options.\nRecord model A and model B as displayed.",
+      "result": "Availability depends on your work configuration.",
+      "durationFrames": 607,
+      "duration": 25.291666666666668
+    },
+    {
+      "id": "control",
+      "kind": "editor",
+      "eyebrow": "FAIR COMPARISON",
+      "title": "Use the same task and context",
+      "body": "Start separate chats and attach the same files.",
+      "narration": "We attach the issue, source, and tests in each new chat, then give each option the same request. Keep the task in an explanation or planning mode to avoid changing the working tree during comparison. Changing the attached files, agent mode, or requirements would change the task. Keep those inputs stable and record any differences you cannot avoid.",
+      "code": "Explain why zero is accepted.\nPropose a minimal fix and one regression test.\nKeep the signature. Describe changes only.",
+      "result": "Repeat with the same issue and attached files.",
+      "durationFrames": 582,
+      "duration": 24.25
+    },
+    {
+      "id": "criteria",
+      "kind": "decision",
+      "eyebrow": "COMPARE RESULTS",
+      "title": "Score observable differences",
+      "body": "Compare evidence, scope, verification, and response time.",
+      "narration": "Look for the line responsible for accepting zero and check whether the proposed test would fail on the original code. Note how long each response takes and whether a response adds unnecessary work. The results on screen are illustrative. Try the exercise yourself and record the outcome you actually saw. One run gives a useful observation, with limited evidence for broader conclusions.",
+      "code": "A: correct cause, focused test, 6 s.\nB: correct cause, extra refactor, 15 s.\nSynthetic sample results",
+      "result": "Both found the defect. A stayed in scope.",
+      "durationFrames": 635,
+      "duration": 26.458333333333332
+    },
+    {
+      "id": "escalate",
+      "kind": "diagram",
+      "eyebrow": "CHOOSE FOR THE WORK",
+      "title": "Start with a suitable option",
+      "body": "Use stronger reasoning when a clear capability gap appears.",
+      "narration": "For this small boundary bug, a fast option may be enough once tests confirm the result. When a change spans packages, has ambiguous requirements, or requires comparing several designs, you might evaluate a stronger reasoning option. A broader change still needs clear context and independent checks. The model label does not replace either one.",
+      "code": "Small, clear change → try a fast option.\nComplex or uncertain change → evaluate reasoning.\nFor either option → verify with evidence.",
+      "result": "Use task demands and results to guide the choice.",
+      "durationFrames": 578,
+      "duration": 24.083333333333332
+    },
+    {
+      "id": "test",
+      "kind": "terminal",
+      "eyebrow": "CHECK THE SUGGESTION",
+      "title": "Confirm the test can catch the bug",
+      "body": "The quality score depends on checking the proposed result.",
+      "narration": "One answer suggests testing one, which already passes. Another adds the test for zero, which fails against the original code. The second test directly exercises the behavior in the issue. To compare responses, inspect those details and run the relevant checks in the approved training environment. This tells you more than whether the generated explanation sounded confident.",
+      "code": "Candidate A: test quantity 1.\nCandidate B: test quantity 0.\nCheck each against the original code.",
+      "result": "The zero test detects this specific defect.",
+      "durationFrames": 620,
+      "duration": 25.833333333333332
+    },
+    {
+      "id": "practice",
+      "kind": "decision",
+      "eyebrow": "YOUR TURN",
+      "title": "Write a short conclusion",
+      "body": "Name the model and explain your evidence.",
+      "narration": "Run the benchmark and write one sentence about your choice. Include which model you used, what it got right or missed, and the test you would use to verify a proposed change. If both results fall short, adjust the brief or fix the missing context before increasing effort. Keep the comparison small enough that you can redo it when the catalog changes.",
+      "code": "Task: zero quantity boundary\nCompared: actual model labels\nDecision: what performed well and why\nEvidence: expected regression result",
+      "result": "A reproducible choice you can revisit.",
+      "durationFrames": 563,
+      "duration": 23.458333333333332
+    }
+  ],
+  "sources": [
+    {
+      "label": "GitHub Copilot model comparison",
+      "url": "https://docs.github.com/en/copilot/reference/ai-models/model-comparison"
+    },
+    {
+      "label": "GitHub Copilot supported models",
+      "url": "https://docs.github.com/en/copilot/reference/ai-models/supported-models"
+    },
+    {
+      "label": "VS Code AI best practices",
+      "url": "https://code.visualstudio.com/docs/agents/best-practices"
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720
+}

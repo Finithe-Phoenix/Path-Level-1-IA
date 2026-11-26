@@ -1,0 +1,108 @@
+{
+  "id": "B05",
+  "title": "What Is an AI Agent?",
+  "subtitle": "Understand the loop and where you remain in control",
+  "scenes": [
+    {
+      "id": "compare",
+      "kind": "diagram",
+      "eyebrow": "ANSWERS AND ACTIONS",
+      "title": "Compare two interactions",
+      "body": "An agent can use available tools as part of a task.",
+      "narration": "We start with a simple request about the order validator. A chat response can explain the code you provide. An agent session can also search the workspace, propose edits, and run permitted checks, depending on the tools it has. Open an approved training workspace and look at the actions shown in the session. The proposed answer and the actions taken are both worth reviewing.",
+      "code": "Question → explanation\nAgent request → tools → evidence\nAvailable tools depend on the session.",
+      "result": "Identify an actual action in the session log.",
+      "durationFrames": 601,
+      "duration": 25.041666666666668
+    },
+    {
+      "id": "loop",
+      "kind": "diagram",
+      "eyebrow": "THE AGENT LOOP",
+      "title": "Follow the evidence",
+      "body": "An agent can use tool results to decide what step comes next.",
+      "narration": "An agent works through a loop. It collects relevant information, proposes or takes an allowed action, looks at the result, and decides whether another action is needed. In our case, it reads the issue, inspects the validator, and finds the missing test. We can follow each step because the task has a narrow scope and a clear place to stop.",
+      "code": "Inspect issue → read validator → inspect tests\nRead results before proposing a change.\nStop when the specified work is done.",
+      "result": "Evidence: a comparison and a missing test.",
+      "durationFrames": 561,
+      "duration": 23.375
+    },
+    {
+      "id": "scope",
+      "kind": "editor",
+      "eyebrow": "START IN PLAN",
+      "title": "Set the boundary before editing",
+      "body": "A plan makes the scope visible to the developer.",
+      "narration": "Ask the agent to investigate why zero is accepted and to suggest the smallest change. Keep the task at planning in the approved session. We expect the agent to point to one comparison and describe one test. If it suggests redesigning validation, steer it back to the boundary case. Check what tools the session can use, even during planning.",
+      "code": "Plan only. Find why zero is accepted.\nDescribe one regression test.\nKeep the function signature.",
+      "result": "Expected files: validator and existing tests.\nReview the plan before implementation.",
+      "durationFrames": 564,
+      "duration": 23.5
+    },
+    {
+      "id": "permissions",
+      "kind": "decision",
+      "eyebrow": "TOOL APPROVAL",
+      "title": "Review a proposed action",
+      "body": "Check which tool, command, working directory, and purpose are shown.",
+      "narration": "Now the training agent proposes running the unit tests in the authorized workspace. Read the command, its working directory, and the reason before deciding. The command should match the task and operate on the sample repository. Pause when an action would touch unrelated paths or make an unrequested external change. The approval controls available to you depend on company settings.",
+      "code": "Proposed: python -B -m unittest discover -s tests\nWorking directory: training checkout\nReason: verify the regression",
+      "result": "Proceed when the command matches your scope.",
+      "durationFrames": 635,
+      "duration": 26.458333333333332
+    },
+    {
+      "id": "result",
+      "kind": "terminal",
+      "eyebrow": "OBSERVE THE RESULT",
+      "title": "Read the evidence yourself",
+      "body": "The exit status and test output matter more than a summary.",
+      "narration": "The test run is useful when it reports the assertion we meant to check. In this synthetic example, the original condition accepts zero and the new regression test fails. We read the reported test name and failure to confirm it matches the issue. If a setup problem caused the failure instead, diagnose that problem before interpreting the result.",
+      "code": "python -B -m unittest discover -s tests -v",
+      "result": "test_rejects_zero ... FAIL\nAssertionError: True is not false",
+      "durationFrames": 563,
+      "duration": 23.458333333333332
+    },
+    {
+      "id": "contexts",
+      "kind": "diagram",
+      "eyebrow": "APPROVED SURFACES",
+      "title": "Identify where the action runs",
+      "body": "A tool choice changes the execution context and available controls.",
+      "narration": "Keep track of the environment when you move between sessions. In this course, Copilot is in VS Code, and Claude Code or OpenCode can be available inside the approved remote workspace. A visible tool approval belongs to the session that offered it. Verify the repository and environment before letting an agent touch files or run checks.",
+      "code": "Local entry point: Copilot in VS Code\nRemote entry points: Claude Code or OpenCode\nCheck the working folder and controls.",
+      "result": "The approved environment defines available actions.",
+      "durationFrames": 581,
+      "duration": 24.208333333333332
+    },
+    {
+      "id": "stop",
+      "kind": "decision",
+      "eyebrow": "YOUR TURN",
+      "title": "Set a stopping condition",
+      "body": "A developer owns the validation and the decision to continue.",
+      "narration": "Give the training agent a bounded task. Say what files it may inspect, what action it can take, what evidence to return, and when to stop. Then review the actual output and explain what it established. For this exercise, success is a focused plan and the expected test evidence. Any further publication can be treated as a separate decision.",
+      "code": "Inspect the source and tests.\nRun the approved test command if needed.\nReport the result and stop.",
+      "result": "Evidence: files inspected and test result.",
+      "durationFrames": 569,
+      "duration": 23.708333333333332
+    }
+  ],
+  "sources": [
+    {
+      "label": "VS Code agent overview",
+      "url": "https://code.visualstudio.com/docs/agents/overview"
+    },
+    {
+      "label": "VS Code trust and safety",
+      "url": "https://code.visualstudio.com/docs/agents/concepts/trust-and-safety"
+    },
+    {
+      "label": "Claude Code permissions",
+      "url": "https://code.claude.com/docs/en/permissions"
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720
+}

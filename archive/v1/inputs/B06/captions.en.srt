@@ -1,0 +1,206 @@
+1
+00:00:00,340 --> 00:00:03,679
+First we enter a short request: fix
+validation.
+
+2
+00:00:03,859 --> 00:00:08,543
+It says little about the problem, the
+affected files, or the result we need.
+
+3
+00:00:08,723 --> 00:00:12,915
+A model might suggest several changes that
+all sound reasonable.
+
+4
+00:00:13,095 --> 00:00:18,430
+Before we accept any proposal, we will
+turn that request into a brief that makes
+
+5
+00:00:18,430 --> 00:00:22,299
+the defect, scope, and acceptance criteria
+easy to review.
+
+6
+00:00:23,757 --> 00:00:25,926
+Start with the behavior in the issue.
+
+7
+00:00:26,106 --> 00:00:29,146
+An order with zero items currently passes.
+
+8
+00:00:29,326 --> 00:00:33,006
+The documented rule says the quantity must
+be positive.
+
+9
+00:00:33,186 --> 00:00:38,366
+We give the assistant the source function
+and its existing tests, using the approved
+
+10
+00:00:38,366 --> 00:00:39,415
+training context.
+
+11
+00:00:39,595 --> 00:00:43,255
+This lets it connect the actual comparison
+to the requirement.
+
+12
+00:00:43,435 --> 00:00:47,617
+Avoid unexplained assumptions about the
+rest of the repository.
+
+13
+00:00:49,090 --> 00:00:51,028
+Next, state the boundaries.
+
+14
+00:00:51,208 --> 00:00:53,133
+Keep the validator's signature.
+
+15
+00:00:53,313 --> 00:00:56,249
+Limit the work to the validator and its
+test file.
+
+16
+00:00:56,429 --> 00:00:58,521
+The inputs one and five should pass.
+
+17
+00:00:58,701 --> 00:01:01,041
+Zero and negative one should fail.
+
+18
+00:01:01,221 --> 00:01:05,499
+These examples give a reviewer a concrete
+way to judge the result.
+
+19
+00:01:05,679 --> 00:01:10,533
+They also help the assistant notice if its
+suggested fix misses a boundary.
+
+20
+00:01:12,007 --> 00:01:14,163
+Now specify what you want back.
+
+21
+00:01:14,343 --> 00:01:19,273
+Ask for the cause, a list of proposed
+files, and the regression test before
+
+22
+00:01:19,273 --> 00:01:20,785
+seeking implementation.
+
+23
+00:01:20,965 --> 00:01:25,678
+If relevant information is missing, tell
+the assistant to say what it needs.
+
+24
+00:01:25,858 --> 00:01:30,818
+Once you approve the plan, ask it to
+report the exact test command and outcome.
+
+25
+00:01:30,998 --> 00:01:33,399
+The format serves your review process.
+
+26
+00:01:34,840 --> 00:01:39,682
+Suppose the assistant suggests renaming
+the function and refactoring callers.
+
+27
+00:01:39,862 --> 00:01:44,725
+We can point to the unchanged signature
+requirement and request a revised plan.
+
+28
+00:01:44,905 --> 00:01:48,702
+Useful follow ups give precise feedback
+about the mismatch.
+
+29
+00:01:48,882 --> 00:01:53,597
+After the second response, check that the
+proposed test would fail against the
+
+30
+00:01:53,597 --> 00:01:55,048
+original implementation.
+
+31
+00:01:55,228 --> 00:01:59,389
+Keep the brief available so the next turn
+stays tied to the same scope.
+
+32
+00:02:00,840 --> 00:02:04,115
+Write one line that you can verify after
+the change.
+
+33
+00:02:04,295 --> 00:02:09,094
+The new zero test should fail on the
+starting code and pass on the proposed
+
+34
+00:02:09,094 --> 00:02:09,350
+fix.
+
+35
+00:02:09,530 --> 00:02:11,718
+The existing tests should still pass.
+
+36
+00:02:11,898 --> 00:02:15,333
+This gives the assistant and the reviewer
+the same target.
+
+37
+00:02:15,513 --> 00:02:20,340
+Keep the exact test command and the
+observed outcome separate from a proposed
+
+38
+00:02:20,340 --> 00:02:20,654
+plan.
+
+39
+00:02:22,132 --> 00:02:24,152
+Choose another synthetic ticket.
+
+40
+00:02:24,332 --> 00:02:29,298
+Write the goal, the relevant sources, the
+scope, the acceptance criteria, and the
+
+41
+00:02:29,298 --> 00:02:30,708
+evidence you want back.
+
+42
+00:02:30,888 --> 00:02:35,503
+Run your prompt in the approved tool and
+compare the response with those five
+
+43
+00:02:35,503 --> 00:02:35,922
+pieces.
+
+44
+00:02:36,102 --> 00:02:41,128
+If the response is weak, change one part
+of the brief and try again so you can see
+
+45
+00:02:41,128 --> 00:02:42,354
+which change helped.

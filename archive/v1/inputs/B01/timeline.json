@@ -1,0 +1,104 @@
+{
+  "id": "B01",
+  "title": "How a Language Model Uses Context",
+  "subtitle": "Tokens, context windows, and evidence",
+  "scenes": [
+    {
+      "id": "request",
+      "kind": "editor",
+      "eyebrow": "THE FIRST REQUEST",
+      "title": "Start with a small question",
+      "body": "The model sees the text supplied to this turn.",
+      "narration": "Imagine you have just opened a training repository and want to know how its order validator works. We ask a short question without attaching any code. A language model can produce a plausible answer based on patterns it has learned, but the question alone does not identify the implementation. Watch how that changes when we supply the exact function we want to understand.",
+      "code": "How does our order validator work?",
+      "result": "The function is missing from this request.\nAttach the implementation to answer.",
+      "durationFrames": 605,
+      "duration": 25.208333333333332
+    },
+    {
+      "id": "tokens",
+      "kind": "diagram",
+      "eyebrow": "TOKENS",
+      "title": "Text enters as tokens",
+      "body": "A token can represent a word, part of a word, or punctuation.",
+      "narration": "Before the model processes our request, a tokenizer converts text into pieces called tokens. Code, punctuation, spaces, and different languages can split in different ways. The blocks on this screen are a sketch to show the idea. Use the tokenizer or usage readout for the actual model if you need precise counts. A word count is only an estimate.",
+      "code": "Text: return quantity > 0\nPossible pieces, for illustration:\n[return] [ quantity] [ >] [ 0]",
+      "result": "A token count depends on the tokenizer.",
+      "durationFrames": 592,
+      "duration": 24.666666666666668
+    },
+    {
+      "id": "window",
+      "kind": "diagram",
+      "eyebrow": "CONTEXT WINDOW",
+      "title": "See what can fit",
+      "body": "The context window is a finite token budget for a request.",
+      "narration": "The window holds material such as your prompt, selected code, and conversation history that the product chooses to include. Outputs and other limits also depend on the model and product. On screen, the useful material is the issue and two small files. Attaching a sprawling log might crowd out relevant material or add noise to the answer.",
+      "code": "Request + instructions\nRelevant files + prior messages\nTool results, when available",
+      "result": "Finite context budget\nExact limits vary by model and product.",
+      "durationFrames": 570,
+      "duration": 23.75
+    },
+    {
+      "id": "source",
+      "kind": "editor",
+      "eyebrow": "SUPPLY EVIDENCE",
+      "title": "Attach the actual function",
+      "body": "The implementation determines the answer for this repository.",
+      "narration": "Now we attach the small function and ask about two inputs. The comparison checks whether the quantity is at least zero, so both zero and one return true. The function may be wrong for the business rule, even though we can explain precisely what it does. Notice the distinction between observing the code and deciding what the code should do.",
+      "code": "def is_valid_quantity(quantity):\n    return quantity >= 0\n\nWhat happens for zero and one?",
+      "result": "0 returns True because 0 >= 0.\n1 returns True because 1 >= 0.",
+      "durationFrames": 532,
+      "duration": 22.166666666666668
+    },
+    {
+      "id": "gap",
+      "kind": "decision",
+      "eyebrow": "MISSING INFORMATION",
+      "title": "Ask for the rule",
+      "body": "A grounded code explanation can still leave a business question open.",
+      "narration": "The assistant has identified the current behavior. It still needs the requirement to decide whether zero should pass. The issue says an order must have at least one item. Now we have two distinct pieces of evidence, the code and the rule. A helpful response names the mismatch and asks for clarification when the relevant rule is unavailable.",
+      "code": "Requirement: an order needs at least one item.\nCurrent code allows 0.\nExplain the mismatch using both sources.",
+      "result": "Current: 0 is accepted.\nRequired: 0 is rejected.\nThe comparison is the point to inspect.",
+      "durationFrames": 558,
+      "duration": 23.25
+    },
+    {
+      "id": "narrow",
+      "kind": "editor",
+      "eyebrow": "CONTROL THE CONTEXT",
+      "title": "Compare two inputs",
+      "body": "Leave room for the pieces the question actually depends on.",
+      "narration": "Try this on screen. In the first chat, attach just the source function and the issue. In the second, include the same evidence along with several unrelated sample notes. We can inspect which source the answer uses. A larger window allows more material, but our task still benefits from relevant context and a narrow question. Check what each response cites.",
+      "code": "Run A: source + issue.\nRun B: source + issue + unrelated notes.\nSame question: why is 0 accepted?",
+      "result": "The comparison and requirement are the evidence.",
+      "durationFrames": 591,
+      "duration": 24.625
+    },
+    {
+      "id": "check",
+      "kind": "terminal",
+      "eyebrow": "YOUR TURN",
+      "title": "Check the boundary",
+      "body": "Run the same check in your approved training environment.",
+      "narration": "Finish by running a small boundary check. Here the original validator returns true for zero and false for negative one. That output confirms what we read in the function. In your own exercise, attach the smallest relevant code sample, ask for a reason tied to a line, and verify the prediction. Keep the test output as the evidence.",
+      "code": "python -B - <<'PY'\nfrom order_quantity import is_valid_quantity\nfor n in (0, -1):\n    print(n, is_valid_quantity(n))\nPY",
+      "result": "0 True\n-1 False",
+      "durationFrames": 549,
+      "duration": 22.875
+    }
+  ],
+  "sources": [
+    {
+      "label": "OpenAI model catalog",
+      "url": "https://developers.openai.com/api/docs/models"
+    },
+    {
+      "label": "VS Code core AI concepts",
+      "url": "https://code.visualstudio.com/docs/agents/concepts/language-models"
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720
+}

@@ -1,0 +1,104 @@
+{
+  "id": "B08",
+  "title": "Verify and Undo an AI Edit",
+  "subtitle": "Read the diff, run tests, and recover one unwanted change",
+  "scenes": [
+    {
+      "id": "start",
+      "kind": "editor",
+      "eyebrow": "A KNOWN STARTING POINT",
+      "title": "Record the patch boundary",
+      "body": "Use a training branch and keep unrelated work visible.",
+      "narration": "Before we ask Copilot to change a file, we open Source Control and check the working tree on a disposable training branch. In this example, the repo begins with no changes. If you already have edits of your own, identify them before an agent session so you can tell what came from the proposed change. This gives us a baseline for review.",
+      "code": "Training branch: fix/reject-zero-quantity\nSource Control: inspect changed files\nRecord the baseline before the edit.",
+      "result": "Baseline: no changes in this exercise.",
+      "durationFrames": 553,
+      "duration": 23.041666666666668
+    },
+    {
+      "id": "proposal",
+      "kind": "editor",
+      "eyebrow": "STUDY THE DIFF",
+      "title": "Map the edit to the issue",
+      "body": "Check every changed file against the stated scope.",
+      "narration": "The proposed diff changes the validator and adds a regression test. It also includes an unrelated rename in a training notes file. We inspect the exact lines instead of relying on the summary. The comparison and test line belong to this issue. The notes change does not help meet the acceptance criteria, so we will remove it before running the final checks.",
+      "code": "- return quantity >= 0\n+ return quantity > 0\n+ self.assertFalse(is_valid_quantity(0))",
+      "result": "Unrelated candidate edit: notes file.",
+      "durationFrames": 589,
+      "duration": 24.541666666666668
+    },
+    {
+      "id": "prove",
+      "kind": "terminal",
+      "eyebrow": "VERIFY THE BEHAVIOR",
+      "title": "Read failing and passing evidence",
+      "body": "The regression should fail on the original code and pass after the fix.",
+      "narration": "Review the earlier failing run and confirm the test failed for the specific boundary, because zero was accepted. Then rerun the suite with the corrected condition in the approved environment. We expect the zero test and the existing tests to pass. Use the same test command for both runs and keep the evidence with the change.",
+      "code": "python -B -m unittest discover -s tests -v",
+      "result": "Before fix: test_rejects_zero ... FAIL\nAfter fix:  test_rejects_zero ... ok\nAfter fix:  Ran 4 tests. OK",
+      "durationFrames": 535,
+      "duration": 22.291666666666668
+    },
+    {
+      "id": "undo",
+      "kind": "editor",
+      "eyebrow": "UNDO ONE UNWANTED EDIT",
+      "title": "Remove the confirmed extra change",
+      "body": "Use the smallest recovery action that preserves other work.",
+      "narration": "In Source Control, open the diff for the training notes file and confirm that the edit came only from this exercise. Then discard that one file's change or revert just the unwanted hunk with the available editor control. If the file contains work you want to keep, revert only those specific lines. A broad discard can remove unrelated work.",
+      "code": "Open the notes diff.\nCheck that it contains only the unwanted edit.\nDiscard just that file or revert the hunk.",
+      "result": "The validator and test edits stay in place.",
+      "durationFrames": 581,
+      "duration": 24.208333333333332
+    },
+    {
+      "id": "recheck",
+      "kind": "terminal",
+      "eyebrow": "VERIFY AFTER RECOVERY",
+      "title": "Review the remaining patch",
+      "body": "Recovery is complete when the intended diff and tests still match.",
+      "narration": "After undo, open Source Control again. The diff should now include only the validator and the regression test. Run the suite once more if the recovery touched the implementation or the tests. The post recovery check matters because an undo action can affect more than intended if you pick the wrong target. Keep the changed files and test result together.",
+      "code": "git diff --stat\npython -B -m unittest discover -s tests -v",
+      "result": "Only validator and test are changed.\nAll four tests pass in the training case.",
+      "durationFrames": 583,
+      "duration": 24.291666666666668
+    },
+    {
+      "id": "checkpoint",
+      "kind": "decision",
+      "eyebrow": "RECOVERY OPTIONS",
+      "title": "Choose the smallest undo",
+      "body": "A checkpoint may roll back several changes in one action.",
+      "narration": "Some agent sessions offer a checkpoint or a way to undo a proposed edit. Check which files that action would restore before using it. For a single unrelated hunk, a precise editor undo often fits the work better. For a session wide rollback in this practice branch, first confirm the changes are contained and preserve any work you still need.",
+      "code": "One hunk → revert only the hunk.\nSeveral session changes → inspect checkpoint scope.\nConfirm what remains after the undo.",
+      "result": "Choose recovery based on the diff you reviewed.",
+      "durationFrames": 575,
+      "duration": 23.958333333333332
+    },
+    {
+      "id": "practice",
+      "kind": "decision",
+      "eyebrow": "YOUR TURN",
+      "title": "Explain what you kept and why",
+      "body": "Use the issue, final diff, and test output as evidence.",
+      "narration": "Practice on a sample branch that has one correct change and one clearly identified extra edit. Keep the fix, undo the extra edit, and review the resulting diff. Then explain the result in three parts. Describe the requirement, identify the lines you kept, and show which tests verify the outcome. You now have evidence another developer can review.",
+      "code": "Requirement: reject zero.\nFinal diff: one comparison and one test.\nEvidence: regression and existing tests pass.",
+      "result": "A reviewable patch with a recovery note.",
+      "durationFrames": 586,
+      "duration": 24.416666666666668
+    }
+  ],
+  "sources": [
+    {
+      "label": "VS Code AI best practices",
+      "url": "https://code.visualstudio.com/docs/agents/best-practices"
+    },
+    {
+      "label": "VS Code source control",
+      "url": "https://code.visualstudio.com/docs/sourcecontrol/overview"
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720
+}
