@@ -1,0 +1,378 @@
+{
+  "id": "B04",
+  "title": "Choose a Model for the Task",
+  "subtitle": "Compare approved options in GitHub Copilot for VS Code",
+  "scenes": [
+    {
+      "id": "ticket",
+      "kind": "github",
+      "eyebrow": "ONE TASK",
+      "title": "Define a small benchmark",
+      "body": "Compare options on work that you can independently verify.",
+      "narration": "Let’s compare two models on the same bug. The baseline function accepts zero. The issue says one and five should pass, while zero and negative one should fail. We ask for a cause, a small fix, and one regression test. Before opening either chat, write these expectations down. That gives both answers the same standard.",
+      "code": "Issue: reject zero quantities.\nKeep the function signature.\nExpected: 1 and 5 pass, 0 and -1 fail.",
+      "result": "Score the response against those requirements.",
+      "focus": "The four expected outcomes define the comparison",
+      "action": "Copy the issue and list its expected outcomes.",
+      "durationFrames": 506,
+      "duration": 21.083333333333332,
+      "cues": [
+        {
+          "start": 0.418,
+          "end": 3.093,
+          "text": "Let’s compare two models on the same\nbug."
+        },
+        {
+          "start": 3.143,
+          "end": 5.543,
+          "text": "The baseline function accepts zero."
+        },
+        {
+          "start": 5.593,
+          "end": 9.728,
+          "text": "The issue says one and five should pass,\nwhile zero and negative one should fail."
+        },
+        {
+          "start": 10.331,
+          "end": 13.931,
+          "text": "We ask for a cause, a small fix, and one\nregression test."
+        },
+        {
+          "start": 13.981,
+          "end": 17.721,
+          "text": "Before opening either chat, write these\nexpectations down."
+        },
+        {
+          "start": 17.796,
+          "end": 20.019,
+          "text": "That gives both answers the same\nstandard."
+        }
+      ]
+    },
+    {
+      "id": "picker",
+      "kind": "editor",
+      "eyebrow": "VS CODE",
+      "title": "Check the Copilot model picker",
+      "body": "Choose from the options your work account exposes.",
+      "narration": "Open the model picker in Copilot Chat. Choose two options actually available in your managed workspace and record their labels. Use the same session mode for both. If your account offers one model, run it twice to see whether the answer stays consistent. Record those as two attempts with the same model.",
+      "code": "Open Copilot Chat.\nInspect the model selection options.\nRecord model A and model B as displayed.",
+      "result": "Availability depends on your work configuration.",
+      "focus": "Two actual picker labels identify the candidates",
+      "action": "Record the labels of two approved models in Copilot Chat.",
+      "durationFrames": 479,
+      "duration": 19.958333333333332,
+      "cues": [
+        {
+          "start": 0.393,
+          "end": 3.168,
+          "text": "Open the model picker in Copilot Chat."
+        },
+        {
+          "start": 3.218,
+          "end": 7.168,
+          "text": "Choose two options actually available in\nyour managed workspace and record their"
+        },
+        {
+          "start": 7.218,
+          "end": 7.723,
+          "text": "labels."
+        },
+        {
+          "start": 8.37,
+          "end": 10.845,
+          "text": "Use the same session mode for both."
+        },
+        {
+          "start": 10.92,
+          "end": 14.745,
+          "text": "If your account offers one model, run it\ntwice to see whether the answer stays"
+        },
+        {
+          "start": 14.795,
+          "end": 15.547,
+          "text": "consistent."
+        },
+        {
+          "start": 16.203,
+          "end": 18.882,
+          "text": "Record those as two attempts with the\nsame model."
+        }
+      ]
+    },
+    {
+      "id": "control",
+      "kind": "editor",
+      "eyebrow": "FAIR COMPARISON",
+      "title": "Use the same task and context",
+      "body": "Start separate chats and attach the same files.",
+      "narration": "Use two fresh Plan sessions on the same revision. In each, attach the issue, the validator, and its tests. Paste the same prompt. Ask why zero passes, then request a minimal fix and one regression test. Leave edits out of this comparison. If a run sees more source or uses a different mode, record that difference before interpreting its result.",
+      "code": "Explain why zero is accepted.\nPropose a minimal fix and one regression test.\nKeep the signature. Describe changes only.",
+      "result": "Repeat with the same issue and attached files.",
+      "focus": "The prompt and attachments match in both runs",
+      "action": "Run the same Plan prompt in two fresh chats.",
+      "durationFrames": 558,
+      "duration": 23.25,
+      "cues": [
+        {
+          "start": 0.439,
+          "end": 3.389,
+          "text": "Use two fresh Plan sessions on the same\nrevision."
+        },
+        {
+          "start": 3.464,
+          "end": 7.099,
+          "text": "In each, attach the issue, the\nvalidator, and its tests."
+        },
+        {
+          "start": 7.174,
+          "end": 8.345,
+          "text": "Paste the same prompt."
+        },
+        {
+          "start": 8.973,
+          "end": 14.098,
+          "text": "Ask why zero passes, then request a\nminimal fix and one regression test."
+        },
+        {
+          "start": 14.198,
+          "end": 16.423,
+          "text": "Leave edits out of this comparison."
+        },
+        {
+          "start": 16.498,
+          "end": 19.448,
+          "text": "If a run sees more source or uses a\ndifferent mode,"
+        },
+        {
+          "start": 19.498,
+          "end": 22.166,
+          "text": "record that difference before\ninterpreting its result."
+        }
+      ]
+    },
+    {
+      "id": "criteria",
+      "kind": "decision",
+      "eyebrow": "COMPARE RESULTS",
+      "title": "Score observable differences",
+      "body": "Compare evidence, scope, verification, and response time.",
+      "narration": "Example A identifies equality, proposes a zero test, and keeps the existing interface. Example B also finds the cause, but adds a refactor the issue never asked for. Both may sound polished. Score the substance first. Only then look at the example response times. Those numbers describe these illustrative runs and can vary across attempts and sessions.",
+      "code": "A: correct cause, focused test, 6 s.\nB: correct cause, extra refactor, 15 s.\nSynthetic sample results",
+      "result": "Both found the defect. A stayed in scope.",
+      "focus": "Correct cause and tighter scope distinguish the sample outputs",
+      "action": "Score each sample against the same criteria.",
+      "durationFrames": 578,
+      "duration": 24.083333333333332,
+      "cues": [
+        {
+          "start": 0.414,
+          "end": 4.089,
+          "text": "Example A identifies equality, proposes\na zero test,"
+        },
+        {
+          "start": 4.229,
+          "end": 6.429,
+          "text": "and keeps the existing interface."
+        },
+        {
+          "start": 6.529,
+          "end": 11.205,
+          "text": "Example B also finds the cause, but adds\na refactor the issue never asked for."
+        },
+        {
+          "start": 11.806,
+          "end": 13.506,
+          "text": "Both may sound polished."
+        },
+        {
+          "start": 13.581,
+          "end": 15.331,
+          "text": "Score the substance first."
+        },
+        {
+          "start": 15.406,
+          "end": 18.256,
+          "text": "Only then look at the example response\ntimes."
+        },
+        {
+          "start": 18.331,
+          "end": 21.806,
+          "text": "Those numbers describe these\nillustrative runs and can vary across"
+        },
+        {
+          "start": 21.856,
+          "end": 22.976,
+          "text": "attempts and sessions."
+        }
+      ]
+    },
+    {
+      "id": "escalate",
+      "kind": "diagram",
+      "eyebrow": "CHOOSE FOR THE WORK",
+      "title": "Start with a suitable option",
+      "body": "Use stronger reasoning when a clear capability gap appears.",
+      "narration": "For this task, the smaller proposal is easier to review because the expected behavior is explicit. A larger migration may justify evaluating a stronger reasoning option on a representative task. You can make that choice from several runs and the evidence they produce. In this small exercise, the best signal is whether the suggested regression catches the defect.",
+      "code": "Small, clear change → try a fast option.\nComplex or uncertain change → evaluate reasoning.\nFor either option → verify with evidence.",
+      "result": "Use task demands and results to guide the choice.",
+      "focus": "A narrow task favors a suitable, verifiable choice",
+      "action": "Select a model for the small fix and name why.",
+      "durationFrames": 569,
+      "duration": 23.708333333333332,
+      "cues": [
+        {
+          "start": 0.393,
+          "end": 4.843,
+          "text": "For this task, the smaller proposal is\neasier to review because the expected"
+        },
+        {
+          "start": 4.893,
+          "end": 6.968,
+          "text": "behavior is explicit."
+        },
+        {
+          "start": 7.043,
+          "end": 10.993,
+          "text": "A larger migration may justify\nevaluating a stronger reasoning option"
+        },
+        {
+          "start": 11.043,
+          "end": 12.459,
+          "text": "on a representative task."
+        },
+        {
+          "start": 13.071,
+          "end": 17.246,
+          "text": "You can make that choice from several\nruns and the evidence they produce."
+        },
+        {
+          "start": 17.321,
+          "end": 21.446,
+          "text": "In this small exercise, the best signal\nis whether the suggested regression"
+        },
+        {
+          "start": 21.521,
+          "end": 22.641,
+          "text": "catches the defect."
+        }
+      ]
+    },
+    {
+      "id": "test",
+      "kind": "terminal",
+      "eyebrow": "CHECK THE SUGGESTION",
+      "title": "Confirm the test can catch the bug",
+      "body": "The quality score depends on checking the proposed result.",
+      "narration": "Compare two test ideas. A test that expects one to pass stays green on the buggy revision. A test that expects zero to fail exposes the equality bug. Run the chosen assertion on the original code in an approved runner. Then apply the small fix and repeat the test. Seeing red first and green afterward makes the model comparison concrete.",
+      "code": "Test idea 1: verify that quantity 1 passes.\nTest idea 2: verify that quantity 0 fails.\nRun each against the original validator.",
+      "result": "The zero test detects this specific defect.",
+      "focus": "The zero test fails on the buggy revision",
+      "action": "Run the proposed zero assertion against the baseline.",
+      "durationFrames": 548,
+      "duration": 22.833333333333332,
+      "cues": [
+        {
+          "start": 0.393,
+          "end": 2.393,
+          "text": "Compare two test ideas."
+        },
+        {
+          "start": 2.468,
+          "end": 6.318,
+          "text": "A test that expects one to pass stays\ngreen on the buggy revision."
+        },
+        {
+          "start": 6.393,
+          "end": 10.133,
+          "text": "A test that expects zero to fail exposes\nthe equality bug."
+        },
+        {
+          "start": 10.761,
+          "end": 14.661,
+          "text": "Run the chosen assertion on the original\ncode in an approved runner."
+        },
+        {
+          "start": 14.736,
+          "end": 17.586,
+          "text": "Then apply the small fix and repeat the\ntest."
+        },
+        {
+          "start": 17.686,
+          "end": 21.735,
+          "text": "Seeing red first and green afterward\nmakes the model comparison concrete."
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "kind": "decision",
+      "eyebrow": "YOUR TURN",
+      "title": "Write a short conclusion",
+      "body": "Name the model and explain your evidence.",
+      "narration": "Write a short decision a teammate can repeat. Name the two model labels, the task, the shared inputs, and the evidence you used. You might say Example A was easier to review because it preserved the signature and produced a test that failed on the original. Repeat the comparison on another small task before treating one result as a general preference.",
+      "code": "Task: zero quantity boundary\nCompared: actual model labels\nDecision: what performed well and why\nEvidence: expected regression result",
+      "result": "A reproducible choice you can revisit.",
+      "focus": "A short decision cites behavior and evidence",
+      "action": "Record your model choice with a reproducible reason.",
+      "durationFrames": 558,
+      "duration": 23.25,
+      "cues": [
+        {
+          "start": 0.414,
+          "end": 3.264,
+          "text": "Write a short decision a teammate can\nrepeat."
+        },
+        {
+          "start": 3.339,
+          "end": 6.504,
+          "text": "Name the two model labels, the task, the\nshared inputs,"
+        },
+        {
+          "start": 6.659,
+          "end": 7.886,
+          "text": "and the evidence you used."
+        },
+        {
+          "start": 8.52,
+          "end": 11.87,
+          "text": "You might say Example A was easier to\nreview because it preserved the"
+        },
+        {
+          "start": 11.92,
+          "end": 15.423,
+          "text": "signature and produced a test that\nfailed on the original."
+        },
+        {
+          "start": 16.047,
+          "end": 20.647,
+          "text": "Repeat the comparison on another small\ntask before treating one result as a"
+        },
+        {
+          "start": 20.697,
+          "end": 21.777,
+          "text": "general preference."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "label": "GitHub Copilot model comparison",
+      "url": "https://docs.github.com/en/copilot/reference/ai-models/model-comparison"
+    },
+    {
+      "label": "GitHub Copilot supported models",
+      "url": "https://docs.github.com/en/copilot/reference/ai-models/supported-models"
+    },
+    {
+      "label": "VS Code AI best practices",
+      "url": "https://code.visualstudio.com/docs/agents/best-practices"
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "durationFrames": 3796,
+  "voiceBuild": "5202614f651b90f592beaf56b669da056a29643fa9e1f1a689ba1a9eda0ea235"
+}
