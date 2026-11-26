@@ -1,205 +1,211 @@
 1
-00:00:00,340 --> 00:00:05,185
-Imagine you have just opened a training
-repository and want to know how its order
+00:00:00,464 --> 00:00:03,865
+Suppose you ask, “How does our order
+validator work?”
 
 2
-00:00:05,185 --> 00:00:06,142
-validator works.
+00:00:03,918 --> 00:00:07,480
+The name sounds specific to us because
+we have the repository open.
 
 3
-00:00:06,322 --> 00:00:09,524
-We ask a short question without attaching
-any code.
+00:00:08,183 --> 00:00:09,862
+Look at the request, though.
 
 4
-00:00:09,704 --> 00:00:14,949
-A language model can produce a plausible
-answer based on patterns it has learned,
+00:00:09,942 --> 00:00:13,274
+It contains neither a function nor a
+file reference.
 
 5
-00:00:14,949 --> 00:00:18,834
-but the question alone does not identify
-the implementation.
+00:00:13,328 --> 00:00:16,738
+The assistant might search if this
+session can read the workspace.
 
 6
-00:00:19,014 --> 00:00:24,091
-Watch how that changes when we supply the
-exact function we want to understand.
+00:00:17,388 --> 00:00:21,317
+Before trusting the explanation, find
+the source it actually used.
 
 7
-00:00:25,548 --> 00:00:31,209
-Before the model processes our request, a
-tokenizer converts text into pieces called
+00:00:23,597 --> 00:00:25,197
+Look at the return line.
 
 8
-00:00:31,209 --> 00:00:31,680
+00:00:25,277 --> 00:00:28,742
+A model reads pieces of this text called
 tokens.
 
 9
-00:00:31,860 --> 00:00:37,139
-Code, punctuation, spaces, and different
-languages can split in different ways.
+00:00:28,822 --> 00:00:33,017
+In this illustration, the space before
+quantity travels with the word,
 
 10
-00:00:37,319 --> 00:00:40,490
-The blocks on this screen are a sketch to
-show the idea.
+00:00:33,071 --> 00:00:34,903
+and the operator is another piece.
 
 11
-00:00:40,670 --> 00:00:46,226
-Use the tokenizer or usage readout for the
-actual model if you need precise counts.
+00:00:35,556 --> 00:00:38,754
+Tokenizers can split the same line
+differently.
 
 12
-00:00:46,406 --> 00:00:48,754
-A word count is only an estimate.
+00:00:38,834 --> 00:00:42,833
+That matters when you're estimating how
+much source, test output,
 
 13
-00:00:50,215 --> 00:00:55,268
-The window holds material such as your
-prompt, selected code, and conversation
+00:00:42,886 --> 00:00:45,055
+and conversation can fit in a request.
 
 14
-00:00:55,268 --> 00:00:58,119
-history that the product chooses to
-include.
+00:00:47,040 --> 00:00:50,638
+Picture the next request after a long
+debugging chat.
 
 15
-00:00:58,299 --> 00:01:02,332
-Outputs and other limits also depend on
-the model and product.
+00:00:50,718 --> 00:00:55,170
+It can include instructions, parts of
+the conversation, selected files,
 
 16
-00:01:02,512 --> 00:01:06,852
-On screen, the useful material is the
-issue and two small files.
+00:00:55,196 --> 00:00:56,292
+and tool results.
 
 17
-00:01:07,032 --> 00:01:12,049
-Attaching a sprawling log might crowd out
-relevant material or add noise to the
+00:00:56,931 --> 00:01:00,583
+The client chooses what to include
+within a finite budget.
 
 18
-00:01:12,049 --> 00:01:12,494
-answer.
+00:01:00,663 --> 00:01:05,068
+If you need the current condition to be
+available, attach the small source file.
 
 19
-00:01:13,965 --> 00:01:17,698
-Now we attach the small function and ask
-about two inputs.
+00:01:05,740 --> 00:01:08,624
+Then check whether the answer points
+back to that file.
 
 20
-00:01:17,878 --> 00:01:23,108
-The comparison checks whether the quantity
-is at least zero, so both zero and one
+00:01:10,544 --> 00:01:14,302
+Open order quantity dot pie in the
+training repository.
 
 21
-00:01:23,108 --> 00:01:23,883
-return true.
+00:01:14,382 --> 00:01:18,564
+Attach it in Copilot chat and ask what
+happens for zero and one.
 
 22
-00:01:24,063 --> 00:01:28,781
-The function may be wrong for the business
-rule, even though we can explain precisely
+00:01:19,240 --> 00:01:21,399
+Read the return expression with me.
 
 23
-00:01:28,781 --> 00:01:29,502
-what it does.
+00:01:21,506 --> 00:01:24,358
+Zero is equal to zero, so it passes.
 
 24
-00:01:29,682 --> 00:01:34,479
-Notice the distinction between observing
-the code and deciding what the code should
+00:01:24,411 --> 00:01:26,964
+One is greater than zero, so it passes
+too.
 
 25
-00:01:34,479 --> 00:01:34,652
-do.
+00:01:27,613 --> 00:01:30,572
+The code explains the observed behavior.
 
 26
-00:01:36,132 --> 00:01:39,227
-The assistant has identified the current
-behavior.
+00:01:30,625 --> 00:01:34,227
+We still need the issue to decide
+whether that behavior is correct.
 
 27
-00:01:39,407 --> 00:01:43,279
-It still needs the requirement to decide
-whether zero should pass.
+00:01:36,529 --> 00:01:37,968
+Add the issue text.
 
 28
-00:01:43,459 --> 00:01:46,692
-The issue says an order must have at least
-one item.
+00:01:38,021 --> 00:01:41,220
+The rule now says an order needs at
+least one item.
 
 29
-00:01:46,872 --> 00:01:51,033
-Now we have two distinct pieces of
-evidence, the code and the rule.
+00:01:41,300 --> 00:01:44,045
+Compare that with the answer we just
+traced.
 
 30
-00:01:51,213 --> 00:01:56,615
-A helpful response names the mismatch and
-asks for clarification when the relevant
+00:01:44,099 --> 00:01:47,820
+The code allows zero because the
+comparison includes equality.
 
 31
-00:01:56,615 --> 00:01:57,932
-rule is unavailable.
+00:01:48,447 --> 00:01:51,352
+The issue requires zero to be rejected.
 
 32
-00:01:59,382 --> 00:02:00,847
-Try this on screen.
+00:01:51,432 --> 00:01:55,830
+Ask the assistant to cite both sources
+so you can see where each claim came
 
 33
-00:02:01,027 --> 00:02:04,697
-In the first chat, attach just the source
-function and the issue.
+00:01:55,883 --> 00:01:56,197
+from.
 
 34
-00:02:04,877 --> 00:02:10,336
-In the second, include the same evidence
-along with several unrelated sample notes.
+00:01:58,419 --> 00:02:02,417
+Try the question twice in two fresh
+chats on the same branch.
 
 35
-00:02:10,516 --> 00:02:13,080
-We can inspect which source the answer
-uses.
+00:02:02,524 --> 00:02:05,056
+First attach the issue and the function.
 
 36
-00:02:13,260 --> 00:02:18,524
-A larger window allows more material, but
-our task still benefits from relevant
+00:02:05,136 --> 00:02:08,236
+For the second run, add an unrelated
+release note.
 
 37
-00:02:18,524 --> 00:02:20,524
-context and a narrow question.
+00:02:08,916 --> 00:02:11,848
+Read each answer and locate its
+evidence.
 
 38
-00:02:20,704 --> 00:02:22,540
-Check what each response cites.
+00:02:11,901 --> 00:02:14,727
+The release note does not explain this
+boundary.
 
 39
-00:02:24,007 --> 00:02:26,495
-Finish by running a small boundary check.
+00:02:14,780 --> 00:02:17,977
+Keep the two sources that let a teammate
+check the claim quickly.
 
 40
-00:02:26,675 --> 00:02:31,636
-Here the original validator returns true
-for zero and false for negative one.
+00:02:20,218 --> 00:02:24,216
+Now check the explanation against the
+original training code.
 
 41
-00:02:31,816 --> 00:02:34,678
-That output confirms what we read in the
-function.
+00:02:24,296 --> 00:02:27,984
+In an approved runner, call the function
+for zero and negative one.
 
 42
-00:02:34,858 --> 00:02:40,131
-In your own exercise, attach the smallest
-relevant code sample, ask for a reason
+00:02:28,637 --> 00:02:32,422
+The output shows true for zero and false
+for negative one.
 
 43
-00:02:40,131 --> 00:02:42,900
-tied to a line, and verify the prediction.
+00:02:32,502 --> 00:02:35,167
+That agrees with the comparison you
+read.
 
 44
-00:02:43,080 --> 00:02:45,429
-Keep the test output as the evidence.
+00:02:35,247 --> 00:02:39,592
+If the result differs in another run,
+compare the checkout and confirm which
+
+45
+00:02:39,645 --> 00:02:41,616
+version of the function you executed.
