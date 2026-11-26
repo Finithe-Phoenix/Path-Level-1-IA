@@ -1,0 +1,374 @@
+{
+  "id": "B08",
+  "title": "Verify and Undo an AI Edit",
+  "subtitle": "Read the diff, run tests, and recover one unwanted change",
+  "scenes": [
+    {
+      "id": "start",
+      "kind": "editor",
+      "eyebrow": "A KNOWN STARTING POINT",
+      "title": "Record the patch boundary",
+      "body": "Use a training branch and keep unrelated work visible.",
+      "narration": "Before asking Copilot to edit, open Source Control in the training workspace. The demonstration starts on a disposable branch with a clean working tree. If you already have edits, note their files and contents. That baseline matters later. You want to recognize your own work before using a control that can discard a change.",
+      "code": "Training branch: fix/reject-zero-quantity\nSource Control: inspect changed files\nRecord the baseline before the edit.",
+      "result": "Baseline: no changes in this exercise.",
+      "focus": "Source Control shows the known starting changes",
+      "action": "Open Source Control and record any existing edits.",
+      "durationFrames": 508,
+      "duration": 21.166666666666668,
+      "cues": [
+        {
+          "start": 0.368,
+          "end": 4.243,
+          "text": "Before asking Copilot to edit, open\nSource Control in the training"
+        },
+        {
+          "start": 4.293,
+          "end": 5.493,
+          "text": "workspace."
+        },
+        {
+          "start": 5.543,
+          "end": 9.387,
+          "text": "The demonstration starts on a disposable\nbranch with a clean working tree."
+        },
+        {
+          "start": 10.011,
+          "end": 13.731,
+          "text": "If you already have edits, note their\nfiles and contents."
+        },
+        {
+          "start": 13.806,
+          "end": 15.831,
+          "text": "That baseline matters later."
+        },
+        {
+          "start": 15.906,
+          "end": 19.381,
+          "text": "You want to recognize your own work\nbefore using a control that can discard"
+        },
+        {
+          "start": 19.406,
+          "end": 20.049,
+          "text": "a change."
+        }
+      ]
+    },
+    {
+      "id": "proposal",
+      "kind": "editor",
+      "eyebrow": "STUDY THE DIFF",
+      "title": "Map the edit to the issue",
+      "body": "Check every changed file against the stated scope.",
+      "narration": "Look at the proposed patch. One change replaces greater than or equal to zero with greater than zero. The new assertion checks the missing boundary case. A third change touches a notes file. Read that diff and ask which requirement it satisfies. In this exercise it is unrelated, so we can remove it while keeping the two useful edits.",
+      "code": "- return quantity >= 0\n+ return quantity > 0\n+ self.assertFalse(is_valid_quantity(0))",
+      "result": "Unrelated candidate edit: notes file.",
+      "focus": "The proposed third file is outside the issue scope",
+      "action": "Open each diff and match it to the issue.",
+      "durationFrames": 535,
+      "duration": 22.291666666666668,
+      "cues": [
+        {
+          "start": 0.439,
+          "end": 2.239,
+          "text": "Look at the proposed patch."
+        },
+        {
+          "start": 2.314,
+          "end": 6.914,
+          "text": "One change replaces greater than or\nequal to zero with greater than zero."
+        },
+        {
+          "start": 6.964,
+          "end": 9.387,
+          "text": "The new assertion checks the missing\nboundary case."
+        },
+        {
+          "start": 10.021,
+          "end": 12.471,
+          "text": "A third change touches a notes file."
+        },
+        {
+          "start": 12.546,
+          "end": 16.121,
+          "text": "Read that diff and ask which requirement\nit satisfies."
+        },
+        {
+          "start": 16.196,
+          "end": 20.271,
+          "text": "In this exercise it is unrelated, so we\ncan remove it while keeping the two"
+        },
+        {
+          "start": 20.321,
+          "end": 21.212,
+          "text": "useful edits."
+        }
+      ]
+    },
+    {
+      "id": "prove",
+      "kind": "terminal",
+      "eyebrow": "VERIFY THE BEHAVIOR",
+      "title": "Read failing and passing evidence",
+      "body": "The regression should fail on the original code and pass after the fix.",
+      "narration": "Review the runner output linked to the exercise. Before the source edit, the zero assertion failed for the expected reason. After the edit, it passes with three earlier cases. Keep both outputs visible while evaluating the patch. They help explain why the validator and test edits belong together and the unrelated note does not.",
+      "code": "python -B -m unittest discover -s tests -v",
+      "result": "Before fix: test_rejects_zero ... FAIL\nAfter fix:  test_rejects_zero ... ok\nAfter fix:  Ran 4 tests. OK",
+      "focus": "The same assertion fails before and passes after the fix",
+      "action": "Confirm the red and green outputs from the approved runner.",
+      "durationFrames": 515,
+      "duration": 21.458333333333332,
+      "cues": [
+        {
+          "start": 0.393,
+          "end": 3.218,
+          "text": "Review the runner output linked to the\nexercise."
+        },
+        {
+          "start": 3.268,
+          "end": 6.743,
+          "text": "Before the source edit, the zero\nassertion failed for the expected"
+        },
+        {
+          "start": 6.793,
+          "end": 7.693,
+          "text": "reason."
+        },
+        {
+          "start": 7.768,
+          "end": 10.778,
+          "text": "After the edit, it passes with three\nearlier cases."
+        },
+        {
+          "start": 11.391,
+          "end": 14.866,
+          "text": "Keep both outputs visible while\nevaluating the patch."
+        },
+        {
+          "start": 14.916,
+          "end": 18.741,
+          "text": "They help explain why the validator and\ntest edits belong together and the"
+        },
+        {
+          "start": 18.791,
+          "end": 20.385,
+          "text": "unrelated note does not."
+        }
+      ]
+    },
+    {
+      "id": "undo",
+      "kind": "editor",
+      "eyebrow": "UNDO ONE UNWANTED EDIT",
+      "title": "Remove the confirmed extra change",
+      "body": "Use the smallest recovery action that preserves other work.",
+      "narration": "Open the notes diff in Source Control. If the file contains only the unwanted agent edit, discard that file's change. If it also contains work you need, use a narrower edit or revert the confirmed hunk. Read the diff again after the action. The validator and the added test should still be in the changed-file list.",
+      "code": "Open the notes diff.\nCheck that it contains only the unwanted edit.\nDiscard just that file or revert the hunk.",
+      "result": "The validator and test edits stay in place.",
+      "focus": "Only the unwanted change is selected for undo",
+      "action": "Discard the unwanted edit after inspecting its diff.",
+      "durationFrames": 508,
+      "duration": 21.166666666666668,
+      "cues": [
+        {
+          "start": 0.393,
+          "end": 2.843,
+          "text": "Open the notes diff in Source Control."
+        },
+        {
+          "start": 2.918,
+          "end": 7.872,
+          "text": "If the file contains only the unwanted\nagent edit, discard that file's change."
+        },
+        {
+          "start": 8.486,
+          "end": 12.861,
+          "text": "If it also contains work you need, use a\nnarrower edit or revert the confirmed"
+        },
+        {
+          "start": 12.911,
+          "end": 13.786,
+          "text": "hunk."
+        },
+        {
+          "start": 13.861,
+          "end": 15.56,
+          "text": "Read the diff again after the action."
+        },
+        {
+          "start": 16.159,
+          "end": 20.058,
+          "text": "The validator and the added test should\nstill be in the changed-file list."
+        }
+      ]
+    },
+    {
+      "id": "recheck",
+      "kind": "terminal",
+      "eyebrow": "VERIFY AFTER RECOVERY",
+      "title": "Review the remaining patch",
+      "body": "Recovery is complete when the intended diff and tests still match.",
+      "narration": "Check Source Control again. Confirm the validator and test are the only changes expected for this exercise, then rerun the suite in the approved environment. All four tests should pass. If the regression disappears from the run, inspect the test diff again. Verifying the result after undo is what tells you that the useful changes survived.",
+      "code": "VS Code Source Control: review the remaining diff.\nApproved runner: run the same unit tests.",
+      "result": "Only validator and test are changed.\nAll four tests pass in the training case.",
+      "focus": "The remaining files match the accepted patch and pass tests",
+      "action": "Review the remaining diff and rerun the suite remotely.",
+      "durationFrames": 535,
+      "duration": 22.291666666666668,
+      "cues": [
+        {
+          "start": 0.393,
+          "end": 2.368,
+          "text": "Check Source Control again."
+        },
+        {
+          "start": 2.443,
+          "end": 7.318,
+          "text": "Confirm the validator and test are the\nonly changes expected for this exercise,"
+        },
+        {
+          "start": 7.368,
+          "end": 9.835,
+          "text": "then rerun the suite in the approved\nenvironment."
+        },
+        {
+          "start": 10.472,
+          "end": 12.297,
+          "text": "All four tests should pass."
+        },
+        {
+          "start": 12.372,
+          "end": 16.672,
+          "text": "If the regression disappears from the\nrun, inspect the test diff again."
+        },
+        {
+          "start": 16.747,
+          "end": 20.547,
+          "text": "Verifying the result after undo is what\ntells you that the useful changes"
+        },
+        {
+          "start": 20.597,
+          "end": 21.191,
+          "text": "survived."
+        }
+      ]
+    },
+    {
+      "id": "checkpoint",
+      "kind": "decision",
+      "eyebrow": "RECOVERY OPTIONS",
+      "title": "Choose the smallest undo",
+      "body": "A checkpoint may roll back several changes in one action.",
+      "narration": "When one hunk is wrong, reverse that hunk. If a whole file contains just the unwanted edit, a file-level discard may be enough. For a broader session checkpoint, read which changes it will affect before using it. The choice depends on the diff you inspected and any unrelated work that must stay in place.",
+      "code": "One hunk → revert only the hunk.\nSeveral session changes → inspect checkpoint scope.\nConfirm what remains after the undo.",
+      "result": "Choose recovery based on the diff you reviewed.",
+      "focus": "The undo choice matches the scope of unwanted changes",
+      "action": "Choose between a hunk, a file, and a session checkpoint.",
+      "durationFrames": 479,
+      "duration": 19.958333333333332,
+      "cues": [
+        {
+          "start": 0.389,
+          "end": 3.264,
+          "text": "When one hunk is wrong, reverse that\nhunk."
+        },
+        {
+          "start": 3.339,
+          "end": 6.189,
+          "text": "If a whole file contains just the\nunwanted edit,"
+        },
+        {
+          "start": 6.239,
+          "end": 8.171,
+          "text": "a file-level discard may be enough."
+        },
+        {
+          "start": 8.785,
+          "end": 12.585,
+          "text": "For a broader session checkpoint, read\nwhich changes it will affect before"
+        },
+        {
+          "start": 12.635,
+          "end": 13.81,
+          "text": "using it."
+        },
+        {
+          "start": 13.86,
+          "end": 17.735,
+          "text": "The choice depends on the diff you\ninspected and any unrelated work that"
+        },
+        {
+          "start": 17.785,
+          "end": 18.888,
+          "text": "must stay in place."
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "kind": "decision",
+      "eyebrow": "YOUR TURN",
+      "title": "Explain what you kept and why",
+      "body": "Use the issue, final diff, and test output as evidence.",
+      "narration": "Finish by explaining the final patch. Zero is now rejected. The signature stays the same. The new test proves the boundary, and the original cases still pass. Name the unrelated edit you removed and show the remaining diff. That gives your teammate both the change they need to review and the evidence you checked after recovery.",
+      "code": "Requirement: reject zero.\nFinal diff: one comparison and one test.\nEvidence: regression and existing tests pass.",
+      "result": "A reviewable patch with a recovery note.",
+      "focus": "A teammate can see the kept patch and the removed extra edit",
+      "action": "Tell a teammate what you kept, removed and verified.",
+      "durationFrames": 523,
+      "duration": 21.791666666666668,
+      "cues": [
+        {
+          "start": 0.439,
+          "end": 2.864,
+          "text": "Finish by explaining the final patch."
+        },
+        {
+          "start": 2.964,
+          "end": 4.739,
+          "text": "Zero is now rejected."
+        },
+        {
+          "start": 4.789,
+          "end": 6.764,
+          "text": "The signature stays the same."
+        },
+        {
+          "start": 6.814,
+          "end": 10.304,
+          "text": "The new test proves the boundary, and\nthe original cases still pass."
+        },
+        {
+          "start": 10.932,
+          "end": 15.082,
+          "text": "Name the unrelated edit you removed and\nshow the remaining diff."
+        },
+        {
+          "start": 15.157,
+          "end": 19.007,
+          "text": "That gives your teammate both the change\nthey need to review and the evidence you"
+        },
+        {
+          "start": 19.057,
+          "end": 20.327,
+          "text": "checked after recovery."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "label": "VS Code AI best practices",
+      "url": "https://code.visualstudio.com/docs/agents/best-practices"
+    },
+    {
+      "label": "VS Code source control",
+      "url": "https://code.visualstudio.com/docs/sourcecontrol/overview"
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "durationFrames": 3603,
+  "voiceBuild": "8fa2e195814aaf5e1abc7fbc1f08728d7ec2b70182eb6aadaef7f3639ecd5070"
+}
