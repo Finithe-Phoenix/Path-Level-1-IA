@@ -1,0 +1,391 @@
+{
+  "id": "B03",
+  "title": "OpenAI, Anthropic, and Microsoft Models",
+  "subtitle": "A catalog snapshot for November 26, 2026",
+  "scenes": [
+    {
+      "id": "layers",
+      "kind": "diagram",
+      "eyebrow": "THREE LAYERS",
+      "title": "Separate model and tool",
+      "body": "A maker, a distribution platform, and a client play different roles.",
+      "narration": "When the dropdown says Claude, you might ask who makes the model, where it runs, and which tool you're using. Those are three questions. The maker publishes the model, a provider or platform offers access, and the client gives you a workflow. In this lesson, the catalogs are a dated snapshot. Your approved picker tells you what is available for work.",
+      "code": "Maker → model family and version\nPlatform → deployment or service\nClient → model picker and workflow",
+      "result": "Example: a Claude model can appear in Copilot.",
+      "focus": "Maker, distribution platform and client are separate entries",
+      "action": "Label the three layers for an installed model.",
+      "durationFrames": 531,
+      "duration": 22.125,
+      "cues": [
+        {
+          "start": 0.389,
+          "end": 4.189,
+          "text": "When the dropdown says Claude, you might\nask who makes the model, where it runs,"
+        },
+        {
+          "start": 4.214,
+          "end": 5.939,
+          "text": "and which tool you're using."
+        },
+        {
+          "start": 6.014,
+          "end": 7.36,
+          "text": "Those are three questions."
+        },
+        {
+          "start": 7.973,
+          "end": 12.073,
+          "text": "The maker publishes the model, a\nprovider or platform offers access,"
+        },
+        {
+          "start": 12.183,
+          "end": 14.383,
+          "text": "and the client gives you a workflow."
+        },
+        {
+          "start": 14.458,
+          "end": 17.369,
+          "text": "In this lesson, the catalogs are a dated\nsnapshot."
+        },
+        {
+          "start": 18.024,
+          "end": 21.045,
+          "text": "Your approved picker tells you what is\navailable for work."
+        }
+      ]
+    },
+    {
+      "id": "openai",
+      "kind": "diagram",
+      "eyebrow": "OPENAI  ·  NOV 26, 2026",
+      "title": "Read the OpenAI catalog",
+      "body": "Use vendor categories to identify candidate models.",
+      "narration": "Open the OpenAI model catalog and compare the entries for GPT six point two Sol and Astra. In the snapshot, Sol is positioned for everyday coding and agent work. Astra is positioned for more demanding reasoning and coding. Notice the input and output section on each card. If you need transcription or image generation, read the relevant entry instead of inferring it from the name.",
+      "code": "GPT-6.2 Sol   → everyday coding and agents\nGPT-6.2 Astra → demanding reasoning and code\nSeparate entries for image, voice, transcription",
+      "result": "Examples from the OpenAI API catalog.",
+      "focus": "OpenAI lists Sol and Astra as separate catalog entries",
+      "action": "Open the OpenAI catalog and check each model card.",
+      "durationFrames": 617,
+      "duration": 25.708333333333332,
+      "cues": [
+        {
+          "start": 0.393,
+          "end": 5.293,
+          "text": "Open the OpenAI model catalog and\ncompare the entries for GPT six point"
+        },
+        {
+          "start": 5.368,
+          "end": 7.193,
+          "text": "two Sol and Astra."
+        },
+        {
+          "start": 7.268,
+          "end": 11.285,
+          "text": "In the snapshot, Sol is positioned for\neveryday coding and agent work."
+        },
+        {
+          "start": 11.892,
+          "end": 15.492,
+          "text": "Astra is positioned for more demanding\nreasoning and coding."
+        },
+        {
+          "start": 15.592,
+          "end": 18.742,
+          "text": "Notice the input and output section on\neach card."
+        },
+        {
+          "start": 18.817,
+          "end": 21.542,
+          "text": "If you need transcription or image\ngeneration,"
+        },
+        {
+          "start": 21.617,
+          "end": 24.637,
+          "text": "read the relevant entry instead of\ninferring it from the name."
+        }
+      ]
+    },
+    {
+      "id": "claude",
+      "kind": "diagram",
+      "eyebrow": "ANTHROPIC  ·  NOV 26, 2026",
+      "title": "Read the Claude catalog",
+      "body": "Family names describe different tradeoffs.",
+      "narration": "In Anthropic’s catalog, find Haiku, Sonnet, Opus, and Fable. Their cards describe different speed, workload, and capability tradeoffs. The provider table matters when you use Claude Code remotely. Two environments can show the same family name while resolving a shortcut differently. Record the exact model ID or selector label you can verify in the approved session.",
+      "code": "Haiku 5.5 → lower latency and cost\nSonnet 5.5 → balanced everyday work\nOpus 5.5 → complex tasks\nFable 5.2 → demanding, long agent work",
+      "result": "Claude Code aliases can resolve by provider.",
+      "focus": "Claude aliases and provider model IDs can differ",
+      "action": "Check an exact Claude model ID in the provider table.",
+      "durationFrames": 593,
+      "duration": 24.708333333333332,
+      "cues": [
+        {
+          "start": 0.418,
+          "end": 4.893,
+          "text": "In Anthropic’s catalog, find Haiku,\nSonnet, Opus, and Fable."
+        },
+        {
+          "start": 4.943,
+          "end": 8.74,
+          "text": "Their cards describe different speed,\nworkload, and capability tradeoffs."
+        },
+        {
+          "start": 9.339,
+          "end": 13.239,
+          "text": "The provider table matters when you use\nClaude Code remotely."
+        },
+        {
+          "start": 13.314,
+          "end": 17.139,
+          "text": "Two environments can show the same\nfamily name while resolving a shortcut"
+        },
+        {
+          "start": 17.189,
+          "end": 17.697,
+          "text": "differently."
+        },
+        {
+          "start": 18.346,
+          "end": 23.146,
+          "text": "Record the exact model ID or selector\nlabel you can verify in the approved"
+        },
+        {
+          "start": 23.196,
+          "end": 23.624,
+          "text": "session."
+        }
+      ]
+    },
+    {
+      "id": "microsoft",
+      "kind": "diagram",
+      "eyebrow": "MICROSOFT  ·  NOV 26, 2026",
+      "title": "Read Microsoft and Foundry",
+      "body": "Foundry lists models from Microsoft and other makers.",
+      "narration": "In Microsoft Foundry, inspect the publisher on a model card. The catalog includes models published by Microsoft as well as models from other providers. You may see Microsoft’s MAI or Phi families. MAI Code two Flash was a limited-access preview in the snapshot. Check the actual card and deployment conditions before you put a catalog model on your team's available list.",
+      "code": "Microsoft-made examples: MAI and Phi\nMAI-Code-2-Flash: limited-access preview\nFoundry catalog: Microsoft and other publishers",
+      "result": "Read the publisher on the model card.",
+      "focus": "The Foundry model card names its publisher",
+      "action": "Open a model card and read the publisher field.",
+      "durationFrames": 594,
+      "duration": 24.75,
+      "cues": [
+        {
+          "start": 0.418,
+          "end": 4.718,
+          "text": "In Microsoft Foundry, inspect the\npublisher on a model card."
+        },
+        {
+          "start": 4.768,
+          "end": 8.893,
+          "text": "The catalog includes models published by\nMicrosoft as well as models from other"
+        },
+        {
+          "start": 8.943,
+          "end": 9.643,
+          "text": "providers."
+        },
+        {
+          "start": 10.245,
+          "end": 13.845,
+          "text": "You may see Microsoft’s MAI or Phi\nfamilies."
+        },
+        {
+          "start": 13.92,
+          "end": 18.07,
+          "text": "MAI Code two Flash was a limited-access\npreview in the snapshot."
+        },
+        {
+          "start": 18.145,
+          "end": 21.77,
+          "text": "Check the actual card and deployment\nconditions before you put a catalog"
+        },
+        {
+          "start": 21.82,
+          "end": 23.655,
+          "text": "model on your team's available list."
+        }
+      ]
+    },
+    {
+      "id": "picker",
+      "kind": "editor",
+      "eyebrow": "WORKPLACE AVAILABILITY",
+      "title": "Check the installed client",
+      "body": "Use the Copilot picker to confirm the options available to you.",
+      "narration": "Now return to the software you use. Open Copilot Chat in VS Code and expand the model selector. Copy the exact label of one model you can select. For a separate check on Claude Code or OpenCode, use the approved G C P workspace and inspect its selector there. Take the label from each surface. Those two lists can differ.",
+      "code": "VS Code → Copilot model selector\nRemote → Claude Code / OpenCode selector\nCheck the managed account and provider",
+      "result": "Record the exact model shown in your session.",
+      "focus": "The approved picker shows the actual available model labels",
+      "action": "Open the model selector in VS Code Copilot Chat.",
+      "durationFrames": 553,
+      "duration": 23.041666666666668,
+      "cues": [
+        {
+          "start": 0.439,
+          "end": 2.714,
+          "text": "Now return to the software you use."
+        },
+        {
+          "start": 2.789,
+          "end": 7.289,
+          "text": "Open Copilot Chat in VS Code and expand\nthe model selector."
+        },
+        {
+          "start": 7.364,
+          "end": 10.112,
+          "text": "Copy the exact label of one model you\ncan select."
+        },
+        {
+          "start": 10.726,
+          "end": 13.801,
+          "text": "For a separate check on Claude Code or\nOpenCode,"
+        },
+        {
+          "start": 13.851,
+          "end": 17.651,
+          "text": "use the approved G C P workspace and\ninspect its selector there."
+        },
+        {
+          "start": 18.306,
+          "end": 20.331,
+          "text": "Take the label from each surface."
+        },
+        {
+          "start": 20.431,
+          "end": 21.974,
+          "text": "Those two lists can differ."
+        }
+      ]
+    },
+    {
+      "id": "lifecycle",
+      "kind": "diagram",
+      "eyebrow": "MODEL LIFECYCLE",
+      "title": "Read availability and status",
+      "body": "Use the dated catalog and the approved picker together.",
+      "narration": "Pick a model card and compare its release status with the workplace picker. Preview on the card describes the provider’s offering. Your company’s policy, plan, and configured provider determine whether you can select it. Put both observations in your note. A colleague can then tell the difference between a catalog announcement and an option they can use today.",
+      "code": "Read provider, version, and release status.\nCheck your approved surface for availability.\nDate the exact choice.",
+      "result": "A vendor release date and workplace access can differ.",
+      "focus": "Preview, enabled and usable describe different facts",
+      "action": "Compare catalog status with the managed picker.",
+      "durationFrames": 538,
+      "duration": 22.416666666666668,
+      "cues": [
+        {
+          "start": 0.389,
+          "end": 4.039,
+          "text": "Pick a model card and compare its\nrelease status with the workplace"
+        },
+        {
+          "start": 4.089,
+          "end": 4.964,
+          "text": "picker."
+        },
+        {
+          "start": 5.039,
+          "end": 7.723,
+          "text": "Preview on the card describes the\nprovider’s offering."
+        },
+        {
+          "start": 8.325,
+          "end": 12.325,
+          "text": "Your company’s policy, plan, and\nconfigured provider determine whether"
+        },
+        {
+          "start": 12.375,
+          "end": 13.825,
+          "text": "you can select it."
+        },
+        {
+          "start": 13.875,
+          "end": 16.225,
+          "text": "Put both observations in your note."
+        },
+        {
+          "start": 16.3,
+          "end": 19.9,
+          "text": "A colleague can then tell the difference\nbetween a catalog announcement and an"
+        },
+        {
+          "start": 19.95,
+          "end": 21.352,
+          "text": "option they can use today."
+        }
+      ]
+    },
+    {
+      "id": "record",
+      "kind": "decision",
+      "eyebrow": "YOUR TURN",
+      "title": "Make a dated record",
+      "body": "Keep a short record so model examples can be refreshed.",
+      "narration": "Make one inventory entry for the class. Include the maker, the exact version or label, the client and environment, and the date you checked. If the picker changes later, repeat that short check. With the available options in hand, the next lesson will compare models on a bug whose behavior you can verify yourself.",
+      "code": "Maker: from the official catalog\nModel: copy the exact selector label\nSurface: approved VS Code or remote session\nChecked: record today's date",
+      "result": "A dated inventory entry you can refresh.",
+      "focus": "A dated inventory entry ties a model to one environment",
+      "action": "Save one maker, model label, surface and date.",
+      "durationFrames": 498,
+      "duration": 20.75,
+      "cues": [
+        {
+          "start": 0.439,
+          "end": 2.914,
+          "text": "Make one inventory entry for the class."
+        },
+        {
+          "start": 2.989,
+          "end": 7.259,
+          "text": "Include the maker, the exact version or\nlabel, the client and environment,"
+        },
+        {
+          "start": 7.419,
+          "end": 8.479,
+          "text": "and the date you checked."
+        },
+        {
+          "start": 9.113,
+          "end": 12.813,
+          "text": "If the picker changes later, repeat that\nshort check."
+        },
+        {
+          "start": 12.863,
+          "end": 17.088,
+          "text": "With the available options in hand, the\nnext lesson will compare models on a bug"
+        },
+        {
+          "start": 17.138,
+          "end": 19.237,
+          "text": "whose behavior you can verify yourself."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "label": "OpenAI Models",
+      "url": "https://developers.openai.com/api/docs/models"
+    },
+    {
+      "label": "Claude Models overview",
+      "url": "https://platform.claude.com/docs/en/models/overview"
+    },
+    {
+      "label": "Microsoft Foundry Microsoft publisher catalog",
+      "url": "https://ai.azure.com/catalog/models?publisher=Microsoft"
+    },
+    {
+      "label": "GitHub Copilot supported models",
+      "url": "https://docs.github.com/en/copilot/reference/ai-models/supported-models"
+    },
+    {
+      "label": "Claude Code model configuration",
+      "url": "https://code.claude.com/docs/en/model-config"
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "durationFrames": 3924,
+  "voiceBuild": "583aed8600195f4cfabea37cfa26dfdf06e6b825aa560a3b86e99b27712ce750"
+}
