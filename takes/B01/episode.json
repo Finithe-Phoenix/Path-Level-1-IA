@@ -14,37 +14,32 @@
       "result": "The function is missing from this request.\nAttach the implementation to answer.",
       "focus": "No implementation is attached",
       "action": "Ask the opening question in a fresh chat.",
-      "durationFrames": 506,
-      "duration": 21.083333333333332,
+      "durationFrames": 496,
+      "duration": 20.666666666666668,
       "cues": [
         {
-          "start": 0.435,
-          "end": 3.625,
+          "start": 0.276,
+          "end": 3.325,
           "text": "Suppose you ask, “How does our order\nvalidator work?”"
         },
         {
-          "start": 3.675,
-          "end": 7.016,
+          "start": 4.012,
+          "end": 7.706,
           "text": "The name sounds specific to us because\nwe have the repository open."
         },
         {
-          "start": 7.675,
-          "end": 9.25,
-          "text": "Look at the request, though."
+          "start": 8.177,
+          "end": 12.297,
+          "text": "Look at the request, though. It contains\nneither a function nor a file reference."
         },
         {
-          "start": 9.325,
-          "end": 12.45,
-          "text": "It contains neither a function nor a\nfile reference."
-        },
-        {
-          "start": 12.5,
-          "end": 15.699,
+          "start": 12.752,
+          "end": 16.03,
           "text": "The assistant might search if this\nsession can read the workspace."
         },
         {
-          "start": 16.308,
-          "end": 19.993,
+          "start": 16.416,
+          "end": 19.942,
           "text": "Before trusting the explanation, find\nthe source it actually used."
         }
       ]
@@ -60,42 +55,37 @@
       "result": "A token count depends on the tokenizer.",
       "focus": "Four sample token pieces",
       "action": "Compare the phrase with the sample token split.",
-      "durationFrames": 520,
-      "duration": 21.666666666666668,
+      "durationFrames": 460,
+      "duration": 19.166666666666668,
       "cues": [
         {
-          "start": 0.443,
-          "end": 1.943,
-          "text": "Look at the return line."
+          "start": 0.255,
+          "end": 4.402,
+          "text": "Look at the return line. A model reads\npieces of this text called tokens."
         },
         {
-          "start": 2.018,
-          "end": 5.268,
-          "text": "A model reads pieces of this text called\ntokens."
-        },
-        {
-          "start": 5.343,
-          "end": 9.278,
+          "start": 4.974,
+          "end": 8.433,
           "text": "In this illustration, the space before\nquantity travels with the word,"
         },
         {
-          "start": 9.328,
-          "end": 11.047,
+          "start": 8.744,
+          "end": 10.338,
           "text": "and the operator is another piece."
         },
         {
-          "start": 11.659,
-          "end": 14.659,
+          "start": 10.699,
+          "end": 13.037,
           "text": "Tokenizers can split the same line\ndifferently."
         },
         {
-          "start": 14.734,
-          "end": 18.484,
+          "start": 13.298,
+          "end": 16.196,
           "text": "That matters when you're estimating how\nmuch source, test output,"
         },
         {
-          "start": 18.534,
-          "end": 20.568,
+          "start": 16.487,
+          "end": 18.422,
           "text": "and conversation can fit in a request."
         }
       ]
@@ -111,37 +101,37 @@
       "result": "Finite context budget\nExact limits vary by model and product.",
       "focus": "Files, messages and tool results draw from one budget",
       "action": "Trace the inputs that may be included in this turn.",
-      "durationFrames": 521,
-      "duration": 21.708333333333332,
+      "durationFrames": 456,
+      "duration": 19.0,
       "cues": [
         {
-          "start": 0.389,
-          "end": 3.764,
+          "start": 0.235,
+          "end": 2.658,
           "text": "Picture the next request after a long\ndebugging chat."
         },
         {
-          "start": 3.839,
-          "end": 8.014,
+          "start": 2.979,
+          "end": 6.916,
           "text": "It can include instructions, parts of\nthe conversation, selected files,"
         },
         {
-          "start": 8.039,
-          "end": 9.067,
+          "start": 7.167,
+          "end": 8.039,
           "text": "and tool results."
         },
         {
-          "start": 9.666,
-          "end": 13.091,
+          "start": 8.46,
+          "end": 11.266,
           "text": "The client chooses what to include\nwithin a finite budget."
         },
         {
-          "start": 13.166,
-          "end": 17.298,
+          "start": 11.607,
+          "end": 15.683,
           "text": "If you need the current condition to be\navailable, attach the small source file."
         },
         {
-          "start": 17.928,
-          "end": 20.633,
+          "start": 15.988,
+          "end": 18.289,
           "text": "Then check whether the answer points\nback to that file."
         }
       ]
@@ -157,42 +147,37 @@
       "result": "0 returns True because 0 >= 0.\n1 returns True because 1 >= 0.",
       "focus": "Zero and one both return true",
       "action": "Attach order_quantity.py and trace both values.",
-      "durationFrames": 569,
-      "duration": 23.708333333333332,
+      "durationFrames": 515,
+      "duration": 21.458333333333332,
       "cues": [
         {
-          "start": 0.393,
-          "end": 3.918,
+          "start": 0.275,
+          "end": 3.074,
           "text": "Open order quantity dot pie in the\ntraining repository."
         },
         {
-          "start": 3.993,
-          "end": 7.915,
+          "start": 3.505,
+          "end": 7.02,
           "text": "Attach it in Copilot chat and ask what\nhappens for zero and one."
         },
         {
-          "start": 8.549,
-          "end": 10.574,
-          "text": "Read the return expression with me."
+          "start": 7.451,
+          "end": 11.567,
+          "text": "Read the return expression with me. Zero\nis equal to zero, so it passes."
         },
         {
-          "start": 10.674,
-          "end": 13.349,
-          "text": "Zero is equal to zero, so it passes."
+          "start": 12.157,
+          "end": 16.458,
+          "text": "One is greater than zero, so it passes\ntoo. The code explains the observed"
         },
         {
-          "start": 13.399,
-          "end": 15.793,
-          "text": "One is greater than zero, so it passes\ntoo."
+          "start": 16.458,
+          "end": 17.065,
+          "text": "behavior."
         },
         {
-          "start": 16.402,
-          "end": 19.177,
-          "text": "The code explains the observed behavior."
-        },
-        {
-          "start": 19.227,
-          "end": 22.605,
+          "start": 17.516,
+          "end": 20.719,
           "text": "We still need the issue to decide\nwhether that behavior is correct."
         }
       ]
@@ -208,43 +193,33 @@
       "result": "Current: 0 is accepted.\nRequired: 0 is rejected.\nThe comparison is the point to inspect.",
       "focus": "The issue rejects zero while the function accepts it",
       "action": "Add the training issue and compare the two sources.",
-      "durationFrames": 479,
-      "duration": 19.958333333333332,
+      "durationFrames": 438,
+      "duration": 18.25,
       "cues": [
         {
-          "start": 0.418,
-          "end": 1.768,
-          "text": "Add the issue text."
+          "start": 0.275,
+          "end": 4.215,
+          "text": "Add the issue text. The rule now says an\norder needs at least one item."
         },
         {
-          "start": 1.818,
-          "end": 4.818,
-          "text": "The rule now says an order needs at\nleast one item."
+          "start": 4.686,
+          "end": 8.773,
+          "text": "Compare that with the answer we just\ntraced. The code allows zero because the"
         },
         {
-          "start": 4.893,
-          "end": 7.468,
-          "text": "Compare that with the answer we just\ntraced."
+          "start": 8.773,
+          "end": 10.594,
+          "text": "comparison includes equality."
         },
         {
-          "start": 7.518,
-          "end": 11.008,
-          "text": "The code allows zero because the\ncomparison includes equality."
+          "start": 11.025,
+          "end": 15.531,
+          "text": "The issue requires zero to be rejected.\nAsk the assistant to cite both sources"
         },
         {
-          "start": 11.596,
-          "end": 14.321,
-          "text": "The issue requires zero to be rejected."
-        },
-        {
-          "start": 14.396,
-          "end": 18.521,
-          "text": "Ask the assistant to cite both sources\nso you can see where each claim came"
-        },
-        {
-          "start": 18.571,
-          "end": 18.865,
-          "text": "from."
+          "start": 15.661,
+          "end": 17.578,
+          "text": "so you can see where each claim came\nfrom."
         }
       ]
     },
@@ -259,37 +234,37 @@
       "result": "The comparison and requirement are the evidence.",
       "focus": "The answer relies on the issue and function",
       "action": "Run the same question with the focused sources.",
-      "durationFrames": 475,
-      "duration": 19.791666666666668,
+      "durationFrames": 450,
+      "duration": 18.75,
       "cues": [
         {
-          "start": 0.393,
-          "end": 4.143,
+          "start": 0.255,
+          "end": 3.194,
           "text": "Try the question twice in two fresh\nchats on the same branch."
         },
         {
-          "start": 4.243,
-          "end": 6.618,
-          "text": "First attach the issue and the function."
+          "start": 3.685,
+          "end": 6.906,
+          "text": "First attach the issue and the function.\nFor the second run,"
         },
         {
-          "start": 6.693,
-          "end": 9.6,
-          "text": "For the second run, add an unrelated\nrelease note."
+          "start": 7.258,
+          "end": 8.913,
+          "text": "add an unrelated release note."
         },
         {
-          "start": 10.238,
-          "end": 12.988,
-          "text": "Read each answer and locate its\nevidence."
+          "start": 9.274,
+          "end": 13.196,
+          "text": "Read each answer and locate its\nevidence. The release note does not"
         },
         {
-          "start": 13.038,
-          "end": 15.688,
-          "text": "The release note does not explain this\nboundary."
+          "start": 13.196,
+          "end": 14.386,
+          "text": "explain this boundary."
         },
         {
-          "start": 15.738,
-          "end": 18.737,
+          "start": 14.882,
+          "end": 18.072,
           "text": "Keep the two sources that let a teammate\ncheck the claim quickly."
         }
       ]
@@ -305,38 +280,38 @@
       "result": "0 True\n-1 False",
       "focus": "The runner prints zero true and negative one false",
       "action": "Run the shown check in an approved runner.",
-      "durationFrames": 528,
-      "duration": 22.0,
+      "durationFrames": 483,
+      "duration": 20.125,
       "cues": [
         {
-          "start": 0.439,
-          "end": 4.189,
+          "start": 0.255,
+          "end": 3.27,
           "text": "Now check the explanation against the\noriginal training code."
         },
         {
-          "start": 4.264,
-          "end": 7.723,
+          "start": 3.591,
+          "end": 7.218,
           "text": "In an approved runner, call the function\nfor zero and negative one."
         },
         {
-          "start": 8.335,
-          "end": 11.885,
+          "start": 7.484,
+          "end": 10.506,
           "text": "The output shows true for zero and false\nfor negative one."
         },
         {
-          "start": 11.96,
-          "end": 14.46,
+          "start": 10.787,
+          "end": 12.592,
           "text": "That agrees with the comparison you\nread."
         },
         {
-          "start": 14.535,
-          "end": 18.61,
-          "text": "If the result differs in another run,\ncompare the checkout and confirm which"
+          "start": 12.974,
+          "end": 14.787,
+          "text": "If the result differs in another run,"
         },
         {
-          "start": 18.66,
-          "end": 20.508,
-          "text": "version of the function you executed."
+          "start": 15.097,
+          "end": 19.195,
+          "text": "compare the checkout and confirm which\nversion of the function you executed."
         }
       ]
     }
@@ -354,6 +329,6 @@
   "fps": 24,
   "width": 1280,
   "height": 720,
-  "durationFrames": 3598,
-  "voiceBuild": "82efe50e7d6b752cbdc6782cf06e1e8b6160376774c80573e76376ee2a69bc27"
+  "durationFrames": 3298,
+  "voiceBuild": "c1397013227098448d98b478bf6580b25d8b42d1582294c76cc04cc3a400ecc4"
 }

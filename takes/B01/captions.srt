@@ -1,211 +1,191 @@
 1
-00:00:00,435 --> 00:00:03,625
+00:00:00,276 --> 00:00:03,325
 Suppose you ask, “How does our order
 validator work?”
 
 2
-00:00:03,675 --> 00:00:07,016
+00:00:04,012 --> 00:00:07,706
 The name sounds specific to us because
 we have the repository open.
 
 3
-00:00:07,675 --> 00:00:09,250
-Look at the request, though.
+00:00:08,177 --> 00:00:12,297
+Look at the request, though. It contains
+neither a function nor a file reference.
 
 4
-00:00:09,325 --> 00:00:12,450
-It contains neither a function nor a
-file reference.
-
-5
-00:00:12,500 --> 00:00:15,699
+00:00:12,752 --> 00:00:16,030
 The assistant might search if this
 session can read the workspace.
 
-6
-00:00:16,308 --> 00:00:19,993
+5
+00:00:16,416 --> 00:00:19,942
 Before trusting the explanation, find
 the source it actually used.
 
+6
+00:00:20,922 --> 00:00:25,069
+Look at the return line. A model reads
+pieces of this text called tokens.
+
 7
-00:00:21,526 --> 00:00:23,026
-Look at the return line.
-
-8
-00:00:23,101 --> 00:00:26,351
-A model reads pieces of this text called
-tokens.
-
-9
-00:00:26,426 --> 00:00:30,361
+00:00:25,641 --> 00:00:29,100
 In this illustration, the space before
 quantity travels with the word,
 
-10
-00:00:30,411 --> 00:00:32,130
+8
+00:00:29,411 --> 00:00:31,005
 and the operator is another piece.
 
-11
-00:00:32,742 --> 00:00:35,742
+9
+00:00:31,366 --> 00:00:33,704
 Tokenizers can split the same line
 differently.
 
-12
-00:00:35,817 --> 00:00:39,567
+10
+00:00:33,965 --> 00:00:36,863
 That matters when you're estimating how
 much source, test output,
 
-13
-00:00:39,617 --> 00:00:41,651
+11
+00:00:37,154 --> 00:00:39,089
 and conversation can fit in a request.
 
-14
-00:00:43,139 --> 00:00:46,514
+12
+00:00:40,068 --> 00:00:42,491
 Picture the next request after a long
 debugging chat.
 
-15
-00:00:46,589 --> 00:00:50,764
+13
+00:00:42,812 --> 00:00:46,749
 It can include instructions, parts of
 the conversation, selected files,
 
-16
-00:00:50,789 --> 00:00:51,817
+14
+00:00:47,000 --> 00:00:47,872
 and tool results.
 
-17
-00:00:52,416 --> 00:00:55,841
+15
+00:00:48,293 --> 00:00:51,099
 The client chooses what to include
 within a finite budget.
 
-18
-00:00:55,916 --> 00:01:00,048
+16
+00:00:51,440 --> 00:00:55,516
 If you need the current condition to be
 available, attach the small source file.
 
-19
-00:01:00,678 --> 00:01:03,383
+17
+00:00:55,821 --> 00:00:58,122
 Then check whether the answer points
 back to that file.
 
-20
-00:01:04,851 --> 00:01:08,376
+18
+00:00:59,108 --> 00:01:01,907
 Open order quantity dot pie in the
 training repository.
 
-21
-00:01:08,451 --> 00:01:12,373
+19
+00:01:02,338 --> 00:01:05,853
 Attach it in Copilot chat and ask what
 happens for zero and one.
 
+20
+00:01:06,284 --> 00:01:10,400
+Read the return expression with me. Zero
+is equal to zero, so it passes.
+
+21
+00:01:10,990 --> 00:01:15,291
+One is greater than zero, so it passes
+too. The code explains the observed
+
 22
-00:01:13,007 --> 00:01:15,032
-Read the return expression with me.
+00:01:15,291 --> 00:01:15,898
+behavior.
 
 23
-00:01:15,132 --> 00:01:17,807
-Zero is equal to zero, so it passes.
-
-24
-00:01:17,857 --> 00:01:20,251
-One is greater than zero, so it passes
-too.
-
-25
-00:01:20,860 --> 00:01:23,635
-The code explains the observed behavior.
-
-26
-00:01:23,685 --> 00:01:27,063
+00:01:16,349 --> 00:01:19,552
 We still need the issue to decide
 whether that behavior is correct.
 
-27
-00:01:28,585 --> 00:01:29,935
-Add the issue text.
+24
+00:01:20,567 --> 00:01:24,507
+Add the issue text. The rule now says an
+order needs at least one item.
 
-28
-00:01:29,985 --> 00:01:32,985
-The rule now says an order needs at
-least one item.
-
-29
-00:01:33,060 --> 00:01:35,635
+25
+00:01:24,978 --> 00:01:29,065
 Compare that with the answer we just
-traced.
+traced. The code allows zero because the
 
-30
-00:01:35,685 --> 00:01:39,175
-The code allows zero because the
+26
+00:01:29,065 --> 00:01:30,886
 comparison includes equality.
 
-31
-00:01:39,763 --> 00:01:42,488
+27
+00:01:31,317 --> 00:01:35,823
 The issue requires zero to be rejected.
-
-32
-00:01:42,563 --> 00:01:46,688
 Ask the assistant to cite both sources
-so you can see where each claim came
 
-33
-00:01:46,738 --> 00:01:47,032
+28
+00:01:35,953 --> 00:01:37,870
+so you can see where each claim came
 from.
 
-34
-00:01:48,518 --> 00:01:52,268
+29
+00:01:38,797 --> 00:01:41,736
 Try the question twice in two fresh
 chats on the same branch.
 
-35
-00:01:52,368 --> 00:01:54,743
+30
+00:01:42,227 --> 00:01:45,448
 First attach the issue and the function.
+For the second run,
 
-36
-00:01:54,818 --> 00:01:57,725
-For the second run, add an unrelated
-release note.
+31
+00:01:45,800 --> 00:01:47,455
+add an unrelated release note.
 
-37
-00:01:58,363 --> 00:02:01,113
+32
+00:01:47,816 --> 00:01:51,738
 Read each answer and locate its
-evidence.
+evidence. The release note does not
 
-38
-00:02:01,163 --> 00:02:03,813
-The release note does not explain this
-boundary.
+33
+00:01:51,738 --> 00:01:52,928
+explain this boundary.
 
-39
-00:02:03,863 --> 00:02:06,862
+34
+00:01:53,424 --> 00:01:56,614
 Keep the two sources that let a teammate
 check the claim quickly.
 
-40
-00:02:08,356 --> 00:02:12,106
+35
+00:01:57,547 --> 00:02:00,562
 Now check the explanation against the
 original training code.
 
-41
-00:02:12,181 --> 00:02:15,640
+36
+00:02:00,883 --> 00:02:04,510
 In an approved runner, call the function
 for zero and negative one.
 
-42
-00:02:16,252 --> 00:02:19,802
+37
+00:02:04,776 --> 00:02:07,798
 The output shows true for zero and false
 for negative one.
 
-43
-00:02:19,877 --> 00:02:22,377
+38
+00:02:08,079 --> 00:02:09,884
 That agrees with the comparison you
 read.
 
-44
-00:02:22,452 --> 00:02:26,527
+39
+00:02:10,266 --> 00:02:12,079
 If the result differs in another run,
-compare the checkout and confirm which
 
-45
-00:02:26,577 --> 00:02:28,425
+40
+00:02:12,389 --> 00:02:16,487
+compare the checkout and confirm which
 version of the function you executed.
