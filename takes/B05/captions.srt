@@ -1,208 +1,194 @@
 1
-00:00:00,393 --> 00:00:03,168
+00:00:00,235 --> 00:00:03,912
 Take one request about the order
-validator.
+validator. If you supply the function,
 
 2
-00:00:03,243 --> 00:00:07,368
-If you supply the function, Copilot can
-explain its comparison.
+00:00:04,122 --> 00:00:06,276
+Copilot can explain its comparison.
 
 3
-00:00:07,443 --> 00:00:11,543
+00:00:06,577 --> 00:00:10,498
 In an agent session, it may also choose
 an available tool to find the file,
 
 4
-00:00:11,618 --> 00:00:14,031
+00:00:10,829 --> 00:00:13,105
 read it, or validate a proposed change.
 
 5
-00:00:14,633 --> 00:00:17,533
+00:00:13,547 --> 00:00:16,257
 Open the training workspace and look at
 the session.
 
 6
-00:00:17,583 --> 00:00:21,003
+00:00:16,628 --> 00:00:20,347
 Can you point to an actual tool event
 and the information it returned?
 
 7
-00:00:22,664 --> 00:00:24,489
-Watch the order of events.
+00:00:21,297 --> 00:00:25,295
+Watch the order of events. The agent
+reads that zero should be rejected,
 
 8
-00:00:24,539 --> 00:00:27,314
-The agent reads that zero should be
-rejected,
-
-9
-00:00:27,364 --> 00:00:31,061
+00:00:25,586 --> 00:00:29,263
 then opens the validator and sees
 greater than or equal to zero.
 
-10
-00:00:31,663 --> 00:00:35,688
+9
+00:00:29,654 --> 00:00:33,324
 That result gives it a reason to inspect
 the tests for a zero case.
 
-11
-00:00:35,763 --> 00:00:38,763
+10
+00:00:33,856 --> 00:00:36,070
 Each next step depends on what the tool
 returns.
 
-12
-00:00:38,838 --> 00:00:41,489
+11
+00:00:36,451 --> 00:00:38,917
 Check the event that led the agent to
 its conclusion.
 
-13
-00:00:42,976 --> 00:00:45,551
+12
+00:00:39,880 --> 00:00:44,180
 Give Plan a task with a clear stopping
-point.
+point. “Find why zero passes and
+
+13
+00:00:44,180 --> 00:00:45,957
+describe one regression test.
 
 14
-00:00:45,626 --> 00:00:49,251
-“Find why zero passes and describe one
-regression test.
-
-15
-00:00:49,301 --> 00:00:52,034
+00:00:46,468 --> 00:00:49,487
 Preserve the function signature and stop
 after the plan.”
 
-16
-00:00:52,646 --> 00:00:55,921
+15
+00:00:49,868 --> 00:00:52,273
 Review the named files and the reason
 for the test.
 
-17
-00:00:55,996 --> 00:00:59,571
+16
+00:00:52,655 --> 00:00:55,552
 If the plan adds a dependency or changes
 other behavior,
 
-18
-00:00:59,646 --> 00:01:01,960
+17
+00:00:55,864 --> 00:00:58,019
 narrow it before moving on to
 implementation.
 
-19
-00:01:03,456 --> 00:01:08,381
+18
+00:00:59,025 --> 00:01:03,069
 If the session asks to run tests, read
 the command and the working directory.
 
-20
-00:01:08,431 --> 00:01:12,237
+19
+00:01:03,369 --> 00:01:06,765
 Our example uses Python’s unittest
 discovery in the training checkout.
 
+20
+00:01:07,065 --> 00:01:11,366
+That matches the agreed check. Verify
+where the process will actually run and
+
 21
-00:01:12,839 --> 00:01:14,914
-That matches the agreed check.
+00:01:11,416 --> 00:01:13,090
+use the approved runner for this lab.
 
 22
-00:01:14,989 --> 00:01:18,664
-Verify where the process will actually
-run and use the approved runner for this
-
-23
-00:01:18,714 --> 00:01:19,589
-lab.
-
-24
-00:01:19,664 --> 00:01:23,364
+00:01:13,431 --> 00:01:16,594
 If a command targets a different project
 or publishes changes,
 
-25
-00:01:23,439 --> 00:01:25,332
+23
+00:01:16,886 --> 00:01:18,538
 stop and inspect what prompted it.
 
-26
-00:01:26,810 --> 00:01:30,635
+24
+00:01:19,462 --> 00:01:23,341
 Our run reports that the zero test
 failed because true was returned where
 
-27
-00:01:30,710 --> 00:01:32,285
+25
+00:01:23,341 --> 00:01:24,470
 false was expected.
 
+26
+00:01:24,961 --> 00:01:29,328
+Find that line in the output. A chat
+message that says “tested” does not tell
+
+27
+00:01:29,328 --> 00:01:30,205
+you which case ran.
+
 28
-00:01:32,360 --> 00:01:33,841
-Find that line in the output.
-
-29
-00:01:34,455 --> 00:01:38,455
-A chat message that says “tested” does
-not tell you which case ran.
-
-30
-00:01:38,505 --> 00:01:41,680
+00:01:30,656 --> 00:01:33,298
 The assertion helps you check the
 proposed diagnosis.
 
-31
-00:01:41,755 --> 00:01:45,134
+29
+00:01:33,680 --> 00:01:37,350
 Keep the output with the revision so a
 teammate can replay the result.
 
-32
-00:01:46,626 --> 00:01:51,171
+30
+00:01:38,338 --> 00:01:41,969
 In this workplace, Copilot in VS Code is
 the local entry point.
 
-33
-00:01:51,246 --> 00:01:55,323
+31
+00:01:42,310 --> 00:01:45,806
 Claude Code and OpenCode run in the
 managed G C P workspace.
 
-34
-00:01:55,926 --> 00:01:59,476
+32
+00:01:46,227 --> 00:01:50,006
 Open the approved environment for the
 tool you are using and confirm the
 
-35
-00:01:59,526 --> 00:02:00,901
+33
+00:01:50,006 --> 00:01:50,774
 working folder.
 
-36
-00:02:00,976 --> 00:02:04,088
+34
+00:01:51,245 --> 00:01:54,480
 A tool call uses the permissions and
 runtime of its session.
 
-37
-00:02:04,697 --> 00:02:09,065
+35
+00:01:54,781 --> 00:01:58,944
 Check those before assuming a local file
 or command is available remotely.
 
-38
-00:02:10,518 --> 00:02:13,018
+36
+00:01:59,838 --> 00:02:01,633
 Try a small read-and-report task.
 
-39
-00:02:13,093 --> 00:02:16,168
+37
+00:02:02,163 --> 00:02:04,718
 Ask the agent to inspect the validator
 and tests,
 
-40
-00:02:16,243 --> 00:02:20,718
+38
+00:02:05,089 --> 00:02:09,313
 identify the line causing the behavior,
 and stop with the file path and relevant
 
-41
-00:02:20,768 --> 00:02:21,368
+39
+00:02:09,313 --> 00:02:09,749
 evidence.
 
-42
-00:02:21,992 --> 00:02:24,142
-Review the actual steps it took.
+40
+00:02:10,320 --> 00:02:14,636
+Review the actual steps it took. If it
+starts editing or proposes an unrelated
 
-43
-00:02:24,217 --> 00:02:27,692
-If it starts editing or proposes an
-unrelated command,
-
-44
-00:02:27,767 --> 00:02:30,346
-pause and bring the request back to the
-stated goal.
+41
+00:02:14,636 --> 00:02:17,849
+command, pause and bring the request
+back to the stated goal.

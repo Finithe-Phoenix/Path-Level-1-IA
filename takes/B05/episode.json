@@ -14,37 +14,37 @@
       "result": "Identify an actual action in the session log.",
       "focus": "A tool event shows an action beyond the written answer",
       "action": "Open Copilot Chat and inspect a bounded agent run.",
-      "durationFrames": 534,
-      "duration": 22.25,
+      "durationFrames": 505,
+      "duration": 21.041666666666668,
       "cues": [
         {
-          "start": 0.393,
-          "end": 3.168,
-          "text": "Take one request about the order\nvalidator."
+          "start": 0.235,
+          "end": 3.912,
+          "text": "Take one request about the order\nvalidator. If you supply the function,"
         },
         {
-          "start": 3.243,
-          "end": 7.368,
-          "text": "If you supply the function, Copilot can\nexplain its comparison."
+          "start": 4.122,
+          "end": 6.276,
+          "text": "Copilot can explain its comparison."
         },
         {
-          "start": 7.443,
-          "end": 11.543,
+          "start": 6.577,
+          "end": 10.498,
           "text": "In an agent session, it may also choose\nan available tool to find the file,"
         },
         {
-          "start": 11.618,
-          "end": 14.031,
+          "start": 10.829,
+          "end": 13.105,
           "text": "read it, or validate a proposed change."
         },
         {
-          "start": 14.633,
-          "end": 17.533,
+          "start": 13.547,
+          "end": 16.257,
           "text": "Open the training workspace and look at\nthe session."
         },
         {
-          "start": 17.583,
-          "end": 21.003,
+          "start": 16.628,
+          "end": 20.347,
           "text": "Can you point to an actual tool event\nand the information it returned?"
         }
       ]
@@ -60,37 +60,32 @@
       "result": "Evidence: a comparison and a missing test.",
       "focus": "The file read leads to inspection of the tests",
       "action": "Follow the sequence from issue to test file.",
-      "durationFrames": 488,
-      "duration": 20.333333333333332,
+      "durationFrames": 446,
+      "duration": 18.583333333333332,
       "cues": [
         {
-          "start": 0.414,
-          "end": 2.239,
-          "text": "Watch the order of events."
+          "start": 0.255,
+          "end": 4.253,
+          "text": "Watch the order of events. The agent\nreads that zero should be rejected,"
         },
         {
-          "start": 2.289,
-          "end": 5.064,
-          "text": "The agent reads that zero should be\nrejected,"
-        },
-        {
-          "start": 5.114,
-          "end": 8.811,
+          "start": 4.544,
+          "end": 8.221,
           "text": "then opens the validator and sees\ngreater than or equal to zero."
         },
         {
-          "start": 9.413,
-          "end": 13.438,
+          "start": 8.612,
+          "end": 12.282,
           "text": "That result gives it a reason to inspect\nthe tests for a zero case."
         },
         {
-          "start": 13.513,
-          "end": 16.513,
+          "start": 12.814,
+          "end": 15.028,
           "text": "Each next step depends on what the tool\nreturns."
         },
         {
-          "start": 16.588,
-          "end": 19.239,
+          "start": 15.409,
+          "end": 17.875,
           "text": "Check the event that led the agent to\nits conclusion."
         }
       ]
@@ -106,37 +101,37 @@
       "result": "Expected files: validator and existing tests.\nReview the plan before implementation.",
       "focus": "Plan names the affected source and test without editing",
       "action": "Ask for a plan and review the proposed files.",
-      "durationFrames": 491,
-      "duration": 20.458333333333332,
+      "durationFrames": 459,
+      "duration": 19.125,
       "cues": [
         {
-          "start": 0.393,
-          "end": 2.968,
-          "text": "Give Plan a task with a clear stopping\npoint."
+          "start": 0.255,
+          "end": 4.555,
+          "text": "Give Plan a task with a clear stopping\npoint. “Find why zero passes and"
         },
         {
-          "start": 3.043,
-          "end": 6.668,
-          "text": "“Find why zero passes and describe one\nregression test."
+          "start": 4.555,
+          "end": 6.332,
+          "text": "describe one regression test."
         },
         {
-          "start": 6.718,
-          "end": 9.451,
+          "start": 6.843,
+          "end": 9.862,
           "text": "Preserve the function signature and stop\nafter the plan.”"
         },
         {
-          "start": 10.063,
-          "end": 13.338,
+          "start": 10.243,
+          "end": 12.648,
           "text": "Review the named files and the reason\nfor the test."
         },
         {
-          "start": 13.413,
-          "end": 16.988,
+          "start": 13.03,
+          "end": 15.927,
           "text": "If the plan adds a dependency or changes\nother behavior,"
         },
         {
-          "start": 17.063,
-          "end": 19.377,
+          "start": 16.239,
+          "end": 18.394,
           "text": "narrow it before moving on to\nimplementation."
         }
       ]
@@ -152,42 +147,37 @@
       "result": "Proceed when the command matches your scope.",
       "focus": "The proposed command and folder match the intended check",
       "action": "Read the command and working folder before approval.",
-      "durationFrames": 561,
-      "duration": 23.375,
+      "durationFrames": 490,
+      "duration": 20.416666666666668,
       "cues": [
         {
-          "start": 0.414,
-          "end": 5.339,
+          "start": 0.275,
+          "end": 4.319,
           "text": "If the session asks to run tests, read\nthe command and the working directory."
         },
         {
-          "start": 5.389,
-          "end": 9.195,
+          "start": 4.619,
+          "end": 8.015,
           "text": "Our example uses Python’s unittest\ndiscovery in the training checkout."
         },
         {
-          "start": 9.797,
-          "end": 11.872,
-          "text": "That matches the agreed check."
+          "start": 8.315,
+          "end": 12.616,
+          "text": "That matches the agreed check. Verify\nwhere the process will actually run and"
         },
         {
-          "start": 11.947,
-          "end": 15.622,
-          "text": "Verify where the process will actually\nrun and use the approved runner for this"
+          "start": 12.666,
+          "end": 14.34,
+          "text": "use the approved runner for this lab."
         },
         {
-          "start": 15.672,
-          "end": 16.547,
-          "text": "lab."
-        },
-        {
-          "start": 16.622,
-          "end": 20.322,
+          "start": 14.681,
+          "end": 17.844,
           "text": "If a command targets a different project\nor publishes changes,"
         },
         {
-          "start": 20.397,
-          "end": 22.29,
+          "start": 18.136,
+          "end": 19.788,
           "text": "stop and inspect what prompted it."
         }
       ]
@@ -203,37 +193,37 @@
       "result": "test_rejects_zero ... FAIL\nAssertionError: True is not false",
       "focus": "The assertion failure names the zero case",
       "action": "Read the test result and explain the failure.",
-      "durationFrames": 475,
-      "duration": 19.791666666666668,
+      "durationFrames": 454,
+      "duration": 18.916666666666668,
       "cues": [
         {
-          "start": 0.393,
-          "end": 4.218,
+          "start": 0.295,
+          "end": 4.174,
           "text": "Our run reports that the zero test\nfailed because true was returned where"
         },
         {
-          "start": 4.293,
-          "end": 5.868,
+          "start": 4.174,
+          "end": 5.303,
           "text": "false was expected."
         },
         {
-          "start": 5.943,
-          "end": 7.424,
-          "text": "Find that line in the output."
+          "start": 5.794,
+          "end": 10.161,
+          "text": "Find that line in the output. A chat\nmessage that says “tested” does not tell"
         },
         {
-          "start": 8.038,
-          "end": 12.038,
-          "text": "A chat message that says “tested” does\nnot tell you which case ran."
+          "start": 10.161,
+          "end": 11.038,
+          "text": "you which case ran."
         },
         {
-          "start": 12.088,
-          "end": 15.263,
+          "start": 11.489,
+          "end": 14.131,
           "text": "The assertion helps you check the\nproposed diagnosis."
         },
         {
-          "start": 15.338,
-          "end": 18.717,
+          "start": 14.513,
+          "end": 18.183,
           "text": "Keep the output with the revision so a\nteammate can replay the result."
         }
       ]
@@ -249,37 +239,37 @@
       "result": "The approved environment defines available actions.",
       "focus": "Local VS Code and the GCP tools have different starting points",
       "action": "Identify the working folder and runtime before testing.",
-      "durationFrames": 574,
-      "duration": 23.916666666666668,
+      "durationFrames": 516,
+      "duration": 21.5,
       "cues": [
         {
-          "start": 0.418,
-          "end": 4.963,
+          "start": 0.255,
+          "end": 3.886,
           "text": "In this workplace, Copilot in VS Code is\nthe local entry point."
         },
         {
-          "start": 5.038,
-          "end": 9.115,
+          "start": 4.227,
+          "end": 7.723,
           "text": "Claude Code and OpenCode run in the\nmanaged G C P workspace."
         },
         {
-          "start": 9.718,
-          "end": 13.268,
+          "start": 8.144,
+          "end": 11.923,
           "text": "Open the approved environment for the\ntool you are using and confirm the"
         },
         {
-          "start": 13.318,
-          "end": 14.693,
+          "start": 11.923,
+          "end": 12.691,
           "text": "working folder."
         },
         {
-          "start": 14.768,
-          "end": 17.88,
+          "start": 13.162,
+          "end": 16.397,
           "text": "A tool call uses the permissions and\nruntime of its session."
         },
         {
-          "start": 18.489,
-          "end": 22.857,
+          "start": 16.698,
+          "end": 20.861,
           "text": "Check those before assuming a local file\nor command is available remotely."
         }
       ]
@@ -295,43 +285,38 @@
       "result": "Evidence: files inspected and test result.",
       "focus": "The session stops after producing the requested evidence",
       "action": "Give a read-and-report task with an explicit stopping point.",
-      "durationFrames": 521,
-      "duration": 21.708333333333332,
+      "durationFrames": 460,
+      "duration": 19.166666666666668,
       "cues": [
         {
-          "start": 0.393,
-          "end": 2.893,
+          "start": 0.255,
+          "end": 2.05,
           "text": "Try a small read-and-report task."
         },
         {
-          "start": 2.968,
-          "end": 6.043,
+          "start": 2.58,
+          "end": 5.135,
           "text": "Ask the agent to inspect the validator\nand tests,"
         },
         {
-          "start": 6.118,
-          "end": 10.593,
+          "start": 5.506,
+          "end": 9.73,
           "text": "identify the line causing the behavior,\nand stop with the file path and relevant"
         },
         {
-          "start": 10.643,
-          "end": 11.243,
+          "start": 9.73,
+          "end": 10.166,
           "text": "evidence."
         },
         {
-          "start": 11.867,
-          "end": 14.017,
-          "text": "Review the actual steps it took."
+          "start": 10.737,
+          "end": 15.053,
+          "text": "Review the actual steps it took. If it\nstarts editing or proposes an unrelated"
         },
         {
-          "start": 14.092,
-          "end": 17.567,
-          "text": "If it starts editing or proposes an\nunrelated command,"
-        },
-        {
-          "start": 17.642,
-          "end": 20.221,
-          "text": "pause and bring the request back to the\nstated goal."
+          "start": 15.053,
+          "end": 18.266,
+          "text": "command, pause and bring the request\nback to the stated goal."
         }
       ]
     }
@@ -353,6 +338,6 @@
   "fps": 24,
   "width": 1280,
   "height": 720,
-  "durationFrames": 3644,
-  "voiceBuild": "ab7cd02395623d8b64bdfcefca6752ef6782aa3ae7757abc0bbb982738e2c921"
+  "durationFrames": 3330,
+  "voiceBuild": "86a2e93b98b4d26d46636d5eb93f9ad9d5e99c91cd5042c4954ee0f3d2cd96df"
 }
