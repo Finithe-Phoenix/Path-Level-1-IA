@@ -14,43 +14,38 @@
       "result": "Baseline: no changes in this exercise.",
       "focus": "Source Control shows the known starting changes",
       "action": "Open Source Control and record any existing edits.",
-      "durationFrames": 508,
-      "duration": 21.166666666666668,
+      "durationFrames": 455,
+      "duration": 18.958333333333332,
       "cues": [
         {
-          "start": 0.368,
-          "end": 4.243,
+          "start": 0.235,
+          "end": 3.675,
           "text": "Before asking Copilot to edit, open\nSource Control in the training"
         },
         {
-          "start": 4.293,
-          "end": 5.493,
+          "start": 3.675,
+          "end": 4.251,
           "text": "workspace."
         },
         {
-          "start": 5.543,
-          "end": 9.387,
+          "start": 4.772,
+          "end": 8.631,
           "text": "The demonstration starts on a disposable\nbranch with a clean working tree."
         },
         {
-          "start": 10.011,
-          "end": 13.731,
+          "start": 8.952,
+          "end": 11.947,
           "text": "If you already have edits, note their\nfiles and contents."
         },
         {
-          "start": 13.806,
-          "end": 15.831,
-          "text": "That baseline matters later."
+          "start": 12.307,
+          "end": 16.44,
+          "text": "That baseline matters later. You want to\nrecognize your own work before using a"
         },
         {
-          "start": 15.906,
-          "end": 19.381,
-          "text": "You want to recognize your own work\nbefore using a control that can discard"
-        },
-        {
-          "start": 19.406,
-          "end": 20.049,
-          "text": "a change."
+          "start": 16.44,
+          "end": 18.248,
+          "text": "control that can discard a change."
         }
       ]
     },
@@ -65,42 +60,42 @@
       "result": "Unrelated candidate edit: notes file.",
       "focus": "The proposed third file is outside the issue scope",
       "action": "Open each diff and match it to the issue.",
-      "durationFrames": 535,
-      "duration": 22.291666666666668,
+      "durationFrames": 473,
+      "duration": 19.708333333333332,
       "cues": [
         {
-          "start": 0.439,
-          "end": 2.239,
-          "text": "Look at the proposed patch."
+          "start": 0.255,
+          "end": 4.568,
+          "text": "Look at the proposed patch. One change\nreplaces greater than or equal to zero"
         },
         {
-          "start": 2.314,
-          "end": 6.914,
-          "text": "One change replaces greater than or\nequal to zero with greater than zero."
+          "start": 4.568,
+          "end": 5.787,
+          "text": "with greater than zero."
         },
         {
-          "start": 6.964,
-          "end": 9.387,
+          "start": 6.259,
+          "end": 8.668,
           "text": "The new assertion checks the missing\nboundary case."
         },
         {
-          "start": 10.021,
-          "end": 12.471,
-          "text": "A third change touches a notes file."
+          "start": 9.09,
+          "end": 13.113,
+          "text": "A third change touches a notes file.\nRead that diff and ask which requirement"
         },
         {
-          "start": 12.546,
-          "end": 16.121,
-          "text": "Read that diff and ask which requirement\nit satisfies."
+          "start": 13.113,
+          "end": 14.002,
+          "text": "it satisfies."
         },
         {
-          "start": 16.196,
-          "end": 20.271,
+          "start": 14.302,
+          "end": 18.241,
           "text": "In this exercise it is unrelated, so we\ncan remove it while keeping the two"
         },
         {
-          "start": 20.321,
-          "end": 21.212,
+          "start": 18.291,
+          "end": 18.963,
           "text": "useful edits."
         }
       ]
@@ -116,42 +111,42 @@
       "result": "Before fix: test_rejects_zero ... FAIL\nAfter fix:  test_rejects_zero ... ok\nAfter fix:  Ran 4 tests. OK",
       "focus": "The same assertion fails before and passes after the fix",
       "action": "Confirm the red and green outputs from the approved runner.",
-      "durationFrames": 515,
-      "duration": 21.458333333333332,
+      "durationFrames": 467,
+      "duration": 19.458333333333332,
       "cues": [
         {
-          "start": 0.393,
-          "end": 3.218,
+          "start": 0.256,
+          "end": 2.464,
           "text": "Review the runner output linked to the\nexercise."
         },
         {
-          "start": 3.268,
-          "end": 6.743,
+          "start": 2.827,
+          "end": 6.548,
           "text": "Before the source edit, the zero\nassertion failed for the expected"
         },
         {
-          "start": 6.793,
-          "end": 7.693,
+          "start": 6.548,
+          "end": 6.874,
           "text": "reason."
         },
         {
-          "start": 7.768,
-          "end": 10.778,
+          "start": 7.465,
+          "end": 10.027,
           "text": "After the edit, it passes with three\nearlier cases."
         },
         {
-          "start": 11.391,
-          "end": 14.866,
+          "start": 10.478,
+          "end": 13.297,
           "text": "Keep both outputs visible while\nevaluating the patch."
         },
         {
-          "start": 14.916,
-          "end": 18.741,
+          "start": 13.788,
+          "end": 17.518,
           "text": "They help explain why the validator and\ntest edits belong together and the"
         },
         {
-          "start": 18.791,
-          "end": 20.385,
+          "start": 17.518,
+          "end": 18.744,
           "text": "unrelated note does not."
         }
       ]
@@ -167,38 +162,38 @@
       "result": "The validator and test edits stay in place.",
       "focus": "Only the unwanted change is selected for undo",
       "action": "Discard the unwanted edit after inspecting its diff.",
-      "durationFrames": 508,
-      "duration": 21.166666666666668,
+      "durationFrames": 459,
+      "duration": 19.125,
       "cues": [
         {
-          "start": 0.393,
-          "end": 2.843,
-          "text": "Open the notes diff in Source Control."
+          "start": 0.275,
+          "end": 4.39,
+          "text": "Open the notes diff in Source Control.\nIf the file contains only the unwanted"
         },
         {
-          "start": 2.918,
-          "end": 7.872,
-          "text": "If the file contains only the unwanted\nagent edit, discard that file's change."
+          "start": 4.4,
+          "end": 6.592,
+          "text": "agent edit, discard that file's change."
         },
         {
-          "start": 8.486,
-          "end": 12.861,
+          "start": 7.103,
+          "end": 11.227,
           "text": "If it also contains work you need, use a\nnarrower edit or revert the confirmed"
         },
         {
-          "start": 12.911,
-          "end": 13.786,
+          "start": 11.227,
+          "end": 11.503,
           "text": "hunk."
         },
         {
-          "start": 13.861,
-          "end": 15.56,
-          "text": "Read the diff again after the action."
+          "start": 11.964,
+          "end": 16.532,
+          "text": "Read the diff again after the action.\nThe validator and the added test should"
         },
         {
-          "start": 16.159,
-          "end": 20.058,
-          "text": "The validator and the added test should\nstill be in the changed-file list."
+          "start": 16.532,
+          "end": 18.352,
+          "text": "still be in the changed-file list."
         }
       ]
     },
@@ -213,42 +208,42 @@
       "result": "Only validator and test are changed.\nAll four tests pass in the training case.",
       "focus": "The remaining files match the accepted patch and pass tests",
       "action": "Review the remaining diff and rerun the suite remotely.",
-      "durationFrames": 535,
-      "duration": 22.291666666666668,
+      "durationFrames": 503,
+      "duration": 20.958333333333332,
       "cues": [
         {
-          "start": 0.393,
-          "end": 2.368,
+          "start": 0.235,
+          "end": 1.613,
           "text": "Check Source Control again."
         },
         {
-          "start": 2.443,
-          "end": 7.318,
+          "start": 1.984,
+          "end": 6.563,
           "text": "Confirm the validator and test are the\nonly changes expected for this exercise,"
         },
         {
-          "start": 7.368,
-          "end": 9.835,
+          "start": 6.914,
+          "end": 9.51,
           "text": "then rerun the suite in the approved\nenvironment."
         },
         {
-          "start": 10.472,
-          "end": 12.297,
-          "text": "All four tests should pass."
+          "start": 10.04,
+          "end": 13.682,
+          "text": "All four tests should pass. If the\nregression disappears from the run,"
         },
         {
-          "start": 12.372,
-          "end": 16.672,
-          "text": "If the regression disappears from the\nrun, inspect the test diff again."
+          "start": 14.054,
+          "end": 15.489,
+          "text": "inspect the test diff again."
         },
         {
-          "start": 16.747,
-          "end": 20.547,
+          "start": 15.809,
+          "end": 19.646,
           "text": "Verifying the result after undo is what\ntells you that the useful changes"
         },
         {
-          "start": 20.597,
-          "end": 21.191,
+          "start": 19.646,
+          "end": 20.233,
           "text": "survived."
         }
       ]
@@ -264,42 +259,37 @@
       "result": "Choose recovery based on the diff you reviewed.",
       "focus": "The undo choice matches the scope of unwanted changes",
       "action": "Choose between a hunk, a file, and a session checkpoint.",
-      "durationFrames": 479,
-      "duration": 19.958333333333332,
+      "durationFrames": 426,
+      "duration": 17.75,
       "cues": [
         {
-          "start": 0.389,
-          "end": 3.264,
-          "text": "When one hunk is wrong, reverse that\nhunk."
+          "start": 0.235,
+          "end": 4.557,
+          "text": "When one hunk is wrong, reverse that\nhunk. If a whole file contains just the"
         },
         {
-          "start": 3.339,
-          "end": 6.189,
-          "text": "If a whole file contains just the\nunwanted edit,"
+          "start": 4.587,
+          "end": 7.405,
+          "text": "unwanted edit, a file-level discard may\nbe enough."
         },
         {
-          "start": 6.239,
-          "end": 8.171,
-          "text": "a file-level discard may be enough."
-        },
-        {
-          "start": 8.785,
-          "end": 12.585,
+          "start": 7.75,
+          "end": 11.608,
           "text": "For a broader session checkpoint, read\nwhich changes it will affect before"
         },
         {
-          "start": 12.635,
-          "end": 13.81,
+          "start": 11.618,
+          "end": 12.069,
           "text": "using it."
         },
         {
-          "start": 13.86,
-          "end": 17.735,
+          "start": 12.35,
+          "end": 16.009,
           "text": "The choice depends on the diff you\ninspected and any unrelated work that"
         },
         {
-          "start": 17.785,
-          "end": 18.888,
+          "start": 16.009,
+          "end": 16.997,
           "text": "must stay in place."
         }
       ]
@@ -315,42 +305,37 @@
       "result": "A reviewable patch with a recovery note.",
       "focus": "A teammate can see the kept patch and the removed extra edit",
       "action": "Tell a teammate what you kept, removed and verified.",
-      "durationFrames": 523,
-      "duration": 21.791666666666668,
+      "durationFrames": 478,
+      "duration": 19.916666666666668,
       "cues": [
         {
-          "start": 0.439,
-          "end": 2.864,
-          "text": "Finish by explaining the final patch."
+          "start": 0.255,
+          "end": 3.651,
+          "text": "Finish by explaining the final patch.\nZero is now rejected."
         },
         {
-          "start": 2.964,
-          "end": 4.739,
-          "text": "Zero is now rejected."
+          "start": 3.996,
+          "end": 7.475,
+          "text": "The signature stays the same. The new\ntest proves the boundary,"
         },
         {
-          "start": 4.789,
-          "end": 6.764,
-          "text": "The signature stays the same."
+          "start": 7.746,
+          "end": 9.683,
+          "text": "and the original cases still pass."
         },
         {
-          "start": 6.814,
-          "end": 10.304,
-          "text": "The new test proves the boundary, and\nthe original cases still pass."
-        },
-        {
-          "start": 10.932,
-          "end": 15.082,
+          "start": 10.105,
+          "end": 13.227,
           "text": "Name the unrelated edit you removed and\nshow the remaining diff."
         },
         {
-          "start": 15.157,
-          "end": 19.007,
+          "start": 13.588,
+          "end": 17.801,
           "text": "That gives your teammate both the change\nthey need to review and the evidence you"
         },
         {
-          "start": 19.057,
-          "end": 20.327,
+          "start": 17.801,
+          "end": 18.98,
           "text": "checked after recovery."
         }
       ]
@@ -369,6 +354,6 @@
   "fps": 24,
   "width": 1280,
   "height": 720,
-  "durationFrames": 3603,
-  "voiceBuild": "8fa2e195814aaf5e1abc7fbc1f08728d7ec2b70182eb6aadaef7f3639ecd5070"
+  "durationFrames": 3261,
+  "voiceBuild": "ef747db0d4914f684b4eaba8f7fd840894038df191f16e89703ab73a09418ab3"
 }

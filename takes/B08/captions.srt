@@ -1,218 +1,207 @@
 1
-00:00:00,368 --> 00:00:04,243
+00:00:00,235 --> 00:00:03,675
 Before asking Copilot to edit, open
 Source Control in the training
 
 2
-00:00:04,293 --> 00:00:05,493
+00:00:03,675 --> 00:00:04,251
 workspace.
 
 3
-00:00:05,543 --> 00:00:09,387
+00:00:04,772 --> 00:00:08,631
 The demonstration starts on a disposable
 branch with a clean working tree.
 
 4
-00:00:10,011 --> 00:00:13,731
+00:00:08,952 --> 00:00:11,947
 If you already have edits, note their
 files and contents.
 
 5
-00:00:13,806 --> 00:00:15,831
-That baseline matters later.
+00:00:12,307 --> 00:00:16,440
+That baseline matters later. You want to
+recognize your own work before using a
 
 6
-00:00:15,906 --> 00:00:19,381
-You want to recognize your own work
-before using a control that can discard
+00:00:16,440 --> 00:00:18,248
+control that can discard a change.
 
 7
-00:00:19,406 --> 00:00:20,049
-a change.
+00:00:19,213 --> 00:00:23,526
+Look at the proposed patch. One change
+replaces greater than or equal to zero
 
 8
-00:00:21,606 --> 00:00:23,406
-Look at the proposed patch.
+00:00:23,526 --> 00:00:24,745
+with greater than zero.
 
 9
-00:00:23,481 --> 00:00:28,081
-One change replaces greater than or
-equal to zero with greater than zero.
-
-10
-00:00:28,131 --> 00:00:30,554
+00:00:25,217 --> 00:00:27,626
 The new assertion checks the missing
 boundary case.
 
-11
-00:00:31,188 --> 00:00:33,638
+10
+00:00:28,048 --> 00:00:32,071
 A third change touches a notes file.
-
-12
-00:00:33,713 --> 00:00:37,288
 Read that diff and ask which requirement
+
+11
+00:00:32,071 --> 00:00:32,960
 it satisfies.
 
-13
-00:00:37,363 --> 00:00:41,438
+12
+00:00:33,260 --> 00:00:37,199
 In this exercise it is unrelated, so we
 can remove it while keeping the two
 
-14
-00:00:41,488 --> 00:00:42,379
+13
+00:00:37,249 --> 00:00:37,921
 useful edits.
 
-15
-00:00:43,851 --> 00:00:46,676
+14
+00:00:38,923 --> 00:00:41,131
 Review the runner output linked to the
 exercise.
 
-16
-00:00:46,726 --> 00:00:50,201
+15
+00:00:41,494 --> 00:00:45,215
 Before the source edit, the zero
 assertion failed for the expected
 
-17
-00:00:50,251 --> 00:00:51,151
+16
+00:00:45,215 --> 00:00:45,541
 reason.
 
-18
-00:00:51,226 --> 00:00:54,236
+17
+00:00:46,132 --> 00:00:48,694
 After the edit, it passes with three
 earlier cases.
 
-19
-00:00:54,849 --> 00:00:58,324
+18
+00:00:49,145 --> 00:00:51,964
 Keep both outputs visible while
 evaluating the patch.
 
-20
-00:00:58,374 --> 00:01:02,199
+19
+00:00:52,455 --> 00:00:56,185
 They help explain why the validator and
 test edits belong together and the
 
-21
-00:01:02,249 --> 00:01:03,843
+20
+00:00:56,185 --> 00:00:57,411
 unrelated note does not.
 
-22
-00:01:05,310 --> 00:01:07,760
+21
+00:00:58,400 --> 00:01:02,515
 Open the notes diff in Source Control.
-
-23
-00:01:07,835 --> 00:01:12,789
 If the file contains only the unwanted
+
+22
+00:01:02,525 --> 00:01:04,717
 agent edit, discard that file's change.
 
-24
-00:01:13,403 --> 00:01:17,778
+23
+00:01:05,228 --> 00:01:09,352
 If it also contains work you need, use a
 narrower edit or revert the confirmed
 
-25
-00:01:17,828 --> 00:01:18,703
+24
+00:01:09,352 --> 00:01:09,628
 hunk.
 
-26
-00:01:18,778 --> 00:01:20,477
+25
+00:01:10,089 --> 00:01:14,657
 Read the diff again after the action.
-
-27
-00:01:21,076 --> 00:01:24,975
 The validator and the added test should
+
+26
+00:01:14,657 --> 00:01:16,477
 still be in the changed-file list.
 
-28
-00:01:26,476 --> 00:01:28,451
+27
+00:01:17,485 --> 00:01:18,863
 Check Source Control again.
 
-29
-00:01:28,526 --> 00:01:33,401
+28
+00:01:19,234 --> 00:01:23,813
 Confirm the validator and test are the
 only changes expected for this exercise,
 
-30
-00:01:33,451 --> 00:01:35,918
+29
+00:01:24,164 --> 00:01:26,760
 then rerun the suite in the approved
 environment.
 
+30
+00:01:27,290 --> 00:01:30,932
+All four tests should pass. If the
+regression disappears from the run,
+
 31
-00:01:36,555 --> 00:01:38,380
-All four tests should pass.
+00:01:31,304 --> 00:01:32,739
+inspect the test diff again.
 
 32
-00:01:38,455 --> 00:01:42,755
-If the regression disappears from the
-run, inspect the test diff again.
-
-33
-00:01:42,830 --> 00:01:46,630
+00:01:33,059 --> 00:01:36,896
 Verifying the result after undo is what
 tells you that the useful changes
 
-34
-00:01:46,680 --> 00:01:47,274
+33
+00:01:36,896 --> 00:01:37,483
 survived.
 
-35
-00:01:48,764 --> 00:01:51,639
+34
+00:01:38,443 --> 00:01:42,765
 When one hunk is wrong, reverse that
-hunk.
+hunk. If a whole file contains just the
+
+35
+00:01:42,795 --> 00:01:45,613
+unwanted edit, a file-level discard may
+be enough.
 
 36
-00:01:51,714 --> 00:01:54,564
-If a whole file contains just the
-unwanted edit,
-
-37
-00:01:54,614 --> 00:01:56,546
-a file-level discard may be enough.
-
-38
-00:01:57,160 --> 00:02:00,960
+00:01:45,958 --> 00:01:49,816
 For a broader session checkpoint, read
 which changes it will affect before
 
-39
-00:02:01,010 --> 00:02:02,185
+37
+00:01:49,826 --> 00:01:50,277
 using it.
 
-40
-00:02:02,235 --> 00:02:06,110
+38
+00:01:50,558 --> 00:01:54,217
 The choice depends on the diff you
 inspected and any unrelated work that
 
-41
-00:02:06,160 --> 00:02:07,263
+39
+00:01:54,217 --> 00:01:55,205
 must stay in place.
 
-42
-00:02:08,772 --> 00:02:11,197
+40
+00:01:56,213 --> 00:01:59,609
 Finish by explaining the final patch.
-
-43
-00:02:11,297 --> 00:02:13,072
 Zero is now rejected.
 
-44
-00:02:13,122 --> 00:02:15,097
-The signature stays the same.
+41
+00:01:59,954 --> 00:02:03,433
+The signature stays the same. The new
+test proves the boundary,
 
-45
-00:02:15,147 --> 00:02:18,637
-The new test proves the boundary, and
-the original cases still pass.
+42
+00:02:03,704 --> 00:02:05,641
+and the original cases still pass.
 
-46
-00:02:19,265 --> 00:02:23,415
+43
+00:02:06,063 --> 00:02:09,185
 Name the unrelated edit you removed and
 show the remaining diff.
 
-47
-00:02:23,490 --> 00:02:27,340
+44
+00:02:09,546 --> 00:02:13,759
 That gives your teammate both the change
 they need to review and the evidence you
 
-48
-00:02:27,390 --> 00:02:28,660
+45
+00:02:13,759 --> 00:02:14,938
 checked after recovery.
