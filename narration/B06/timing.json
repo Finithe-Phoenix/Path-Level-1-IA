@@ -1,0 +1,294 @@
+{
+  "fps": 24,
+  "voiceBuild": "206f2a65b286014a525a527aac0ab71fefa0c73bdaf3a4e34d1e408af670ae36",
+  "paceBuild": "688398cb801d0cd26f73119cfebd0be21d4bac835e77cdede64556abc0458422",
+  "delivery": {
+    "targetWordsPerMinute": 146,
+    "inputWordsPerMinute": 157.28,
+    "tempo": 0.95268892,
+    "outputWordsPerMinute": 146.0
+  },
+  "audioSha256": "695a0cf185a478cfbc15e6eb00e9b95d0b44016149c47383fd920c1216e40332",
+  "captionsSha256": "6d0508ba3b2db7f208f26de5b3a7a4a6fc58b07e0874433e16caba507a25e2db",
+  "scenes": [
+    {
+      "id": "vague",
+      "scriptSha256": "b5dc9977bef14884e88894cb9b4dfc7661e858f4824d4022ad8d590808e790a6",
+      "durationFrames": 554,
+      "cues": [
+        {
+          "start": 0.439,
+          "end": 3.378,
+          "text": "Imagine the whole prompt is “Fix\nvalidation.”"
+        },
+        {
+          "start": 3.43,
+          "end": 5.031,
+          "text": "Which input fails?"
+        },
+        {
+          "start": 5.084,
+          "end": 6.763,
+          "text": "What result should change?"
+        },
+        {
+          "start": 6.815,
+          "end": 8.652,
+          "text": "Which files are in scope?"
+        },
+        {
+          "start": 8.731,
+          "end": 12.641,
+          "text": "If those questions are unanswered, an\nagent can propose a broad refactor that"
+        },
+        {
+          "start": 12.694,
+          "end": 13.682,
+          "text": "sounds reasonable."
+        },
+        {
+          "start": 14.37,
+          "end": 19.015,
+          "text": "Start in Copilot Plan and use the\ndisplayed prompt as a baseline."
+        },
+        {
+          "start": 19.093,
+          "end": 21.28,
+          "text": "Then make each missing part explicit."
+        }
+      ]
+    },
+    {
+      "id": "goal",
+      "scriptSha256": "38ec54b52a1f8035ee90897d3dc6e3db8c2e8f989e8e8dfb61fbb413438eca18",
+      "durationFrames": 537,
+      "cues": [
+        {
+          "start": 0.413,
+          "end": 4.323,
+          "text": "We can replace the broad request with a\nprecise observation."
+        },
+        {
+          "start": 4.375,
+          "end": 7.603,
+          "text": "The order validator currently returns\ntrue for zero,"
+        },
+        {
+          "start": 7.655,
+          "end": 9.271,
+          "text": "but the issue requires false."
+        },
+        {
+          "start": 9.936,
+          "end": 13.636,
+          "text": "Attach the validator and the tests from\nthe training checkout."
+        },
+        {
+          "start": 13.715,
+          "end": 17.362,
+          "text": "Ask Copilot to identify the condition\nresponsible."
+        },
+        {
+          "start": 17.441,
+          "end": 20.855,
+          "text": "Now you can open the named file and\ncheck the cause yourself."
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "scriptSha256": "fb85934b96597bdbf106067944ecae8bcc31cfa4f8cd403e45993714929c6a2b",
+      "durationFrames": 565,
+      "cues": [
+        {
+          "start": 0.461,
+          "end": 3.111,
+          "text": "State what the change is allowed to\ntouch."
+        },
+        {
+          "start": 3.19,
+          "end": 7.598,
+          "text": "Keep the existing function signature,\nedit only the validator and the relevant"
+        },
+        {
+          "start": 7.651,
+          "end": 12.156,
+          "text": "test file, and preserve the behavior for\none, five, and negative one."
+        },
+        {
+          "start": 12.779,
+          "end": 16.662,
+          "text": "That gives the agent a boundary and a\nsmall set of examples."
+        },
+        {
+          "start": 16.741,
+          "end": 20.966,
+          "text": "If it proposes to rename the function,\nyou already know which requirement that"
+        },
+        {
+          "start": 21.018,
+          "end": 21.749,
+          "text": "violates."
+        }
+      ]
+    },
+    {
+      "id": "output",
+      "scriptSha256": "f6616aa2bccd0f034346888d15c0f3d19904279ca1f37e34042b6d93d14ebcf1",
+      "durationFrames": 514,
+      "cues": [
+        {
+          "start": 0.435,
+          "end": 3.557,
+          "text": "Request the output you can review before\nany edit."
+        },
+        {
+          "start": 3.636,
+          "end": 8.129,
+          "text": "Ask for the cause, the files it would\ntouch, the smallest proposed change,"
+        },
+        {
+          "start": 8.181,
+          "end": 10.228,
+          "text": "and one test that should expose the bug."
+        },
+        {
+          "start": 10.883,
+          "end": 14.872,
+          "text": "Have it ask about missing requirements\nand stop after the plan."
+        },
+        {
+          "start": 14.95,
+          "end": 18.572,
+          "text": "Then look for the line that explains why\na test for zero should fail on the"
+        },
+        {
+          "start": 18.624,
+          "end": 19.63,
+          "text": "original code."
+        }
+      ]
+    },
+    {
+      "id": "iterate",
+      "scriptSha256": "9d46e18c6a03498a62818fa69822db3acdf477d175c4bfd42a0c4068b44be1fb",
+      "durationFrames": 531,
+      "cues": [
+        {
+          "start": 0.461,
+          "end": 3.846,
+          "text": "Suppose the first plan introduces a new\nparameter."
+        },
+        {
+          "start": 3.925,
+          "end": 6.942,
+          "text": "Tell Copilot which part conflicts with\nthe issue."
+        },
+        {
+          "start": 6.995,
+          "end": 8.822,
+          "text": "“Preserve the existing signature."
+        },
+        {
+          "start": 9.455,
+          "end": 12.893,
+          "text": "Revise only the comparison and the zero\nregression.”"
+        },
+        {
+          "start": 12.972,
+          "end": 15.701,
+          "text": "Check the updated plan for both points."
+        },
+        {
+          "start": 15.78,
+          "end": 19.243,
+          "text": "A precise correction lets you tell\nwhether your next message fixed the"
+        },
+        {
+          "start": 19.296,
+          "end": 20.352,
+          "text": "misunderstanding."
+        }
+      ]
+    },
+    {
+      "id": "criteria",
+      "scriptSha256": "a36fc85426aae679ae088d9ea908f22f868db786eaa5e9b96c1a30d1b3dc5e63",
+      "durationFrames": 551,
+      "cues": [
+        {
+          "start": 0.413,
+          "end": 2.433,
+          "text": "Add a line about evidence."
+        },
+        {
+          "start": 2.512,
+          "end": 5.871,
+          "text": "Run the same test command in the\napproved runner before and after the"
+        },
+        {
+          "start": 5.949,
+          "end": 6.894,
+          "text": "fix."
+        },
+        {
+          "start": 6.973,
+          "end": 10.815,
+          "text": "Before the fix, the zero assertion\nshould fail for the reported reason."
+        },
+        {
+          "start": 11.47,
+          "end": 14.629,
+          "text": "After it, the new and existing tests\nshould pass."
+        },
+        {
+          "start": 14.708,
+          "end": 18.46,
+          "text": "Ask for the observed output and check it\nagainst the requirement."
+        },
+        {
+          "start": 18.539,
+          "end": 21.182,
+          "text": "That makes the task's definition of done\nvisible."
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "scriptSha256": "63b195ffbd5d4d0e71a9ee51d84aa5bfbafd0398f3c7bfb029fbc64792aec12d",
+      "durationFrames": 486,
+      "cues": [
+        {
+          "start": 0.386,
+          "end": 4.086,
+          "text": "Pick another synthetic issue and write\nfour short lines."
+        },
+        {
+          "start": 4.191,
+          "end": 8.028,
+          "text": "Say what happens, what may change, what\nthe assistant should produce,"
+        },
+        {
+          "start": 8.238,
+          "end": 9.632,
+          "text": "and how you will verify it."
+        },
+        {
+          "start": 10.302,
+          "end": 13.53,
+          "text": "Read them to a teammate without any\nother context."
+        },
+        {
+          "start": 13.609,
+          "end": 16.679,
+          "text": "If they can describe the expected change\nand the test,"
+        },
+        {
+          "start": 16.732,
+          "end": 18.306,
+          "text": "your brief is ready to use."
+        }
+      ]
+    }
+  ]
+}

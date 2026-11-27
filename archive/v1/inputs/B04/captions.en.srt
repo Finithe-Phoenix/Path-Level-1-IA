@@ -1,0 +1,203 @@
+1
+00:00:00,340 --> 00:00:03,403
+We will compare models using a synthetic
+issue.
+
+2
+00:00:03,583 --> 00:00:08,639
+The order validator accepts zero even
+though an order needs at least one item.
+
+3
+00:00:08,819 --> 00:00:10,305
+Our target is clear.
+
+4
+00:00:10,485 --> 00:00:15,117
+Find the cause, suggest a small change,
+and propose a regression test while
+
+5
+00:00:15,117 --> 00:00:17,217
+preserving the function signature.
+
+6
+00:00:17,397 --> 00:00:22,701
+A task with an observable outcome makes
+the comparison easier to evaluate than an
+
+7
+00:00:22,701 --> 00:00:24,011
+open ended question.
+
+8
+00:00:25,465 --> 00:00:30,074
+In VS Code, open Copilot Chat and look at
+the model selector.
+
+9
+00:00:30,254 --> 00:00:33,498
+Pick two workplace approved options if you
+have them.
+
+10
+00:00:33,678 --> 00:00:38,308
+One might favor speed and the other may be
+oriented toward harder reasoning.
+
+11
+00:00:38,488 --> 00:00:43,998
+If your account exposes only one model,
+compare two runs with that model and label
+
+12
+00:00:43,998 --> 00:00:45,678
+the exercise accordingly.
+
+13
+00:00:45,858 --> 00:00:49,282
+The important part is recording your
+starting conditions.
+
+14
+00:00:50,757 --> 00:00:56,225
+We attach the issue, source, and tests in
+each new chat, then give each option the
+
+15
+00:00:56,225 --> 00:00:57,092
+same request.
+
+16
+00:00:57,272 --> 00:01:01,671
+Keep the task in an explanation or
+planning mode to avoid changing the
+
+17
+00:01:01,671 --> 00:01:03,619
+working tree during comparison.
+
+18
+00:01:03,799 --> 00:01:09,045
+Changing the attached files, agent mode,
+or requirements would change the task.
+
+19
+00:01:09,225 --> 00:01:13,546
+Keep those inputs stable and record any
+differences you cannot avoid.
+
+20
+00:01:15,007 --> 00:01:19,410
+Look for the line responsible for
+accepting zero and check whether the
+
+21
+00:01:19,410 --> 00:01:22,303
+proposed test would fail on the original
+code.
+
+22
+00:01:22,483 --> 00:01:27,465
+Note how long each response takes and
+whether a response adds unnecessary work.
+
+23
+00:01:27,645 --> 00:01:29,993
+The results on screen are illustrative.
+
+24
+00:01:30,173 --> 00:01:34,355
+Try the exercise yourself and record the
+outcome you actually saw.
+
+25
+00:01:34,535 --> 00:01:40,006
+One run gives a useful observation, with
+limited evidence for broader conclusions.
+
+26
+00:01:41,465 --> 00:01:46,550
+For this small boundary bug, a fast option
+may be enough once tests confirm the
+
+27
+00:01:46,550 --> 00:01:47,001
+result.
+
+28
+00:01:47,181 --> 00:01:51,807
+When a change spans packages, has
+ambiguous requirements, or requires
+
+29
+00:01:51,807 --> 00:01:56,769
+comparing several designs, you might
+evaluate a stronger reasoning option.
+
+30
+00:01:56,949 --> 00:02:01,107
+A broader change still needs clear context
+and independent checks.
+
+31
+00:02:01,287 --> 00:02:04,082
+The model label does not replace either
+one.
+
+32
+00:02:05,548 --> 00:02:09,056
+One answer suggests testing one, which
+already passes.
+
+33
+00:02:09,236 --> 00:02:13,633
+Another adds the test for zero, which
+fails against the original code.
+
+34
+00:02:13,813 --> 00:02:17,951
+The second test directly exercises the
+behavior in the issue.
+
+35
+00:02:18,131 --> 00:02:23,122
+To compare responses, inspect those
+details and run the relevant checks in the
+
+36
+00:02:23,122 --> 00:02:25,042
+approved training environment.
+
+37
+00:02:25,222 --> 00:02:29,938
+This tells you more than whether the
+generated explanation sounded confident.
+
+38
+00:02:31,382 --> 00:02:34,890
+Run the benchmark and write one sentence
+about your choice.
+
+39
+00:02:35,070 --> 00:02:39,993
+Include which model you used, what it got
+right or missed, and the test you would
+
+40
+00:02:39,993 --> 00:02:41,938
+use to verify a proposed change.
+
+41
+00:02:42,118 --> 00:02:47,240
+If both results fall short, adjust the
+brief or fix the missing context before
+
+42
+00:02:47,240 --> 00:02:48,422
+increasing effort.
+
+43
+00:02:48,602 --> 00:02:53,390
+Keep the comparison small enough that you
+can redo it when the catalog changes.

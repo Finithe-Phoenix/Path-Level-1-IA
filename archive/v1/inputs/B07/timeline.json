@@ -1,0 +1,108 @@
+{
+  "id": "B07",
+  "title": "Give Copilot the Right Context",
+  "subtitle": "Attach the smallest set of useful evidence in VS Code",
+  "scenes": [
+    {
+      "id": "baseline",
+      "kind": "editor",
+      "eyebrow": "CONTEXT BASELINE",
+      "title": "Start with a broad question",
+      "body": "A broad request makes the relevant evidence ambiguous.",
+      "narration": "We want Copilot to find why a zero quantity passes. We start with a plain question and no explicit reference to the issue or the relevant files. Depending on the session, Copilot may have access to some editor context. We can make the evidence easier to inspect by choosing it ourselves. Watch which sources we add to the request.",
+      "code": "Why does zero pass validation?",
+      "result": "Check which sources are visible in this chat.",
+      "durationFrames": 544,
+      "duration": 22.666666666666668
+    },
+    {
+      "id": "needed",
+      "kind": "diagram",
+      "eyebrow": "SELECT THE EVIDENCE",
+      "title": "Pick three useful inputs",
+      "body": "The issue, function, and tests answer different questions.",
+      "narration": "Our issue tells us what should happen. The validator shows what does happen. The test file shows which inputs the suite already covers. Those three sources are enough for this task. We leave unrelated files, keys, and logs out of the chat. In your organization, confirm that the sources you attach are approved for this model and service.",
+      "code": "Issue → expected behavior\nValidator → current behavior\nTests → existing coverage",
+      "result": "Selected: only relevant training content.",
+      "durationFrames": 539,
+      "duration": 22.458333333333332
+    },
+    {
+      "id": "attach",
+      "kind": "editor",
+      "eyebrow": "ADD CONTEXT IN VS CODE",
+      "title": "Attach the source and test files",
+      "body": "Use the context picker or a supported file mention.",
+      "narration": "In Copilot Chat, use the context picker or select the named files directly. Attach the short issue text or link through a method available in your approved environment. Before submitting, verify the file names displayed in the chat. Ask Copilot to separate what the code does from what the issue requires and to point to the relevant comparison.",
+      "code": "Attach order_quantity.py\nAttach tests/test_order_quantity.py\nInclude the synthetic issue text.",
+      "result": "The relevant function and tests are visible.",
+      "durationFrames": 572,
+      "duration": 23.833333333333332
+    },
+    {
+      "id": "inspect",
+      "kind": "editor",
+      "eyebrow": "INSPECT THE ANSWER",
+      "title": "Check the cited code",
+      "body": "Verify the assistant's explanation against the actual file.",
+      "narration": "The answer points to the greater than or equal comparison. Open the file and check that it really contains that comparison. Then read the test file and confirm that zero is missing. Copilot can identify a likely story that still needs verification. File references help you trace the reasoning, and the source remains the authority for the current behavior.",
+      "code": "Explain why 0 is accepted.\nWhich existing test covers 0?\nName the relevant function and comparison.",
+      "result": "Code allows 0. The baseline has no zero test.",
+      "durationFrames": 585,
+      "duration": 24.375
+    },
+    {
+      "id": "prune",
+      "kind": "decision",
+      "eyebrow": "RESOLVE CONTEXT MISMATCHES",
+      "title": "Watch for outdated or broad context",
+      "body": "Remove irrelevant context and attach the current file.",
+      "narration": "If an answer mentions a different version of the validator, check the branch and the attached file before retrying. Start a fresh chat when an old discussion keeps steering the response. In the new session, attach the current exact code and say which version of the issue applies. Keep the scope small to make the response easier to verify.",
+      "code": "Check the branch and active file.\nRemove unrelated attachments.\nAttach the current implementation.",
+      "result": "Use exact sources to resolve the mismatch.",
+      "durationFrames": 529,
+      "duration": 22.041666666666668
+    },
+    {
+      "id": "followup",
+      "kind": "editor",
+      "eyebrow": "HANDLE AN INCOMPLETE ANSWER",
+      "title": "Ask what is still missing",
+      "body": "Make unknowns explicit before requesting a change.",
+      "narration": "Suppose Copilot identifies why zero passes but cannot verify the business rule. Ask which source it still needs and provide the actual issue text through an approved method. We then ask it to show where the code and rule disagree. The useful result is a traceable explanation supported by both sources, with any remaining assumptions clearly named.",
+      "code": "What evidence do you need for the expected behavior?\nUse the supplied issue and code to compare them.",
+      "result": "Requirement from issue. Behavior from source.",
+      "durationFrames": 588,
+      "duration": 24.5
+    },
+    {
+      "id": "practice",
+      "kind": "decision",
+      "eyebrow": "YOUR TURN",
+      "title": "Compare two context sets",
+      "body": "Explain what changed in the answer and why.",
+      "narration": "Ask the same training question in two fresh chats. In the first, give the issue only. In the second, include the current validator and its tests. Then compare which answer locates the actual cause and which admits uncertainty. Keep one piece of evidence from the code and one from the test file. That record helps you decide what context to supply next time.",
+      "code": "Run A: issue only.\nRun B: issue + validator + tests.\nCompare the cause and cited evidence.",
+      "result": "A short comparison grounded in repository files.",
+      "durationFrames": 579,
+      "duration": 24.125
+    }
+  ],
+  "sources": [
+    {
+      "label": "Add context to chat",
+      "url": "https://code.visualstudio.com/docs/chat/copilot-chat-context"
+    },
+    {
+      "label": "VS Code AI best practices",
+      "url": "https://code.visualstudio.com/docs/agents/best-practices"
+    },
+    {
+      "label": "Copilot content exclusion",
+      "url": "https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion"
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720
+}

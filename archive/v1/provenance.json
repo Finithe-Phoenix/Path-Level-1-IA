@@ -1,0 +1,76 @@
+{
+  "releaseTag": "v1.0.0",
+  "releaseCommit": "538a03c4e36609629b3fba6c02d2524e656c0fec",
+  "productionEnvironment": {
+    "node": "24.22.3",
+    "chromium": "156.0.8078.79",
+    "ffmpeg": "7.1.5",
+    "python": "3.12.14",
+    "fonts": [
+      "DejaVu Sans",
+      "DejaVu Sans Mono"
+    ]
+  },
+  "modelFileChecksums": {
+    "kokoro-v1.0.int8.onnx": "ae315a79b623f244700e4afb9246c46a26066782e049ba174bf3ba433970ee9c",
+    "kokoro-v1.0.onnx": "beb0d1848dee9a49da392cc3df26958d46cfa35d321edf434f52949153f0df3a",
+    "voices-v1.0.bin": "bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d"
+  },
+  "episodes": [
+    {
+      "episode": "B01",
+      "videoSha256": "762343ae2e6a1fe1b25fa715080d0db851f6fff0f8c458e39dc0a49ba96e13e2",
+      "englishSrtSha256": "f0963e6eaf58293857ed9bebc436c0d5e5bfad3edb787fed6ad902e4fbbbb411",
+      "pcmS16leSha256": "f4af175b8f17fa5e222cd5b368c79fdbc89a04c1ff0dbdfad7b2fdd237557354"
+    },
+    {
+      "episode": "B02",
+      "videoSha256": "e0e919a7ed8fa9f01a51ac13460c0fbe67c15db93288b6e01fe84acf334db4de",
+      "englishSrtSha256": "292764132ff2c9b7f5aa60dc59d98e6884a3e9feff4e050490f4a11d179012db",
+      "pcmS16leSha256": "57a73ba0888c728c9d4c7dbc2c947504223d1b8c5abf132bcaeff0030142dcf5"
+    },
+    {
+      "episode": "B03",
+      "videoSha256": "90be62e4d83ce2bd1bec1f94aae4ba98235ae5cbdaa870551af748411dee8a04",
+      "englishSrtSha256": "d2dea88dc5b95fb1e11b705dbe56f72142aa7bd931a4efba04583587e7177d25",
+      "pcmS16leSha256": "307a70ec32f38e6501c4bd71885064b277e05d0a1b33a7c2fef178e5b2fd8c2a"
+    },
+    {
+      "episode": "B04",
+      "videoSha256": "a51fba63be7b699a1d60f3a8413c817c93724094bc22901d5ea557b1704a0fc9",
+      "englishSrtSha256": "9c7abae3779d60181b5f9c56dfa9f8364c65612f04017136daf063aec84ca945",
+      "pcmS16leSha256": "e0f55f99f764e7fb7c7e92805594578849f18057e041f18d4dc70e1a47f9d058"
+    },
+    {
+      "episode": "B05",
+      "videoSha256": "b27283faa328d3066b3bfeb711d11bee13ea580e67d22701a76b138d367ef0da",
+      "englishSrtSha256": "2299c4230518e08db69d768499edaee86e59f8e56bb558f4ef59beedec9e16fb",
+      "pcmS16leSha256": "67fd406b16514bdeefa9bc379232bce25c4fe1182d1411cac999fee3ff2ddd65"
+    },
+    {
+      "episode": "B06",
+      "videoSha256": "d950be2b067c85b9ef0d06cf30f2b61d6ba53b4ef9c8f76b3e39a55251689d51",
+      "englishSrtSha256": "77be638b0e86758524ca0dba25a22321f3b641182dbe8d3c45ba72170537fb90",
+      "pcmS16leSha256": "08baf266bb9f13d7c9838c554727521a09ddd14a9a593efe4d3962c0ad81aa49"
+    },
+    {
+      "episode": "B07",
+      "videoSha256": "f230bdd3c03ba45f4e17dff7d9f38972d2c4501c54789e6b8cbeb4a662f77266",
+      "englishSrtSha256": "cf152355609888cf03f99d5b86667a6e6c474cdd3821b7379f98bba93c0c9fdc",
+      "pcmS16leSha256": "fba0cd9f24ec378e050a241f5de99b879127e3832f17597f7bb2152341936eb9"
+    },
+    {
+      "episode": "B08",
+      "videoSha256": "13e8ab8da8f0cb86dc6544db181c6825f4c370db5cbe4fa139ff1e699595a332",
+      "englishSrtSha256": "5187a4b2f733940d7d5c46ae98dbbb3d387fcfd7fd8e352cc8e43eee7a251363",
+      "pcmS16leSha256": "48b244b8b4399fafd44b35cd66fbe6b97bf11c53036538c860e7ac96f1e800f5"
+    }
+  ],
+  "voice": {
+    "engine": "kokoro-onnx 0.6.1",
+    "language": "en-us",
+    "name": "af_heart",
+    "seriesSpeed": 0.94,
+    "masterSampleRate": 24000
+  }
+}

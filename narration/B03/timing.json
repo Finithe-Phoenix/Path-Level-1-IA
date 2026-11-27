@@ -1,0 +1,309 @@
+{
+  "fps": 24,
+  "voiceBuild": "583aed8600195f4cfabea37cfa26dfdf06e6b825aa560a3b86e99b27712ce750",
+  "paceBuild": "aec1202bbcf8cffaedcb3d9f4b6ca55afeb94f6763d7973bb4243eaab7e335c8",
+  "delivery": {
+    "targetWordsPerMinute": 146,
+    "inputWordsPerMinute": 152.29,
+    "tempo": 0.97531618,
+    "outputWordsPerMinute": 146.01
+  },
+  "audioSha256": "61d72c2a4a766a4bb4f070ac119484e3f484c06715a4a21e5856980df48b0e05",
+  "captionsSha256": "4868e0b12f4f53660df8ffcf4ef926958e709c66028c04a4d33010d658e537ae",
+  "scenes": [
+    {
+      "id": "layers",
+      "scriptSha256": "d25a65b92a06c2ffa487e4466dbd525c1ae883e0e765d763d3e3e6f775057339",
+      "durationFrames": 554,
+      "cues": [
+        {
+          "start": 0.399,
+          "end": 4.295,
+          "text": "When the dropdown says Claude, you might\nask who makes the model, where it runs,"
+        },
+        {
+          "start": 4.321,
+          "end": 6.089,
+          "text": "and which tool you're using."
+        },
+        {
+          "start": 6.166,
+          "end": 7.546,
+          "text": "Those are three questions."
+        },
+        {
+          "start": 8.175,
+          "end": 12.379,
+          "text": "The maker publishes the model, a\nprovider or platform offers access,"
+        },
+        {
+          "start": 12.491,
+          "end": 14.747,
+          "text": "and the client gives you a workflow."
+        },
+        {
+          "start": 14.824,
+          "end": 17.809,
+          "text": "In this lesson, the catalogs are a dated\nsnapshot."
+        },
+        {
+          "start": 18.48,
+          "end": 21.578,
+          "text": "Your approved picker tells you what is\navailable for work."
+        }
+      ]
+    },
+    {
+      "id": "openai",
+      "scriptSha256": "62661c8dee472b37470224ebf738124035a102be1296d744b38a93aedfab7928",
+      "durationFrames": 641,
+      "cues": [
+        {
+          "start": 0.403,
+          "end": 5.427,
+          "text": "Open the OpenAI model catalog and\ncompare the entries for GPT six point"
+        },
+        {
+          "start": 5.504,
+          "end": 7.375,
+          "text": "two Sol and Astra."
+        },
+        {
+          "start": 7.452,
+          "end": 11.571,
+          "text": "In the snapshot, Sol is positioned for\neveryday coding and agent work."
+        },
+        {
+          "start": 12.193,
+          "end": 15.884,
+          "text": "Astra is positioned for more demanding\nreasoning and coding."
+        },
+        {
+          "start": 15.987,
+          "end": 19.216,
+          "text": "Notice the input and output section on\neach card."
+        },
+        {
+          "start": 19.293,
+          "end": 22.087,
+          "text": "If you need transcription or image\ngeneration,"
+        },
+        {
+          "start": 22.164,
+          "end": 25.261,
+          "text": "read the relevant entry instead of\ninferring it from the name."
+        }
+      ]
+    },
+    {
+      "id": "claude",
+      "scriptSha256": "9120255d300d00dc126938dfe2683f73571ec71ce4da6be6f554db4eba624f12",
+      "durationFrames": 617,
+      "cues": [
+        {
+          "start": 0.429,
+          "end": 5.017,
+          "text": "In Anthropic’s catalog, find Haiku,\nSonnet, Opus, and Fable."
+        },
+        {
+          "start": 5.068,
+          "end": 8.961,
+          "text": "Their cards describe different speed,\nworkload, and capability tradeoffs."
+        },
+        {
+          "start": 9.575,
+          "end": 13.574,
+          "text": "The provider table matters when you use\nClaude Code remotely."
+        },
+        {
+          "start": 13.651,
+          "end": 17.573,
+          "text": "Two environments can show the same\nfamily name while resolving a shortcut"
+        },
+        {
+          "start": 17.624,
+          "end": 18.145,
+          "text": "differently."
+        },
+        {
+          "start": 18.81,
+          "end": 23.732,
+          "text": "Record the exact model ID or selector\nlabel you can verify in the approved"
+        },
+        {
+          "start": 23.783,
+          "end": 24.222,
+          "text": "session."
+        }
+      ]
+    },
+    {
+      "id": "microsoft",
+      "scriptSha256": "7afbfbd3957d8443eaeb28f073df00e0262c7fbb4104659ab07ad13d81aa2209",
+      "durationFrames": 619,
+      "cues": [
+        {
+          "start": 0.429,
+          "end": 4.837,
+          "text": "In Microsoft Foundry, inspect the\npublisher on a model card."
+        },
+        {
+          "start": 4.889,
+          "end": 9.118,
+          "text": "The catalog includes models published by\nMicrosoft as well as models from other"
+        },
+        {
+          "start": 9.169,
+          "end": 9.887,
+          "text": "providers."
+        },
+        {
+          "start": 10.504,
+          "end": 14.195,
+          "text": "You may see Microsoft’s MAI or Phi\nfamilies."
+        },
+        {
+          "start": 14.272,
+          "end": 18.527,
+          "text": "MAI Code two Flash was a limited-access\npreview in the snapshot."
+        },
+        {
+          "start": 18.604,
+          "end": 22.321,
+          "text": "Check the actual card and deployment\nconditions before you put a catalog"
+        },
+        {
+          "start": 22.372,
+          "end": 24.254,
+          "text": "model on your team's available list."
+        }
+      ]
+    },
+    {
+      "id": "picker",
+      "scriptSha256": "6737517ade2fc892235e9f79b4adb6298fe08b26346c5e76d2b2ef465ac76973",
+      "durationFrames": 582,
+      "cues": [
+        {
+          "start": 0.45,
+          "end": 2.783,
+          "text": "Now return to the software you use."
+        },
+        {
+          "start": 2.86,
+          "end": 7.473,
+          "text": "Open Copilot Chat in VS Code and expand\nthe model selector."
+        },
+        {
+          "start": 7.55,
+          "end": 10.368,
+          "text": "Copy the exact label of one model you\ncan select."
+        },
+        {
+          "start": 10.997,
+          "end": 14.15,
+          "text": "For a separate check on Claude Code or\nOpenCode,"
+        },
+        {
+          "start": 14.202,
+          "end": 18.098,
+          "text": "use the approved G C P workspace and\ninspect its selector there."
+        },
+        {
+          "start": 18.769,
+          "end": 20.846,
+          "text": "Take the label from each surface."
+        },
+        {
+          "start": 20.948,
+          "end": 22.53,
+          "text": "Those two lists can differ."
+        }
+      ]
+    },
+    {
+      "id": "lifecycle",
+      "scriptSha256": "2f35c61cb1bf80f672dfe2909aec875ce36b70c2ff21ca4dc2e03001cfd27a5f",
+      "durationFrames": 561,
+      "cues": [
+        {
+          "start": 0.399,
+          "end": 4.141,
+          "text": "Pick a model card and compare its\nrelease status with the workplace"
+        },
+        {
+          "start": 4.192,
+          "end": 5.09,
+          "text": "picker."
+        },
+        {
+          "start": 5.167,
+          "end": 7.918,
+          "text": "Preview on the card describes the\nprovider’s offering."
+        },
+        {
+          "start": 8.536,
+          "end": 12.637,
+          "text": "Your company’s policy, plan, and\nconfigured provider determine whether"
+        },
+        {
+          "start": 12.688,
+          "end": 14.175,
+          "text": "you can select it."
+        },
+        {
+          "start": 14.226,
+          "end": 16.636,
+          "text": "Put both observations in your note."
+        },
+        {
+          "start": 16.713,
+          "end": 20.404,
+          "text": "A colleague can then tell the difference\nbetween a catalog announcement and an"
+        },
+        {
+          "start": 20.455,
+          "end": 21.892,
+          "text": "option they can use today."
+        }
+      ]
+    },
+    {
+      "id": "record",
+      "scriptSha256": "43a99e85df10f80eed56ebf0b6f306c0861434dba524a15f31137d6a5ca315d1",
+      "durationFrames": 519,
+      "cues": [
+        {
+          "start": 0.45,
+          "end": 2.988,
+          "text": "Make one inventory entry for the class."
+        },
+        {
+          "start": 3.065,
+          "end": 7.443,
+          "text": "Include the maker, the exact version or\nlabel, the client and environment,"
+        },
+        {
+          "start": 7.607,
+          "end": 8.694,
+          "text": "and the date you checked."
+        },
+        {
+          "start": 9.344,
+          "end": 13.137,
+          "text": "If the picker changes later, repeat that\nshort check."
+        },
+        {
+          "start": 13.189,
+          "end": 17.52,
+          "text": "With the available options in hand, the\nnext lesson will compare models on a bug"
+        },
+        {
+          "start": 17.572,
+          "end": 19.724,
+          "text": "whose behavior you can verify yourself."
+        }
+      ]
+    }
+  ]
+}

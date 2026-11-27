@@ -1,0 +1,294 @@
+{
+  "fps": 24,
+  "voiceBuild": "4fcb6261ae3b600ef504026035e65552e9f18d45c4e578835ce9730e308929c2",
+  "paceBuild": "3ad1b1014b662f125d7dda5fa06073302ef9cea413b2578580c305b66afaeb95",
+  "delivery": {
+    "targetWordsPerMinute": 146,
+    "inputWordsPerMinute": 165.71,
+    "tempo": 0.9029872,
+    "outputWordsPerMinute": 146.01
+  },
+  "audioSha256": "5ac39820a3be79c4a7ff558387f0ae2a00ba69cdb30f8cb15a038fb9cabd0b84",
+  "captionsSha256": "deb2495428c46efda8f4da3078f882171f7af234d15a9466a548afaa71e458c1",
+  "scenes": [
+    {
+      "id": "baseline",
+      "scriptSha256": "e49c6efb1166c252844c1623305a8bd0848e090286efcf5d30d2bb685689324d",
+      "durationFrames": 576,
+      "cues": [
+        {
+          "start": 0.463,
+          "end": 3.259,
+          "text": "Ask “Why does zero pass validation?”"
+        },
+        {
+          "start": 3.342,
+          "end": 4.865,
+          "text": "in a fresh chat."
+        },
+        {
+          "start": 4.92,
+          "end": 9.09,
+          "text": "Depending on the session, Copilot may\nalready receive parts of the active"
+        },
+        {
+          "start": 9.145,
+          "end": 11.18,
+          "text": "editor or search the workspace."
+        },
+        {
+          "start": 11.925,
+          "end": 14.749,
+          "text": "Look for the sources cited in its\nanswer."
+        },
+        {
+          "start": 14.832,
+          "end": 18.736,
+          "text": "Even a correct guess is easier to\nevaluate once you know where it came"
+        },
+        {
+          "start": 18.791,
+          "end": 19.677,
+          "text": "from."
+        },
+        {
+          "start": 19.788,
+          "end": 22.161,
+          "text": "Next we will choose the evidence\ndeliberately."
+        }
+      ]
+    },
+    {
+      "id": "needed",
+      "scriptSha256": "57c328dba39629b3dc49c916e7b51bc0c1d9c1d76cbf8f0171c469502830caac",
+      "durationFrames": 528,
+      "cues": [
+        {
+          "start": 0.486,
+          "end": 3.421,
+          "text": "Select three things from the training\ncheckout."
+        },
+        {
+          "start": 3.476,
+          "end": 5.719,
+          "text": "The issue tells you what should happen."
+        },
+        {
+          "start": 5.774,
+          "end": 8.553,
+          "text": "The validator tells you what the program\ndoes now."
+        },
+        {
+          "start": 9.208,
+          "end": 12.724,
+          "text": "The test file tells you what behavior is\nalready covered."
+        },
+        {
+          "start": 12.807,
+          "end": 16.102,
+          "text": "If you only have the issue, you can\nexplain the rule."
+        },
+        {
+          "start": 16.157,
+          "end": 20.431,
+          "text": "With the source, you can identify\nexactly which comparison breaks it."
+        }
+      ]
+    },
+    {
+      "id": "attach",
+      "scriptSha256": "fba5ac4aaa4f40d42ec4468f20b9cee259bdfb63b58a23614d9034bdab062808",
+      "durationFrames": 554,
+      "cues": [
+        {
+          "start": 0.435,
+          "end": 4.311,
+          "text": "Open the validator and the test file in\nVS Code."
+        },
+        {
+          "start": 4.394,
+          "end": 7.8,
+          "text": "Use the chat attachment control to add\nthose files."
+        },
+        {
+          "start": 7.883,
+          "end": 12.026,
+          "text": "Include the synthetic issue text and\ninspect the list before sending."
+        },
+        {
+          "start": 12.714,
+          "end": 16.563,
+          "text": "Confirm the paths are from the checkout\nyou intend to work on."
+        },
+        {
+          "start": 16.646,
+          "end": 21.211,
+          "text": "This lets you and the assistant refer to\nthe same function and the same tests."
+        }
+      ]
+    },
+    {
+      "id": "inspect",
+      "scriptSha256": "f93c8ab4f881c65b1d71f3ddb720758f899185e30a8619721dd593b9a3f28fd6",
+      "durationFrames": 574,
+      "cues": [
+        {
+          "start": 0.463,
+          "end": 2.484,
+          "text": "Ask two questions together."
+        },
+        {
+          "start": 2.567,
+          "end": 6.36,
+          "text": "“Why does zero pass, and which baseline\ntest covers it?”"
+        },
+        {
+          "start": 6.415,
+          "end": 10.986,
+          "text": "The answer should show that greater than\nor equal to zero returns true for zero."
+        },
+        {
+          "start": 11.642,
+          "end": 15.236,
+          "text": "Read the tests for one, five, and\nnegative one."
+        },
+        {
+          "start": 15.347,
+          "end": 17.396,
+          "text": "None runs the zero case."
+        },
+        {
+          "start": 17.451,
+          "end": 21.493,
+          "text": "That gap explains why the existing suite\ncan be green while the issue remains"
+        },
+        {
+          "start": 21.548,
+          "end": 22.035,
+          "text": "open."
+        }
+      ]
+    },
+    {
+      "id": "prune",
+      "scriptSha256": "27bedbc6123f7dc00d1806e453e8a6f33dc2c2cdd1d3fe3dd5183d32d28f34ec",
+      "durationFrames": 610,
+      "cues": [
+        {
+          "start": 0.463,
+          "end": 4.45,
+          "text": "Imagine an older attachment shows a\ngreater-than comparison."
+        },
+        {
+          "start": 4.505,
+          "end": 8.63,
+          "text": "The active checkout still has greater\nthan or equal to zero."
+        },
+        {
+          "start": 8.713,
+          "end": 11.593,
+          "text": "Open the current file and confirm the\nbranch,"
+        },
+        {
+          "start": 11.648,
+          "end": 13.585,
+          "text": "then remove the stale attachment."
+        },
+        {
+          "start": 14.279,
+          "end": 17.491,
+          "text": "Ask the question again using the current\nsource."
+        },
+        {
+          "start": 17.574,
+          "end": 20.924,
+          "text": "A one-character difference is enough to\nchange the answer,"
+        },
+        {
+          "start": 20.979,
+          "end": 23.574,
+          "text": "so keep the two versions easy to\ndistinguish."
+        }
+      ]
+    },
+    {
+      "id": "followup",
+      "scriptSha256": "b35cb238fe2ff1e7df998acf805e27a06d6a965392d052e1c9a083f7602a6e0a",
+      "durationFrames": 563,
+      "cues": [
+        {
+          "start": 0.435,
+          "end": 4.643,
+          "text": "Try a follow-up where you provide the\nfunction but leave out the issue."
+        },
+        {
+          "start": 4.727,
+          "end": 8.686,
+          "text": "Ask what the program does and what\nevidence would tell you whether that is"
+        },
+        {
+          "start": 8.741,
+          "end": 9.379,
+          "text": "correct."
+        },
+        {
+          "start": 10.07,
+          "end": 12.589,
+          "text": "The code answers the first question."
+        },
+        {
+          "start": 12.645,
+          "end": 14.943,
+          "text": "The issue answers the second."
+        },
+        {
+          "start": 15.026,
+          "end": 19.173,
+          "text": "After you provide it, ask the assistant\nto compare the two and check that it"
+        },
+        {
+          "start": 19.228,
+          "end": 21.565,
+          "text": "keeps both claims tied to their sources."
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "scriptSha256": "856829eaf3f8a9ba504689d568bb6518e1c51ab58cae95147948a67eaeab981b",
+      "durationFrames": 540,
+      "cues": [
+        {
+          "start": 0.463,
+          "end": 4.533,
+          "text": "Run the same question in two fresh\nsessions on the same branch."
+        },
+        {
+          "start": 4.616,
+          "end": 7.08,
+          "text": "In the first attach the issue alone."
+        },
+        {
+          "start": 7.163,
+          "end": 9.733,
+          "text": "In the second add the validator and\ntests."
+        },
+        {
+          "start": 10.423,
+          "end": 13.469,
+          "text": "Compare their claims about the cause and\ncoverage."
+        },
+        {
+          "start": 13.552,
+          "end": 16.763,
+          "text": "Look for a real source line and a named\ntest."
+        },
+        {
+          "start": 16.846,
+          "end": 20.502,
+          "text": "Write one sentence about which\nattachment made each claim checkable."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,364 @@
+{
+  "id": "B06",
+  "title": "Prompt Engineering for Coding Tasks",
+  "subtitle": "Turn a request into a verifiable brief",
+  "scenes": [
+    {
+      "id": "vague",
+      "kind": "editor",
+      "eyebrow": "A VAGUE REQUEST",
+      "title": "See what is missing",
+      "body": "Clear instructions help bound the work and reduce guesswork.",
+      "narration": "Imagine the whole prompt is “Fix validation.” Which input fails? What result should change? Which files are in scope? If those questions are unanswered, an agent can propose a broad refactor that sounds reasonable. Start in Copilot Plan and use the displayed prompt as a baseline. Then make each missing part explicit.",
+      "code": "Fix validation.",
+      "result": "Missing: failing behavior, scope, and evidence.",
+      "focus": "The vague prompt omits a failing example and a boundary",
+      "action": "Enter the vague request and identify its missing details.",
+      "durationFrames": 513,
+      "duration": 21.375,
+      "cues": [
+        {
+          "start": 0.418,
+          "end": 3.218,
+          "text": "Imagine the whole prompt is “Fix\nvalidation.”"
+        },
+        {
+          "start": 3.268,
+          "end": 4.793,
+          "text": "Which input fails?"
+        },
+        {
+          "start": 4.843,
+          "end": 6.443,
+          "text": "What result should change?"
+        },
+        {
+          "start": 6.493,
+          "end": 8.243,
+          "text": "Which files are in scope?"
+        },
+        {
+          "start": 8.318,
+          "end": 12.043,
+          "text": "If those questions are unanswered, an\nagent can propose a broad refactor that"
+        },
+        {
+          "start": 12.093,
+          "end": 13.035,
+          "text": "sounds reasonable."
+        },
+        {
+          "start": 13.69,
+          "end": 18.115,
+          "text": "Start in Copilot Plan and use the\ndisplayed prompt as a baseline."
+        },
+        {
+          "start": 18.19,
+          "end": 20.273,
+          "text": "Then make each missing part explicit."
+        }
+      ]
+    },
+    {
+      "id": "goal",
+      "kind": "github",
+      "eyebrow": "GOAL AND EVIDENCE",
+      "title": "Describe the observed defect",
+      "body": "Tie the question to the issue and the smallest relevant code.",
+      "narration": "We can replace the broad request with a precise observation. The order validator currently returns true for zero, but the issue requires false. Attach the validator and the tests from the training checkout. Ask Copilot to identify the condition responsible. Now you can open the named file and check the cause yourself.",
+      "code": "Issue: zero passes but must be rejected.\nContext: validator and existing test file.\nFind the condition responsible.",
+      "result": "The comparison allows equality with zero.",
+      "focus": "The report gives both the observed and required response",
+      "action": "Add the zero input and attach the source and tests.",
+      "durationFrames": 503,
+      "duration": 20.958333333333332,
+      "cues": [
+        {
+          "start": 0.393,
+          "end": 4.118,
+          "text": "We can replace the broad request with a\nprecise observation."
+        },
+        {
+          "start": 4.168,
+          "end": 7.243,
+          "text": "The order validator currently returns\ntrue for zero,"
+        },
+        {
+          "start": 7.293,
+          "end": 8.832,
+          "text": "but the issue requires false."
+        },
+        {
+          "start": 9.466,
+          "end": 12.991,
+          "text": "Attach the validator and the tests from\nthe training checkout."
+        },
+        {
+          "start": 13.066,
+          "end": 16.541,
+          "text": "Ask Copilot to identify the condition\nresponsible."
+        },
+        {
+          "start": 16.616,
+          "end": 19.868,
+          "text": "Now you can open the named file and\ncheck the cause yourself."
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "kind": "editor",
+      "eyebrow": "SCOPE AND ACCEPTANCE",
+      "title": "State what may change",
+      "body": "Use observable inputs and preserve the public interface.",
+      "narration": "State what the change is allowed to touch. Keep the existing function signature, edit only the validator and the relevant test file, and preserve the behavior for one, five, and negative one. That gives the agent a boundary and a small set of examples. If it proposes to rename the function, you already know which requirement that violates.",
+      "code": "Keep the existing signature.\nLimit edits to the validator and its tests.\nAccept: 1, 5. Reject: 0, -1.",
+      "result": "The acceptance criteria are testable.",
+      "focus": "The signature and four cases constrain the plan",
+      "action": "Add the permitted files and acceptance cases to the prompt.",
+      "durationFrames": 523,
+      "duration": 21.791666666666668,
+      "cues": [
+        {
+          "start": 0.439,
+          "end": 2.964,
+          "text": "State what the change is allowed to\ntouch."
+        },
+        {
+          "start": 3.039,
+          "end": 7.239,
+          "text": "Keep the existing function signature,\nedit only the validator and the relevant"
+        },
+        {
+          "start": 7.289,
+          "end": 11.581,
+          "text": "test file, and preserve the behavior for\none, five, and negative one."
+        },
+        {
+          "start": 12.174,
+          "end": 15.874,
+          "text": "That gives the agent a boundary and a\nsmall set of examples."
+        },
+        {
+          "start": 15.949,
+          "end": 19.974,
+          "text": "If it proposes to rename the function,\nyou already know which requirement that"
+        },
+        {
+          "start": 20.024,
+          "end": 20.72,
+          "text": "violates."
+        }
+      ]
+    },
+    {
+      "id": "output",
+      "kind": "editor",
+      "eyebrow": "REQUEST A DELIVERABLE",
+      "title": "Ask for a plan and proof",
+      "body": "An answer format can make the result easier to review.",
+      "narration": "Request the output you can review before any edit. Ask for the cause, the files it would touch, the smallest proposed change, and one test that should expose the bug. Have it ask about missing requirements and stop after the plan. Then look for the line that explains why a test for zero should fail on the original code.",
+      "code": "Return: cause, changed files, planned test.\nAsk if the relevant requirement is missing.\nWait for approval before editing.",
+      "result": "Review the plan before authorizing changes.",
+      "focus": "The response names the cause, edit and regression",
+      "action": "Ask for a plan and name the expected deliverable.",
+      "durationFrames": 475,
+      "duration": 19.791666666666668,
+      "cues": [
+        {
+          "start": 0.414,
+          "end": 3.389,
+          "text": "Request the output you can review before\nany edit."
+        },
+        {
+          "start": 3.464,
+          "end": 7.744,
+          "text": "Ask for the cause, the files it would\ntouch, the smallest proposed change,"
+        },
+        {
+          "start": 7.794,
+          "end": 9.744,
+          "text": "and one test that should expose the bug."
+        },
+        {
+          "start": 10.368,
+          "end": 14.168,
+          "text": "Have it ask about missing requirements\nand stop after the plan."
+        },
+        {
+          "start": 14.243,
+          "end": 17.693,
+          "text": "Then look for the line that explains why\na test for zero should fail on the"
+        },
+        {
+          "start": 17.743,
+          "end": 18.701,
+          "text": "original code."
+        }
+      ]
+    },
+    {
+      "id": "iterate",
+      "kind": "decision",
+      "eyebrow": "STEER BASED ON THE RESPONSE",
+      "title": "Correct a concrete mismatch",
+      "body": "Point to the requirement the response missed.",
+      "narration": "Suppose the first plan introduces a new parameter. Tell Copilot which part conflicts with the issue. “Preserve the existing signature. Revise only the comparison and the zero regression.” Check the updated plan for both points. A precise correction lets you tell whether your next message fixed the misunderstanding.",
+      "code": "The plan changes the public signature.\nPreserve the signature.\nRevise only the proposed comparison and test.",
+      "result": "Check the updated plan against the issue.",
+      "focus": "A revised plan preserves the public signature",
+      "action": "Point to the incorrect change and request a specific revision.",
+      "durationFrames": 491,
+      "duration": 20.458333333333332,
+      "cues": [
+        {
+          "start": 0.439,
+          "end": 3.664,
+          "text": "Suppose the first plan introduces a new\nparameter."
+        },
+        {
+          "start": 3.739,
+          "end": 6.614,
+          "text": "Tell Copilot which part conflicts with\nthe issue."
+        },
+        {
+          "start": 6.664,
+          "end": 8.405,
+          "text": "“Preserve the existing signature."
+        },
+        {
+          "start": 9.008,
+          "end": 12.283,
+          "text": "Revise only the comparison and the zero\nregression.”"
+        },
+        {
+          "start": 12.358,
+          "end": 14.958,
+          "text": "Check the updated plan for both points."
+        },
+        {
+          "start": 15.033,
+          "end": 18.333,
+          "text": "A precise correction lets you tell\nwhether your next message fixed the"
+        },
+        {
+          "start": 18.383,
+          "end": 19.389,
+          "text": "misunderstanding."
+        }
+      ]
+    },
+    {
+      "id": "criteria",
+      "kind": "terminal",
+      "eyebrow": "MAKE IT CHECKABLE",
+      "title": "Write the verification line",
+      "body": "State what needs to fail and what needs to pass.",
+      "narration": "Add a line about evidence. Run the same test command in the approved runner before and after the fix. Before the fix, the zero assertion should fail for the reported reason. After it, the new and existing tests should pass. Ask for the observed output and check it against the requirement. That makes the task's definition of done visible.",
+      "code": "Run the same test command before and after.\nBefore: the zero test fails for the defect.\nAfter: the zero and existing tests pass.",
+      "result": "Ask for observed output and specific errors.",
+      "focus": "Red and green runs provide the requested proof",
+      "action": "Ask for the same approved test command on both revisions.",
+      "durationFrames": 510,
+      "duration": 21.25,
+      "cues": [
+        {
+          "start": 0.393,
+          "end": 2.318,
+          "text": "Add a line about evidence."
+        },
+        {
+          "start": 2.393,
+          "end": 5.593,
+          "text": "Run the same test command in the\napproved runner before and after the"
+        },
+        {
+          "start": 5.668,
+          "end": 6.568,
+          "text": "fix."
+        },
+        {
+          "start": 6.643,
+          "end": 10.303,
+          "text": "Before the fix, the zero assertion\nshould fail for the reported reason."
+        },
+        {
+          "start": 10.927,
+          "end": 13.937,
+          "text": "After it, the new and existing tests\nshould pass."
+        },
+        {
+          "start": 14.012,
+          "end": 17.587,
+          "text": "Ask for the observed output and check it\nagainst the requirement."
+        },
+        {
+          "start": 17.662,
+          "end": 20.18,
+          "text": "That makes the task's definition of done\nvisible."
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "kind": "decision",
+      "eyebrow": "YOUR TURN",
+      "title": "Build your own brief",
+      "body": "Save a short prompt you can adapt to a real task.",
+      "narration": "Pick another synthetic issue and write four short lines. Say what happens, what may change, what the assistant should produce, and how you will verify it. Read them to a teammate without any other context. If they can describe the expected change and the test, your brief is ready to use.",
+      "code": "Goal + source material\nScope + acceptance criteria\nRequested output and verification evidence",
+      "result": "A clear brief ready for the next training task.",
+      "focus": "The final brief contains goal, scope, output and evidence",
+      "action": "Rewrite one training request as a four-part brief.",
+      "durationFrames": 455,
+      "duration": 18.958333333333332,
+      "cues": [
+        {
+          "start": 0.368,
+          "end": 3.893,
+          "text": "Pick another synthetic issue and write\nfour short lines."
+        },
+        {
+          "start": 3.993,
+          "end": 7.648,
+          "text": "Say what happens, what may change, what\nthe assistant should produce,"
+        },
+        {
+          "start": 7.848,
+          "end": 9.176,
+          "text": "and how you will verify it."
+        },
+        {
+          "start": 9.815,
+          "end": 12.89,
+          "text": "Read them to a teammate without any\nother context."
+        },
+        {
+          "start": 12.965,
+          "end": 15.89,
+          "text": "If they can describe the expected change\nand the test,"
+        },
+        {
+          "start": 15.94,
+          "end": 17.44,
+          "text": "your brief is ready to use."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "label": "VS Code AI best practices",
+      "url": "https://code.visualstudio.com/docs/agents/best-practices"
+    },
+    {
+      "label": "GitHub Copilot prompt engineering",
+      "url": "https://docs.github.com/en/copilot/concepts/prompting-and-context/prompt-engineering"
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "durationFrames": 3470,
+  "voiceBuild": "206f2a65b286014a525a527aac0ab71fefa0c73bdaf3a4e34d1e408af670ae36"
+}

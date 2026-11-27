@@ -1,0 +1,294 @@
+{
+  "fps": 24,
+  "voiceBuild": "b49fc75b0131999eb9396ee70ae6ef89cdc192ecd69f69774cb13cba15a425fc",
+  "paceBuild": "e667503f3589a5c4b25087db3b96b0e358f98a3882587505bb45f1eff4ec83ca",
+  "delivery": {
+    "targetWordsPerMinute": 146,
+    "inputWordsPerMinute": 159.79,
+    "tempo": 0.93117402,
+    "outputWordsPerMinute": 146.02
+  },
+  "audioSha256": "8e58da83b94914791b3dbf151c250b8e2281606ecc20b290e9984b9ec09db237",
+  "captionsSha256": "1bc6148663d116842b334bc3f580b372895304972ea23528b3dce1d825060baf",
+  "scenes": [
+    {
+      "id": "map",
+      "scriptSha256": "53b2e3ace5895459f831e4eb0eb6c09220b411b8cc32cbaf380f3fa626e09ff4",
+      "durationFrames": 546,
+      "cues": [
+        {
+          "start": 0.422,
+          "end": 3.912,
+          "text": "An order issue arrives and the team\nneeds three things."
+        },
+        {
+          "start": 4.02,
+          "end": 7.698,
+          "text": "Someone must explain the validator, find\nthe rule in our notes,"
+        },
+        {
+          "start": 7.913,
+          "end": 8.981,
+          "text": "and label the issue."
+        },
+        {
+          "start": 9.639,
+          "end": 14.059,
+          "text": "Those tasks can share the same text, yet\nthe outputs are different."
+        },
+        {
+          "start": 14.166,
+          "end": 16.314,
+          "text": "Start by naming the deliverable."
+        },
+        {
+          "start": 16.394,
+          "end": 20.534,
+          "text": "Once you know what must come back, you\ncan pick a capability and a way to check"
+        },
+        {
+          "start": 20.588,
+          "end": 21.222,
+          "text": "the result."
+        }
+      ]
+    },
+    {
+      "id": "language",
+      "scriptSha256": "766d436ef0058d1ebcc07c57fe0dd72a184030447cf058094d9e3463afbb2607",
+      "durationFrames": 596,
+      "cues": [
+        {
+          "start": 0.418,
+          "end": 6.056,
+          "text": "Give Copilot the return line and ask it\nto explain the result for zero and one."
+        },
+        {
+          "start": 6.136,
+          "end": 9.737,
+          "text": "A language model can produce an\nexplanation in ordinary words."
+        },
+        {
+          "start": 10.405,
+          "end": 13.009,
+          "text": "Check those words against the\nexpression."
+        },
+        {
+          "start": 13.09,
+          "end": 15.828,
+          "text": "Both numbers satisfy this condition."
+        },
+        {
+          "start": 15.909,
+          "end": 20.044,
+          "text": "If the answer says zero is rejected,\nyou've found a specific sentence to"
+        },
+        {
+          "start": 20.097,
+          "end": 22.997,
+          "text": "question and a one-line source to point\nto."
+        }
+      ]
+    },
+    {
+      "id": "embeddings",
+      "scriptSha256": "c93bc6aa416e6680d3bbe09271ca8db471b09fae0b6eaf3fe0653bd98a124313",
+      "durationFrames": 622,
+      "cues": [
+        {
+          "start": 0.471,
+          "end": 4.176,
+          "text": "Now imagine the rule lives in one of\nthree training notes."
+        },
+        {
+          "start": 4.257,
+          "end": 8.156,
+          "text": "An embedding model turns the query and\nthe stored notes into vectors."
+        },
+        {
+          "start": 8.81,
+          "end": 12.623,
+          "text": "The system compares those\nrepresentations and ranks possible"
+        },
+        {
+          "start": 12.676,
+          "end": 13.885,
+          "text": "matches."
+        },
+        {
+          "start": 13.965,
+          "end": 17.053,
+          "text": "A useful first result is the order\nacceptance note."
+        },
+        {
+          "start": 17.712,
+          "end": 19.511,
+          "text": "Open it and read the rule."
+        },
+        {
+          "start": 19.591,
+          "end": 21.82,
+          "text": "Similarity helps you find a source."
+        },
+        {
+          "start": 21.873,
+          "end": 24.392,
+          "text": "The source itself tells you what the\nrule says."
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "scriptSha256": "069154d52218707d6807d4ce0f1b1abd9210168ed5b001eb7fdc3d1e7971f831",
+      "durationFrames": 618,
+      "cues": [
+        {
+          "start": 0.467,
+          "end": 5.332,
+          "text": "For the issue label, our outputs are\ndefect, feature, or question."
+        },
+        {
+          "start": 5.386,
+          "end": 9.197,
+          "text": "The ticket reports behavior that already\ncontradicts a documented rule."
+        },
+        {
+          "start": 9.867,
+          "end": 12.552,
+          "text": "That gives us a reason to choose defect."
+        },
+        {
+          "start": 12.632,
+          "end": 17.17,
+          "text": "A classifier can propose the label\ndirectly, and a language model can also"
+        },
+        {
+          "start": 17.223,
+          "end": 19.091,
+          "text": "choose from a short allowed list."
+        },
+        {
+          "start": 19.761,
+          "end": 23.6,
+          "text": "Check which wording in the issue\nsupports the decision before applying"
+        },
+        {
+          "start": 23.681,
+          "end": 23.921,
+          "text": "it."
+        }
+      ]
+    },
+    {
+      "id": "media",
+      "scriptSha256": "bc53098bc153b010b494c1699f6fcedee7efd914c89ff4cc7b48ad26d272471b",
+      "durationFrames": 570,
+      "cues": [
+        {
+          "start": 0.445,
+          "end": 3.129,
+          "text": "Think of the materials for a training\nlesson."
+        },
+        {
+          "start": 3.21,
+          "end": 7.425,
+          "text": "A screenshot can go into a vision-\ncapable model for a description."
+        },
+        {
+          "start": 7.506,
+          "end": 10.813,
+          "text": "A written brief can go into an image\nmodel for an illustration."
+        },
+        {
+          "start": 11.476,
+          "end": 14.859,
+          "text": "Audio can go into a transcription system\nfor text."
+        },
+        {
+          "start": 14.912,
+          "end": 18.644,
+          "text": "Check a screenshot description against\nthe visible controls."
+        },
+        {
+          "start": 18.725,
+          "end": 22.207,
+          "text": "Check a transcript against an important\nsentence in the recording."
+        }
+      ]
+    },
+    {
+      "id": "tool",
+      "scriptSha256": "bd734e553b2bf04fd1c29949684538507a5140978518f1c03623edbe144e2b23",
+      "durationFrames": 568,
+      "cues": [
+        {
+          "start": 0.471,
+          "end": 2.834,
+          "text": "Some tools combine these steps."
+        },
+        {
+          "start": 2.915,
+          "end": 7.855,
+          "text": "A question about zero quantities might\nfirst retrieve the most relevant note."
+        },
+        {
+          "start": 7.908,
+          "end": 11.088,
+          "text": "The language model then uses that note\nto draft an answer."
+        },
+        {
+          "start": 11.746,
+          "end": 16.015,
+          "text": "When you see the final paragraph, trace\nit back through the citation."
+        },
+        {
+          "start": 16.096,
+          "end": 20.848,
+          "text": "If retrieval found an outdated rule, the\nanswer can sound convincing and still"
+        },
+        {
+          "start": 20.902,
+          "end": 22.184,
+          "text": "use the wrong evidence."
+        }
+      ]
+    },
+    {
+      "id": "route",
+      "scriptSha256": "daef05e9845ff40fc48cab97d17263d99633b8259d308b53d74b0894a4d584dd",
+      "durationFrames": 553,
+      "cues": [
+        {
+          "start": 0.422,
+          "end": 4.449,
+          "text": "Choose a task from the training\nrepository and finish this sentence."
+        },
+        {
+          "start": 4.53,
+          "end": 8.53,
+          "text": "“I need this input turned into this\noutput, and I will check it by doing"
+        },
+        {
+          "start": 8.584,
+          "end": 8.958,
+          "text": "this.”"
+        },
+        {
+          "start": 9.628,
+          "end": 14.487,
+          "text": "For example, use a language model to\nexplain the validator and verify the"
+        },
+        {
+          "start": 14.541,
+          "end": 17.034,
+          "text": "explanation against the code and a test."
+        },
+        {
+          "start": 17.738,
+          "end": 21.12,
+          "text": "Once that check is clear, you're ready\nto compare options."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+1
+00:00:00,340 --> 00:00:03,787
+We want Copilot to find why a zero
+quantity passes.
+
+2
+00:00:03,967 --> 00:00:08,723
+We start with a plain question and no
+explicit reference to the issue or the
+
+3
+00:00:08,723 --> 00:00:09,662
+relevant files.
+
+4
+00:00:09,842 --> 00:00:14,566
+Depending on the session, Copilot may have
+access to some editor context.
+
+5
+00:00:14,746 --> 00:00:18,873
+We can make the evidence easier to inspect
+by choosing it ourselves.
+
+6
+00:00:19,053 --> 00:00:21,553
+Watch which sources we add to the request.
+
+7
+00:00:23,007 --> 00:00:25,092
+Our issue tells us what should happen.
+
+8
+00:00:25,272 --> 00:00:27,464
+The validator shows what does happen.
+
+9
+00:00:27,644 --> 00:00:31,061
+The test file shows which inputs the suite
+already covers.
+
+10
+00:00:31,241 --> 00:00:33,921
+Those three sources are enough for this
+task.
+
+11
+00:00:34,101 --> 00:00:37,920
+We leave unrelated files, keys, and logs
+out of the chat.
+
+12
+00:00:38,100 --> 00:00:42,894
+In your organization, confirm that the
+sources you attach are approved for this
+
+13
+00:00:42,894 --> 00:00:43,986
+model and service.
+
+14
+00:00:45,465 --> 00:00:50,638
+In Copilot Chat, use the context picker or
+select the named files directly.
+
+15
+00:00:50,818 --> 00:00:55,135
+Attach the short issue text or link
+through a method available in your
+
+16
+00:00:55,135 --> 00:00:56,430
+approved environment.
+
+17
+00:00:56,610 --> 00:01:00,546
+Before submitting, verify the file names
+displayed in the chat.
+
+18
+00:01:00,726 --> 00:01:06,094
+Ask Copilot to separate what the code does
+from what the issue requires and to point
+
+19
+00:01:06,094 --> 00:01:07,819
+to the relevant comparison.
+
+20
+00:01:09,298 --> 00:01:12,661
+The answer points to the greater than or
+equal comparison.
+
+21
+00:01:12,841 --> 00:01:16,915
+Open the file and check that it really
+contains that comparison.
+
+22
+00:01:17,095 --> 00:01:20,627
+Then read the test file and confirm that
+zero is missing.
+
+23
+00:01:20,807 --> 00:01:25,542
+Copilot can identify a likely story that
+still needs verification.
+
+24
+00:01:25,722 --> 00:01:30,087
+File references help you trace the
+reasoning, and the source remains the
+
+25
+00:01:30,087 --> 00:01:32,208
+authority for the current behavior.
+
+26
+00:01:33,673 --> 00:01:38,726
+If an answer mentions a different version
+of the validator, check the branch and the
+
+27
+00:01:38,726 --> 00:01:40,531
+attached file before retrying.
+
+28
+00:01:40,711 --> 00:01:44,688
+Start a fresh chat when an old discussion
+keeps steering the response.
+
+29
+00:01:44,868 --> 00:01:49,714
+In the new session, attach the current
+exact code and say which version of the
+
+30
+00:01:49,714 --> 00:01:50,583
+issue applies.
+
+31
+00:01:50,763 --> 00:01:54,234
+Keep the scope small to make the response
+easier to verify.
+
+32
+00:01:55,715 --> 00:02:01,453
+Suppose Copilot identifies why zero passes
+but cannot verify the business rule.
+
+33
+00:02:01,633 --> 00:02:06,241
+Ask which source it still needs and
+provide the actual issue text through an
+
+34
+00:02:06,241 --> 00:02:07,212
+approved method.
+
+35
+00:02:07,392 --> 00:02:10,838
+We then ask it to show where the code and
+rule disagree.
+
+36
+00:02:11,018 --> 00:02:15,746
+The useful result is a traceable
+explanation supported by both sources,
+
+37
+00:02:15,746 --> 00:02:18,742
+with any remaining assumptions clearly
+named.
+
+38
+00:02:20,215 --> 00:02:23,322
+Ask the same training question in two
+fresh chats.
+
+39
+00:02:23,502 --> 00:02:25,701
+In the first, give the issue only.
+
+40
+00:02:25,881 --> 00:02:29,315
+In the second, include the current
+validator and its tests.
+
+41
+00:02:29,495 --> 00:02:34,509
+Then compare which answer locates the
+actual cause and which admits uncertainty.
+
+42
+00:02:34,689 --> 00:02:38,754
+Keep one piece of evidence from the code
+and one from the test file.
+
+43
+00:02:38,934 --> 00:02:42,890
+That record helps you decide what context
+to supply next time.

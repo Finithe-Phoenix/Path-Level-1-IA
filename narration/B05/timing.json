@@ -1,0 +1,284 @@
+{
+  "fps": 24,
+  "voiceBuild": "ab7cd02395623d8b64bdfcefca6752ef6782aa3ae7757abc0bbb982738e2c921",
+  "paceBuild": "c3b63c5f05ce07751c4fb928165e0202d326a8a5e3dc911274a7e1934e5b0a94",
+  "delivery": {
+    "targetWordsPerMinute": 146,
+    "inputWordsPerMinute": 160.04,
+    "tempo": 0.93155939,
+    "outputWordsPerMinute": 145.98
+  },
+  "audioSha256": "a2b0b6b55a9dc56f6249cfd2033c228ee737cad13f16cbfe3b38e751662fec7e",
+  "captionsSha256": "a46b94776ebbce9dfe756e5aee6eb8ceaa428fcd54de3f183dee3c7a1c481753",
+  "scenes": [
+    {
+      "id": "compare",
+      "scriptSha256": "516e9a67cdc5c0a8f88d71bac5f3afeb8edc2c3b4179a15a6729477a44c57f06",
+      "durationFrames": 582,
+      "cues": [
+        {
+          "start": 0.422,
+          "end": 3.401,
+          "text": "Take one request about the order\nvalidator."
+        },
+        {
+          "start": 3.481,
+          "end": 7.909,
+          "text": "If you supply the function, Copilot can\nexplain its comparison."
+        },
+        {
+          "start": 7.99,
+          "end": 12.391,
+          "text": "In an agent session, it may also choose\nan available tool to find the file,"
+        },
+        {
+          "start": 12.472,
+          "end": 15.062,
+          "text": "read it, or validate a proposed change."
+        },
+        {
+          "start": 15.708,
+          "end": 18.821,
+          "text": "Open the training workspace and look at\nthe session."
+        },
+        {
+          "start": 18.875,
+          "end": 22.546,
+          "text": "Can you point to an actual tool event\nand the information it returned?"
+        }
+      ]
+    },
+    {
+      "id": "loop",
+      "scriptSha256": "9ec17be83f4ddd1354d278f358f025dd85020b25dada2e0f6e91db39b1991607",
+      "durationFrames": 533,
+      "cues": [
+        {
+          "start": 0.444,
+          "end": 2.403,
+          "text": "Watch the order of events."
+        },
+        {
+          "start": 2.457,
+          "end": 5.436,
+          "text": "The agent reads that zero should be\nrejected,"
+        },
+        {
+          "start": 5.49,
+          "end": 9.458,
+          "text": "then opens the validator and sees\ngreater than or equal to zero."
+        },
+        {
+          "start": 10.105,
+          "end": 14.425,
+          "text": "That result gives it a reason to inspect\nthe tests for a zero case."
+        },
+        {
+          "start": 14.506,
+          "end": 17.726,
+          "text": "Each next step depends on what the tool\nreturns."
+        },
+        {
+          "start": 17.807,
+          "end": 20.652,
+          "text": "Check the event that led the agent to\nits conclusion."
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "scriptSha256": "f35fa88ae4c821e32e3afcf1bdeeb334dc87c4a8dd40c053aa697a91cffb57e1",
+      "durationFrames": 543,
+      "cues": [
+        {
+          "start": 0.422,
+          "end": 3.186,
+          "text": "Give Plan a task with a clear stopping\npoint."
+        },
+        {
+          "start": 3.267,
+          "end": 7.158,
+          "text": "“Find why zero passes and describe one\nregression test."
+        },
+        {
+          "start": 7.212,
+          "end": 10.145,
+          "text": "Preserve the function signature and stop\nafter the plan.”"
+        },
+        {
+          "start": 10.802,
+          "end": 14.318,
+          "text": "Review the named files and the reason\nfor the test."
+        },
+        {
+          "start": 14.398,
+          "end": 18.236,
+          "text": "If the plan adds a dependency or changes\nother behavior,"
+        },
+        {
+          "start": 18.317,
+          "end": 20.801,
+          "text": "narrow it before moving on to\nimplementation."
+        }
+      ]
+    },
+    {
+      "id": "permissions",
+      "scriptSha256": "ce12ae0ad4eaaf995589ae6ba783ce7d64ba724dc55dfb9470e4e1baa4a46a0b",
+      "durationFrames": 618,
+      "cues": [
+        {
+          "start": 0.444,
+          "end": 5.731,
+          "text": "If the session asks to run tests, read\nthe command and the working directory."
+        },
+        {
+          "start": 5.785,
+          "end": 9.871,
+          "text": "Our example uses Python’s unittest\ndiscovery in the training checkout."
+        },
+        {
+          "start": 10.517,
+          "end": 12.744,
+          "text": "That matches the agreed check."
+        },
+        {
+          "start": 12.825,
+          "end": 16.77,
+          "text": "Verify where the process will actually\nrun and use the approved runner for this"
+        },
+        {
+          "start": 16.823,
+          "end": 17.763,
+          "text": "lab."
+        },
+        {
+          "start": 17.843,
+          "end": 21.815,
+          "text": "If a command targets a different project\nor publishes changes,"
+        },
+        {
+          "start": 21.896,
+          "end": 23.928,
+          "text": "stop and inspect what prompted it."
+        }
+      ]
+    },
+    {
+      "id": "result",
+      "scriptSha256": "af05c82642ca3f54a8f814cff568565a38c317a07a76707eece4805bdf4a8aed",
+      "durationFrames": 525,
+      "cues": [
+        {
+          "start": 0.422,
+          "end": 4.528,
+          "text": "Our run reports that the zero test\nfailed because true was returned where"
+        },
+        {
+          "start": 4.608,
+          "end": 6.299,
+          "text": "false was expected."
+        },
+        {
+          "start": 6.38,
+          "end": 7.969,
+          "text": "Find that line in the output."
+        },
+        {
+          "start": 8.629,
+          "end": 12.922,
+          "text": "A chat message that says “tested” does\nnot tell you which case ran."
+        },
+        {
+          "start": 12.976,
+          "end": 16.384,
+          "text": "The assertion helps you check the\nproposed diagnosis."
+        },
+        {
+          "start": 16.465,
+          "end": 20.092,
+          "text": "Keep the output with the revision so a\nteammate can replay the result."
+        }
+      ]
+    },
+    {
+      "id": "contexts",
+      "scriptSha256": "95d32667c9ee5799732244a7f80a72cd7bdd36c47e301efd5b69b6142afba000",
+      "durationFrames": 626,
+      "cues": [
+        {
+          "start": 0.449,
+          "end": 5.328,
+          "text": "In this workplace, Copilot in VS Code is\nthe local entry point."
+        },
+        {
+          "start": 5.408,
+          "end": 9.785,
+          "text": "Claude Code and OpenCode run in the\nmanaged G C P workspace."
+        },
+        {
+          "start": 10.432,
+          "end": 14.243,
+          "text": "Open the approved environment for the\ntool you are using and confirm the"
+        },
+        {
+          "start": 14.296,
+          "end": 15.772,
+          "text": "working folder."
+        },
+        {
+          "start": 15.853,
+          "end": 19.194,
+          "text": "A tool call uses the permissions and\nruntime of its session."
+        },
+        {
+          "start": 19.847,
+          "end": 24.536,
+          "text": "Check those before assuming a local file\nor command is available remotely."
+        }
+      ]
+    },
+    {
+      "id": "stop",
+      "scriptSha256": "166977cab9b8d5695105fb1ac9fedf94147cd78b34eddf2cc49c8d81fbf89d5e",
+      "durationFrames": 568,
+      "cues": [
+        {
+          "start": 0.422,
+          "end": 3.106,
+          "text": "Try a small read-and-report task."
+        },
+        {
+          "start": 3.186,
+          "end": 6.487,
+          "text": "Ask the agent to inspect the validator\nand tests,"
+        },
+        {
+          "start": 6.567,
+          "end": 11.371,
+          "text": "identify the line causing the behavior,\nand stop with the file path and relevant"
+        },
+        {
+          "start": 11.425,
+          "end": 12.069,
+          "text": "evidence."
+        },
+        {
+          "start": 12.739,
+          "end": 15.047,
+          "text": "Review the actual steps it took."
+        },
+        {
+          "start": 15.127,
+          "end": 18.858,
+          "text": "If it starts editing or proposes an\nunrelated command,"
+        },
+        {
+          "start": 18.938,
+          "end": 21.707,
+          "text": "pause and bring the request back to the\nstated goal."
+        }
+      ]
+    }
+  ]
+}

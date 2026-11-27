@@ -1,0 +1,304 @@
+{
+  "fps": 24,
+  "voiceBuild": "8fa2e195814aaf5e1abc7fbc1f08728d7ec2b70182eb6aadaef7f3639ecd5070",
+  "paceBuild": "d5858e6b4bea71dc959d0ca40387f0ab8aa89c22067f87e1fd5e9027c8b39514",
+  "delivery": {
+    "targetWordsPerMinute": 146,
+    "inputWordsPerMinute": 155.47,
+    "tempo": 0.96479494,
+    "outputWordsPerMinute": 145.99
+  },
+  "audioSha256": "d3237a003abc987877a98229121ada8a1eb52451ccc4c85136cb1d4b9369d91c",
+  "captionsSha256": "1002e4ce065d335b7fabf212e412d1e9fd0eeec3a0b959bf239a3d96361e0829",
+  "scenes": [
+    {
+      "id": "start",
+      "scriptSha256": "85fd8dd3f32f49ad38d6055f34a9fffa394c9404a9618ea655e6c3c03f196323",
+      "durationFrames": 542,
+      "cues": [
+        {
+          "start": 0.381,
+          "end": 4.398,
+          "text": "Before asking Copilot to edit, open\nSource Control in the training"
+        },
+        {
+          "start": 4.45,
+          "end": 5.693,
+          "text": "workspace."
+        },
+        {
+          "start": 5.745,
+          "end": 9.73,
+          "text": "The demonstration starts on a disposable\nbranch with a clean working tree."
+        },
+        {
+          "start": 10.376,
+          "end": 14.232,
+          "text": "If you already have edits, note their\nfiles and contents."
+        },
+        {
+          "start": 14.31,
+          "end": 16.409,
+          "text": "That baseline matters later."
+        },
+        {
+          "start": 16.486,
+          "end": 20.088,
+          "text": "You want to recognize your own work\nbefore using a control that can discard"
+        },
+        {
+          "start": 20.114,
+          "end": 20.781,
+          "text": "a change."
+        }
+      ]
+    },
+    {
+      "id": "proposal",
+      "scriptSha256": "8ee599ddf60e0be8561647f43d4074e549e39d0591ea22fdfed7f030079ff460",
+      "durationFrames": 570,
+      "cues": [
+        {
+          "start": 0.455,
+          "end": 2.321,
+          "text": "Look at the proposed patch."
+        },
+        {
+          "start": 2.398,
+          "end": 7.166,
+          "text": "One change replaces greater than or\nequal to zero with greater than zero."
+        },
+        {
+          "start": 7.218,
+          "end": 9.73,
+          "text": "The new assertion checks the missing\nboundary case."
+        },
+        {
+          "start": 10.387,
+          "end": 12.926,
+          "text": "A third change touches a notes file."
+        },
+        {
+          "start": 13.004,
+          "end": 16.709,
+          "text": "Read that diff and ask which requirement\nit satisfies."
+        },
+        {
+          "start": 16.787,
+          "end": 21.011,
+          "text": "In this exercise it is unrelated, so we\ncan remove it while keeping the two"
+        },
+        {
+          "start": 21.063,
+          "end": 21.986,
+          "text": "useful edits."
+        }
+      ]
+    },
+    {
+      "id": "prove",
+      "scriptSha256": "d0c9174af6e49c28a3a594195192ef8f9c9652fe639445a34c643547ffaffbd7",
+      "durationFrames": 550,
+      "cues": [
+        {
+          "start": 0.407,
+          "end": 3.335,
+          "text": "Review the runner output linked to the\nexercise."
+        },
+        {
+          "start": 3.387,
+          "end": 6.989,
+          "text": "Before the source edit, the zero\nassertion failed for the expected"
+        },
+        {
+          "start": 7.041,
+          "end": 7.974,
+          "text": "reason."
+        },
+        {
+          "start": 8.051,
+          "end": 11.171,
+          "text": "After the edit, it passes with three\nearlier cases."
+        },
+        {
+          "start": 11.807,
+          "end": 15.408,
+          "text": "Keep both outputs visible while\nevaluating the patch."
+        },
+        {
+          "start": 15.46,
+          "end": 19.425,
+          "text": "They help explain why the validator and\ntest edits belong together and the"
+        },
+        {
+          "start": 19.477,
+          "end": 21.129,
+          "text": "unrelated note does not."
+        }
+      ]
+    },
+    {
+      "id": "undo",
+      "scriptSha256": "b31be3b0faf236b7c8f675cc5328d9c8e59e6fea860d194a7ffb6a088cd00f29",
+      "durationFrames": 542,
+      "cues": [
+        {
+          "start": 0.407,
+          "end": 2.947,
+          "text": "Open the notes diff in Source Control."
+        },
+        {
+          "start": 3.024,
+          "end": 8.159,
+          "text": "If the file contains only the unwanted\nagent edit, discard that file's change."
+        },
+        {
+          "start": 8.796,
+          "end": 13.33,
+          "text": "If it also contains work you need, use a\nnarrower edit or revert the confirmed"
+        },
+        {
+          "start": 13.382,
+          "end": 14.289,
+          "text": "hunk."
+        },
+        {
+          "start": 14.367,
+          "end": 16.128,
+          "text": "Read the diff again after the action."
+        },
+        {
+          "start": 16.749,
+          "end": 20.79,
+          "text": "The validator and the added test should\nstill be in the changed-file list."
+        }
+      ]
+    },
+    {
+      "id": "recheck",
+      "scriptSha256": "f4e218589b711343b3b52d55c7c34ed4b6e65f7a73e38e73b3538cfe80e20c98",
+      "durationFrames": 570,
+      "cues": [
+        {
+          "start": 0.407,
+          "end": 2.454,
+          "text": "Check Source Control again."
+        },
+        {
+          "start": 2.532,
+          "end": 7.585,
+          "text": "Confirm the validator and test are the\nonly changes expected for this exercise,"
+        },
+        {
+          "start": 7.637,
+          "end": 10.194,
+          "text": "then rerun the suite in the approved\nenvironment."
+        },
+        {
+          "start": 10.854,
+          "end": 12.746,
+          "text": "All four tests should pass."
+        },
+        {
+          "start": 12.823,
+          "end": 17.28,
+          "text": "If the regression disappears from the\nrun, inspect the test diff again."
+        },
+        {
+          "start": 17.358,
+          "end": 21.297,
+          "text": "Verifying the result after undo is what\ntells you that the useful changes"
+        },
+        {
+          "start": 21.349,
+          "end": 21.964,
+          "text": "survived."
+        }
+      ]
+    },
+    {
+      "id": "checkpoint",
+      "scriptSha256": "12d75ff214406704f4e9b71043367aae155bed9864402ddd162dddc76983e12d",
+      "durationFrames": 512,
+      "cues": [
+        {
+          "start": 0.403,
+          "end": 3.383,
+          "text": "When one hunk is wrong, reverse that\nhunk."
+        },
+        {
+          "start": 3.461,
+          "end": 6.415,
+          "text": "If a whole file contains just the\nunwanted edit,"
+        },
+        {
+          "start": 6.467,
+          "end": 8.469,
+          "text": "a file-level discard may be enough."
+        },
+        {
+          "start": 9.106,
+          "end": 13.044,
+          "text": "For a broader session checkpoint, read\nwhich changes it will affect before"
+        },
+        {
+          "start": 13.096,
+          "end": 14.314,
+          "text": "using it."
+        },
+        {
+          "start": 14.366,
+          "end": 18.382,
+          "text": "The choice depends on the diff you\ninspected and any unrelated work that"
+        },
+        {
+          "start": 18.434,
+          "end": 19.577,
+          "text": "must stay in place."
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "scriptSha256": "4c8735394927931b617af033b89b349b33091305f52cd860c96035d0fd0494a7",
+      "durationFrames": 551,
+      "cues": [
+        {
+          "start": 0.455,
+          "end": 2.969,
+          "text": "Finish by explaining the final patch."
+        },
+        {
+          "start": 3.072,
+          "end": 4.912,
+          "text": "Zero is now rejected."
+        },
+        {
+          "start": 4.964,
+          "end": 7.011,
+          "text": "The signature stays the same."
+        },
+        {
+          "start": 7.063,
+          "end": 10.68,
+          "text": "The new test proves the boundary, and\nthe original cases still pass."
+        },
+        {
+          "start": 11.331,
+          "end": 15.632,
+          "text": "Name the unrelated edit you removed and\nshow the remaining diff."
+        },
+        {
+          "start": 15.71,
+          "end": 19.701,
+          "text": "That gives your teammate both the change\nthey need to review and the evidence you"
+        },
+        {
+          "start": 19.752,
+          "end": 21.069,
+          "text": "checked after recovery."
+        }
+      ]
+    }
+  ]
+}

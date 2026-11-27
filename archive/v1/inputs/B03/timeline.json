@@ -1,0 +1,116 @@
+{
+  "id": "B03",
+  "title": "OpenAI, Anthropic, and Microsoft Models",
+  "subtitle": "A catalog snapshot for November 26, 2026",
+  "scenes": [
+    {
+      "id": "layers",
+      "kind": "diagram",
+      "eyebrow": "THREE LAYERS",
+      "title": "Separate model and tool",
+      "body": "A maker, a distribution platform, and a client play different roles.",
+      "narration": "The same model can appear in a vendor catalog and in products from other companies. We will look at three levels. The company develops a model, a platform makes it available, and an application exposes it to the user. The examples on screen were checked on November twenty sixth, twenty twenty six. Your workplace settings determine what you can actually choose.",
+      "code": "Maker → model family and version\nPlatform → deployment or service\nClient → model picker and workflow",
+      "result": "Example: a Claude model can appear in Copilot.",
+      "durationFrames": 575,
+      "duration": 23.958333333333332
+    },
+    {
+      "id": "openai",
+      "kind": "diagram",
+      "eyebrow": "OPENAI  ·  NOV 26, 2026",
+      "title": "Read the OpenAI catalog",
+      "body": "Use vendor categories to identify candidate models.",
+      "narration": "The OpenAI API catalog describes GPT six point two Sol as a starting point for everyday coding and agent work. Astra is an option for more demanding reasoning and code. The catalog also lists models for specialized tasks such as image generation, audio, and transcription. Confirm the endpoint and current status if you need details. A catalog entry alone gives no guarantee for your editor.",
+      "code": "GPT-6.2 Sol   → everyday coding and agents\nGPT-6.2 Astra → demanding reasoning and code\nSeparate entries for image, voice, transcription",
+      "result": "Examples from the OpenAI API catalog.",
+      "durationFrames": 717,
+      "duration": 29.875
+    },
+    {
+      "id": "claude",
+      "kind": "diagram",
+      "eyebrow": "ANTHROPIC  ·  NOV 26, 2026",
+      "title": "Read the Claude catalog",
+      "body": "Family names describe different tradeoffs.",
+      "narration": "Anthropic's catalog groups several current Claude models. Haiku emphasizes latency and price. Sonnet balances speed and capability for everyday work. Opus handles complex, longer tasks. Fable is positioned for high capability and long agent runs. In Claude Code, provider and managed settings matter. Use the model selector to see what your corporate remote session offers.",
+      "code": "Haiku 5.5 → lower latency and cost\nSonnet 5.5 → balanced everyday work\nOpus 5.5 → complex tasks\nFable 5.2 → demanding, long agent work",
+      "result": "Claude Code aliases can resolve by provider.",
+      "durationFrames": 661,
+      "duration": 27.541666666666668
+    },
+    {
+      "id": "microsoft",
+      "kind": "diagram",
+      "eyebrow": "MICROSOFT  ·  NOV 26, 2026",
+      "title": "Read Microsoft and Foundry",
+      "body": "Foundry lists models from Microsoft and other makers.",
+      "narration": "Microsoft develops families such as MAI and Phi. MAI Code two and Code two Flash are examples focused on coding. Microsoft Foundry is a deployment and catalog surface with models from multiple makers. Open the publisher field to see who developed a model. Also check the deployment and regional details when they matter to your organization's configuration.",
+      "code": "Microsoft-made examples: MAI, Phi\nCoding examples: MAI Code 2 and Code 2 Flash\nFoundry catalog: Microsoft + other publishers",
+      "result": "Read the publisher on the model card.",
+      "durationFrames": 646,
+      "duration": 26.916666666666668
+    },
+    {
+      "id": "picker",
+      "kind": "editor",
+      "eyebrow": "WORKPLACE AVAILABILITY",
+      "title": "Check the installed client",
+      "body": "Use the Copilot picker to confirm the options available to you.",
+      "narration": "GitHub Copilot supports model options from several providers. The actual list you see in VS Code depends on your client version, plan, and organization settings. Claude Code and OpenCode run in the approved remote workspace in this course. Their model options depend on the configured provider. A model appearing in one catalog does not establish access in another tool.",
+      "code": "VS Code → Copilot model selector\nRemote → Claude Code / OpenCode selector\nCheck the managed account and provider",
+      "result": "Record the exact model shown in your session.",
+      "durationFrames": 644,
+      "duration": 26.833333333333332
+    },
+    {
+      "id": "lifecycle",
+      "kind": "diagram",
+      "eyebrow": "MODEL LIFECYCLE",
+      "title": "Read availability and status",
+      "body": "Use the dated catalog and the approved picker together.",
+      "narration": "Look for the release status beside a model name. A preview, general release, or retirement marker tells you something about its lifecycle on that surface. Versions and naming change over time. For a training exercise, choose a model people can access and keep any unavailable model as an example for discussion. Refresh the record when your work account changes.",
+      "code": "Read provider, version, and release status.\nCheck your approved surface for availability.\nDate the exact choice.",
+      "result": "A vendor release date and workplace access can differ.",
+      "durationFrames": 599,
+      "duration": 24.958333333333332
+    },
+    {
+      "id": "record",
+      "kind": "decision",
+      "eyebrow": "YOUR TURN",
+      "title": "Make a dated record",
+      "body": "Keep a short record so model examples can be refreshed.",
+      "narration": "Pick one model you can see in a work tool and find its official documentation. Record the maker, exact name, tool, and the date you checked. Then write the reason that model is a sensible candidate for a small coding task. If you cannot find it in your approved session, treat it as a catalog example and choose a model you can access.",
+      "code": "Maker: from the official catalog\nModel: copy the exact selector label\nSurface: approved VS Code or remote session\nChecked: record today's date",
+      "result": "A dated inventory entry you can refresh.",
+      "durationFrames": 553,
+      "duration": 23.041666666666668
+    }
+  ],
+  "sources": [
+    {
+      "label": "OpenAI Models",
+      "url": "https://developers.openai.com/api/docs/models"
+    },
+    {
+      "label": "Claude Models overview",
+      "url": "https://platform.claude.com/docs/en/models/overview"
+    },
+    {
+      "label": "Microsoft Foundry Microsoft publisher catalog",
+      "url": "https://ai.azure.com/catalog/models?publisher=Microsoft"
+    },
+    {
+      "label": "GitHub Copilot supported models",
+      "url": "https://docs.github.com/en/copilot/reference/ai-models/supported-models"
+    },
+    {
+      "label": "Claude Code model configuration",
+      "url": "https://code.claude.com/docs/en/model-config"
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720
+}

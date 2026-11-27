@@ -1,0 +1,289 @@
+{
+  "fps": 24,
+  "voiceBuild": "82efe50e7d6b752cbdc6782cf06e1e8b6160376774c80573e76376ee2a69bc27",
+  "paceBuild": "f1176f49062487c3f88acaa3a39091d2099800e3c6d57d5faabe93a9251d815f",
+  "delivery": {
+    "targetWordsPerMinute": 146,
+    "inputWordsPerMinute": 159.29,
+    "tempo": 0.93790744,
+    "outputWordsPerMinute": 146.02
+  },
+  "audioSha256": "96e92910d400424d00b9a943e9c1b32ee4bde65a998bb860dab80a9e47f239cd",
+  "captionsSha256": "aa547544d113bc9df08add018576a5ee368f5ab7f7027b2c0a26d11e03c0ba85",
+  "scenes": [
+    {
+      "id": "request",
+      "scriptSha256": "a7675abaf35be2878e90ba5a7010c7d9387f7bca13f1c9f7ed6b79be1d9ec8bc",
+      "durationFrames": 555,
+      "cues": [
+        {
+          "start": 0.464,
+          "end": 3.865,
+          "text": "Suppose you ask, “How does our order\nvalidator work?”"
+        },
+        {
+          "start": 3.918,
+          "end": 7.48,
+          "text": "The name sounds specific to us because\nwe have the repository open."
+        },
+        {
+          "start": 8.183,
+          "end": 9.862,
+          "text": "Look at the request, though."
+        },
+        {
+          "start": 9.942,
+          "end": 13.274,
+          "text": "It contains neither a function nor a\nfile reference."
+        },
+        {
+          "start": 13.328,
+          "end": 16.738,
+          "text": "The assistant might search if this\nsession can read the workspace."
+        },
+        {
+          "start": 17.388,
+          "end": 21.317,
+          "text": "Before trusting the explanation, find\nthe source it actually used."
+        }
+      ]
+    },
+    {
+      "id": "tokens",
+      "scriptSha256": "36efb348e7b79ea0f390618a1ce61ecfb978d423aa58a26b907fad383b704554",
+      "durationFrames": 564,
+      "cues": [
+        {
+          "start": 0.472,
+          "end": 2.072,
+          "text": "Look at the return line."
+        },
+        {
+          "start": 2.152,
+          "end": 5.617,
+          "text": "A model reads pieces of this text called\ntokens."
+        },
+        {
+          "start": 5.697,
+          "end": 9.892,
+          "text": "In this illustration, the space before\nquantity travels with the word,"
+        },
+        {
+          "start": 9.946,
+          "end": 11.778,
+          "text": "and the operator is another piece."
+        },
+        {
+          "start": 12.431,
+          "end": 15.629,
+          "text": "Tokenizers can split the same line\ndifferently."
+        },
+        {
+          "start": 15.709,
+          "end": 19.708,
+          "text": "That matters when you're estimating how\nmuch source, test output,"
+        },
+        {
+          "start": 19.761,
+          "end": 21.93,
+          "text": "and conversation can fit in a request."
+        }
+      ]
+    },
+    {
+      "id": "window",
+      "scriptSha256": "02e40d664df8f278f899cf2341d6d89418eab3224e776703c7d95f643c04857b",
+      "durationFrames": 564,
+      "cues": [
+        {
+          "start": 0.415,
+          "end": 4.013,
+          "text": "Picture the next request after a long\ndebugging chat."
+        },
+        {
+          "start": 4.093,
+          "end": 8.545,
+          "text": "It can include instructions, parts of\nthe conversation, selected files,"
+        },
+        {
+          "start": 8.571,
+          "end": 9.667,
+          "text": "and tool results."
+        },
+        {
+          "start": 10.306,
+          "end": 13.958,
+          "text": "The client chooses what to include\nwithin a finite budget."
+        },
+        {
+          "start": 14.038,
+          "end": 18.443,
+          "text": "If you need the current condition to be\navailable, attach the small source file."
+        },
+        {
+          "start": 19.115,
+          "end": 21.999,
+          "text": "Then check whether the answer points\nback to that file."
+        }
+      ]
+    },
+    {
+      "id": "source",
+      "scriptSha256": "3d46146e5254ae70a09e9e23e4b7004cb79a318d7fcaf3434ac9ca798967111e",
+      "durationFrames": 623,
+      "cues": [
+        {
+          "start": 0.419,
+          "end": 4.177,
+          "text": "Open order quantity dot pie in the\ntraining repository."
+        },
+        {
+          "start": 4.257,
+          "end": 8.439,
+          "text": "Attach it in Copilot chat and ask what\nhappens for zero and one."
+        },
+        {
+          "start": 9.115,
+          "end": 11.274,
+          "text": "Read the return expression with me."
+        },
+        {
+          "start": 11.381,
+          "end": 14.233,
+          "text": "Zero is equal to zero, so it passes."
+        },
+        {
+          "start": 14.286,
+          "end": 16.839,
+          "text": "One is greater than zero, so it passes\ntoo."
+        },
+        {
+          "start": 17.488,
+          "end": 20.447,
+          "text": "The code explains the observed behavior."
+        },
+        {
+          "start": 20.5,
+          "end": 24.102,
+          "text": "We still need the issue to decide\nwhether that behavior is correct."
+        }
+      ]
+    },
+    {
+      "id": "gap",
+      "scriptSha256": "6656115fd37f6cfab118fd64e10c8bf3c8d8710291f1fc1d31163715483e7fce",
+      "durationFrames": 526,
+      "cues": [
+        {
+          "start": 0.446,
+          "end": 1.885,
+          "text": "Add the issue text."
+        },
+        {
+          "start": 1.938,
+          "end": 5.137,
+          "text": "The rule now says an order needs at\nleast one item."
+        },
+        {
+          "start": 5.217,
+          "end": 7.962,
+          "text": "Compare that with the answer we just\ntraced."
+        },
+        {
+          "start": 8.016,
+          "end": 11.737,
+          "text": "The code allows zero because the\ncomparison includes equality."
+        },
+        {
+          "start": 12.364,
+          "end": 15.269,
+          "text": "The issue requires zero to be rejected."
+        },
+        {
+          "start": 15.349,
+          "end": 19.747,
+          "text": "Ask the assistant to cite both sources\nso you can see where each claim came"
+        },
+        {
+          "start": 19.8,
+          "end": 20.114,
+          "text": "from."
+        }
+      ]
+    },
+    {
+      "id": "narrow",
+      "scriptSha256": "3a9b74128d96fb013bbe67404cd378a16eafa3bba1c0580fa1161a672de8ebf7",
+      "durationFrames": 522,
+      "cues": [
+        {
+          "start": 0.419,
+          "end": 4.417,
+          "text": "Try the question twice in two fresh\nchats on the same branch."
+        },
+        {
+          "start": 4.524,
+          "end": 7.056,
+          "text": "First attach the issue and the function."
+        },
+        {
+          "start": 7.136,
+          "end": 10.236,
+          "text": "For the second run, add an unrelated\nrelease note."
+        },
+        {
+          "start": 10.916,
+          "end": 13.848,
+          "text": "Read each answer and locate its\nevidence."
+        },
+        {
+          "start": 13.901,
+          "end": 16.727,
+          "text": "The release note does not explain this\nboundary."
+        },
+        {
+          "start": 16.78,
+          "end": 19.977,
+          "text": "Keep the two sources that let a teammate\ncheck the claim quickly."
+        }
+      ]
+    },
+    {
+      "id": "check",
+      "scriptSha256": "d52db8e2508e4715bfef9ee9da6e2d670dad75051a9ce0cc06031d5553946fe8",
+      "durationFrames": 571,
+      "cues": [
+        {
+          "start": 0.468,
+          "end": 4.466,
+          "text": "Now check the explanation against the\noriginal training code."
+        },
+        {
+          "start": 4.546,
+          "end": 8.234,
+          "text": "In an approved runner, call the function\nfor zero and negative one."
+        },
+        {
+          "start": 8.887,
+          "end": 12.672,
+          "text": "The output shows true for zero and false\nfor negative one."
+        },
+        {
+          "start": 12.752,
+          "end": 15.417,
+          "text": "That agrees with the comparison you\nread."
+        },
+        {
+          "start": 15.497,
+          "end": 19.842,
+          "text": "If the result differs in another run,\ncompare the checkout and confirm which"
+        },
+        {
+          "start": 19.895,
+          "end": 21.866,
+          "text": "version of the function you executed."
+        }
+      ]
+    }
+  ]
+}

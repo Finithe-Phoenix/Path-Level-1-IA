@@ -1,0 +1,722 @@
+[
+  {
+    "id": "B01",
+    "title": "How a Language Model Uses Context",
+    "subtitle": "Tokens, context windows, and evidence",
+    "scenes": [
+      {
+        "id": "request",
+        "kind": "editor",
+        "eyebrow": "THE FIRST REQUEST",
+        "title": "Start with a small question",
+        "body": "The model sees the text supplied to this turn.",
+        "narration": "Imagine you have just opened a training repository and want to know how its order validator works. We ask a short question without attaching any code. A language model can produce a plausible answer based on patterns it has learned, but the question alone does not identify the implementation. Watch how that changes when we supply the exact function we want to understand.",
+        "code": "How does our order validator work?",
+        "result": "The function is missing from this request.\nAttach the implementation to answer."
+      },
+      {
+        "id": "tokens",
+        "kind": "diagram",
+        "eyebrow": "TOKENS",
+        "title": "Text enters as tokens",
+        "body": "A token can represent a word, part of a word, or punctuation.",
+        "narration": "Before the model processes our request, a tokenizer converts text into pieces called tokens. Code, punctuation, spaces, and different languages can split in different ways. The blocks on this screen are a sketch to show the idea. Use the tokenizer or usage readout for the actual model if you need precise counts. A word count is only an estimate.",
+        "code": "Text: return quantity > 0\nPossible pieces, for illustration:\n[return] [ quantity] [ >] [ 0]",
+        "result": "A token count depends on the tokenizer."
+      },
+      {
+        "id": "window",
+        "kind": "diagram",
+        "eyebrow": "CONTEXT WINDOW",
+        "title": "See what can fit",
+        "body": "The context window is a finite token budget for a request.",
+        "narration": "The window holds material such as your prompt, selected code, and conversation history that the product chooses to include. Outputs and other limits also depend on the model and product. On screen, the useful material is the issue and two small files. Attaching a sprawling log might crowd out relevant material or add noise to the answer.",
+        "code": "Request + instructions\nRelevant files + prior messages\nTool results, when available",
+        "result": "Finite context budget\nExact limits vary by model and product."
+      },
+      {
+        "id": "source",
+        "kind": "editor",
+        "eyebrow": "SUPPLY EVIDENCE",
+        "title": "Attach the actual function",
+        "body": "The implementation determines the answer for this repository.",
+        "narration": "Now we attach the small function and ask about two inputs. The comparison checks whether the quantity is at least zero, so both zero and one return true. The function may be wrong for the business rule, even though we can explain precisely what it does. Notice the distinction between observing the code and deciding what the code should do.",
+        "code": "def is_valid_quantity(quantity):\n    return quantity >= 0\n\nWhat happens for zero and one?",
+        "result": "0 returns True because 0 >= 0.\n1 returns True because 1 >= 0."
+      },
+      {
+        "id": "gap",
+        "kind": "decision",
+        "eyebrow": "MISSING INFORMATION",
+        "title": "Ask for the rule",
+        "body": "A grounded code explanation can still leave a business question open.",
+        "narration": "The assistant has identified the current behavior. It still needs the requirement to decide whether zero should pass. The issue says an order must have at least one item. Now we have two distinct pieces of evidence, the code and the rule. A helpful response names the mismatch and asks for clarification when the relevant rule is unavailable.",
+        "code": "Requirement: an order needs at least one item.\nCurrent code allows 0.\nExplain the mismatch using both sources.",
+        "result": "Current: 0 is accepted.\nRequired: 0 is rejected.\nThe comparison is the point to inspect."
+      },
+      {
+        "id": "narrow",
+        "kind": "editor",
+        "eyebrow": "CONTROL THE CONTEXT",
+        "title": "Compare two inputs",
+        "body": "Leave room for the pieces the question actually depends on.",
+        "narration": "Try this on screen. In the first chat, attach just the source function and the issue. In the second, include the same evidence along with several unrelated sample notes. We can inspect which source the answer uses. A larger window allows more material, but our task still benefits from relevant context and a narrow question. Check what each response cites.",
+        "code": "Run A: source + issue.\nRun B: source + issue + unrelated notes.\nSame question: why is 0 accepted?",
+        "result": "The comparison and requirement are the evidence."
+      },
+      {
+        "id": "check",
+        "kind": "terminal",
+        "eyebrow": "YOUR TURN",
+        "title": "Check the boundary",
+        "body": "Run the same check in your approved training environment.",
+        "narration": "Finish by running a small boundary check. Here the original validator returns true for zero and false for negative one. That output confirms what we read in the function. In your own exercise, attach the smallest relevant code sample, ask for a reason tied to a line, and verify the prediction. Keep the test output as the evidence.",
+        "code": "python -B - <<'PY'\nfrom order_quantity import is_valid_quantity\nfor n in (0, -1):\n    print(n, is_valid_quantity(n))\nPY",
+        "result": "0 True\n-1 False"
+      }
+    ],
+    "sources": [
+      {
+        "label": "OpenAI model catalog",
+        "url": "https://developers.openai.com/api/docs/models"
+      },
+      {
+        "label": "VS Code core AI concepts",
+        "url": "https://code.visualstudio.com/docs/agents/concepts/language-models"
+      }
+    ]
+  },
+  {
+    "id": "B02",
+    "title": "The Main Types of AI Models",
+    "subtitle": "Match the task, input, and output",
+    "scenes": [
+      {
+        "id": "map",
+        "kind": "diagram",
+        "eyebrow": "A TASK MAP",
+        "title": "Start with the output",
+        "body": "The deliverable tells you what capability to look for.",
+        "narration": "We have five tasks in this training workspace. Explain a function, find a related note, label a ticket, draw a training image, and turn a recording into text. Each expects a different result. Before looking at brands or version numbers, ask what goes in and what must come out. That simple question prevents a surprising amount of confusion.",
+        "code": "Explain code      → text\nFind similar notes → ranked matches\nLabel a ticket    → category\nCreate an image   → pixels\nTranscribe audio  → text",
+        "result": "Start with the work the model must perform."
+      },
+      {
+        "id": "language",
+        "kind": "editor",
+        "eyebrow": "LANGUAGE GENERATION",
+        "title": "Explain and draft code",
+        "body": "A language model can generate explanations or candidate changes.",
+        "narration": "A language model can read the sample function and generate a plain English explanation. It can also suggest a test or draft a change when you ask. The output is text or code to review. For our validator, we still use the source and tests to check the answer. The generated explanation helps us decide what to inspect next.",
+        "code": "Explain this comparison for 0 and 1:\nreturn quantity >= 0",
+        "result": "0 passes the current comparison.\n1 also passes."
+      },
+      {
+        "id": "embeddings",
+        "kind": "diagram",
+        "eyebrow": "EMBEDDINGS",
+        "title": "Find related notes",
+        "body": "Embeddings represent inputs as vectors for similarity lookup.",
+        "narration": "We can search a small set of synthetic notes for the phrase zero item order. An embedding model makes a numerical vector for each note and for the search phrase. A search system ranks nearby vectors and returns likely matches. Retrieve and read the original note before drawing a conclusion, because similarity only shows what may be related.",
+        "code": "Query: zero item order\nNotes: order rules, release dates, colors\nEmbed query + compare stored note vectors",
+        "result": "Top match: order acceptance rules.\nOpen the original note for evidence."
+      },
+      {
+        "id": "classification",
+        "kind": "decision",
+        "eyebrow": "CLASSIFICATION",
+        "title": "Choose an allowed label",
+        "body": "A classification task has a defined set of outcomes.",
+        "narration": "A training triage queue uses three labels: defect, feature, and question. The input says that zero item orders are accepted, against a documented requirement. The output is the defect label. A dedicated classifier or a general model can perform this task. The important design choice is the label set and how you check it on new examples.",
+        "code": "Allowed: defect | feature | question\nTicket: zero items accepted against the rule.\nReturn one label.",
+        "result": "defect\nCheck the proposed label before applying it."
+      },
+      {
+        "id": "media",
+        "kind": "diagram",
+        "eyebrow": "MEDIA AND MODALITIES",
+        "title": "Follow the input and output",
+        "body": "Image understanding, image creation, and transcription differ.",
+        "narration": "Now look at three media tasks. A vision capable model can describe a synthetic screenshot. An image generator can create a new training illustration. A transcription model turns approved audio into text. Some systems accept several modalities in one model. Check the tool's input and output support for the exact workflow before relying on it.",
+        "code": "Screenshot → description\nText brief → training illustration\nAudio clip → transcript",
+        "result": "Pick capabilities based on the required output."
+      },
+      {
+        "id": "tool",
+        "kind": "diagram",
+        "eyebrow": "SYSTEM DESIGN",
+        "title": "See the parts of a search",
+        "body": "A system can combine several model types to answer one question.",
+        "narration": "One product may combine these capabilities. Our search demo turns a question into an embedding, retrieves a likely document, and passes that document to a language model. The final answer is generated from text supplied by the search step. Trace the steps on screen and check the source link. This is a useful example of several model types working together.",
+        "code": "Question → embedding → related note\nRelated note + question → language model\nAnswer → read the cited source",
+        "result": "Ask which step produced each piece of evidence."
+      },
+      {
+        "id": "route",
+        "kind": "decision",
+        "eyebrow": "YOUR TURN",
+        "title": "Choose and verify",
+        "body": "Start with a task and define evidence of success.",
+        "narration": "Try three cards from this lesson. For explaining the validator, choose text generation and verify the explanation with test output. For finding a related policy note, choose embedding based retrieval and read the source it returns. For categorizing an issue, choose classification and compare against examples labeled by a person. Write down the success check before choosing the tool.",
+        "code": "Explain validator → compare with tests.\nFind related note → read the note.\nLabel an issue → compare to examples.",
+        "result": "A capability choice plus a verification method."
+      }
+    ],
+    "sources": [
+      {
+        "label": "OpenAI full model catalog",
+        "url": "https://developers.openai.com/api/docs/models/all"
+      },
+      {
+        "label": "OpenAI embeddings guide",
+        "url": "https://developers.openai.com/api/docs/guides/embeddings"
+      }
+    ]
+  },
+  {
+    "id": "B03",
+    "title": "OpenAI, Anthropic, and Microsoft Models",
+    "subtitle": "A catalog snapshot for November 26, 2026",
+    "scenes": [
+      {
+        "id": "layers",
+        "kind": "diagram",
+        "eyebrow": "THREE LAYERS",
+        "title": "Separate model and tool",
+        "body": "A maker, a distribution platform, and a client play different roles.",
+        "narration": "The same model can appear in a vendor catalog and in products from other companies. We will look at three levels. The company develops a model, a platform makes it available, and an application exposes it to the user. The examples on screen were checked on November twenty sixth, twenty twenty six. Your workplace settings determine what you can actually choose.",
+        "code": "Maker → model family and version\nPlatform → deployment or service\nClient → model picker and workflow",
+        "result": "Example: a Claude model can appear in Copilot."
+      },
+      {
+        "id": "openai",
+        "kind": "diagram",
+        "eyebrow": "OPENAI  ·  NOV 26, 2026",
+        "title": "Read the OpenAI catalog",
+        "body": "Use vendor categories to identify candidate models.",
+        "narration": "The OpenAI API catalog describes GPT six point two Sol as a starting point for everyday coding and agent work. Astra is an option for more demanding reasoning and code. The catalog also lists models for specialized tasks such as image generation, audio, and transcription. Confirm the endpoint and current status if you need details. A catalog entry alone gives no guarantee for your editor.",
+        "code": "GPT-6.2 Sol   → everyday coding and agents\nGPT-6.2 Astra → demanding reasoning and code\nSeparate entries for image, voice, transcription",
+        "result": "Examples from the OpenAI API catalog."
+      },
+      {
+        "id": "claude",
+        "kind": "diagram",
+        "eyebrow": "ANTHROPIC  ·  NOV 26, 2026",
+        "title": "Read the Claude catalog",
+        "body": "Family names describe different tradeoffs.",
+        "narration": "Anthropic's catalog groups several current Claude models. Haiku emphasizes latency and price. Sonnet balances speed and capability for everyday work. Opus handles complex, longer tasks. Fable is positioned for high capability and long agent runs. In Claude Code, provider and managed settings matter. Use the model selector to see what your corporate remote session offers.",
+        "code": "Haiku 5.5 → lower latency and cost\nSonnet 5.5 → balanced everyday work\nOpus 5.5 → complex tasks\nFable 5.2 → demanding, long agent work",
+        "result": "Claude Code aliases can resolve by provider."
+      },
+      {
+        "id": "microsoft",
+        "kind": "diagram",
+        "eyebrow": "MICROSOFT  ·  NOV 26, 2026",
+        "title": "Read Microsoft and Foundry",
+        "body": "Foundry lists models from Microsoft and other makers.",
+        "narration": "Microsoft develops families such as MAI and Phi. MAI Code two and Code two Flash are examples focused on coding. Microsoft Foundry is a deployment and catalog surface with models from multiple makers. Open the publisher field to see who developed a model. Also check the deployment and regional details when they matter to your organization's configuration.",
+        "code": "Microsoft-made examples: MAI, Phi\nCoding examples: MAI Code 2 and Code 2 Flash\nFoundry catalog: Microsoft + other publishers",
+        "result": "Read the publisher on the model card."
+      },
+      {
+        "id": "picker",
+        "kind": "editor",
+        "eyebrow": "WORKPLACE AVAILABILITY",
+        "title": "Check the installed client",
+        "body": "Use the Copilot picker to confirm the options available to you.",
+        "narration": "GitHub Copilot supports model options from several providers. The actual list you see in VS Code depends on your client version, plan, and organization settings. Claude Code and OpenCode run in the approved remote workspace in this course. Their model options depend on the configured provider. A model appearing in one catalog does not establish access in another tool.",
+        "code": "VS Code → Copilot model selector\nRemote → Claude Code / OpenCode selector\nCheck the managed account and provider",
+        "result": "Record the exact model shown in your session."
+      },
+      {
+        "id": "lifecycle",
+        "kind": "diagram",
+        "eyebrow": "MODEL LIFECYCLE",
+        "title": "Read availability and status",
+        "body": "Use the dated catalog and the approved picker together.",
+        "narration": "Look for the release status beside a model name. A preview, general release, or retirement marker tells you something about its lifecycle on that surface. Versions and naming change over time. For a training exercise, choose a model people can access and keep any unavailable model as an example for discussion. Refresh the record when your work account changes.",
+        "code": "Read provider, version, and release status.\nCheck your approved surface for availability.\nDate the exact choice.",
+        "result": "A vendor release date and workplace access can differ."
+      },
+      {
+        "id": "record",
+        "kind": "decision",
+        "eyebrow": "YOUR TURN",
+        "title": "Make a dated record",
+        "body": "Keep a short record so model examples can be refreshed.",
+        "narration": "Pick one model you can see in a work tool and find its official documentation. Record the maker, exact name, tool, and the date you checked. Then write the reason that model is a sensible candidate for a small coding task. If you cannot find it in your approved session, treat it as a catalog example and choose a model you can access.",
+        "code": "Maker: from the official catalog\nModel: copy the exact selector label\nSurface: approved VS Code or remote session\nChecked: record today's date",
+        "result": "A dated inventory entry you can refresh."
+      }
+    ],
+    "sources": [
+      {
+        "label": "OpenAI Models",
+        "url": "https://developers.openai.com/api/docs/models"
+      },
+      {
+        "label": "Claude Models overview",
+        "url": "https://platform.claude.com/docs/en/models/overview"
+      },
+      {
+        "label": "Microsoft Foundry Microsoft publisher catalog",
+        "url": "https://ai.azure.com/catalog/models?publisher=Microsoft"
+      },
+      {
+        "label": "GitHub Copilot supported models",
+        "url": "https://docs.github.com/en/copilot/reference/ai-models/supported-models"
+      },
+      {
+        "label": "Claude Code model configuration",
+        "url": "https://code.claude.com/docs/en/model-config"
+      }
+    ]
+  },
+  {
+    "id": "B04",
+    "title": "Choose a Model for the Task",
+    "subtitle": "Compare approved options in GitHub Copilot for VS Code",
+    "scenes": [
+      {
+        "id": "ticket",
+        "kind": "github",
+        "eyebrow": "ONE TASK",
+        "title": "Define a small benchmark",
+        "body": "Compare options on work that you can independently verify.",
+        "narration": "We will compare models using a synthetic issue. The order validator accepts zero even though an order needs at least one item. Our target is clear. Find the cause, suggest a small change, and propose a regression test while preserving the function signature. A task with an observable outcome makes the comparison easier to evaluate than an open ended question.",
+        "code": "Issue: reject zero quantities.\nKeep the function signature.\nExpected: 1 and 5 pass, 0 and -1 fail.",
+        "result": "Score the response against those requirements."
+      },
+      {
+        "id": "picker",
+        "kind": "editor",
+        "eyebrow": "VS CODE",
+        "title": "Check the Copilot model picker",
+        "body": "Choose from the options your work account exposes.",
+        "narration": "In VS Code, open Copilot Chat and look at the model selector. Pick two workplace approved options if you have them. One might favor speed and the other may be oriented toward harder reasoning. If your account exposes only one model, compare two runs with that model and label the exercise accordingly. The important part is recording your starting conditions.",
+        "code": "Open Copilot Chat.\nInspect the model selection options.\nRecord model A and model B as displayed.",
+        "result": "Availability depends on your work configuration."
+      },
+      {
+        "id": "control",
+        "kind": "editor",
+        "eyebrow": "FAIR COMPARISON",
+        "title": "Use the same task and context",
+        "body": "Start separate chats and attach the same files.",
+        "narration": "We attach the issue, source, and tests in each new chat, then give each option the same request. Keep the task in an explanation or planning mode to avoid changing the working tree during comparison. Changing the attached files, agent mode, or requirements would change the task. Keep those inputs stable and record any differences you cannot avoid.",
+        "code": "Explain why zero is accepted.\nPropose a minimal fix and one regression test.\nKeep the signature. Describe changes only.",
+        "result": "Repeat with the same issue and attached files."
+      },
+      {
+        "id": "criteria",
+        "kind": "decision",
+        "eyebrow": "COMPARE RESULTS",
+        "title": "Score observable differences",
+        "body": "Compare evidence, scope, verification, and response time.",
+        "narration": "Look for the line responsible for accepting zero and check whether the proposed test would fail on the original code. Note how long each response takes and whether a response adds unnecessary work. The results on screen are illustrative. Try the exercise yourself and record the outcome you actually saw. One run gives a useful observation, with limited evidence for broader conclusions.",
+        "code": "A: correct cause, focused test, 6 s.\nB: correct cause, extra refactor, 15 s.\nSynthetic sample results",
+        "result": "Both found the defect. A stayed in scope."
+      },
+      {
+        "id": "escalate",
+        "kind": "diagram",
+        "eyebrow": "CHOOSE FOR THE WORK",
+        "title": "Start with a suitable option",
+        "body": "Use stronger reasoning when a clear capability gap appears.",
+        "narration": "For this small boundary bug, a fast option may be enough once tests confirm the result. When a change spans packages, has ambiguous requirements, or requires comparing several designs, you might evaluate a stronger reasoning option. A broader change still needs clear context and independent checks. The model label does not replace either one.",
+        "code": "Small, clear change → try a fast option.\nComplex or uncertain change → evaluate reasoning.\nFor either option → verify with evidence.",
+        "result": "Use task demands and results to guide the choice."
+      },
+      {
+        "id": "test",
+        "kind": "terminal",
+        "eyebrow": "CHECK THE SUGGESTION",
+        "title": "Confirm the test can catch the bug",
+        "body": "The quality score depends on checking the proposed result.",
+        "narration": "One answer suggests testing one, which already passes. Another adds the test for zero, which fails against the original code. The second test directly exercises the behavior in the issue. To compare responses, inspect those details and run the relevant checks in the approved training environment. This tells you more than whether the generated explanation sounded confident.",
+        "code": "Candidate A: test quantity 1.\nCandidate B: test quantity 0.\nCheck each against the original code.",
+        "result": "The zero test detects this specific defect."
+      },
+      {
+        "id": "practice",
+        "kind": "decision",
+        "eyebrow": "YOUR TURN",
+        "title": "Write a short conclusion",
+        "body": "Name the model and explain your evidence.",
+        "narration": "Run the benchmark and write one sentence about your choice. Include which model you used, what it got right or missed, and the test you would use to verify a proposed change. If both results fall short, adjust the brief or fix the missing context before increasing effort. Keep the comparison small enough that you can redo it when the catalog changes.",
+        "code": "Task: zero quantity boundary\nCompared: actual model labels\nDecision: what performed well and why\nEvidence: expected regression result",
+        "result": "A reproducible choice you can revisit."
+      }
+    ],
+    "sources": [
+      {
+        "label": "GitHub Copilot model comparison",
+        "url": "https://docs.github.com/en/copilot/reference/ai-models/model-comparison"
+      },
+      {
+        "label": "GitHub Copilot supported models",
+        "url": "https://docs.github.com/en/copilot/reference/ai-models/supported-models"
+      },
+      {
+        "label": "VS Code AI best practices",
+        "url": "https://code.visualstudio.com/docs/agents/best-practices"
+      }
+    ]
+  },
+  {
+    "id": "B05",
+    "title": "What Is an AI Agent?",
+    "subtitle": "Understand the loop and where you remain in control",
+    "scenes": [
+      {
+        "id": "compare",
+        "kind": "diagram",
+        "eyebrow": "ANSWERS AND ACTIONS",
+        "title": "Compare two interactions",
+        "body": "An agent can use available tools as part of a task.",
+        "narration": "We start with a simple request about the order validator. A chat response can explain the code you provide. An agent session can also search the workspace, propose edits, and run permitted checks, depending on the tools it has. Open an approved training workspace and look at the actions shown in the session. The proposed answer and the actions taken are both worth reviewing.",
+        "code": "Question → explanation\nAgent request → tools → evidence\nAvailable tools depend on the session.",
+        "result": "Identify an actual action in the session log."
+      },
+      {
+        "id": "loop",
+        "kind": "diagram",
+        "eyebrow": "THE AGENT LOOP",
+        "title": "Follow the evidence",
+        "body": "An agent can use tool results to decide what step comes next.",
+        "narration": "An agent works through a loop. It collects relevant information, proposes or takes an allowed action, looks at the result, and decides whether another action is needed. In our case, it reads the issue, inspects the validator, and finds the missing test. We can follow each step because the task has a narrow scope and a clear place to stop.",
+        "code": "Inspect issue → read validator → inspect tests\nRead results before proposing a change.\nStop when the specified work is done.",
+        "result": "Evidence: a comparison and a missing test."
+      },
+      {
+        "id": "scope",
+        "kind": "editor",
+        "eyebrow": "START IN PLAN",
+        "title": "Set the boundary before editing",
+        "body": "A plan makes the scope visible to the developer.",
+        "narration": "Ask the agent to investigate why zero is accepted and to suggest the smallest change. Keep the task at planning in the approved session. We expect the agent to point to one comparison and describe one test. If it suggests redesigning validation, steer it back to the boundary case. Check what tools the session can use, even during planning.",
+        "code": "Plan only. Find why zero is accepted.\nDescribe one regression test.\nKeep the function signature.",
+        "result": "Expected files: validator and existing tests.\nReview the plan before implementation."
+      },
+      {
+        "id": "permissions",
+        "kind": "decision",
+        "eyebrow": "TOOL APPROVAL",
+        "title": "Review a proposed action",
+        "body": "Check which tool, command, working directory, and purpose are shown.",
+        "narration": "Now the training agent proposes running the unit tests in the authorized workspace. Read the command, its working directory, and the reason before deciding. The command should match the task and operate on the sample repository. Pause when an action would touch unrelated paths or make an unrequested external change. The approval controls available to you depend on company settings.",
+        "code": "Proposed: python -B -m unittest discover -s tests\nWorking directory: training checkout\nReason: verify the regression",
+        "result": "Proceed when the command matches your scope."
+      },
+      {
+        "id": "result",
+        "kind": "terminal",
+        "eyebrow": "OBSERVE THE RESULT",
+        "title": "Read the evidence yourself",
+        "body": "The exit status and test output matter more than a summary.",
+        "narration": "The test run is useful when it reports the assertion we meant to check. In this synthetic example, the original condition accepts zero and the new regression test fails. We read the reported test name and failure to confirm it matches the issue. If a setup problem caused the failure instead, diagnose that problem before interpreting the result.",
+        "code": "python -B -m unittest discover -s tests -v",
+        "result": "test_rejects_zero ... FAIL\nAssertionError: True is not false"
+      },
+      {
+        "id": "contexts",
+        "kind": "diagram",
+        "eyebrow": "APPROVED SURFACES",
+        "title": "Identify where the action runs",
+        "body": "A tool choice changes the execution context and available controls.",
+        "narration": "Keep track of the environment when you move between sessions. In this course, Copilot is in VS Code, and Claude Code or OpenCode can be available inside the approved remote workspace. A visible tool approval belongs to the session that offered it. Verify the repository and environment before letting an agent touch files or run checks.",
+        "code": "Local entry point: Copilot in VS Code\nRemote entry points: Claude Code or OpenCode\nCheck the working folder and controls.",
+        "result": "The approved environment defines available actions."
+      },
+      {
+        "id": "stop",
+        "kind": "decision",
+        "eyebrow": "YOUR TURN",
+        "title": "Set a stopping condition",
+        "body": "A developer owns the validation and the decision to continue.",
+        "narration": "Give the training agent a bounded task. Say what files it may inspect, what action it can take, what evidence to return, and when to stop. Then review the actual output and explain what it established. For this exercise, success is a focused plan and the expected test evidence. Any further publication can be treated as a separate decision.",
+        "code": "Inspect the source and tests.\nRun the approved test command if needed.\nReport the result and stop.",
+        "result": "Evidence: files inspected and test result."
+      }
+    ],
+    "sources": [
+      {
+        "label": "VS Code agent overview",
+        "url": "https://code.visualstudio.com/docs/agents/overview"
+      },
+      {
+        "label": "VS Code trust and safety",
+        "url": "https://code.visualstudio.com/docs/agents/concepts/trust-and-safety"
+      },
+      {
+        "label": "Claude Code permissions",
+        "url": "https://code.claude.com/docs/en/permissions"
+      }
+    ]
+  },
+  {
+    "id": "B06",
+    "title": "Prompt Engineering for Coding Tasks",
+    "subtitle": "Turn a request into a verifiable brief",
+    "scenes": [
+      {
+        "id": "vague",
+        "kind": "editor",
+        "eyebrow": "A VAGUE REQUEST",
+        "title": "See what is missing",
+        "body": "Clear instructions help bound the work and reduce guesswork.",
+        "narration": "First we enter a short request: fix validation. It says little about the problem, the affected files, or the result we need. A model might suggest several changes that all sound reasonable. Before we accept any proposal, we will turn that request into a brief that makes the defect, scope, and acceptance criteria easy to review.",
+        "code": "Fix validation.",
+        "result": "Missing: failing behavior, scope, and evidence."
+      },
+      {
+        "id": "goal",
+        "kind": "github",
+        "eyebrow": "GOAL AND EVIDENCE",
+        "title": "Describe the observed defect",
+        "body": "Tie the question to the issue and the smallest relevant code.",
+        "narration": "Start with the behavior in the issue. An order with zero items currently passes. The documented rule says the quantity must be positive. We give the assistant the source function and its existing tests, using the approved training context. This lets it connect the actual comparison to the requirement. Avoid unexplained assumptions about the rest of the repository.",
+        "code": "Issue: zero passes but must be rejected.\nContext: validator and existing test file.\nFind the condition responsible.",
+        "result": "The comparison allows equality with zero."
+      },
+      {
+        "id": "scope",
+        "kind": "editor",
+        "eyebrow": "SCOPE AND ACCEPTANCE",
+        "title": "State what may change",
+        "body": "Use observable inputs and preserve the public interface.",
+        "narration": "Next, state the boundaries. Keep the validator's signature. Limit the work to the validator and its test file. The inputs one and five should pass. Zero and negative one should fail. These examples give a reviewer a concrete way to judge the result. They also help the assistant notice if its suggested fix misses a boundary.",
+        "code": "Keep the existing signature.\nLimit edits to the validator and its tests.\nAccept: 1, 5. Reject: 0, -1.",
+        "result": "The acceptance criteria are testable."
+      },
+      {
+        "id": "output",
+        "kind": "editor",
+        "eyebrow": "REQUEST A DELIVERABLE",
+        "title": "Ask for a plan and proof",
+        "body": "An answer format can make the result easier to review.",
+        "narration": "Now specify what you want back. Ask for the cause, a list of proposed files, and the regression test before seeking implementation. If relevant information is missing, tell the assistant to say what it needs. Once you approve the plan, ask it to report the exact test command and outcome. The format serves your review process.",
+        "code": "Return: cause, changed files, planned test.\nAsk if the relevant requirement is missing.\nWait for approval before editing.",
+        "result": "Review the plan before authorizing changes."
+      },
+      {
+        "id": "iterate",
+        "kind": "decision",
+        "eyebrow": "STEER BASED ON THE RESPONSE",
+        "title": "Correct a concrete mismatch",
+        "body": "Point to the requirement the response missed.",
+        "narration": "Suppose the assistant suggests renaming the function and refactoring callers. We can point to the unchanged signature requirement and request a revised plan. Useful follow ups give precise feedback about the mismatch. After the second response, check that the proposed test would fail against the original implementation. Keep the brief available so the next turn stays tied to the same scope.",
+        "code": "The plan changes the public signature.\nPreserve the signature.\nRevise only the proposed comparison and test.",
+        "result": "Check the updated plan against the issue."
+      },
+      {
+        "id": "criteria",
+        "kind": "terminal",
+        "eyebrow": "MAKE IT CHECKABLE",
+        "title": "Write the verification line",
+        "body": "State what needs to fail and what needs to pass.",
+        "narration": "Write one line that you can verify after the change. The new zero test should fail on the starting code and pass on the proposed fix. The existing tests should still pass. This gives the assistant and the reviewer the same target. Keep the exact test command and the observed outcome separate from a proposed plan.",
+        "code": "Run the same test command before and after.\nBefore: the zero test fails for the defect.\nAfter: the zero and existing tests pass.",
+        "result": "Ask for observed output and specific errors."
+      },
+      {
+        "id": "practice",
+        "kind": "decision",
+        "eyebrow": "YOUR TURN",
+        "title": "Build your own brief",
+        "body": "Save a short prompt you can adapt to a real task.",
+        "narration": "Choose another synthetic ticket. Write the goal, the relevant sources, the scope, the acceptance criteria, and the evidence you want back. Run your prompt in the approved tool and compare the response with those five pieces. If the response is weak, change one part of the brief and try again so you can see which change helped.",
+        "code": "Goal + source material\nScope + acceptance criteria\nRequested output and verification evidence",
+        "result": "A clear brief ready for the next training task."
+      }
+    ],
+    "sources": [
+      {
+        "label": "VS Code AI best practices",
+        "url": "https://code.visualstudio.com/docs/agents/best-practices"
+      },
+      {
+        "label": "GitHub Copilot prompt engineering",
+        "url": "https://docs.github.com/en/copilot/concepts/prompting-and-context/prompt-engineering"
+      }
+    ]
+  },
+  {
+    "id": "B07",
+    "title": "Give Copilot the Right Context",
+    "subtitle": "Attach the smallest set of useful evidence in VS Code",
+    "scenes": [
+      {
+        "id": "baseline",
+        "kind": "editor",
+        "eyebrow": "CONTEXT BASELINE",
+        "title": "Start with a broad question",
+        "body": "A broad request makes the relevant evidence ambiguous.",
+        "narration": "We want Copilot to find why a zero quantity passes. We start with a plain question and no explicit reference to the issue or the relevant files. Depending on the session, Copilot may have access to some editor context. We can make the evidence easier to inspect by choosing it ourselves. Watch which sources we add to the request.",
+        "code": "Why does zero pass validation?",
+        "result": "Check which sources are visible in this chat."
+      },
+      {
+        "id": "needed",
+        "kind": "diagram",
+        "eyebrow": "SELECT THE EVIDENCE",
+        "title": "Pick three useful inputs",
+        "body": "The issue, function, and tests answer different questions.",
+        "narration": "Our issue tells us what should happen. The validator shows what does happen. The test file shows which inputs the suite already covers. Those three sources are enough for this task. We leave unrelated files, keys, and logs out of the chat. In your organization, confirm that the sources you attach are approved for this model and service.",
+        "code": "Issue → expected behavior\nValidator → current behavior\nTests → existing coverage",
+        "result": "Selected: only relevant training content."
+      },
+      {
+        "id": "attach",
+        "kind": "editor",
+        "eyebrow": "ADD CONTEXT IN VS CODE",
+        "title": "Attach the source and test files",
+        "body": "Use the context picker or a supported file mention.",
+        "narration": "In Copilot Chat, use the context picker or select the named files directly. Attach the short issue text or link through a method available in your approved environment. Before submitting, verify the file names displayed in the chat. Ask Copilot to separate what the code does from what the issue requires and to point to the relevant comparison.",
+        "code": "Attach order_quantity.py\nAttach tests/test_order_quantity.py\nInclude the synthetic issue text.",
+        "result": "The relevant function and tests are visible."
+      },
+      {
+        "id": "inspect",
+        "kind": "editor",
+        "eyebrow": "INSPECT THE ANSWER",
+        "title": "Check the cited code",
+        "body": "Verify the assistant's explanation against the actual file.",
+        "narration": "The answer points to the greater than or equal comparison. Open the file and check that it really contains that comparison. Then read the test file and confirm that zero is missing. Copilot can identify a likely story that still needs verification. File references help you trace the reasoning, and the source remains the authority for the current behavior.",
+        "code": "Explain why 0 is accepted.\nWhich existing test covers 0?\nName the relevant function and comparison.",
+        "result": "Code allows 0. The baseline has no zero test."
+      },
+      {
+        "id": "prune",
+        "kind": "decision",
+        "eyebrow": "RESOLVE CONTEXT MISMATCHES",
+        "title": "Watch for outdated or broad context",
+        "body": "Remove irrelevant context and attach the current file.",
+        "narration": "If an answer mentions a different version of the validator, check the branch and the attached file before retrying. Start a fresh chat when an old discussion keeps steering the response. In the new session, attach the current exact code and say which version of the issue applies. Keep the scope small to make the response easier to verify.",
+        "code": "Check the branch and active file.\nRemove unrelated attachments.\nAttach the current implementation.",
+        "result": "Use exact sources to resolve the mismatch."
+      },
+      {
+        "id": "followup",
+        "kind": "editor",
+        "eyebrow": "HANDLE AN INCOMPLETE ANSWER",
+        "title": "Ask what is still missing",
+        "body": "Make unknowns explicit before requesting a change.",
+        "narration": "Suppose Copilot identifies why zero passes but cannot verify the business rule. Ask which source it still needs and provide the actual issue text through an approved method. We then ask it to show where the code and rule disagree. The useful result is a traceable explanation supported by both sources, with any remaining assumptions clearly named.",
+        "code": "What evidence do you need for the expected behavior?\nUse the supplied issue and code to compare them.",
+        "result": "Requirement from issue. Behavior from source."
+      },
+      {
+        "id": "practice",
+        "kind": "decision",
+        "eyebrow": "YOUR TURN",
+        "title": "Compare two context sets",
+        "body": "Explain what changed in the answer and why.",
+        "narration": "Ask the same training question in two fresh chats. In the first, give the issue only. In the second, include the current validator and its tests. Then compare which answer locates the actual cause and which admits uncertainty. Keep one piece of evidence from the code and one from the test file. That record helps you decide what context to supply next time.",
+        "code": "Run A: issue only.\nRun B: issue + validator + tests.\nCompare the cause and cited evidence.",
+        "result": "A short comparison grounded in repository files."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Add context to chat",
+        "url": "https://code.visualstudio.com/docs/chat/copilot-chat-context"
+      },
+      {
+        "label": "VS Code AI best practices",
+        "url": "https://code.visualstudio.com/docs/agents/best-practices"
+      },
+      {
+        "label": "Copilot content exclusion",
+        "url": "https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion"
+      }
+    ]
+  },
+  {
+    "id": "B08",
+    "title": "Verify and Undo an AI Edit",
+    "subtitle": "Read the diff, run tests, and recover one unwanted change",
+    "scenes": [
+      {
+        "id": "start",
+        "kind": "editor",
+        "eyebrow": "A KNOWN STARTING POINT",
+        "title": "Record the patch boundary",
+        "body": "Use a training branch and keep unrelated work visible.",
+        "narration": "Before we ask Copilot to change a file, we open Source Control and check the working tree on a disposable training branch. In this example, the repo begins with no changes. If you already have edits of your own, identify them before an agent session so you can tell what came from the proposed change. This gives us a baseline for review.",
+        "code": "Training branch: fix/reject-zero-quantity\nSource Control: inspect changed files\nRecord the baseline before the edit.",
+        "result": "Baseline: no changes in this exercise."
+      },
+      {
+        "id": "proposal",
+        "kind": "editor",
+        "eyebrow": "STUDY THE DIFF",
+        "title": "Map the edit to the issue",
+        "body": "Check every changed file against the stated scope.",
+        "narration": "The proposed diff changes the validator and adds a regression test. It also includes an unrelated rename in a training notes file. We inspect the exact lines instead of relying on the summary. The comparison and test line belong to this issue. The notes change does not help meet the acceptance criteria, so we will remove it before running the final checks.",
+        "code": "- return quantity >= 0\n+ return quantity > 0\n+ self.assertFalse(is_valid_quantity(0))",
+        "result": "Unrelated candidate edit: notes file."
+      },
+      {
+        "id": "prove",
+        "kind": "terminal",
+        "eyebrow": "VERIFY THE BEHAVIOR",
+        "title": "Read failing and passing evidence",
+        "body": "The regression should fail on the original code and pass after the fix.",
+        "narration": "Review the earlier failing run and confirm the test failed for the specific boundary, because zero was accepted. Then rerun the suite with the corrected condition in the approved environment. We expect the zero test and the existing tests to pass. Use the same test command for both runs and keep the evidence with the change.",
+        "code": "python -B -m unittest discover -s tests -v",
+        "result": "Before fix: test_rejects_zero ... FAIL\nAfter fix:  test_rejects_zero ... ok\nAfter fix:  Ran 4 tests. OK"
+      },
+      {
+        "id": "undo",
+        "kind": "editor",
+        "eyebrow": "UNDO ONE UNWANTED EDIT",
+        "title": "Remove the confirmed extra change",
+        "body": "Use the smallest recovery action that preserves other work.",
+        "narration": "In Source Control, open the diff for the training notes file and confirm that the edit came only from this exercise. Then discard that one file's change or revert just the unwanted hunk with the available editor control. If the file contains work you want to keep, revert only those specific lines. A broad discard can remove unrelated work.",
+        "code": "Open the notes diff.\nCheck that it contains only the unwanted edit.\nDiscard just that file or revert the hunk.",
+        "result": "The validator and test edits stay in place."
+      },
+      {
+        "id": "recheck",
+        "kind": "terminal",
+        "eyebrow": "VERIFY AFTER RECOVERY",
+        "title": "Review the remaining patch",
+        "body": "Recovery is complete when the intended diff and tests still match.",
+        "narration": "After undo, open Source Control again. The diff should now include only the validator and the regression test. Run the suite once more if the recovery touched the implementation or the tests. The post recovery check matters because an undo action can affect more than intended if you pick the wrong target. Keep the changed files and test result together.",
+        "code": "git diff --stat\npython -B -m unittest discover -s tests -v",
+        "result": "Only validator and test are changed.\nAll four tests pass in the training case."
+      },
+      {
+        "id": "checkpoint",
+        "kind": "decision",
+        "eyebrow": "RECOVERY OPTIONS",
+        "title": "Choose the smallest undo",
+        "body": "A checkpoint may roll back several changes in one action.",
+        "narration": "Some agent sessions offer a checkpoint or a way to undo a proposed edit. Check which files that action would restore before using it. For a single unrelated hunk, a precise editor undo often fits the work better. For a session wide rollback in this practice branch, first confirm the changes are contained and preserve any work you still need.",
+        "code": "One hunk → revert only the hunk.\nSeveral session changes → inspect checkpoint scope.\nConfirm what remains after the undo.",
+        "result": "Choose recovery based on the diff you reviewed."
+      },
+      {
+        "id": "practice",
+        "kind": "decision",
+        "eyebrow": "YOUR TURN",
+        "title": "Explain what you kept and why",
+        "body": "Use the issue, final diff, and test output as evidence.",
+        "narration": "Practice on a sample branch that has one correct change and one clearly identified extra edit. Keep the fix, undo the extra edit, and review the resulting diff. Then explain the result in three parts. Describe the requirement, identify the lines you kept, and show which tests verify the outcome. You now have evidence another developer can review.",
+        "code": "Requirement: reject zero.\nFinal diff: one comparison and one test.\nEvidence: regression and existing tests pass.",
+        "result": "A reviewable patch with a recovery note."
+      }
+    ],
+    "sources": [
+      {
+        "label": "VS Code AI best practices",
+        "url": "https://code.visualstudio.com/docs/agents/best-practices"
+      },
+      {
+        "label": "VS Code source control",
+        "url": "https://code.visualstudio.com/docs/sourcecontrol/overview"
+      }
+    ]
+  }
+]

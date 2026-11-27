@@ -1,0 +1,359 @@
+{
+  "id": "B01",
+  "title": "How a Language Model Uses Context",
+  "subtitle": "Tokens, context windows, and evidence",
+  "scenes": [
+    {
+      "id": "request",
+      "kind": "editor",
+      "eyebrow": "THE FIRST REQUEST",
+      "title": "Start with a small question",
+      "body": "The model sees the text supplied to this turn.",
+      "narration": "Suppose you ask, “How does our order validator work?” The name sounds specific to us because we have the repository open. Look at the request, though. It contains neither a function nor a file reference. The assistant might search if this session can read the workspace. Before trusting the explanation, find the source it actually used.",
+      "code": "How does our order validator work?",
+      "result": "The function is missing from this request.\nAttach the implementation to answer.",
+      "focus": "No implementation is attached",
+      "action": "Ask the opening question in a fresh chat.",
+      "durationFrames": 506,
+      "duration": 21.083333333333332,
+      "cues": [
+        {
+          "start": 0.435,
+          "end": 3.625,
+          "text": "Suppose you ask, “How does our order\nvalidator work?”"
+        },
+        {
+          "start": 3.675,
+          "end": 7.016,
+          "text": "The name sounds specific to us because\nwe have the repository open."
+        },
+        {
+          "start": 7.675,
+          "end": 9.25,
+          "text": "Look at the request, though."
+        },
+        {
+          "start": 9.325,
+          "end": 12.45,
+          "text": "It contains neither a function nor a\nfile reference."
+        },
+        {
+          "start": 12.5,
+          "end": 15.699,
+          "text": "The assistant might search if this\nsession can read the workspace."
+        },
+        {
+          "start": 16.308,
+          "end": 19.993,
+          "text": "Before trusting the explanation, find\nthe source it actually used."
+        }
+      ]
+    },
+    {
+      "id": "tokens",
+      "kind": "diagram",
+      "eyebrow": "TOKENS",
+      "title": "Text enters as tokens",
+      "body": "A token can represent a word, part of a word, or punctuation.",
+      "narration": "Look at the return line. A model reads pieces of this text called tokens. In this illustration, the space before quantity travels with the word, and the operator is another piece. Tokenizers can split the same line differently. That matters when you're estimating how much source, test output, and conversation can fit in a request.",
+      "code": "Text: return quantity > 0\nPossible pieces, for illustration:\n[return] [ quantity] [ >] [ 0]",
+      "result": "A token count depends on the tokenizer.",
+      "focus": "Four sample token pieces",
+      "action": "Compare the phrase with the sample token split.",
+      "durationFrames": 520,
+      "duration": 21.666666666666668,
+      "cues": [
+        {
+          "start": 0.443,
+          "end": 1.943,
+          "text": "Look at the return line."
+        },
+        {
+          "start": 2.018,
+          "end": 5.268,
+          "text": "A model reads pieces of this text called\ntokens."
+        },
+        {
+          "start": 5.343,
+          "end": 9.278,
+          "text": "In this illustration, the space before\nquantity travels with the word,"
+        },
+        {
+          "start": 9.328,
+          "end": 11.047,
+          "text": "and the operator is another piece."
+        },
+        {
+          "start": 11.659,
+          "end": 14.659,
+          "text": "Tokenizers can split the same line\ndifferently."
+        },
+        {
+          "start": 14.734,
+          "end": 18.484,
+          "text": "That matters when you're estimating how\nmuch source, test output,"
+        },
+        {
+          "start": 18.534,
+          "end": 20.568,
+          "text": "and conversation can fit in a request."
+        }
+      ]
+    },
+    {
+      "id": "window",
+      "kind": "diagram",
+      "eyebrow": "CONTEXT WINDOW",
+      "title": "See what can fit",
+      "body": "The context window is a finite token budget for a request.",
+      "narration": "Picture the next request after a long debugging chat. It can include instructions, parts of the conversation, selected files, and tool results. The client chooses what to include within a finite budget. If you need the current condition to be available, attach the small source file. Then check whether the answer points back to that file.",
+      "code": "Request + instructions\nRelevant files + prior messages\nTool results, when available",
+      "result": "Finite context budget\nExact limits vary by model and product.",
+      "focus": "Files, messages and tool results draw from one budget",
+      "action": "Trace the inputs that may be included in this turn.",
+      "durationFrames": 521,
+      "duration": 21.708333333333332,
+      "cues": [
+        {
+          "start": 0.389,
+          "end": 3.764,
+          "text": "Picture the next request after a long\ndebugging chat."
+        },
+        {
+          "start": 3.839,
+          "end": 8.014,
+          "text": "It can include instructions, parts of\nthe conversation, selected files,"
+        },
+        {
+          "start": 8.039,
+          "end": 9.067,
+          "text": "and tool results."
+        },
+        {
+          "start": 9.666,
+          "end": 13.091,
+          "text": "The client chooses what to include\nwithin a finite budget."
+        },
+        {
+          "start": 13.166,
+          "end": 17.298,
+          "text": "If you need the current condition to be\navailable, attach the small source file."
+        },
+        {
+          "start": 17.928,
+          "end": 20.633,
+          "text": "Then check whether the answer points\nback to that file."
+        }
+      ]
+    },
+    {
+      "id": "source",
+      "kind": "editor",
+      "eyebrow": "SUPPLY EVIDENCE",
+      "title": "Attach the actual function",
+      "body": "The implementation determines the answer for this repository.",
+      "narration": "Open order quantity dot pie in the training repository. Attach it in Copilot chat and ask what happens for zero and one. Read the return expression with me. Zero is equal to zero, so it passes. One is greater than zero, so it passes too. The code explains the observed behavior. We still need the issue to decide whether that behavior is correct.",
+      "code": "def is_valid_quantity(quantity):\n    return quantity >= 0\n\nWhat happens for zero and one?",
+      "result": "0 returns True because 0 >= 0.\n1 returns True because 1 >= 0.",
+      "focus": "Zero and one both return true",
+      "action": "Attach order_quantity.py and trace both values.",
+      "durationFrames": 569,
+      "duration": 23.708333333333332,
+      "cues": [
+        {
+          "start": 0.393,
+          "end": 3.918,
+          "text": "Open order quantity dot pie in the\ntraining repository."
+        },
+        {
+          "start": 3.993,
+          "end": 7.915,
+          "text": "Attach it in Copilot chat and ask what\nhappens for zero and one."
+        },
+        {
+          "start": 8.549,
+          "end": 10.574,
+          "text": "Read the return expression with me."
+        },
+        {
+          "start": 10.674,
+          "end": 13.349,
+          "text": "Zero is equal to zero, so it passes."
+        },
+        {
+          "start": 13.399,
+          "end": 15.793,
+          "text": "One is greater than zero, so it passes\ntoo."
+        },
+        {
+          "start": 16.402,
+          "end": 19.177,
+          "text": "The code explains the observed behavior."
+        },
+        {
+          "start": 19.227,
+          "end": 22.605,
+          "text": "We still need the issue to decide\nwhether that behavior is correct."
+        }
+      ]
+    },
+    {
+      "id": "gap",
+      "kind": "decision",
+      "eyebrow": "MISSING INFORMATION",
+      "title": "Ask for the rule",
+      "body": "A grounded code explanation can still leave a business question open.",
+      "narration": "Add the issue text. The rule now says an order needs at least one item. Compare that with the answer we just traced. The code allows zero because the comparison includes equality. The issue requires zero to be rejected. Ask the assistant to cite both sources so you can see where each claim came from.",
+      "code": "Requirement: an order needs at least one item.\nCurrent code allows 0.\nExplain the mismatch using both sources.",
+      "result": "Current: 0 is accepted.\nRequired: 0 is rejected.\nThe comparison is the point to inspect.",
+      "focus": "The issue rejects zero while the function accepts it",
+      "action": "Add the training issue and compare the two sources.",
+      "durationFrames": 479,
+      "duration": 19.958333333333332,
+      "cues": [
+        {
+          "start": 0.418,
+          "end": 1.768,
+          "text": "Add the issue text."
+        },
+        {
+          "start": 1.818,
+          "end": 4.818,
+          "text": "The rule now says an order needs at\nleast one item."
+        },
+        {
+          "start": 4.893,
+          "end": 7.468,
+          "text": "Compare that with the answer we just\ntraced."
+        },
+        {
+          "start": 7.518,
+          "end": 11.008,
+          "text": "The code allows zero because the\ncomparison includes equality."
+        },
+        {
+          "start": 11.596,
+          "end": 14.321,
+          "text": "The issue requires zero to be rejected."
+        },
+        {
+          "start": 14.396,
+          "end": 18.521,
+          "text": "Ask the assistant to cite both sources\nso you can see where each claim came"
+        },
+        {
+          "start": 18.571,
+          "end": 18.865,
+          "text": "from."
+        }
+      ]
+    },
+    {
+      "id": "narrow",
+      "kind": "editor",
+      "eyebrow": "CONTROL THE CONTEXT",
+      "title": "Compare two inputs",
+      "body": "Leave room for the pieces the question actually depends on.",
+      "narration": "Try the question twice in two fresh chats on the same branch. First attach the issue and the function. For the second run, add an unrelated release note. Read each answer and locate its evidence. The release note does not explain this boundary. Keep the two sources that let a teammate check the claim quickly.",
+      "code": "Run A: source + issue.\nRun B: source + issue + unrelated notes.\nSame question: why is 0 accepted?",
+      "result": "The comparison and requirement are the evidence.",
+      "focus": "The answer relies on the issue and function",
+      "action": "Run the same question with the focused sources.",
+      "durationFrames": 475,
+      "duration": 19.791666666666668,
+      "cues": [
+        {
+          "start": 0.393,
+          "end": 4.143,
+          "text": "Try the question twice in two fresh\nchats on the same branch."
+        },
+        {
+          "start": 4.243,
+          "end": 6.618,
+          "text": "First attach the issue and the function."
+        },
+        {
+          "start": 6.693,
+          "end": 9.6,
+          "text": "For the second run, add an unrelated\nrelease note."
+        },
+        {
+          "start": 10.238,
+          "end": 12.988,
+          "text": "Read each answer and locate its\nevidence."
+        },
+        {
+          "start": 13.038,
+          "end": 15.688,
+          "text": "The release note does not explain this\nboundary."
+        },
+        {
+          "start": 15.738,
+          "end": 18.737,
+          "text": "Keep the two sources that let a teammate\ncheck the claim quickly."
+        }
+      ]
+    },
+    {
+      "id": "check",
+      "kind": "terminal",
+      "eyebrow": "YOUR TURN",
+      "title": "Check the boundary",
+      "body": "Run the same check in your approved training environment.",
+      "narration": "Now check the explanation against the original training code. In an approved runner, call the function for zero and negative one. The output shows true for zero and false for negative one. That agrees with the comparison you read. If the result differs in another run, compare the checkout and confirm which version of the function you executed.",
+      "code": "python -B - <<'PY'\nfrom order_quantity import is_valid_quantity\nfor n in (0, -1):\n    print(n, is_valid_quantity(n))\nPY",
+      "result": "0 True\n-1 False",
+      "focus": "The runner prints zero true and negative one false",
+      "action": "Run the shown check in an approved runner.",
+      "durationFrames": 528,
+      "duration": 22.0,
+      "cues": [
+        {
+          "start": 0.439,
+          "end": 4.189,
+          "text": "Now check the explanation against the\noriginal training code."
+        },
+        {
+          "start": 4.264,
+          "end": 7.723,
+          "text": "In an approved runner, call the function\nfor zero and negative one."
+        },
+        {
+          "start": 8.335,
+          "end": 11.885,
+          "text": "The output shows true for zero and false\nfor negative one."
+        },
+        {
+          "start": 11.96,
+          "end": 14.46,
+          "text": "That agrees with the comparison you\nread."
+        },
+        {
+          "start": 14.535,
+          "end": 18.61,
+          "text": "If the result differs in another run,\ncompare the checkout and confirm which"
+        },
+        {
+          "start": 18.66,
+          "end": 20.508,
+          "text": "version of the function you executed."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "label": "OpenAI model catalog",
+      "url": "https://developers.openai.com/api/docs/models"
+    },
+    {
+      "label": "VS Code core AI concepts",
+      "url": "https://code.visualstudio.com/docs/agents/concepts/language-models"
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "durationFrames": 3598,
+  "voiceBuild": "82efe50e7d6b752cbdc6782cf06e1e8b6160376774c80573e76376ee2a69bc27"
+}
