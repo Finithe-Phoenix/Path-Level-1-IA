@@ -14,47 +14,37 @@
       "result": "Check which sources are visible in this chat.",
       "focus": "The baseline answer reveals which sources were used",
       "action": "Start a fresh chat and check the response references.",
-      "durationFrames": 506,
-      "duration": 21.083333333333332,
+      "durationFrames": 490,
+      "duration": 20.416666666666668,
       "cues": [
         {
-          "start": 0.418,
-          "end": 2.943,
+          "start": 0.316,
+          "end": 2.321,
           "text": "Ask “Why does zero pass validation?”"
         },
         {
-          "start": 3.018,
-          "end": 4.393,
-          "text": "in a fresh chat."
+          "start": 3.022,
+          "end": 5.277,
+          "text": "in a fresh chat. Depending on the\nsession,"
         },
         {
-          "start": 4.443,
-          "end": 8.208,
-          "text": "Depending on the session, Copilot may\nalready receive parts of the active"
+          "start": 5.488,
+          "end": 9.948,
+          "text": "Copilot may already receive parts of the\nactive editor or search the workspace."
         },
         {
-          "start": 8.258,
-          "end": 10.095,
-          "text": "editor or search the workspace."
+          "start": 10.328,
+          "end": 14.648,
+          "text": "Look for the sources cited in its\nanswer. Even a correct guess is easier"
         },
         {
-          "start": 10.768,
-          "end": 13.318,
-          "text": "Look for the sources cited in its\nanswer."
+          "start": 14.648,
+          "end": 17.042,
+          "text": "to evaluate once you know where it came\nfrom."
         },
         {
-          "start": 13.393,
-          "end": 16.918,
-          "text": "Even a correct guess is easier to\nevaluate once you know where it came"
-        },
-        {
-          "start": 16.968,
-          "end": 17.768,
-          "text": "from."
-        },
-        {
-          "start": 17.868,
-          "end": 20.011,
+          "start": 17.473,
+          "end": 19.775,
           "text": "Next we will choose the evidence\ndeliberately."
         }
       ]
@@ -70,37 +60,37 @@
       "result": "Selected: only relevant training content.",
       "focus": "The issue, function and test file answer distinct questions",
       "action": "Match each source to the question it answers.",
-      "durationFrames": 469,
-      "duration": 19.541666666666668,
+      "durationFrames": 438,
+      "duration": 18.25,
       "cues": [
         {
-          "start": 0.439,
-          "end": 3.089,
-          "text": "Select three things from the training\ncheckout."
+          "start": 0.275,
+          "end": 4.419,
+          "text": "Select three things from the training\ncheckout. The issue tells you what"
         },
         {
-          "start": 3.139,
-          "end": 5.164,
-          "text": "The issue tells you what should happen."
+          "start": 4.419,
+          "end": 4.955,
+          "text": "should happen."
         },
         {
-          "start": 5.214,
-          "end": 7.723,
+          "start": 5.426,
+          "end": 7.772,
           "text": "The validator tells you what the program\ndoes now."
         },
         {
-          "start": 8.315,
-          "end": 11.49,
+          "start": 8.073,
+          "end": 10.859,
           "text": "The test file tells you what behavior is\nalready covered."
         },
         {
-          "start": 11.565,
-          "end": 14.54,
+          "start": 11.221,
+          "end": 13.687,
           "text": "If you only have the issue, you can\nexplain the rule."
         },
         {
-          "start": 14.59,
-          "end": 18.449,
+          "start": 13.968,
+          "end": 17.595,
           "text": "With the source, you can identify\nexactly which comparison breaks it."
         }
       ]
@@ -116,32 +106,32 @@
       "result": "The relevant function and tests are visible.",
       "focus": "All three current references appear in the request",
       "action": "Attach the issue and the two files in Copilot Chat.",
-      "durationFrames": 486,
-      "duration": 20.25,
+      "durationFrames": 448,
+      "duration": 18.666666666666668,
       "cues": [
         {
-          "start": 0.393,
-          "end": 3.893,
+          "start": 0.275,
+          "end": 2.994,
           "text": "Open the validator and the test file in\nVS Code."
         },
         {
-          "start": 3.968,
-          "end": 7.043,
+          "start": 3.585,
+          "end": 6.107,
           "text": "Use the chat attachment control to add\nthose files."
         },
         {
-          "start": 7.118,
-          "end": 10.859,
+          "start": 6.599,
+          "end": 10.149,
           "text": "Include the synthetic issue text and\ninspect the list before sending."
         },
         {
-          "start": 11.481,
-          "end": 14.956,
+          "start": 10.451,
+          "end": 13.421,
           "text": "Confirm the paths are from the checkout\nyou intend to work on."
         },
         {
-          "start": 15.031,
-          "end": 19.153,
+          "start": 13.702,
+          "end": 17.869,
           "text": "This lets you and the assistant refer to\nthe same function and the same tests."
         }
       ]
@@ -157,42 +147,37 @@
       "result": "Code allows 0. The baseline has no zero test.",
       "focus": "The comparison admits zero and no zero test exists yet",
       "action": "Check the cited source and test names in the editor.",
-      "durationFrames": 504,
-      "duration": 21.0,
+      "durationFrames": 486,
+      "duration": 20.25,
       "cues": [
         {
-          "start": 0.418,
-          "end": 2.243,
-          "text": "Ask two questions together."
+          "start": 0.315,
+          "end": 3.451,
+          "text": "Ask two questions together. “Why does\nzero pass,"
         },
         {
-          "start": 2.318,
-          "end": 5.743,
-          "text": "“Why does zero pass, and which baseline\ntest covers it?”"
+          "start": 3.923,
+          "end": 5.676,
+          "text": "and which baseline test covers it?”"
         },
         {
-          "start": 5.793,
-          "end": 9.92,
+          "start": 6.236,
+          "end": 10.248,
           "text": "The answer should show that greater than\nor equal to zero returns true for zero."
         },
         {
-          "start": 10.513,
-          "end": 13.758,
-          "text": "Read the tests for one, five, and\nnegative one."
+          "start": 10.528,
+          "end": 14.848,
+          "text": "Read the tests for one, five, and\nnegative one. None runs the zero case."
         },
         {
-          "start": 13.858,
-          "end": 15.708,
-          "text": "None runs the zero case."
-        },
-        {
-          "start": 15.758,
-          "end": 19.408,
+          "start": 15.339,
+          "end": 19.168,
           "text": "That gap explains why the existing suite\ncan be green while the issue remains"
         },
         {
-          "start": 19.458,
-          "end": 19.897,
+          "start": 19.179,
+          "end": 19.47,
           "text": "open."
         }
       ]
@@ -208,42 +193,42 @@
       "result": "Use exact sources to resolve the mismatch.",
       "focus": "The current branch supplies the authoritative source for this run",
       "action": "Remove a stale attachment and reopen the current file.",
-      "durationFrames": 537,
-      "duration": 22.375,
+      "durationFrames": 505,
+      "duration": 21.041666666666668,
       "cues": [
         {
-          "start": 0.418,
-          "end": 4.018,
+          "start": 0.296,
+          "end": 3.582,
           "text": "Imagine an older attachment shows a\ngreater-than comparison."
         },
         {
-          "start": 4.068,
-          "end": 7.793,
+          "start": 3.963,
+          "end": 6.978,
           "text": "The active checkout still has greater\nthan or equal to zero."
         },
         {
-          "start": 7.868,
-          "end": 10.468,
+          "start": 7.319,
+          "end": 9.554,
           "text": "Open the current file and confirm the\nbranch,"
         },
         {
-          "start": 10.518,
-          "end": 12.267,
+          "start": 9.805,
+          "end": 11.479,
           "text": "then remove the stale attachment."
         },
         {
-          "start": 12.894,
-          "end": 15.794,
+          "start": 11.93,
+          "end": 14.111,
           "text": "Ask the question again using the current\nsource."
         },
         {
-          "start": 15.869,
-          "end": 18.894,
+          "start": 14.622,
+          "end": 17.496,
           "text": "A one-character difference is enough to\nchange the answer,"
         },
         {
-          "start": 18.944,
-          "end": 21.287,
+          "start": 17.886,
+          "end": 20.279,
           "text": "so keep the two versions easy to\ndistinguish."
         }
       ]
@@ -259,42 +244,37 @@
       "result": "Requirement from issue. Behavior from source.",
       "focus": "The answer points to missing evidence when a source is absent",
       "action": "Ask which requirement source is still missing.",
-      "durationFrames": 494,
-      "duration": 20.583333333333332,
+      "durationFrames": 466,
+      "duration": 19.416666666666668,
       "cues": [
         {
-          "start": 0.393,
-          "end": 4.193,
+          "start": 0.255,
+          "end": 3.931,
           "text": "Try a follow-up where you provide the\nfunction but leave out the issue."
         },
         {
-          "start": 4.268,
-          "end": 7.843,
+          "start": 4.402,
+          "end": 8.075,
           "text": "Ask what the program does and what\nevidence would tell you whether that is"
         },
         {
-          "start": 7.893,
-          "end": 8.469,
+          "start": 8.075,
+          "end": 8.533,
           "text": "correct."
         },
         {
-          "start": 9.093,
-          "end": 11.368,
-          "text": "The code answers the first question."
+          "start": 8.984,
+          "end": 12.443,
+          "text": "The code answers the first question. The\nissue answers the second."
         },
         {
-          "start": 11.418,
-          "end": 13.493,
-          "text": "The issue answers the second."
-        },
-        {
-          "start": 13.568,
-          "end": 17.313,
+          "start": 12.944,
+          "end": 16.723,
           "text": "After you provide it, ask the assistant\nto compare the two and check that it"
         },
         {
-          "start": 17.363,
-          "end": 19.473,
+          "start": 16.723,
+          "end": 18.68,
           "text": "keeps both claims tied to their sources."
         }
       ]
@@ -310,38 +290,33 @@
       "result": "A short comparison grounded in repository files.",
       "focus": "The stronger answer identifies the source line and test gap",
       "action": "Compare the two fresh-chat answers side by side.",
-      "durationFrames": 480,
-      "duration": 20.0,
+      "durationFrames": 454,
+      "duration": 18.916666666666668,
       "cues": [
         {
-          "start": 0.418,
-          "end": 4.093,
+          "start": 0.255,
+          "end": 3.398,
           "text": "Run the same question in two fresh\nsessions on the same branch."
         },
         {
-          "start": 4.168,
-          "end": 6.393,
-          "text": "In the first attach the issue alone."
+          "start": 3.909,
+          "end": 8.125,
+          "text": "In the first attach the issue alone. In\nthe second add the validator and tests."
         },
         {
-          "start": 6.468,
-          "end": 8.789,
-          "text": "In the second add the validator and\ntests."
-        },
-        {
-          "start": 9.412,
-          "end": 12.162,
+          "start": 8.546,
+          "end": 11.111,
           "text": "Compare their claims about the cause and\ncoverage."
         },
         {
-          "start": 12.237,
-          "end": 15.137,
-          "text": "Look for a real source line and a named\ntest."
+          "start": 11.603,
+          "end": 15.898,
+          "text": "Look for a real source line and a named\ntest. Write one sentence about which"
         },
         {
-          "start": 15.212,
-          "end": 18.513,
-          "text": "Write one sentence about which\nattachment made each claim checkable."
+          "start": 15.898,
+          "end": 17.968,
+          "text": "attachment made each claim checkable."
         }
       ]
     }
@@ -363,6 +338,6 @@
   "fps": 24,
   "width": 1280,
   "height": 720,
-  "durationFrames": 3476,
-  "voiceBuild": "4fcb6261ae3b600ef504026035e65552e9f18d45c4e578835ce9730e308929c2"
+  "durationFrames": 3287,
+  "voiceBuild": "44befbf54e3ad4805497ceb8728d217ecea01f7be9558c93d8dad48f6f4f8851"
 }

@@ -1,215 +1,196 @@
 1
-00:00:00,463 --> 00:00:03,259
+00:00:00,362 --> 00:00:02,662
 Ask “Why does zero pass validation?”
 
 2
-00:00:03,342 --> 00:00:04,865
-in a fresh chat.
+00:00:03,466 --> 00:00:06,052
+in a fresh chat. Depending on the
+session,
 
 3
-00:00:04,920 --> 00:00:09,090
-Depending on the session, Copilot may
-already receive parts of the active
+00:00:06,294 --> 00:00:11,410
+Copilot may already receive parts of the
+active editor or search the workspace.
 
 4
-00:00:09,145 --> 00:00:11,180
-editor or search the workspace.
+00:00:11,846 --> 00:00:16,800
+Look for the sources cited in its
+answer. Even a correct guess is easier
 
 5
-00:00:11,925 --> 00:00:14,749
-Look for the sources cited in its
-answer.
-
-6
-00:00:14,832 --> 00:00:18,736
-Even a correct guess is easier to
-evaluate once you know where it came
-
-7
-00:00:18,791 --> 00:00:19,677
+00:00:16,800 --> 00:00:19,546
+to evaluate once you know where it came
 from.
 
-8
-00:00:19,788 --> 00:00:22,161
+6
+00:00:20,041 --> 00:00:22,681
 Next we will choose the evidence
 deliberately.
 
-9
-00:00:24,486 --> 00:00:27,421
+7
+00:00:24,398 --> 00:00:29,151
 Select three things from the training
-checkout.
+checkout. The issue tells you what
 
-10
-00:00:27,476 --> 00:00:29,719
-The issue tells you what should happen.
+8
+00:00:29,151 --> 00:00:29,766
+should happen.
 
-11
-00:00:29,774 --> 00:00:32,553
+9
+00:00:30,306 --> 00:00:32,997
 The validator tells you what the program
 does now.
 
-12
-00:00:33,208 --> 00:00:36,724
+10
+00:00:33,342 --> 00:00:36,538
 The test file tells you what behavior is
 already covered.
 
-13
-00:00:36,807 --> 00:00:40,102
+11
+00:00:36,953 --> 00:00:39,781
 If you only have the issue, you can
 explain the rule.
 
-14
-00:00:40,157 --> 00:00:44,431
+12
+00:00:40,104 --> 00:00:44,264
 With the source, you can identify
 exactly which comparison breaks it.
 
-15
-00:00:46,435 --> 00:00:50,311
+13
+00:00:45,690 --> 00:00:48,809
 Open the validator and the test file in
 VS Code.
 
-16
-00:00:50,394 --> 00:00:53,800
+14
+00:00:49,487 --> 00:00:52,379
 Use the chat attachment control to add
 those files.
 
-17
-00:00:53,883 --> 00:00:58,026
+15
+00:00:52,944 --> 00:00:57,015
 Include the synthetic issue text and
 inspect the list before sending.
 
-18
-00:00:58,714 --> 00:01:02,563
+16
+00:00:57,362 --> 00:01:00,768
 Confirm the paths are from the checkout
 you intend to work on.
 
-19
-00:01:02,646 --> 00:01:07,211
+17
+00:01:01,090 --> 00:01:05,870
 This lets you and the assistant refer to
 the same function and the same tests.
 
+18
+00:01:07,819 --> 00:01:11,416
+Ask two questions together. “Why does
+zero pass,
+
+19
+00:01:11,957 --> 00:01:13,968
+and which baseline test covers it?”
+
 20
-00:01:09,546 --> 00:01:11,567
-Ask two questions together.
-
-21
-00:01:11,650 --> 00:01:15,443
-“Why does zero pass, and which baseline
-test covers it?”
-
-22
-00:01:15,498 --> 00:01:20,069
+00:01:14,610 --> 00:01:19,212
 The answer should show that greater than
 or equal to zero returns true for zero.
 
-23
-00:01:20,725 --> 00:01:24,319
+21
+00:01:19,533 --> 00:01:24,488
 Read the tests for one, five, and
-negative one.
+negative one. None runs the zero case.
 
-24
-00:01:24,430 --> 00:01:26,479
-None runs the zero case.
-
-25
-00:01:26,534 --> 00:01:30,576
+22
+00:01:25,051 --> 00:01:29,443
 That gap explains why the existing suite
 can be green while the issue remains
 
-26
-00:01:30,631 --> 00:01:31,118
+23
+00:01:29,455 --> 00:01:30,105
 open.
 
-27
-00:01:33,463 --> 00:01:37,450
+24
+00:01:31,672 --> 00:01:35,441
 Imagine an older attachment shows a
 greater-than comparison.
 
-28
-00:01:37,505 --> 00:01:41,630
+25
+00:01:35,878 --> 00:01:39,336
 The active checkout still has greater
 than or equal to zero.
 
-29
-00:01:41,713 --> 00:01:44,593
+26
+00:01:39,727 --> 00:01:42,291
 Open the current file and confirm the
 branch,
 
-30
-00:01:44,648 --> 00:01:46,585
+27
+00:01:42,579 --> 00:01:44,499
 then remove the stale attachment.
 
-31
-00:01:47,279 --> 00:01:50,491
+28
+00:01:45,016 --> 00:01:47,518
 Ask the question again using the current
 source.
 
-32
-00:01:50,574 --> 00:01:53,924
+29
+00:01:48,104 --> 00:01:51,400
 A one-character difference is enough to
 change the answer,
 
-33
-00:01:53,979 --> 00:01:56,574
+30
+00:01:51,847 --> 00:01:54,592
 so keep the two versions easy to
 distinguish.
 
-34
-00:01:58,852 --> 00:02:03,060
+31
+00:01:56,375 --> 00:02:00,592
 Try a follow-up where you provide the
 function but leave out the issue.
 
-35
-00:02:03,144 --> 00:02:07,103
+32
+00:02:01,132 --> 00:02:05,345
 Ask what the program does and what
 evidence would tell you whether that is
 
-36
-00:02:07,158 --> 00:02:07,796
+33
+00:02:05,345 --> 00:02:05,995
 correct.
 
-37
-00:02:08,487 --> 00:02:11,006
-The code answers the first question.
+34
+00:02:06,387 --> 00:02:10,354
+The code answers the first question. The
+issue answers the second.
 
-38
-00:02:11,062 --> 00:02:13,360
-The issue answers the second.
-
-39
-00:02:13,443 --> 00:02:17,590
+35
+00:02:10,929 --> 00:02:15,263
 After you provide it, ask the assistant
 to compare the two and check that it
 
-40
-00:02:17,645 --> 00:02:19,982
+36
+00:02:15,263 --> 00:02:17,508
 keeps both claims tied to their sources.
 
-41
-00:02:22,338 --> 00:02:26,408
+37
+00:02:19,292 --> 00:02:22,897
 Run the same question in two fresh
 sessions on the same branch.
 
-42
-00:02:26,491 --> 00:02:28,955
-In the first attach the issue alone.
+38
+00:02:23,483 --> 00:02:28,319
+In the first attach the issue alone. In
+the second add the validator and tests.
 
-43
-00:02:29,038 --> 00:02:31,608
-In the second add the validator and
-tests.
-
-44
-00:02:32,298 --> 00:02:35,344
+39
+00:02:28,802 --> 00:02:31,744
 Compare their claims about the cause and
 coverage.
 
-45
-00:02:35,427 --> 00:02:38,638
+40
+00:02:32,308 --> 00:02:37,234
 Look for a real source line and a named
-test.
+test. Write one sentence about which
 
-46
-00:02:38,721 --> 00:02:42,377
-Write one sentence about which
+41
+00:02:37,234 --> 00:02:39,608
 attachment made each claim checkable.
