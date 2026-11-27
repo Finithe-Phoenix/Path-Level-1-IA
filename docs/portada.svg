@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="440" viewBox="0 0 1440 440" role="img" aria-labelledby="title desc">
+<title id="title">RUTA DE IA  /  BÁSICO · Contexto y modelos</title>
+<desc id="desc">Código y segmentación ilustrativa en tokens. 8 videos · 21 min 56 s</desc>
+<defs>
+<pattern id="dots" width="13" height="13" patternUnits="userSpaceOnUse">
+<circle cx="2" cy="2" r="0.85" fill="#15202a" opacity=".15"/>
+</pattern>
+<pattern id="graph" width="23" height="23" patternUnits="userSpaceOnUse">
+<path d="M23 0H0V23" fill="none" stroke="#cbcadd" stroke-width="1"/>
+</pattern>
+</defs>
+<rect x="0" y="0" width="1440" height="440" rx="0" fill="#15202a" />
+<rect x="589" y="0" width="851" height="440" rx="0" fill="#e0f0df" />
+<rect x="589" y="0" width="851" height="440" rx="0" fill="url(#dots)" />
+<g transform="translate(52 51)">
+<path d="M0 5L8 0L8 17L0 22Z" fill="#a7ebc8" stroke-linejoin="round"/>
+<path d="M10 0L18 5L18 22L10 17Z" fill="#a7ebc8" stroke-linejoin="round"/>
+<path d="M20 5L28 0L28 17L20 22Z" fill="#a7ebc8" stroke-linejoin="round"/>
+</g>
+<text x="98" y="69" font-family="DejaVu Sans Mono,monospace" font-size="19" font-weight="700" fill="#f7f5ed" text-anchor="start" letter-spacing="1.3">RUTA DE IA  /  BÁSICO</text>
+<text x="48" y="192" font-family="Open Sans,DejaVu Sans,sans-serif" font-size="80" font-weight="700" fill="#f7f5ed" text-anchor="start" letter-spacing="-4">Contexto</text>
+<text x="48" y="280" font-family="Open Sans,DejaVu Sans,sans-serif" font-size="80" font-weight="700" fill="#a7ebc8" text-anchor="start" letter-spacing="-4">y modelos</text>
+<path d="M52 339L526 339" fill="none" stroke="#495661" stroke-width="1.7" />
+<path d="M54 363L54 381L68 372Z" fill="#a7ebc8" />
+<text x="83" y="380" font-family="DejaVu Sans Mono,monospace" font-size="21" font-weight="400" fill="#e5e8df" text-anchor="start" >8 videos · 21 min 56 s</text>
+<path d="M618 30L631 30" fill="none" stroke="#15202a" stroke-width="1.5" />
+<path d="M618 30L618 43" fill="none" stroke="#15202a" stroke-width="1.5" />
+<path d="M1411 30L1398 30" fill="none" stroke="#15202a" stroke-width="1.5" />
+<path d="M1411 30L1411 43" fill="none" stroke="#15202a" stroke-width="1.5" />
+<path d="M618 410L631 410" fill="none" stroke="#15202a" stroke-width="1.5" />
+<path d="M618 410L618 397" fill="none" stroke="#15202a" stroke-width="1.5" />
+<path d="M1411 410L1398 410" fill="none" stroke="#15202a" stroke-width="1.5" />
+<path d="M1411 410L1411 397" fill="none" stroke="#15202a" stroke-width="1.5" />
+<text x="652" y="69" font-family="DejaVu Sans Mono,monospace" font-size="19" font-weight="700" fill="#15202a" text-anchor="start" letter-spacing="1.1">DEL CÓDIGO A LOS TOKENS</text>
+<rect x="674" y="103" width="676" height="84" rx="10" fill="#15202a" />
+<rect x="665" y="94" width="676" height="84" rx="10" fill="#f5f6e9" stroke="#15202a" stroke-width="2.6" />
+<text x="708" y="148" font-family="DejaVu Sans Mono,monospace" font-size="40" font-weight="700" fill="#15202a" text-anchor="start" >return quantity &gt; 0</text>
+<rect x="1303" y="110" width="13" height="13" rx="3" fill="#65b48f" stroke="#15202a" stroke-width="1.7" />
+<path d="M778 180V197 Q778 212 766.975 219 L746.5 235V267" fill="none" stroke="#4a7865" stroke-width="2.4" stroke-dasharray="5 4"/>
+<circle cx="778" cy="180" r="3.7" fill="#15202a" />
+<path d="M925 180V197 Q925 212 933.925 219 L950.5 235V267" fill="none" stroke="#4a7865" stroke-width="2.4" stroke-dasharray="5 4"/>
+<circle cx="925" cy="180" r="3.7" fill="#15202a" />
+<path d="M1079 180V197 Q1079 212 1100.7 219 L1141.0 235V267" fill="none" stroke="#4a7865" stroke-width="2.4" stroke-dasharray="5 4"/>
+<circle cx="1079" cy="180" r="3.7" fill="#15202a" />
+<path d="M1151 180V197 Q1151 212 1193.875 219 L1273.5 235V267" fill="none" stroke="#4a7865" stroke-width="2.4" stroke-dasharray="5 4"/>
+<circle cx="1151" cy="180" r="3.7" fill="#15202a" />
+<path d="M682 271L834 271L834 340L682 340Z" fill="#94b4a3" stroke-linejoin="round"/>
+<path d="M677 321L816 321L816 333L677 333Z" fill="#7aa690" stroke="#15202a" stroke-width="2" stroke-linejoin="round"/>
+<path d="M816 263L829 255L829 313L816 321Z" fill="#73a48a" stroke="#15202a" stroke-width="2" stroke-linejoin="round"/>
+<path d="M677 263L690 255L829 255L816 263Z" fill="#fcf7dd" stroke="#15202a" stroke-width="2" stroke-linejoin="round"/>
+<rect x="677" y="263" width="139" height="58" rx="0" fill="#9ee2bf" stroke="#15202a" stroke-width="2" />
+<text x="746.5" y="304.0" font-family="DejaVu Sans Mono,monospace" font-size="36" font-weight="700" fill="#15202a" text-anchor="middle" >return</text>
+<path d="M867 264L1057 264L1057 333L867 333Z" fill="#94b4a3" stroke-linejoin="round"/>
+<path d="M862 314L1039 314L1039 326L862 326Z" fill="#7aa690" stroke="#15202a" stroke-width="2" stroke-linejoin="round"/>
+<path d="M1039 256L1052 248L1052 306L1039 314Z" fill="#73a48a" stroke="#15202a" stroke-width="2" stroke-linejoin="round"/>
+<path d="M862 256L875 248L1052 248L1039 256Z" fill="#fcf7dd" stroke="#15202a" stroke-width="2" stroke-linejoin="round"/>
+<rect x="862" y="256" width="177" height="58" rx="0" fill="#d4ef9e" stroke="#15202a" stroke-width="2" />
+<text x="950.5" y="297.0" font-family="DejaVu Sans Mono,monospace" font-size="36" font-weight="700" fill="#15202a" text-anchor="middle" >quantity</text>
+<path d="M1095 276L1210 276L1210 345L1095 345Z" fill="#94b4a3" stroke-linejoin="round"/>
+<path d="M1090 326L1192 326L1192 338L1090 338Z" fill="#7aa690" stroke="#15202a" stroke-width="2" stroke-linejoin="round"/>
+<path d="M1192 268L1205 260L1205 318L1192 326Z" fill="#73a48a" stroke="#15202a" stroke-width="2" stroke-linejoin="round"/>
+<path d="M1090 268L1103 260L1205 260L1192 268Z" fill="#fcf7dd" stroke="#15202a" stroke-width="2" stroke-linejoin="round"/>
+<rect x="1090" y="268" width="102" height="58" rx="0" fill="#c0d9f7" stroke="#15202a" stroke-width="2" />
+<text x="1141.0" y="309.0" font-family="DejaVu Sans Mono,monospace" font-size="36" font-weight="700" fill="#15202a" text-anchor="middle" >&gt;</text>
+<path d="M1239 267L1331 267L1331 336L1239 336Z" fill="#94b4a3" stroke-linejoin="round"/>
+<path d="M1234 317L1313 317L1313 329L1234 329Z" fill="#7aa690" stroke="#15202a" stroke-width="2" stroke-linejoin="round"/>
+<path d="M1313 259L1326 251L1326 309L1313 317Z" fill="#73a48a" stroke="#15202a" stroke-width="2" stroke-linejoin="round"/>
+<path d="M1234 259L1247 251L1326 251L1313 259Z" fill="#fcf7dd" stroke="#15202a" stroke-width="2" stroke-linejoin="round"/>
+<rect x="1234" y="259" width="79" height="58" rx="0" fill="#ffd184" stroke="#15202a" stroke-width="2" />
+<text x="1273.5" y="300.0" font-family="DejaVu Sans Mono,monospace" font-size="36" font-weight="700" fill="#15202a" text-anchor="middle" >0</text>
+<path d="M681 363L1326 363" fill="none" stroke="#4a7865" stroke-width="1.7" />
+<path d="M681 351L681 363" fill="none" stroke="#4a7865" stroke-width="1.7" />
+<path d="M1326 351L1326 363" fill="none" stroke="#4a7865" stroke-width="1.7" />
+<rect x="837" y="348" width="356" height="31" rx="0" fill="#e0f0df" />
+<text x="1015" y="372" font-family="Open Sans,DejaVu Sans,sans-serif" font-size="19" font-weight="400" fill="#15202a" text-anchor="middle" >Segmentación ilustrativa</text>
+</svg>

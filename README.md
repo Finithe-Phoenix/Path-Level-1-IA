@@ -1,57 +1,43 @@
-# Path de IA · Básico
+# Básico · Fundamentos con GitHub Copilot
 
-Aprende a elegir un tipo de modelo, darle a Copilot el contexto justo y verificar tu primer cambio en VS Code.
+![La expresión return quantity > 0 se descompone en cuatro tokens ilustrativos.](docs/portada.png)
 
-Cada episodio tiene narración y subtítulos en inglés. El MP4 incluye capítulos para volver a un paso. [Descargar el episodio de muestra B01](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/refs/heads/main/videos/B01.mp4).
+Empieza con una pregunta sobre una función que acepta pedidos de cero unidades. A medida que adjuntas el código y las pruebas, verás qué información usa Copilot, qué puede hacer un agente y cómo comprobar su respuesta en VS Code.
 
-[![Fragmentos del episodio B01](preview.gif)](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/refs/heads/main/videos/B01.mp4)
+**8 episodios · 21:56 en total.** Narración y subtítulos en inglés. Cada MP4 incluye capítulos para repetir un paso.
 
-| Episodio | Demostración | Duración | Archivos |
-|---|---|---:|---|
-| B01 | How a Language Model Uses Context | 2:44 | [MP4](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/refs/heads/main/videos/B01.mp4) · [SRT](subtitles/B01.en.srt) |
-| B02 | The Main Types of AI Models | 2:50 | [MP4](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/refs/heads/main/videos/B02.mp4) · [SRT](subtitles/B02.en.srt) |
-| B03 | OpenAI, Anthropic, and Microsoft Models | 2:51 | [MP4](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/refs/heads/main/videos/B03.mp4) · [SRT](subtitles/B03.en.srt) |
-| B04 | Choose a Model for the Task | 2:46 | [MP4](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/refs/heads/main/videos/B04.mp4) · [SRT](subtitles/B04.en.srt) |
-| B05 | What Is an AI Agent? | 2:46 | [MP4](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/refs/heads/main/videos/B05.mp4) · [SRT](subtitles/B05.en.srt) |
-| B06 | Prompt Engineering for Coding Tasks | 2:36 | [MP4](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/refs/heads/main/videos/B06.mp4) · [SRT](subtitles/B06.en.srt) |
-| B07 | Give Copilot the Right Context | 2:44 | [MP4](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/refs/heads/main/videos/B07.mp4) · [SRT](subtitles/B07.en.srt) |
-| B08 | Verify and Undo an AI Edit | 2:40 | [MP4](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/refs/heads/main/videos/B08.mp4) · [SRT](subtitles/B08.en.srt) |
+[Descargar el primer episodio (B01)](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/videos-v2.0.0/videos/B01.mp4) · [Editar o reconstruir los videos](PRODUCCION.md)
 
-## Reconstruir un episodio en GCP
+## Temario
 
-En el workspace remoto, abre la raíz del repositorio. La producción utiliza Linux, Node.js 24, Python 3.12, FFmpeg y DejaVu Sans. La pista de voz, los subtítulos y los tiempos ya están en Git.
+Selecciona el título para descargar el video. Puedes activar los subtítulos en tu reproductor o descargar el archivo SRT de cada episodio.
 
-```bash
-npm ci --prefix engine
-python3 studio.py list
-python3 studio.py render B01
-python3 studio.py verify B01 --decode
-```
+| Episodio | Qué harás en pantalla |
+| --- | --- |
+| **B01** · [How a Language Model Uses Context](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/videos-v2.0.0/videos/B01.mp4)<br>2:44 · [SRT](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/videos-v2.0.0/subtitles/B01.en.srt) | Adjunta el validador de pedidos y predice qué devolverá para cero y para uno. |
+| **B02** · [The Main Types of AI Models](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/videos-v2.0.0/videos/B02.mp4)<br>2:50 · [SRT](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/videos-v2.0.0/subtitles/B02.en.srt) | Elige entre generar texto, buscar por similitud o clasificar un ticket según el resultado que necesitas. |
+| **B03** · [OpenAI, Anthropic, and Microsoft Models](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/videos-v2.0.0/videos/B03.mp4)<br>2:51 · [SRT](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/videos-v2.0.0/subtitles/B03.en.srt) | Identifica al fabricante, la plataforma y el cliente de un modelo de OpenAI, Anthropic o Microsoft. Comprueba cuál aparece en tu sesión. |
+| **B04** · [Choose a Model for the Task](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/videos-v2.0.0/videos/B04.mp4)<br>2:46 · [SRT](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/videos-v2.0.0/subtitles/B04.en.srt) | Compara dos modelos con el mismo issue y puntúa sus respuestas con cuatro resultados esperados. |
+| **B05** · [What Is an AI Agent?](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/videos-v2.0.0/videos/B05.mp4)<br>2:46 · [SRT](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/videos-v2.0.0/subtitles/B05.en.srt) | Sigue una llamada a una herramienta. Comprueba el comando propuesto y decide cuándo debe terminar la sesión. |
+| **B06** · [Prompt Engineering for Coding Tasks](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/videos-v2.0.0/videos/B06.mp4)<br>2:36 · [SRT](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/videos-v2.0.0/subtitles/B06.en.srt) | Convierte «arregla esto» en un prompt con un defecto observable, un alcance y una prueba de aceptación. |
+| **B07** · [Give Copilot the Right Context](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/videos-v2.0.0/videos/B07.mp4)<br>2:44 · [SRT](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/videos-v2.0.0/subtitles/B07.en.srt) | Adjunta el issue, la función y las pruebas. Comprueba si la respuesta cita la línea que admite el cero. |
+| **B08** · [Verify and Undo an AI Edit](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/videos-v2.0.0/videos/B08.mp4)<br>2:40 · [SRT](https://github.com/Finithe-Phoenix/Path-Level-1-IA/raw/videos-v2.0.0/subtitles/B08.en.srt) | Revisa el diff, elimina la edición ajena al issue y vuelve a ejecutar las pruebas sobre el cambio que conservas. |
 
-El MP4 se escribe en `videos/B01.mp4`. Para renderizar el path completo, usa `python3 studio.py render all`. Para generar el proyecto HTML editable y su vista previa, ejecuta `python3 studio.py project B01` y abre `build/B01/preview.html`. Las instrucciones de HyperFrames y Remotion están en [engine/README.md](engine/README.md).
+<details>
+<summary>Ver un fragmento animado de B01</summary>
 
-## Cambiar lo que se explica o cómo suena
+![Fragmento de la demostración B01](preview.gif)
 
-Edita el guion, las acciones y los resultados de pantalla en [lessons/episodes.json](lessons/episodes.json). Cada episodio enlaza sus fuentes técnicas. El estilo, el ritmo y la mezcla de voces están en [voice/profile.json](voice/profile.json). Si cambias el texto hablado o el orden de las escenas, regenera la voz antes del render.
+</details>
 
-```bash
-python3.12 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r voice/requirements.txt
-python voice/assets.py
-python studio.py voice B01
-python studio.py render B01
-python studio.py verify B01 --decode
-```
+## Laboratorio de práctica
 
-Para cambiar solo el ritmo, usa la toma original guardada en `takes/`. Por ejemplo, ejecuta `python3 studio.py pace B01 --target-wpm 142` y vuelve a renderizar. Este ajuste conserva el tono y recalcula escenas y subtítulos. La síntesis de voz descarga dos archivos de modelo con hashes fijados y los reutiliza. Las pistas AAC ya publicadas permiten editar la animación y volver a exportar sin sintetizar voz. [Detalles de narración](voice/README.md).
+El proyecto incluye el validador de cantidades y tres pruebas iniciales. Puedes reproducir el fallo con un pedido de cero unidades y comprobar el resultado de tu arreglo en el workspace autorizado. [Abrir el laboratorio](lab/README.md).
 
-## Versionar la siguiente edición
+## Fuentes editables
 
-Crea una rama para el cambio y conserva el ID de cada episodio. Tras revisar el video, ejecuta `python3 studio.py manifest` para renovar el inventario y `python3 studio.py verify all --release` para cotejar los archivos. Si el episodio editado aparece en la vista previa del README, regenera ese fragmento con `python3 preview.py`. Incluye las fuentes y los archivos generados en el mismo PR. La guía de trabajo está en [AGENTS.md](AGENTS.md).
+Para preparar una nueva edición, empieza por el guion y las referencias técnicas de cada escena. El repositorio también guarda los dibujos, la toma original de voz, el audio final y sus marcas de tiempo. [Guiones y referencias](lessons/episodes.json) · [Guía de producción](PRODUCCION.md) · [Guía para agentes](AGENTS.md) · [Descargar las fuentes de v2.0.0 en ZIP](https://github.com/Finithe-Phoenix/Path-Level-1-IA/archive/refs/tags/v2.0.0.zip).
 
-Las pantallas y los datos del curso son simulaciones didácticas. Los PR del ejemplo los revisa una persona mediante `gh` en el terminal autorizado. Claude Code y OpenCode se ejecutan dentro del workspace de GCP.
+## Otras rutas
 
-Puedes consultar los [materiales de producción de la edición 1](archive/v1/) y los [videos originales](https://github.com/Finithe-Phoenix/Path-Level-1-IA/releases/tag/v1.0.0).
-
-El validador y sus tres pruebas iniciales están en el [laboratorio de práctica](lab/).
+[Medio](https://github.com/Finithe-Phoenix/Path-Level-2-IA) · [Avanzado](https://github.com/Finithe-Phoenix/Path-Level-3-IA) · [Managers](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA)
