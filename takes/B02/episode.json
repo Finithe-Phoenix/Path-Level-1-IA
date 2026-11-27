@@ -14,43 +14,38 @@
       "result": "Start with the work the model must perform.",
       "focus": "Each task names a different deliverable",
       "action": "Match a training task to its desired output.",
-      "durationFrames": 500,
-      "duration": 20.833333333333332,
+      "durationFrames": 475,
+      "duration": 19.791666666666668,
       "cues": [
         {
-          "start": 0.393,
-          "end": 3.643,
+          "start": 0.255,
+          "end": 2.93,
           "text": "An order issue arrives and the team\nneeds three things."
         },
         {
-          "start": 3.743,
-          "end": 7.168,
+          "start": 3.311,
+          "end": 6.488,
           "text": "Someone must explain the validator, find\nthe rule in our notes,"
         },
         {
-          "start": 7.368,
-          "end": 8.363,
+          "start": 6.859,
+          "end": 7.831,
           "text": "and label the issue."
         },
         {
-          "start": 8.976,
-          "end": 13.091,
+          "start": 8.192,
+          "end": 11.482,
           "text": "Those tasks can share the same text, yet\nthe outputs are different."
         },
         {
-          "start": 13.191,
-          "end": 15.191,
-          "text": "Start by naming the deliverable."
+          "start": 11.903,
+          "end": 15.926,
+          "text": "Start by naming the deliverable. Once\nyou know what must come back,"
         },
         {
-          "start": 15.266,
-          "end": 19.121,
-          "text": "Once you know what must come back, you\ncan pick a capability and a way to check"
-        },
-        {
-          "start": 19.171,
-          "end": 19.761,
-          "text": "the result."
+          "start": 16.258,
+          "end": 19.077,
+          "text": "you can pick a capability and a way to\ncheck the result."
         }
       ]
     },
@@ -65,38 +60,43 @@
       "result": "0 passes the current comparison.\n1 also passes.",
       "focus": "The generated explanation can be checked against the expression",
       "action": "Ask Copilot to explain the two comparison results.",
-      "durationFrames": 540,
-      "duration": 22.5,
+      "durationFrames": 492,
+      "duration": 20.5,
       "cues": [
         {
-          "start": 0.389,
-          "end": 5.639,
+          "start": 0.235,
+          "end": 4.743,
           "text": "Give Copilot the return line and ask it\nto explain the result for zero and one."
         },
         {
-          "start": 5.714,
-          "end": 9.067,
+          "start": 5.174,
+          "end": 8.469,
           "text": "A language model can produce an\nexplanation in ordinary words."
         },
         {
-          "start": 9.689,
-          "end": 12.114,
-          "text": "Check those words against the\nexpression."
+          "start": 8.87,
+          "end": 12.78,
+          "text": "Check those words against the\nexpression. Both numbers satisfy this"
         },
         {
-          "start": 12.189,
-          "end": 14.739,
-          "text": "Both numbers satisfy this condition."
+          "start": 12.78,
+          "end": 13.337,
+          "text": "condition."
         },
         {
-          "start": 14.814,
-          "end": 18.664,
-          "text": "If the answer says zero is rejected,\nyou've found a specific sentence to"
+          "start": 13.828,
+          "end": 15.744,
+          "text": "If the answer says zero is rejected,"
         },
         {
-          "start": 18.714,
-          "end": 21.414,
-          "text": "question and a one-line source to point\nto."
+          "start": 15.915,
+          "end": 19.551,
+          "text": "you've found a specific sentence to\nquestion and a one-line source to point"
+        },
+        {
+          "start": 19.551,
+          "end": 19.837,
+          "text": "to."
         }
       ]
     },
@@ -111,47 +111,42 @@
       "result": "Top match: order acceptance rules.\nOpen the original note for evidence.",
       "focus": "The order acceptance note ranks first in the example",
       "action": "Open the first result and read the cited rule.",
-      "durationFrames": 571,
-      "duration": 23.791666666666668,
+      "durationFrames": 517,
+      "duration": 21.541666666666668,
       "cues": [
         {
-          "start": 0.439,
-          "end": 3.889,
+          "start": 0.255,
+          "end": 3.074,
           "text": "Now imagine the rule lives in one of\nthree training notes."
         },
         {
-          "start": 3.964,
-          "end": 7.595,
+          "start": 3.495,
+          "end": 6.89,
           "text": "An embedding model turns the query and\nthe stored notes into vectors."
         },
         {
-          "start": 8.204,
-          "end": 11.754,
+          "start": 7.251,
+          "end": 10.488,
           "text": "The system compares those\nrepresentations and ranks possible"
         },
         {
-          "start": 11.804,
-          "end": 12.929,
+          "start": 10.488,
+          "end": 10.974,
           "text": "matches."
         },
         {
-          "start": 13.004,
-          "end": 15.879,
+          "start": 11.295,
+          "end": 14.03,
           "text": "A useful first result is the order\nacceptance note."
         },
         {
-          "start": 16.493,
-          "end": 18.168,
-          "text": "Open it and read the rule."
+          "start": 14.581,
+          "end": 18.123,
+          "text": "Open it and read the rule. Similarity\nhelps you find a source."
         },
         {
-          "start": 18.243,
-          "end": 20.318,
-          "text": "Similarity helps you find a source."
-        },
-        {
-          "start": 20.368,
-          "end": 22.713,
+          "start": 18.614,
+          "end": 20.809,
           "text": "The source itself tells you what the\nrule says."
         }
       ]
@@ -167,42 +162,42 @@
       "result": "defect\nCheck the proposed label before applying it.",
       "focus": "The example ticket receives the defect label",
       "action": "Choose one label and compare it to the documented rule.",
-      "durationFrames": 561,
-      "duration": 23.375,
+      "durationFrames": 517,
+      "duration": 21.541666666666668,
       "cues": [
         {
-          "start": 0.435,
-          "end": 4.965,
+          "start": 0.235,
+          "end": 3.819,
           "text": "For the issue label, our outputs are\ndefect, feature, or question."
         },
         {
-          "start": 5.015,
-          "end": 8.564,
+          "start": 4.099,
+          "end": 7.875,
           "text": "The ticket reports behavior that already\ncontradicts a documented rule."
         },
         {
-          "start": 9.188,
-          "end": 11.688,
+          "start": 8.155,
+          "end": 10.293,
           "text": "That gives us a reason to choose defect."
         },
         {
-          "start": 11.763,
-          "end": 15.988,
-          "text": "A classifier can propose the label\ndirectly, and a language model can also"
+          "start": 10.695,
+          "end": 13.113,
+          "text": "A classifier can propose the label\ndirectly,"
         },
         {
-          "start": 16.038,
-          "end": 17.777,
-          "text": "choose from a short allowed list."
+          "start": 13.345,
+          "end": 16.707,
+          "text": "and a language model can also choose\nfrom a short allowed list."
         },
         {
-          "start": 18.401,
-          "end": 21.976,
+          "start": 17.068,
+          "end": 20.746,
           "text": "Check which wording in the issue\nsupports the decision before applying"
         },
         {
-          "start": 22.051,
-          "end": 22.275,
+          "start": 20.746,
+          "end": 20.912,
           "text": "it."
         }
       ]
@@ -218,37 +213,37 @@
       "result": "Pick capabilities based on the required output.",
       "focus": "Screenshot, picture and transcript have different outputs",
       "action": "Choose an input-output pair and name its check.",
-      "durationFrames": 522,
-      "duration": 21.75,
+      "durationFrames": 510,
+      "duration": 21.25,
       "cues": [
         {
-          "start": 0.414,
-          "end": 2.914,
-          "text": "Think of the materials for a training\nlesson."
+          "start": 0.235,
+          "end": 4.428,
+          "text": "Think of the materials for a training\nlesson. A screenshot can go into a"
         },
         {
-          "start": 2.989,
-          "end": 6.914,
-          "text": "A screenshot can go into a vision-\ncapable model for a description."
+          "start": 4.428,
+          "end": 6.556,
+          "text": "vision-capable model for a description."
         },
         {
-          "start": 6.989,
-          "end": 10.069,
+          "start": 6.857,
+          "end": 9.963,
           "text": "A written brief can go into an image\nmodel for an illustration."
         },
         {
-          "start": 10.686,
-          "end": 13.836,
+          "start": 10.405,
+          "end": 13.043,
           "text": "Audio can go into a transcription system\nfor text."
         },
         {
-          "start": 13.886,
-          "end": 17.361,
+          "start": 13.404,
+          "end": 16.551,
           "text": "Check a screenshot description against\nthe visible controls."
         },
         {
-          "start": 17.436,
-          "end": 20.679,
+          "start": 17.022,
+          "end": 20.517,
           "text": "Check a transcript against an important\nsentence in the recording."
         }
       ]
@@ -264,37 +259,37 @@
       "result": "Ask which step produced each piece of evidence.",
       "focus": "Retrieval supplies the note that generation can explain",
       "action": "Follow the query from retrieval to the cited note.",
-      "durationFrames": 521,
-      "duration": 21.708333333333332,
+      "durationFrames": 472,
+      "duration": 19.666666666666668,
       "cues": [
         {
-          "start": 0.439,
-          "end": 2.639,
-          "text": "Some tools combine these steps."
+          "start": 0.295,
+          "end": 4.233,
+          "text": "Some tools combine these steps. A\nquestion about zero quantities might"
         },
         {
-          "start": 2.714,
-          "end": 7.314,
-          "text": "A question about zero quantities might\nfirst retrieve the most relevant note."
+          "start": 4.233,
+          "end": 6.244,
+          "text": "first retrieve the most relevant note."
         },
         {
-          "start": 7.364,
-          "end": 10.325,
+          "start": 6.549,
+          "end": 9.24,
           "text": "The language model then uses that note\nto draft an answer."
         },
         {
-          "start": 10.938,
-          "end": 14.913,
+          "start": 9.54,
+          "end": 12.843,
           "text": "When you see the final paragraph, trace\nit back through the citation."
         },
         {
-          "start": 14.988,
-          "end": 19.413,
+          "start": 13.224,
+          "end": 17.759,
           "text": "If retrieval found an outdated rule, the\nanswer can sound convincing and still"
         },
         {
-          "start": 19.463,
-          "end": 20.657,
+          "start": 17.81,
+          "end": 18.861,
           "text": "use the wrong evidence."
         }
       ]
@@ -310,37 +305,37 @@
       "result": "A capability choice plus a verification method.",
       "focus": "The chosen capability has a matching verification step",
       "action": "Write a task, its output, and one check.",
-      "durationFrames": 507,
-      "duration": 21.125,
+      "durationFrames": 471,
+      "duration": 19.625,
       "cues": [
         {
-          "start": 0.393,
-          "end": 4.143,
+          "start": 0.235,
+          "end": 3.766,
           "text": "Choose a task from the training\nrepository and finish this sentence."
         },
         {
-          "start": 4.218,
-          "end": 7.943,
-          "text": "“I need this input turned into this\noutput, and I will check it by doing"
+          "start": 4.337,
+          "end": 6.712,
+          "text": "“I need this input turned into this\noutput,"
         },
         {
-          "start": 7.993,
-          "end": 8.341,
-          "text": "this.”"
+          "start": 6.963,
+          "end": 8.677,
+          "text": "and I will check it by doing this.”"
         },
         {
-          "start": 8.965,
-          "end": 13.49,
+          "start": 9.078,
+          "end": 13.426,
           "text": "For example, use a language model to\nexplain the validator and verify the"
         },
         {
-          "start": 13.54,
-          "end": 15.862,
+          "start": 13.426,
+          "end": 15.507,
           "text": "explanation against the code and a test."
         },
         {
-          "start": 16.517,
-          "end": 19.666,
+          "start": 15.948,
+          "end": 18.63,
           "text": "Once that check is clear, you're ready\nto compare options."
         }
       ]
@@ -359,6 +354,6 @@
   "fps": 24,
   "width": 1280,
   "height": 720,
-  "durationFrames": 3722,
-  "voiceBuild": "b49fc75b0131999eb9396ee70ae6ef89cdc192ecd69f69774cb13cba15a425fc"
+  "durationFrames": 3454,
+  "voiceBuild": "2a9082b0457b74d32c48a3f8258a7741489de3f23aa66263853bf6648aacc461"
 }

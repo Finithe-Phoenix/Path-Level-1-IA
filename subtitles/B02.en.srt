@@ -1,215 +1,212 @@
 1
-00:00:00,422 --> 00:00:03,912
+00:00:00,289 --> 00:00:03,321
 An order issue arrives and the team
 needs three things.
 
 2
-00:00:04,020 --> 00:00:07,698
+00:00:03,753 --> 00:00:07,354
 Someone must explain the validator, find
 the rule in our notes,
 
 3
-00:00:07,913 --> 00:00:08,981
+00:00:07,775 --> 00:00:08,876
 and label the issue.
 
 4
-00:00:09,639 --> 00:00:14,059
+00:00:09,286 --> 00:00:13,015
 Those tasks can share the same text, yet
 the outputs are different.
 
 5
-00:00:14,166 --> 00:00:16,314
-Start by naming the deliverable.
+00:00:13,492 --> 00:00:18,052
+Start by naming the deliverable. Once
+you know what must come back,
 
 6
-00:00:16,394 --> 00:00:20,534
-Once you know what must come back, you
-can pick a capability and a way to check
+00:00:18,428 --> 00:00:21,624
+you can pick a capability and a way to
+check the result.
 
 7
-00:00:20,588 --> 00:00:21,222
-the result.
-
-8
-00:00:23,168 --> 00:00:28,806
+00:00:23,099 --> 00:00:28,209
 Give Copilot the return line and ask it
 to explain the result for zero and one.
 
-9
-00:00:28,886 --> 00:00:32,487
+8
+00:00:28,698 --> 00:00:32,433
 A language model can produce an
 explanation in ordinary words.
 
-10
-00:00:33,155 --> 00:00:35,759
+9
+00:00:32,887 --> 00:00:37,319
 Check those words against the
-expression.
+expression. Both numbers satisfy this
+
+10
+00:00:37,319 --> 00:00:37,969
+condition.
 
 11
-00:00:35,840 --> 00:00:38,578
-Both numbers satisfy this condition.
+00:00:38,507 --> 00:00:40,679
+If the answer says zero is rejected,
 
 12
-00:00:38,659 --> 00:00:42,794
-If the answer says zero is rejected,
+00:00:40,873 --> 00:00:44,994
 you've found a specific sentence to
+question and a one-line source to point
 
 13
-00:00:42,847 --> 00:00:45,747
-question and a one-line source to point
+00:00:44,994 --> 00:00:45,644
 to.
 
 14
-00:00:48,054 --> 00:00:51,759
+00:00:46,997 --> 00:00:50,192
 Now imagine the rule lives in one of
 three training notes.
 
 15
-00:00:51,840 --> 00:00:55,739
+00:00:50,670 --> 00:00:54,518
 An embedding model turns the query and
 the stored notes into vectors.
 
 16
-00:00:56,393 --> 00:01:00,206
+00:00:54,927 --> 00:00:58,596
 The system compares those
 representations and ranks possible
 
 17
-00:01:00,259 --> 00:01:01,468
+00:00:58,596 --> 00:00:59,246
 matches.
 
 18
-00:01:01,548 --> 00:01:04,636
+00:00:59,511 --> 00:01:02,611
 A useful first result is the order
 acceptance note.
 
 19
-00:01:05,295 --> 00:01:07,094
-Open it and read the rule.
+00:01:03,235 --> 00:01:07,250
+Open it and read the rule. Similarity
+helps you find a source.
 
 20
-00:01:07,174 --> 00:01:09,403
-Similarity helps you find a source.
-
-21
-00:01:09,456 --> 00:01:11,975
+00:01:07,807 --> 00:01:10,295
 The source itself tells you what the
 rule says.
 
-22
-00:01:13,967 --> 00:01:18,832
+21
+00:01:11,766 --> 00:01:15,829
 For the issue label, our outputs are
 defect, feature, or question.
 
-23
-00:01:18,886 --> 00:01:22,697
+22
+00:01:16,146 --> 00:01:20,426
 The ticket reports behavior that already
 contradicts a documented rule.
 
-24
-00:01:23,367 --> 00:01:26,052
+23
+00:01:20,744 --> 00:01:23,167
 That gives us a reason to choose defect.
 
-25
-00:01:26,132 --> 00:01:30,670
+24
+00:01:23,623 --> 00:01:26,364
 A classifier can propose the label
-directly, and a language model can also
+directly,
+
+25
+00:01:26,626 --> 00:01:30,437
+and a language model can also choose
+from a short allowed list.
 
 26
-00:01:30,723 --> 00:01:32,591
-choose from a short allowed list.
-
-27
-00:01:33,261 --> 00:01:37,100
+00:01:30,846 --> 00:01:35,015
 Check which wording in the issue
 supports the decision before applying
 
-28
-00:01:37,181 --> 00:01:37,421
+27
+00:01:35,015 --> 00:01:35,665
 it.
 
-29
-00:01:39,695 --> 00:01:42,379
+28
+00:01:36,849 --> 00:01:41,602
 Think of the materials for a training
-lesson.
+lesson. A screenshot can go into a
+
+29
+00:01:41,602 --> 00:01:44,014
+vision-capable model for a description.
 
 30
-00:01:42,460 --> 00:01:46,675
-A screenshot can go into a vision-
-capable model for a description.
-
-31
-00:01:46,756 --> 00:01:50,063
+00:01:44,355 --> 00:01:47,876
 A written brief can go into an image
 model for an illustration.
 
-32
-00:01:50,726 --> 00:01:54,109
+31
+00:01:48,377 --> 00:01:51,367
 Audio can go into a transcription system
 for text.
 
-33
-00:01:54,162 --> 00:01:57,894
+32
+00:01:51,776 --> 00:01:55,343
 Check a screenshot description against
 the visible controls.
 
-34
-00:01:57,975 --> 00:02:01,457
+33
+00:01:55,877 --> 00:01:59,839
 Check a transcript against an important
 sentence in the recording.
 
-35
-00:02:03,471 --> 00:02:05,834
-Some tools combine these steps.
+34
+00:02:01,376 --> 00:02:05,840
+Some tools combine these steps. A
+question about zero quantities might
 
-36
-00:02:05,915 --> 00:02:10,855
-A question about zero quantities might
+35
+00:02:05,840 --> 00:02:08,120
 first retrieve the most relevant note.
 
-37
-00:02:10,908 --> 00:02:14,088
+36
+00:02:08,465 --> 00:02:11,515
 The language model then uses that note
 to draft an answer.
 
-38
-00:02:14,746 --> 00:02:19,015
+37
+00:02:11,856 --> 00:02:15,599
 When you see the final paragraph, trace
 it back through the citation.
 
-39
-00:02:19,096 --> 00:02:23,848
+38
+00:02:16,031 --> 00:02:21,172
 If retrieval found an outdated rule, the
 answer can sound convincing and still
 
-40
-00:02:23,902 --> 00:02:25,184
+39
+00:02:21,230 --> 00:02:22,421
 use the wrong evidence.
 
-41
-00:02:27,089 --> 00:02:31,116
+40
+00:02:23,974 --> 00:02:27,977
 Choose a task from the training
 repository and finish this sentence.
 
-42
-00:02:31,197 --> 00:02:35,197
+41
+00:02:28,624 --> 00:02:31,316
 “I need this input turned into this
-output, and I will check it by doing
+output,
+
+42
+00:02:31,601 --> 00:02:33,543
+and I will check it by doing this.”
 
 43
-00:02:35,251 --> 00:02:35,625
-this.”
-
-44
-00:02:36,295 --> 00:02:41,154
+00:02:33,998 --> 00:02:38,926
 For example, use a language model to
 explain the validator and verify the
 
-45
-00:02:41,208 --> 00:02:43,701
+44
+00:02:38,926 --> 00:02:41,285
 explanation against the code and a test.
 
-46
-00:02:44,405 --> 00:02:47,787
+45
+00:02:41,785 --> 00:02:44,825
 Once that check is clear, you're ready
 to compare options.
