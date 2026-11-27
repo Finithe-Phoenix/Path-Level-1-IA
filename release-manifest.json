@@ -4,129 +4,129 @@
     {
       "id": "B01",
       "title": "How a Language Model Uses Context",
-      "frames": 3925,
+      "frames": 3846,
       "fps": 24,
       "chapters": 7,
       "sha256": {
-        "videos/B01.mp4": "95c7fc3b0bd616d3e2f5e7514de0f4ecde89c8dfa4e59a4a80175e9cfa247f92",
-        "subtitles/B01.en.srt": "aa547544d113bc9df08add018576a5ee368f5ab7f7027b2c0a26d11e03c0ba85",
-        "narration/B01/narration.m4a": "96e92910d400424d00b9a943e9c1b32ee4bde65a998bb860dab80a9e47f239cd",
-        "narration/B01/timing.json": "7408b188537dc0cddef1eb694b242194e1d6dc31fb5353d7155410b94f784301",
-        "takes/B01/episode.json": "47135bb923017f2e3f894f6958868f3b4cf2cf0210858d906c94bc60b1aad221",
-        "takes/B01/narration.m4a": "87d3e880c65ba5a0d1862e575524bf95f2cc3b77d79b929bebc0b3fec5a2bee2",
-        "takes/B01/captions.srt": "23a3d48bf15efd921854e9bd0dfbaca31c8b242b4833e8293e0ee67af850342a"
+        "videos/B01.mp4": "d5bb77aef857a5ab816283a4e1d7d0c361a0945059e0302ee83a8753139de242",
+        "subtitles/B01.en.srt": "07e8d3e0b05cbe4a8a944f257881e9d6f793134ada0e6d3735e42b536770b925",
+        "narration/B01/narration.m4a": "174fa285ec1da6091be534e8a1433ae7656c95cbd9f51b7ebf0fd1eadbec57c2",
+        "narration/B01/timing.json": "7b852906e6e2a24544841f9abc036706665470d7631efacb2a656d2b326c568d",
+        "takes/B01/episode.json": "e15b238864ee8eccb4c0243aee772c1b4cc067d44ddcd091e3b9d4f0984e3c16",
+        "takes/B01/narration.m4a": "7f495e7ed9cd8d914cbf3d916f19da551f6aeebdbb144d3ca67efd7527d56379",
+        "takes/B01/captions.srt": "f33491c2e2ea1aae9e2c976bfa399e248cec32e3cdf5a706426881edfd47b302"
       }
     },
     {
       "id": "B02",
       "title": "The Main Types of AI Models",
-      "frames": 4073,
+      "frames": 3991,
       "fps": 24,
       "chapters": 7,
       "sha256": {
-        "videos/B02.mp4": "aa414bfd9d5bda63a1824685da683ce081d015a7c98c79f7b22d40feb9540bb2",
-        "subtitles/B02.en.srt": "1bc6148663d116842b334bc3f580b372895304972ea23528b3dce1d825060baf",
-        "narration/B02/narration.m4a": "8e58da83b94914791b3dbf151c250b8e2281606ecc20b290e9984b9ec09db237",
-        "narration/B02/timing.json": "b6e3f1ed22ce31645d2cc12a1eed0ff64ce1f2eae2ab7f05ee46236faab29665",
-        "takes/B02/episode.json": "bdbbcad98ab4302dc34fc952bb2e58fc4cdd7f42fb5b8d5a2ada85ca2bb92adf",
-        "takes/B02/narration.m4a": "ca32fa75b9c50cbfe67a0f354f89e87987b05bfff556d8d2d3013a68fdd6b383",
-        "takes/B02/captions.srt": "7e8cd7332e7e0a19d5a7e3bcdc07c49c651aa7efd8b7653ca5d1a675f127bd9e"
+        "videos/B02.mp4": "48605d7723a95441ca556fbc0d484e88a85d46d80229a2d5798f0f603ed3efa9",
+        "subtitles/B02.en.srt": "0655acdaf13806165e03983ba30e3d4857bf04eb7a9b6d2f0e9a2ee8b31ba984",
+        "narration/B02/narration.m4a": "aa7efe2c0cd51d7d96fba73cce914db58b7658b9468acc4731b512d02e3cf41c",
+        "narration/B02/timing.json": "e8d928819c8a83081fdbfa85701a311890c1e4edec883b680de32ed8e7fb9628",
+        "takes/B02/episode.json": "911418d7a8ed0ca09c451d01acb1b7034d25c37fa7ab63b41f43f862fde28080",
+        "takes/B02/narration.m4a": "5b6c33b24627e1e315caf0305e66ba34a4709a990e13dc49f0185794ea1310d0",
+        "takes/B02/captions.srt": "0a9847d8111f00134e2b11c61c6e4f5b83aa4295e9e7173189505b2061a01f5a"
       }
     },
     {
       "id": "B03",
       "title": "OpenAI, Anthropic, and Microsoft Models",
-      "frames": 4093,
+      "frames": 4011,
       "fps": 24,
       "chapters": 7,
       "sha256": {
-        "videos/B03.mp4": "a35eb9bffc2e9f8851117006bab32621e9fed7d66998cb6bd2b570f3085467a5",
-        "subtitles/B03.en.srt": "4868e0b12f4f53660df8ffcf4ef926958e709c66028c04a4d33010d658e537ae",
-        "narration/B03/narration.m4a": "61d72c2a4a766a4bb4f070ac119484e3f484c06715a4a21e5856980df48b0e05",
-        "narration/B03/timing.json": "98348a5c20521282bc0e6c0ec2ca45896d0ece9c3a14e9e361ceaf39a47c6e02",
-        "takes/B03/episode.json": "bfcb3d3bba7669f5fb4104f63a265d01bcf01ba4ea5a0a69fbe9c5ecfb563788",
-        "takes/B03/narration.m4a": "bfbc6cc4124552d98db9c4cd528ff0cd5df2cd380f524d38045bb379eb0a2ad0",
-        "takes/B03/captions.srt": "bb690485f65248847cf131d6c269d2b9af17dfd90fe8f925a85232060611506a"
+        "videos/B03.mp4": "f1a57cda78d639ab1f6f3a3517c1dbaecb8db668f43be6a99b5c38751728771b",
+        "subtitles/B03.en.srt": "6c15a5c16d626f5214baa7d1ad3b704929ef1947b883affbe76e91669c6ca73e",
+        "narration/B03/narration.m4a": "57d29e683d2fd9801df0ac06a31266872d366ad23daa60835fb15599989b10b3",
+        "narration/B03/timing.json": "cf79d7115888022b9cad4d542cf49ff000db1bd6db9176bb6e83709fcac75c25",
+        "takes/B03/episode.json": "769926221374b18b1e872651ffba44245e7c380ef7a2b088dfdcbbcfb7cc81f4",
+        "takes/B03/narration.m4a": "fc74ed6fcf162fd1b9c4126773deda388b23ff410f3c5aea4a0676285ae224d7",
+        "takes/B03/captions.srt": "6c1805a952fe390ad2e9aed91c349762e3baf476978b8955fc21521aed5f06b4"
       }
     },
     {
       "id": "B04",
       "title": "Choose a Model for the Task",
-      "frames": 3975,
+      "frames": 3895,
       "fps": 24,
       "chapters": 7,
       "sha256": {
-        "videos/B04.mp4": "3ffefbeba09880289291dee1a936c14d780092a3994dedb155bc6eb33ac61d83",
-        "subtitles/B04.en.srt": "94892dd21884d6e5570ed331f8bd9cd14847740d50dd52831e658fb7544c33c8",
-        "narration/B04/narration.m4a": "f01a2d7690ef95f6c067327e99722ee59a0ff37bce1e1d8b92a659d373ad1775",
-        "narration/B04/timing.json": "06058e9df48f0beac25ffc819f0583d96b907ca657eb0289c8de6cff46085a7a",
-        "takes/B04/episode.json": "19d67e25f32ca92762255b830cecb54b17aaccef7c68b862846402b3dfde48a4",
-        "takes/B04/narration.m4a": "94a88fe853d11453487a584cb62df28d9a7bd246de65ff4034c5a78931c2544a",
-        "takes/B04/captions.srt": "c699f1ad143cd9a18ed62f7a673e10dde141caf7bc1391b4af5533bea45c34a5"
+        "videos/B04.mp4": "dcca59c18d7cf64f78ee98af0a54fa127ce877796bb092f3968cd7b6c71e3db5",
+        "subtitles/B04.en.srt": "30bf5c8ba5a2a0df1e5fa98d762f9f7824c8ed4947a43a91d44745db99dd7189",
+        "narration/B04/narration.m4a": "1a8c1d86d1bd7495a3febcf50607c56ca70d7486baf0c4edaf4fef86b5c5d986",
+        "narration/B04/timing.json": "e4a81a528fca9b269c47575de8f908a61b67f1b8d1f11951b775dd891490595a",
+        "takes/B04/episode.json": "a51ef789aa2b6854d7640f7fa8de0b3105a9df9049c82f1c553b5a8778942045",
+        "takes/B04/narration.m4a": "b9440e1fe8949ba872d0a2ad95bac0747e6ae7e1216e958e1377225414ba400f",
+        "takes/B04/captions.srt": "19ba0622c64ee2fa290f77601e04e0b3bd5d9aff465540f3dbaeb17ce11490cf"
       }
     },
     {
       "id": "B05",
       "title": "What Is an AI Agent?",
-      "frames": 3995,
+      "frames": 3914,
       "fps": 24,
       "chapters": 7,
       "sha256": {
-        "videos/B05.mp4": "9f2da4b16af70d36f67fc89e85f00bb05764041690dc76f81064bd733f787e59",
-        "subtitles/B05.en.srt": "a46b94776ebbce9dfe756e5aee6eb8ceaa428fcd54de3f183dee3c7a1c481753",
-        "narration/B05/narration.m4a": "a2b0b6b55a9dc56f6249cfd2033c228ee737cad13f16cbfe3b38e751662fec7e",
-        "narration/B05/timing.json": "6b23b402ffc6b037b8bd1cc59c8fad27a4dd9c180cbd86c1a6f73b032a304c5b",
-        "takes/B05/episode.json": "d17abaa351ac022feeddea8cb1456e580bd8333a745a0b6483a7af46a67fc470",
-        "takes/B05/narration.m4a": "cfd96af68a1c7d4e202252cb7cbf9a3a27b6cdec922c5fe8340f7531bc2a2473",
-        "takes/B05/captions.srt": "879757366e60fb26c6fa4ca4f72b3e023bea0b2a3c54e3f1fcc36576c9e9c0b5"
+        "videos/B05.mp4": "5a89ede2c1e51392e754fe9e9e3f43ed22aa1684c2ecbba1d661c104a2dfe77b",
+        "subtitles/B05.en.srt": "7a00f7abeaa9b41d774b1132a66ad10900578a84ed68f27d9b8df3e4c1e07610",
+        "narration/B05/narration.m4a": "a25334e655c0d71ebe4c51c714828655097a2d62da8dc5de373e679882effbbd",
+        "narration/B05/timing.json": "aead881460a457817d320617a3a85815dab72b76adb47ec2a80b8961d1268387",
+        "takes/B05/episode.json": "c5ec1072603bec309b6a8403a6d93b2394e7e9a2dd26c7255a8d1b63abfa6f74",
+        "takes/B05/narration.m4a": "d3c900a9ceca9d275795162d8d3ffbea96d9a487dad77e31de8ed876fd4598e3",
+        "takes/B05/captions.srt": "8ceb1ba424ca14c350561242318782907350c88dca1c16a5920cc0d5f9e0c5e8"
       }
     },
     {
       "id": "B06",
       "title": "Prompt Engineering for Coding Tasks",
-      "frames": 3738,
+      "frames": 3663,
       "fps": 24,
       "chapters": 7,
       "sha256": {
-        "videos/B06.mp4": "40cdcc36f8ac6ef6da3a50ff03e0404da29d608d70d673f9ab6103ae8ef71c22",
-        "subtitles/B06.en.srt": "6d0508ba3b2db7f208f26de5b3a7a4a6fc58b07e0874433e16caba507a25e2db",
-        "narration/B06/narration.m4a": "695a0cf185a478cfbc15e6eb00e9b95d0b44016149c47383fd920c1216e40332",
-        "narration/B06/timing.json": "e6f37e21819a354d9931dd99fb38ff0731e6e395e99944cf3852382cfdbabdb4",
-        "takes/B06/episode.json": "72cbb25f4b85bf1f24adec9cd0c1bddc9cbd97a520428a11510f02299e7a0aae",
-        "takes/B06/narration.m4a": "d37e3c93091f6fc4b6e8e4b1882164b4914c0af83a741cb73b1d229de2d46501",
-        "takes/B06/captions.srt": "0c99752aee2c8522e5e04c88881fd204d4ff0b0680f61c82d9430bbb4ad0a200"
+        "videos/B06.mp4": "e2a18f3b62970cb9a94453457751388cea723e100ba359cec289c59cfad2dda7",
+        "subtitles/B06.en.srt": "d079789d6039211f1fd3ec5a705458696fe20d4fdc1277bf831b9e255ebcc3d0",
+        "narration/B06/narration.m4a": "5d07bae5c332a281b854c817f6bbf68d1ce058d2222b356df8af166876440ba0",
+        "narration/B06/timing.json": "f02ed9dc86c5766997e2cd7b2f8af7157578560029989d3e3f2eb7bf792b5228",
+        "takes/B06/episode.json": "6331d672ad4747f5f55a996853a45d84393615a4af9dd2fa857bcceddd9268a6",
+        "takes/B06/narration.m4a": "b7416f180411a96badbd0c6090a6121e33f84ed2be3f544bd2e0fe0229fcd0c0",
+        "takes/B06/captions.srt": "c64a3176a125ce3e9b43d7e9273220149712f9526a8a4b8988aa32bc65a56d7a"
       }
     },
     {
       "id": "B07",
       "title": "Give Copilot the Right Context",
-      "frames": 3945,
+      "frames": 3866,
       "fps": 24,
       "chapters": 7,
       "sha256": {
-        "videos/B07.mp4": "a08a7297478b80be52137b1845e6a1bd5da37fa6641e9e8b1edf4d09c2928856",
-        "subtitles/B07.en.srt": "deb2495428c46efda8f4da3078f882171f7af234d15a9466a548afaa71e458c1",
-        "narration/B07/narration.m4a": "5ac39820a3be79c4a7ff558387f0ae2a00ba69cdb30f8cb15a038fb9cabd0b84",
-        "narration/B07/timing.json": "02466fbedee3b1ed3542296c64d813574440e82e85c90b504b906dd74f59c220",
-        "takes/B07/episode.json": "3be5960221ece2fc083dfb80bfc3ae3f1f7a850082d26aca0fde8e9d11e80232",
-        "takes/B07/narration.m4a": "9e5c0c1f55e7d01a95af7605d358ba0c430c2385f44ab969eec076752ac5fb2c",
-        "takes/B07/captions.srt": "77c438067114ec6fabf0a1da388ccdfeddb34fee84dea9d5290197870df23b3c"
+        "videos/B07.mp4": "04b004484a7252fc64a8080fc711e44b56ffff9068bc037fcd075ede96bd0b71",
+        "subtitles/B07.en.srt": "3bbda0d1a86d3d3aee7754acbef21cd905ddd8d89a06d22bfbda077862d55e57",
+        "narration/B07/narration.m4a": "cf3cc7876a33b5730e9f386ce0d6ee46638335229273993baa0ea4d3d7683780",
+        "narration/B07/timing.json": "b6077c5317e86742f065c1b9a3c65d48fcf359da1b1b5ff7ade902dd7b765e0a",
+        "takes/B07/episode.json": "00388d2ba8fec039c7f54b86af80313ca0e64fc1cc23462aa26a6c85b0999a57",
+        "takes/B07/narration.m4a": "5908287ef70742aa2deac247e7a516c7cb84a0891f024121a23dc26c8b35aef0",
+        "takes/B07/captions.srt": "0337bf74c36b0b162b97513d1ed73f7247ab05486ee6123425d2044b151c0e5a"
       }
     },
     {
       "id": "B08",
       "title": "Verify and Undo an AI Edit",
-      "frames": 3837,
+      "frames": 3759,
       "fps": 24,
       "chapters": 7,
       "sha256": {
-        "videos/B08.mp4": "1e5a0eda4bb6dfa145101916fedcdff282420de970e2027bd64296b67b1d5989",
-        "subtitles/B08.en.srt": "1002e4ce065d335b7fabf212e412d1e9fd0eeec3a0b959bf239a3d96361e0829",
-        "narration/B08/narration.m4a": "d3237a003abc987877a98229121ada8a1eb52451ccc4c85136cb1d4b9369d91c",
-        "narration/B08/timing.json": "3e25dcce4f4f0e8698e4f486955d269589e692a88dca674c9b6ee6490d48d390",
-        "takes/B08/episode.json": "605ed4c7504b96b25c04a1e0572daf19ff6ad98b11ddabc33dd68012e03e79d4",
-        "takes/B08/narration.m4a": "35935ecb74df4801bdf20339b98651a5a8dbc3acb81ad26dcfc295f7dbe964dc",
-        "takes/B08/captions.srt": "38c3fae80215dd5fceda1926717ed1fec15f2224462834acc0ce6c85bfff9d09"
+        "videos/B08.mp4": "26f671d526d123f9800873552a4bf57953cc95be35e33d2fdb84e777dd8be999",
+        "subtitles/B08.en.srt": "4682cdf11484f32a719ab59e5f38f087a440ff6493e38c80de8550e68621c1c8",
+        "narration/B08/narration.m4a": "4bb5a665d792550fbf9262cda61a321c4f066063fe1e9186f9082d1da07dd237",
+        "narration/B08/timing.json": "bae550dbe3bc0a8abca1b29356b3eda2bea850f56a4fc32d4a35f2bfa4875ea2",
+        "takes/B08/episode.json": "a93fa4108f1fad2cb87d5f42c340adc2f5a617a5c57e5acd391196747ce2dea5",
+        "takes/B08/narration.m4a": "97c56164d5e6ac0e91e881c2a074d4b5100bbbd76c089816399f68445d68bb8a",
+        "takes/B08/captions.srt": "066a4edd8ff38e51bdaf6887d9e472b07faa8df46f652c35d25f689d168b32a1"
       }
     }
   ]

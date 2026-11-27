@@ -2,8 +2,8 @@
   "episode": "B01",
   "shots": [
     [
-      "source",
-      0.4
+      "request",
+      0.028
     ],
     [
       "tokens",
