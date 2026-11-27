@@ -14,37 +14,32 @@
       "result": "Score the response against those requirements.",
       "focus": "The four expected outcomes define the comparison",
       "action": "Copy the issue and list its expected outcomes.",
-      "durationFrames": 506,
-      "duration": 21.083333333333332,
+      "durationFrames": 460,
+      "duration": 19.166666666666668,
       "cues": [
         {
-          "start": 0.418,
-          "end": 3.093,
-          "text": "Let’s compare two models on the same\nbug."
+          "start": 0.276,
+          "end": 4.607,
+          "text": "Let’s compare two models on the same\nbug. The baseline function accepts zero."
         },
         {
-          "start": 3.143,
-          "end": 5.543,
-          "text": "The baseline function accepts zero."
-        },
-        {
-          "start": 5.593,
-          "end": 9.728,
+          "start": 4.868,
+          "end": 9.392,
           "text": "The issue says one and five should pass,\nwhile zero and negative one should fail."
         },
         {
-          "start": 10.331,
-          "end": 13.931,
+          "start": 9.652,
+          "end": 12.939,
           "text": "We ask for a cause, a small fix, and one\nregression test."
         },
         {
-          "start": 13.981,
-          "end": 17.721,
+          "start": 13.3,
+          "end": 16.179,
           "text": "Before opening either chat, write these\nexpectations down."
         },
         {
-          "start": 17.796,
-          "end": 20.019,
+          "start": 16.46,
+          "end": 18.502,
           "text": "That gives both answers the same\nstandard."
         }
       ]
@@ -60,42 +55,32 @@
       "result": "Availability depends on your work configuration.",
       "focus": "Two actual picker labels identify the candidates",
       "action": "Record the labels of two approved models in Copilot Chat.",
-      "durationFrames": 479,
-      "duration": 19.958333333333332,
+      "durationFrames": 450,
+      "duration": 18.75,
       "cues": [
         {
-          "start": 0.393,
-          "end": 3.168,
-          "text": "Open the model picker in Copilot Chat."
+          "start": 0.275,
+          "end": 5.208,
+          "text": "Open the model picker in Copilot Chat.\nChoose two options actually available in"
         },
         {
-          "start": 3.218,
-          "end": 7.168,
-          "text": "Choose two options actually available in\nyour managed workspace and record their"
+          "start": 5.208,
+          "end": 7.737,
+          "text": "your managed workspace and record their\nlabels."
         },
         {
-          "start": 7.218,
-          "end": 7.723,
-          "text": "labels."
+          "start": 8.287,
+          "end": 11.981,
+          "text": "Use the same session mode for both. If\nyour account offers one model,"
         },
         {
-          "start": 8.37,
-          "end": 10.845,
-          "text": "Use the same session mode for both."
+          "start": 12.352,
+          "end": 15.145,
+          "text": "run it twice to see whether the answer\nstays consistent."
         },
         {
-          "start": 10.92,
-          "end": 14.745,
-          "text": "If your account offers one model, run it\ntwice to see whether the answer stays"
-        },
-        {
-          "start": 14.795,
-          "end": 15.547,
-          "text": "consistent."
-        },
-        {
-          "start": 16.203,
-          "end": 18.882,
+          "start": 15.656,
+          "end": 18.034,
           "text": "Record those as two attempts with the\nsame model."
         }
       ]
@@ -111,42 +96,42 @@
       "result": "Repeat with the same issue and attached files.",
       "focus": "The prompt and attachments match in both runs",
       "action": "Run the same Plan prompt in two fresh chats.",
-      "durationFrames": 558,
-      "duration": 23.25,
+      "durationFrames": 513,
+      "duration": 21.375,
       "cues": [
         {
-          "start": 0.439,
-          "end": 3.389,
+          "start": 0.296,
+          "end": 2.761,
           "text": "Use two fresh Plan sessions on the same\nrevision."
         },
         {
-          "start": 3.464,
-          "end": 7.099,
+          "start": 3.233,
+          "end": 6.248,
           "text": "In each, attach the issue, the\nvalidator, and its tests."
         },
         {
-          "start": 7.174,
-          "end": 8.345,
-          "text": "Paste the same prompt."
+          "start": 6.628,
+          "end": 9.564,
+          "text": "Paste the same prompt. Ask why zero\npasses,"
         },
         {
-          "start": 8.973,
-          "end": 14.098,
-          "text": "Ask why zero passes, then request a\nminimal fix and one regression test."
+          "start": 9.814,
+          "end": 12.369,
+          "text": "then request a minimal fix and one\nregression test."
         },
         {
-          "start": 14.198,
-          "end": 16.423,
+          "start": 12.901,
+          "end": 14.572,
           "text": "Leave edits out of this comparison."
         },
         {
-          "start": 16.498,
-          "end": 19.448,
+          "start": 14.975,
+          "end": 17.872,
           "text": "If a run sees more source or uses a\ndifferent mode,"
         },
         {
-          "start": 19.498,
-          "end": 22.166,
+          "start": 18.283,
+          "end": 20.639,
           "text": "record that difference before\ninterpreting its result."
         }
       ]
@@ -162,48 +147,38 @@
       "result": "Both found the defect. A stayed in scope.",
       "focus": "Correct cause and tighter scope distinguish the sample outputs",
       "action": "Score each sample against the same criteria.",
-      "durationFrames": 578,
-      "duration": 24.083333333333332,
+      "durationFrames": 520,
+      "duration": 21.666666666666668,
       "cues": [
         {
-          "start": 0.414,
-          "end": 4.089,
+          "start": 0.275,
+          "end": 3.377,
           "text": "Example A identifies equality, proposes\na zero test,"
         },
         {
-          "start": 4.229,
-          "end": 6.429,
+          "start": 3.488,
+          "end": 4.963,
           "text": "and keeps the existing interface."
         },
         {
-          "start": 6.529,
-          "end": 11.205,
+          "start": 5.324,
+          "end": 9.748,
           "text": "Example B also finds the cause, but adds\na refactor the issue never asked for."
         },
         {
-          "start": 11.806,
-          "end": 13.506,
-          "text": "Both may sound polished."
+          "start": 9.973,
+          "end": 12.854,
+          "text": "Both may sound polished. Score the\nsubstance first."
         },
         {
-          "start": 13.581,
-          "end": 15.331,
-          "text": "Score the substance first."
+          "start": 13.296,
+          "end": 17.552,
+          "text": "Only then look at the example response\ntimes. Those numbers describe these"
         },
         {
-          "start": 15.406,
-          "end": 18.256,
-          "text": "Only then look at the example response\ntimes."
-        },
-        {
-          "start": 18.331,
-          "end": 21.806,
-          "text": "Those numbers describe these\nillustrative runs and can vary across"
-        },
-        {
-          "start": 21.856,
-          "end": 22.976,
-          "text": "attempts and sessions."
+          "start": 17.552,
+          "end": 21.006,
+          "text": "illustrative runs and can vary across\nattempts and sessions."
         }
       ]
     },
@@ -218,42 +193,42 @@
       "result": "Use task demands and results to guide the choice.",
       "focus": "A narrow task favors a suitable, verifiable choice",
       "action": "Select a model for the small fix and name why.",
-      "durationFrames": 569,
-      "duration": 23.708333333333332,
+      "durationFrames": 535,
+      "duration": 22.291666666666668,
       "cues": [
         {
-          "start": 0.393,
-          "end": 4.843,
+          "start": 0.235,
+          "end": 4.769,
           "text": "For this task, the smaller proposal is\neasier to review because the expected"
         },
         {
-          "start": 4.893,
-          "end": 6.968,
+          "start": 4.769,
+          "end": 6.036,
           "text": "behavior is explicit."
         },
         {
-          "start": 7.043,
-          "end": 10.993,
+          "start": 6.526,
+          "end": 10.361,
           "text": "A larger migration may justify\nevaluating a stronger reasoning option"
         },
         {
-          "start": 11.043,
-          "end": 12.459,
+          "start": 10.632,
+          "end": 11.863,
           "text": "on a representative task."
         },
         {
-          "start": 13.071,
-          "end": 17.246,
+          "start": 12.243,
+          "end": 16.003,
           "text": "You can make that choice from several\nruns and the evidence they produce."
         },
         {
-          "start": 17.321,
-          "end": 21.446,
+          "start": 16.534,
+          "end": 20.617,
           "text": "In this small exercise, the best signal\nis whether the suggested regression"
         },
         {
-          "start": 21.521,
-          "end": 22.641,
+          "start": 20.617,
+          "end": 21.574,
           "text": "catches the defect."
         }
       ]
@@ -269,38 +244,38 @@
       "result": "The zero test detects this specific defect.",
       "focus": "The zero test fails on the buggy revision",
       "action": "Run the proposed zero assertion against the baseline.",
-      "durationFrames": 548,
-      "duration": 22.833333333333332,
+      "durationFrames": 503,
+      "duration": 20.958333333333332,
       "cues": [
         {
-          "start": 0.393,
-          "end": 2.393,
-          "text": "Compare two test ideas."
+          "start": 0.235,
+          "end": 4.799,
+          "text": "Compare two test ideas. A test that\nexpects one to pass stays green on the"
         },
         {
-          "start": 2.468,
-          "end": 6.318,
-          "text": "A test that expects one to pass stays\ngreen on the buggy revision."
+          "start": 4.799,
+          "end": 5.487,
+          "text": "buggy revision."
         },
         {
-          "start": 6.393,
-          "end": 10.133,
+          "start": 6.039,
+          "end": 8.948,
           "text": "A test that expects zero to fail exposes\nthe equality bug."
         },
         {
-          "start": 10.761,
-          "end": 14.661,
+          "start": 9.33,
+          "end": 13.026,
           "text": "Run the chosen assertion on the original\ncode in an approved runner."
         },
         {
-          "start": 14.736,
-          "end": 17.586,
-          "text": "Then apply the small fix and repeat the\ntest."
+          "start": 13.436,
+          "end": 17.698,
+          "text": "Then apply the small fix and repeat the\ntest. Seeing red first and green"
         },
         {
-          "start": 17.686,
-          "end": 21.735,
-          "text": "Seeing red first and green afterward\nmakes the model comparison concrete."
+          "start": 17.728,
+          "end": 20.285,
+          "text": "afterward makes the model comparison\nconcrete."
         }
       ]
     },
@@ -315,42 +290,37 @@
       "result": "A reproducible choice you can revisit.",
       "focus": "A short decision cites behavior and evidence",
       "action": "Record your model choice with a reproducible reason.",
-      "durationFrames": 558,
-      "duration": 23.25,
+      "durationFrames": 539,
+      "duration": 22.458333333333332,
       "cues": [
         {
-          "start": 0.414,
-          "end": 3.264,
-          "text": "Write a short decision a teammate can\nrepeat."
+          "start": 0.295,
+          "end": 4.349,
+          "text": "Write a short decision a teammate can\nrepeat. Name the two model labels,"
         },
         {
-          "start": 3.339,
-          "end": 6.504,
-          "text": "Name the two model labels, the task, the\nshared inputs,"
+          "start": 4.46,
+          "end": 7.713,
+          "text": "the task, the shared inputs, and the\nevidence you used."
         },
         {
-          "start": 6.659,
-          "end": 7.886,
-          "text": "and the evidence you used."
-        },
-        {
-          "start": 8.52,
-          "end": 11.87,
+          "start": 8.223,
+          "end": 12.165,
           "text": "You might say Example A was easier to\nreview because it preserved the"
         },
         {
-          "start": 11.92,
-          "end": 15.423,
+          "start": 12.165,
+          "end": 15.605,
           "text": "signature and produced a test that\nfailed on the original."
         },
         {
-          "start": 16.047,
-          "end": 20.647,
+          "start": 16.076,
+          "end": 20.476,
           "text": "Repeat the comparison on another small\ntask before treating one result as a"
         },
         {
-          "start": 20.697,
-          "end": 21.777,
+          "start": 20.476,
+          "end": 21.384,
           "text": "general preference."
         }
       ]
@@ -373,6 +343,6 @@
   "fps": 24,
   "width": 1280,
   "height": 720,
-  "durationFrames": 3796,
-  "voiceBuild": "5202614f651b90f592beaf56b669da056a29643fa9e1f1a689ba1a9eda0ea235"
+  "durationFrames": 3520,
+  "voiceBuild": "80e3dab1f7b59a7714a6e82366ba4e9ba631042881e14fd846b73fcbab1f826b"
 }

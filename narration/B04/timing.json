@@ -1,49 +1,45 @@
 {
+  "audioEdition": 3,
   "fps": 24,
-  "voiceBuild": "5202614f651b90f592beaf56b669da056a29643fa9e1f1a689ba1a9eda0ea235",
-  "paceBuild": "8f46978950107adb122c10ff32c57b29fbba9656fb9dd21f8b6610e3f1af9f0e",
+  "voiceBuild": "80e3dab1f7b59a7714a6e82366ba4e9ba631042881e14fd846b73fcbab1f826b",
+  "paceBuild": "fcafb0c280603e839811c352c3655cf39cec62e4bb4f03974336013c46a83b51",
   "delivery": {
-    "targetWordsPerMinute": 146,
-    "inputWordsPerMinute": 152.88,
-    "tempo": 0.97696199,
-    "outputWordsPerMinute": 145.99
+    "targetWordsPerMinute": 149,
+    "inputWordsPerMinute": 164.86,
+    "tempo": 0.92498063,
+    "outputWordsPerMinute": 148.99
   },
-  "audioSha256": "f01a2d7690ef95f6c067327e99722ee59a0ff37bce1e1d8b92a659d373ad1775",
-  "captionsSha256": "94892dd21884d6e5570ed331f8bd9cd14847740d50dd52831e658fb7544c33c8",
+  "audioSha256": "1a8c1d86d1bd7495a3febcf50607c56ca70d7486baf0c4edaf4fef86b5c5d986",
+  "captionsSha256": "30bf5c8ba5a2a0df1e5fa98d762f9f7824c8ed4947a43a91d44745db99dd7189",
   "scenes": [
     {
       "id": "ticket",
       "scriptSha256": "13230cdd16ca077de7ab8d2d04ea8a59060e643a38e504ed256bd018cace12f9",
-      "durationFrames": 527,
+      "durationFrames": 506,
       "cues": [
         {
-          "start": 0.428,
-          "end": 3.166,
-          "text": "Let’s compare two models on the same\nbug."
+          "start": 0.298,
+          "end": 4.981,
+          "text": "Let’s compare two models on the same\nbug. The baseline function accepts zero."
         },
         {
-          "start": 3.217,
-          "end": 5.674,
-          "text": "The baseline function accepts zero."
-        },
-        {
-          "start": 5.725,
-          "end": 9.957,
+          "start": 5.263,
+          "end": 10.154,
           "text": "The issue says one and five should pass,\nwhile zero and negative one should fail."
         },
         {
-          "start": 10.575,
-          "end": 14.26,
+          "start": 10.435,
+          "end": 13.988,
           "text": "We ask for a cause, a small fix, and one\nregression test."
         },
         {
-          "start": 14.311,
-          "end": 18.139,
+          "start": 14.379,
+          "end": 17.491,
           "text": "Before opening either chat, write these\nexpectations down."
         },
         {
-          "start": 18.216,
-          "end": 20.491,
+          "start": 17.795,
+          "end": 20.003,
           "text": "That gives both answers the same\nstandard."
         }
       ]
@@ -51,41 +47,31 @@
     {
       "id": "picker",
       "scriptSha256": "aa2a7f428538793c7db0903dfbf5732ca0db3edb6f6c632ff1ce24a584eca450",
-      "durationFrames": 506,
+      "durationFrames": 503,
       "cues": [
         {
-          "start": 0.402,
-          "end": 3.243,
-          "text": "Open the model picker in Copilot Chat."
+          "start": 0.297,
+          "end": 5.63,
+          "text": "Open the model picker in Copilot Chat.\nChoose two options actually available in"
         },
         {
-          "start": 3.294,
-          "end": 7.337,
-          "text": "Choose two options actually available in\nyour managed workspace and record their"
+          "start": 5.63,
+          "end": 8.364,
+          "text": "your managed workspace and record their\nlabels."
         },
         {
-          "start": 7.388,
-          "end": 7.905,
-          "text": "labels."
+          "start": 8.959,
+          "end": 12.953,
+          "text": "Use the same session mode for both. If\nyour account offers one model,"
         },
         {
-          "start": 8.567,
-          "end": 11.101,
-          "text": "Use the same session mode for both."
+          "start": 13.354,
+          "end": 16.373,
+          "text": "run it twice to see whether the answer\nstays consistent."
         },
         {
-          "start": 11.178,
-          "end": 15.093,
-          "text": "If your account offers one model, run it\ntwice to see whether the answer stays"
-        },
-        {
-          "start": 15.144,
-          "end": 15.914,
-          "text": "consistent."
-        },
-        {
-          "start": 16.585,
-          "end": 19.327,
+          "start": 16.926,
+          "end": 19.497,
           "text": "Record those as two attempts with the\nsame model."
         }
       ]
@@ -93,41 +79,41 @@
     {
       "id": "control",
       "scriptSha256": "f527df407beaf193fc40cc34735e6cedad26d204d23636ba603dad72628b1b31",
-      "durationFrames": 587,
+      "durationFrames": 570,
       "cues": [
         {
-          "start": 0.449,
-          "end": 3.469,
+          "start": 0.32,
+          "end": 2.985,
           "text": "Use two fresh Plan sessions on the same\nrevision."
         },
         {
-          "start": 3.546,
-          "end": 7.266,
+          "start": 3.495,
+          "end": 6.755,
           "text": "In each, attach the issue, the\nvalidator, and its tests."
         },
         {
-          "start": 7.343,
-          "end": 8.542,
-          "text": "Paste the same prompt."
+          "start": 7.166,
+          "end": 10.34,
+          "text": "Paste the same prompt. Ask why zero\npasses,"
         },
         {
-          "start": 9.185,
-          "end": 14.43,
-          "text": "Ask why zero passes, then request a\nminimal fix and one regression test."
+          "start": 10.61,
+          "end": 13.372,
+          "text": "then request a minimal fix and one\nregression test."
         },
         {
-          "start": 14.533,
-          "end": 16.81,
+          "start": 13.947,
+          "end": 15.754,
           "text": "Leave edits out of this comparison."
         },
         {
-          "start": 16.887,
-          "end": 19.907,
+          "start": 16.19,
+          "end": 19.321,
           "text": "If a run sees more source or uses a\ndifferent mode,"
         },
         {
-          "start": 19.958,
-          "end": 22.689,
+          "start": 19.766,
+          "end": 22.313,
           "text": "record that difference before\ninterpreting its result."
         }
       ]
@@ -135,88 +121,78 @@
     {
       "id": "criteria",
       "scriptSha256": "ad398fb8e14654129dbd2f8cdca4b7e7479acc5783f2e1f3ba85e7b91b1f5b9a",
-      "durationFrames": 607,
+      "durationFrames": 578,
       "cues": [
         {
-          "start": 0.424,
-          "end": 4.185,
+          "start": 0.297,
+          "end": 3.651,
           "text": "Example A identifies equality, proposes\na zero test,"
         },
         {
-          "start": 4.329,
-          "end": 6.581,
+          "start": 3.771,
+          "end": 5.366,
           "text": "and keeps the existing interface."
         },
         {
-          "start": 6.683,
-          "end": 11.469,
+          "start": 5.756,
+          "end": 10.539,
           "text": "Example B also finds the cause, but adds\na refactor the issue never asked for."
         },
         {
-          "start": 12.084,
-          "end": 13.824,
-          "text": "Both may sound polished."
+          "start": 10.782,
+          "end": 13.897,
+          "text": "Both may sound polished. Score the\nsubstance first."
         },
         {
-          "start": 13.901,
-          "end": 15.693,
-          "text": "Score the substance first."
+          "start": 14.374,
+          "end": 18.976,
+          "text": "Only then look at the example response\ntimes. Those numbers describe these"
         },
         {
-          "start": 15.769,
-          "end": 18.686,
-          "text": "Only then look at the example response\ntimes."
-        },
-        {
-          "start": 18.763,
-          "end": 22.32,
-          "text": "Those numbers describe these\nillustrative runs and can vary across"
-        },
-        {
-          "start": 22.371,
-          "end": 23.518,
-          "text": "attempts and sessions."
+          "start": 18.976,
+          "end": 22.71,
+          "text": "illustrative runs and can vary across\nattempts and sessions."
         }
       ]
     },
     {
       "id": "escalate",
       "scriptSha256": "0b039a751d8a97cffe18783f510baa4794217b2951d2e2281bc2379487ae92af",
-      "durationFrames": 591,
+      "durationFrames": 587,
       "cues": [
         {
-          "start": 0.402,
-          "end": 4.957,
+          "start": 0.254,
+          "end": 5.156,
           "text": "For this task, the smaller proposal is\neasier to review because the expected"
         },
         {
-          "start": 5.008,
-          "end": 7.132,
+          "start": 5.156,
+          "end": 6.526,
           "text": "behavior is explicit."
         },
         {
-          "start": 7.209,
-          "end": 11.252,
+          "start": 7.055,
+          "end": 11.201,
           "text": "A larger migration may justify\nevaluating a stronger reasoning option"
         },
         {
-          "start": 11.303,
-          "end": 12.753,
+          "start": 11.494,
+          "end": 12.825,
           "text": "on a representative task."
         },
         {
-          "start": 13.379,
-          "end": 17.653,
+          "start": 13.236,
+          "end": 17.301,
           "text": "You can make that choice from several\nruns and the evidence they produce."
         },
         {
-          "start": 17.729,
-          "end": 21.952,
+          "start": 17.875,
+          "end": 22.289,
           "text": "In this small exercise, the best signal\nis whether the suggested regression"
         },
         {
-          "start": 22.028,
-          "end": 23.175,
+          "start": 22.289,
+          "end": 23.324,
           "text": "catches the defect."
         }
       ]
@@ -224,78 +200,73 @@
     {
       "id": "test",
       "scriptSha256": "9fd64e0f353b5c40c60221e69c9f5b4c9eea5772e9b2b4037dd57613cf9c583a",
-      "durationFrames": 577,
+      "durationFrames": 559,
       "cues": [
         {
-          "start": 0.402,
-          "end": 2.449,
-          "text": "Compare two test ideas."
+          "start": 0.254,
+          "end": 5.188,
+          "text": "Compare two test ideas. A test that\nexpects one to pass stays green on the"
         },
         {
-          "start": 2.526,
-          "end": 6.467,
-          "text": "A test that expects one to pass stays\ngreen on the buggy revision."
+          "start": 5.188,
+          "end": 5.932,
+          "text": "buggy revision."
         },
         {
-          "start": 6.544,
-          "end": 10.372,
+          "start": 6.529,
+          "end": 9.674,
           "text": "A test that expects zero to fail exposes\nthe equality bug."
         },
         {
-          "start": 11.015,
-          "end": 15.007,
+          "start": 10.087,
+          "end": 14.082,
           "text": "Run the chosen assertion on the original\ncode in an approved runner."
         },
         {
-          "start": 15.083,
-          "end": 18.001,
-          "text": "Then apply the small fix and repeat the\ntest."
+          "start": 14.526,
+          "end": 19.133,
+          "text": "Then apply the small fix and repeat the\ntest. Seeing red first and green"
         },
         {
-          "start": 18.103,
-          "end": 22.248,
-          "text": "Seeing red first and green afterward\nmakes the model comparison concrete."
+          "start": 19.166,
+          "end": 21.93,
+          "text": "afterward makes the model comparison\nconcrete."
         }
       ]
     },
     {
       "id": "practice",
       "scriptSha256": "87704b763c0314d74b9e3fb0b741fe0fb7e32d211c0bf5b42a57aafb3e044bad",
-      "durationFrames": 580,
+      "durationFrames": 592,
       "cues": [
         {
-          "start": 0.424,
-          "end": 3.341,
-          "text": "Write a short decision a teammate can\nrepeat."
+          "start": 0.319,
+          "end": 4.702,
+          "text": "Write a short decision a teammate can\nrepeat. Name the two model labels,"
         },
         {
-          "start": 3.418,
-          "end": 6.657,
-          "text": "Name the two model labels, the task, the\nshared inputs,"
+          "start": 4.822,
+          "end": 8.339,
+          "text": "the task, the shared inputs, and the\nevidence you used."
         },
         {
-          "start": 6.816,
-          "end": 8.072,
-          "text": "and the evidence you used."
-        },
-        {
-          "start": 8.721,
-          "end": 12.15,
+          "start": 8.89,
+          "end": 13.152,
           "text": "You might say Example A was easier to\nreview because it preserved the"
         },
         {
-          "start": 12.201,
-          "end": 15.787,
+          "start": 13.152,
+          "end": 16.871,
           "text": "signature and produced a test that\nfailed on the original."
         },
         {
-          "start": 16.425,
-          "end": 21.134,
+          "start": 17.38,
+          "end": 22.137,
           "text": "Repeat the comparison on another small\ntask before treating one result as a"
         },
         {
-          "start": 21.185,
-          "end": 22.291,
+          "start": 22.137,
+          "end": 23.118,
           "text": "general preference."
         }
       ]
