@@ -1,226 +1,217 @@
 1
-00:00:00,399 --> 00:00:04,295
+00:00:00,261 --> 00:00:04,584
 When the dropdown says Claude, you might
 ask who makes the model, where it runs,
 
 2
-00:00:04,321 --> 00:00:06,089
+00:00:04,795 --> 00:00:06,074
 and which tool you're using.
 
 3
-00:00:06,166 --> 00:00:07,546
-Those are three questions.
+00:00:06,518 --> 00:00:09,773
+Those are three questions. The maker
+publishes the model,
 
 4
-00:00:08,175 --> 00:00:12,379
-The maker publishes the model, a
-provider or platform offers access,
-
-5
-00:00:12,491 --> 00:00:14,747
+00:00:10,140 --> 00:00:14,550
+a provider or platform offers access,
 and the client gives you a workflow.
 
-6
-00:00:14,824 --> 00:00:17,809
+5
+00:00:14,883 --> 00:00:17,828
 In this lesson, the catalogs are a dated
 snapshot.
 
-7
-00:00:18,480 --> 00:00:21,578
+6
+00:00:18,206 --> 00:00:21,403
 Your approved picker tells you what is
 available for work.
 
-8
-00:00:23,486 --> 00:00:28,510
+7
+00:00:22,994 --> 00:00:27,947
 Open the OpenAI model catalog and
 compare the entries for GPT six point
 
-9
-00:00:28,587 --> 00:00:30,458
+8
+00:00:28,002 --> 00:00:29,326
 two Sol and Astra.
 
-10
-00:00:30,535 --> 00:00:34,654
+9
+00:00:29,805 --> 00:00:34,008
 In the snapshot, Sol is positioned for
 everyday coding and agent work.
 
-11
-00:00:35,276 --> 00:00:38,967
+10
+00:00:34,476 --> 00:00:37,954
 Astra is positioned for more demanding
 reasoning and coding.
 
-12
-00:00:39,070 --> 00:00:42,299
+11
+00:00:38,354 --> 00:00:41,196
 Notice the input and output section on
 each card.
 
-13
-00:00:42,376 --> 00:00:45,170
+12
+00:00:41,652 --> 00:00:44,511
 If you need transcription or image
 generation,
 
-14
-00:00:45,247 --> 00:00:48,344
+13
+00:00:44,878 --> 00:00:48,316
 read the relevant entry instead of
 inferring it from the name.
 
-15
-00:00:50,221 --> 00:00:54,809
+14
+00:00:49,702 --> 00:00:53,427
 In Anthropic’s catalog, find Haiku,
 Sonnet, Opus, and Fable.
 
-16
-00:00:54,860 --> 00:00:58,753
+15
+00:00:53,766 --> 00:00:58,294
 Their cards describe different speed,
 workload, and capability tradeoffs.
 
-17
-00:00:59,367 --> 00:01:03,366
+16
+00:00:58,700 --> 00:01:02,145
 The provider table matters when you use
 Claude Code remotely.
 
-18
-00:01:03,443 --> 00:01:07,365
+17
+00:01:02,456 --> 00:01:06,695
 Two environments can show the same
 family name while resolving a shortcut
 
-19
-00:01:07,416 --> 00:01:07,937
+18
+00:01:06,695 --> 00:01:07,345
 differently.
 
-20
-00:01:08,602 --> 00:01:13,524
+19
+00:01:07,591 --> 00:01:12,295
 Record the exact model ID or selector
 label you can verify in the approved
 
-21
-00:01:13,575 --> 00:01:14,014
+20
+00:01:12,295 --> 00:01:12,945
 session.
 
-22
-00:01:15,929 --> 00:01:20,337
+21
+00:01:14,325 --> 00:01:17,984
 In Microsoft Foundry, inspect the
 publisher on a model card.
 
-23
-00:01:20,389 --> 00:01:24,618
+22
+00:01:18,368 --> 00:01:23,158
 The catalog includes models published by
 Microsoft as well as models from other
 
-24
-00:01:24,669 --> 00:01:25,387
+23
+00:01:23,158 --> 00:01:23,808
 providers.
 
-25
-00:01:26,004 --> 00:01:29,695
+24
+00:01:24,189 --> 00:01:29,533
 You may see Microsoft’s MAI or Phi
-families.
+families. MAI Code two Flash was a
+
+25
+00:01:29,533 --> 00:01:31,697
+limited-access preview in the snapshot.
 
 26
-00:01:29,772 --> 00:01:34,027
-MAI Code two Flash was a limited-access
-preview in the snapshot.
-
-27
-00:01:34,104 --> 00:01:37,821
+00:01:32,119 --> 00:01:36,152
 Check the actual card and deployment
 conditions before you put a catalog
 
-28
-00:01:37,872 --> 00:01:39,754
+27
+00:01:36,187 --> 00:01:38,442
 model on your team's available list.
 
+28
+00:01:39,908 --> 00:01:45,480
+Now return to the software you use. Open
+Copilot Chat in VS Code and expand the
+
 29
-00:01:41,742 --> 00:01:44,075
-Now return to the software you use.
+00:01:45,480 --> 00:01:46,497
+model selector.
 
 30
-00:01:44,152 --> 00:01:48,765
-Open Copilot Chat in VS Code and expand
-the model selector.
-
-31
-00:01:48,842 --> 00:01:51,660
+00:01:46,831 --> 00:01:49,535
 Copy the exact label of one model you
 can select.
 
-32
-00:01:52,289 --> 00:01:55,442
+31
+00:01:49,914 --> 00:01:53,214
 For a separate check on Claude Code or
 OpenCode,
 
-33
-00:01:55,494 --> 00:01:59,390
+32
+00:01:53,469 --> 00:01:57,568
 use the approved G C P workspace and
 inspect its selector there.
 
+33
+00:01:57,858 --> 00:02:01,490
+Take the label from each surface. Those
+two lists can differ.
+
 34
-00:02:00,061 --> 00:02:02,138
-Take the label from each surface.
-
-35
-00:02:02,240 --> 00:02:03,822
-Those two lists can differ.
-
-36
-00:02:05,941 --> 00:02:09,683
+00:02:03,136 --> 00:02:07,156
 Pick a model card and compare its
 release status with the workplace
 
-37
-00:02:09,734 --> 00:02:10,632
+35
+00:02:07,156 --> 00:02:07,806
 picker.
 
-38
-00:02:10,709 --> 00:02:13,460
+36
+00:02:07,963 --> 00:02:10,730
 Preview on the card describes the
 provider’s offering.
 
-39
-00:02:14,078 --> 00:02:18,179
+37
+00:02:11,086 --> 00:02:15,290
 Your company’s policy, plan, and
 configured provider determine whether
 
-40
-00:02:18,230 --> 00:02:19,717
+38
+00:02:15,290 --> 00:02:16,196
 you can select it.
 
-41
-00:02:19,768 --> 00:02:22,178
-Put both observations in your note.
+39
+00:02:16,580 --> 00:02:21,115
+Put both observations in your note. A
+colleague can then tell the difference
 
-42
-00:02:22,255 --> 00:02:25,946
-A colleague can then tell the difference
+40
+00:02:21,115 --> 00:02:24,944
 between a catalog announcement and an
-
-43
-00:02:25,997 --> 00:02:27,434
 option they can use today.
 
-44
-00:02:29,367 --> 00:02:31,905
+41
+00:02:26,513 --> 00:02:30,414
 Make one inventory entry for the class.
+Include the maker,
 
-45
-00:02:31,982 --> 00:02:36,360
-Include the maker, the exact version or
-label, the client and environment,
+42
+00:02:30,626 --> 00:02:33,860
+the exact version or label, the client
+and environment,
 
-46
-00:02:36,524 --> 00:02:37,611
+43
+00:02:34,115 --> 00:02:35,171
 and the date you checked.
 
-47
-00:02:38,261 --> 00:02:42,054
+44
+00:02:35,572 --> 00:02:38,280
 If the picker changes later, repeat that
 short check.
 
-48
-00:02:42,106 --> 00:02:46,437
+45
+00:02:38,681 --> 00:02:43,201
 With the available options in hand, the
 next lesson will compare models on a bug
 
-49
-00:02:46,489 --> 00:02:48,641
+46
+00:02:43,389 --> 00:02:45,643
 whose behavior you can verify yourself.
