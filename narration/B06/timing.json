@@ -1,59 +1,55 @@
 {
+  "audioEdition": 3,
   "fps": 24,
-  "voiceBuild": "206f2a65b286014a525a527aac0ab71fefa0c73bdaf3a4e34d1e408af670ae36",
-  "paceBuild": "688398cb801d0cd26f73119cfebd0be21d4bac835e77cdede64556abc0458422",
+  "voiceBuild": "72b292d26c84d038bb529f23c207b88d59984555a9148faa07bd9615e7c68285",
+  "paceBuild": "bad91dadde824a68dce358945248aa1a5d7f71fb8fcd9e888f91e03af46bede4",
   "delivery": {
-    "targetWordsPerMinute": 146,
-    "inputWordsPerMinute": 157.28,
-    "tempo": 0.95268892,
-    "outputWordsPerMinute": 146.0
+    "targetWordsPerMinute": 149,
+    "inputWordsPerMinute": 169.44,
+    "tempo": 0.90298484,
+    "outputWordsPerMinute": 148.99
   },
-  "audioSha256": "695a0cf185a478cfbc15e6eb00e9b95d0b44016149c47383fd920c1216e40332",
-  "captionsSha256": "6d0508ba3b2db7f208f26de5b3a7a4a6fc58b07e0874433e16caba507a25e2db",
+  "audioSha256": "5d07bae5c332a281b854c817f6bbf68d1ce058d2222b356df8af166876440ba0",
+  "captionsSha256": "d079789d6039211f1fd3ec5a705458696fe20d4fdc1277bf831b9e255ebcc3d0",
   "scenes": [
     {
       "id": "vague",
       "scriptSha256": "b5dc9977bef14884e88894cb9b4dfc7661e858f4824d4022ad8d590808e790a6",
-      "durationFrames": 554,
+      "durationFrames": 559,
       "cues": [
         {
-          "start": 0.439,
-          "end": 3.378,
-          "text": "Imagine the whole prompt is “Fix\nvalidation.”"
+          "start": 0.305,
+          "end": 4.698,
+          "text": "Imagine the whole prompt is “Fix\nvalidation.” Which input fails?"
         },
         {
-          "start": 3.43,
-          "end": 5.031,
-          "text": "Which input fails?"
-        },
-        {
-          "start": 5.084,
-          "end": 6.763,
+          "start": 5.453,
+          "end": 6.723,
           "text": "What result should change?"
         },
         {
-          "start": 6.815,
-          "end": 8.652,
+          "start": 7.48,
+          "end": 8.783,
           "text": "Which files are in scope?"
         },
         {
-          "start": 8.731,
-          "end": 12.641,
+          "start": 9.538,
+          "end": 13.96,
           "text": "If those questions are unanswered, an\nagent can propose a broad refactor that"
         },
         {
-          "start": 12.694,
-          "end": 13.682,
+          "start": 13.96,
+          "end": 15.009,
           "text": "sounds reasonable."
         },
         {
-          "start": 14.37,
-          "end": 19.015,
+          "start": 15.431,
+          "end": 19.452,
           "text": "Start in Copilot Plan and use the\ndisplayed prompt as a baseline."
         },
         {
-          "start": 19.093,
-          "end": 21.28,
+          "start": 19.808,
+          "end": 21.824,
           "text": "Then make each missing part explicit."
         }
       ]
@@ -61,36 +57,36 @@
     {
       "id": "goal",
       "scriptSha256": "38ec54b52a1f8035ee90897d3dc6e3db8c2e8f989e8e8dfb61fbb413438eca18",
-      "durationFrames": 537,
+      "durationFrames": 504,
       "cues": [
         {
-          "start": 0.413,
-          "end": 4.323,
+          "start": 0.282,
+          "end": 3.608,
           "text": "We can replace the broad request with a\nprecise observation."
         },
         {
-          "start": 4.375,
-          "end": 7.603,
+          "start": 3.903,
+          "end": 6.747,
           "text": "The order validator currently returns\ntrue for zero,"
         },
         {
-          "start": 7.655,
-          "end": 9.271,
+          "start": 6.936,
+          "end": 8.566,
           "text": "but the issue requires false."
         },
         {
-          "start": 9.936,
-          "end": 13.636,
+          "start": 9.077,
+          "end": 12.623,
           "text": "Attach the validator and the tests from\nthe training checkout."
         },
         {
-          "start": 13.715,
-          "end": 17.362,
+          "start": 13.188,
+          "end": 16.173,
           "text": "Ask Copilot to identify the condition\nresponsible."
         },
         {
-          "start": 17.441,
-          "end": 20.855,
+          "start": 16.672,
+          "end": 19.761,
           "text": "Now you can open the named file and\ncheck the cause yourself."
         }
       ]
@@ -98,73 +94,73 @@
     {
       "id": "scope",
       "scriptSha256": "fb85934b96597bdbf106067944ecae8bcc31cfa4f8cd403e45993714929c6a2b",
-      "durationFrames": 565,
+      "durationFrames": 553,
       "cues": [
         {
-          "start": 0.461,
-          "end": 3.111,
+          "start": 0.35,
+          "end": 2.374,
           "text": "State what the change is allowed to\ntouch."
         },
         {
-          "start": 3.19,
-          "end": 7.598,
+          "start": 2.82,
+          "end": 7.448,
           "text": "Keep the existing function signature,\nedit only the validator and the relevant"
         },
         {
-          "start": 7.651,
-          "end": 12.156,
+          "start": 7.448,
+          "end": 12.342,
           "text": "test file, and preserve the behavior for\none, five, and negative one."
         },
         {
-          "start": 12.779,
-          "end": 16.662,
+          "start": 12.841,
+          "end": 16.357,
           "text": "That gives the agent a boundary and a\nsmall set of examples."
         },
         {
-          "start": 16.741,
-          "end": 20.966,
-          "text": "If it proposes to rename the function,\nyou already know which requirement that"
+          "start": 16.779,
+          "end": 18.815,
+          "text": "If it proposes to rename the function,"
         },
         {
-          "start": 21.018,
-          "end": 21.749,
-          "text": "violates."
+          "start": 19.161,
+          "end": 21.619,
+          "text": "you already know which requirement that\nviolates."
         }
       ]
     },
     {
       "id": "output",
       "scriptSha256": "f6616aa2bccd0f034346888d15c0f3d19904279ca1f37e34042b6d93d14ebcf1",
-      "durationFrames": 514,
+      "durationFrames": 510,
       "cues": [
         {
-          "start": 0.435,
-          "end": 3.557,
+          "start": 0.26,
+          "end": 2.846,
           "text": "Request the output you can review before\nany edit."
         },
         {
-          "start": 3.636,
-          "end": 8.129,
+          "start": 3.289,
+          "end": 7.691,
           "text": "Ask for the cause, the files it would\ntouch, the smallest proposed change,"
         },
         {
-          "start": 8.181,
-          "end": 10.228,
+          "start": 8.08,
+          "end": 10.153,
           "text": "and one test that should expose the bug."
         },
         {
-          "start": 10.883,
-          "end": 14.872,
+          "start": 10.718,
+          "end": 14.358,
           "text": "Have it ask about missing requirements\nand stop after the plan."
         },
         {
-          "start": 14.95,
-          "end": 18.572,
+          "start": 14.691,
+          "end": 19.018,
           "text": "Then look for the line that explains why\na test for zero should fail on the"
         },
         {
-          "start": 18.624,
-          "end": 19.63,
+          "start": 19.018,
+          "end": 19.812,
           "text": "original code."
         }
       ]
@@ -172,83 +168,74 @@
     {
       "id": "iterate",
       "scriptSha256": "9d46e18c6a03498a62818fa69822db3acdf477d175c4bfd42a0c4068b44be1fb",
-      "durationFrames": 531,
+      "durationFrames": 530,
       "cues": [
         {
-          "start": 0.461,
-          "end": 3.846,
+          "start": 0.306,
+          "end": 3.009,
           "text": "Suppose the first plan introduces a new\nparameter."
         },
         {
-          "start": 3.925,
-          "end": 6.942,
+          "start": 3.454,
+          "end": 6.239,
           "text": "Tell Copilot which part conflicts with\nthe issue."
         },
         {
-          "start": 6.995,
-          "end": 8.822,
-          "text": "“Preserve the existing signature."
+          "start": 6.549,
+          "end": 11.664,
+          "text": "“Preserve the existing signature. Revise\nonly the comparison and the zero"
         },
         {
-          "start": 9.455,
-          "end": 12.893,
-          "text": "Revise only the comparison and the zero\nregression.”"
+          "start": 11.664,
+          "end": 12.314,
+          "text": "regression.”",
+          "speechEnd": 12.268
         },
         {
-          "start": 12.972,
-          "end": 15.701,
-          "text": "Check the updated plan for both points."
+          "start": 12.668,
+          "end": 17.523,
+          "text": "Check the updated plan for both points.\nA precise correction lets you tell"
         },
         {
-          "start": 15.78,
-          "end": 19.243,
-          "text": "A precise correction lets you tell\nwhether your next message fixed the"
-        },
-        {
-          "start": 19.296,
-          "end": 20.352,
-          "text": "misunderstanding."
+          "start": 17.735,
+          "end": 20.7,
+          "text": "whether your next message fixed the\nmisunderstanding."
         }
       ]
     },
     {
       "id": "criteria",
       "scriptSha256": "a36fc85426aae679ae088d9ea908f22f868db786eaa5e9b96c1a30d1b3dc5e63",
-      "durationFrames": 551,
+      "durationFrames": 546,
       "cues": [
         {
-          "start": 0.413,
-          "end": 2.433,
-          "text": "Add a line about evidence."
+          "start": 0.327,
+          "end": 4.769,
+          "text": "Add a line about evidence. Run the same\ntest command in the approved runner"
         },
         {
-          "start": 2.512,
-          "end": 5.871,
-          "text": "Run the same test command in the\napproved runner before and after the"
+          "start": 4.769,
+          "end": 6.564,
+          "text": "before and after the fix."
         },
         {
-          "start": 5.949,
-          "end": 6.894,
-          "text": "fix."
-        },
-        {
-          "start": 6.973,
-          "end": 10.815,
+          "start": 7.197,
+          "end": 11.209,
           "text": "Before the fix, the zero assertion\nshould fail for the reported reason."
         },
         {
-          "start": 11.47,
-          "end": 14.629,
+          "start": 11.676,
+          "end": 14.176,
           "text": "After it, the new and existing tests\nshould pass."
         },
         {
-          "start": 14.708,
-          "end": 18.46,
+          "start": 14.732,
+          "end": 18.326,
           "text": "Ask for the observed output and check it\nagainst the requirement."
         },
         {
-          "start": 18.539,
-          "end": 21.182,
+          "start": 18.915,
+          "end": 21.305,
           "text": "That makes the task's definition of done\nvisible."
         }
       ]
@@ -256,36 +243,36 @@
     {
       "id": "practice",
       "scriptSha256": "63b195ffbd5d4d0e71a9ee51d84aa5bfbafd0398f3c7bfb029fbc64792aec12d",
-      "durationFrames": 486,
+      "durationFrames": 461,
       "cues": [
         {
-          "start": 0.386,
-          "end": 4.086,
+          "start": 0.282,
+          "end": 3.382,
           "text": "Pick another synthetic issue and write\nfour short lines."
         },
         {
-          "start": 4.191,
-          "end": 8.028,
+          "start": 3.804,
+          "end": 7.552,
           "text": "Say what happens, what may change, what\nthe assistant should produce,"
         },
         {
-          "start": 8.238,
-          "end": 9.632,
+          "start": 7.919,
+          "end": 9.51,
           "text": "and how you will verify it."
         },
         {
-          "start": 10.302,
-          "end": 13.53,
+          "start": 9.821,
+          "end": 12.476,
           "text": "Read them to a teammate without any\nother context."
         },
         {
-          "start": 13.609,
-          "end": 16.679,
+          "start": 13.02,
+          "end": 15.991,
           "text": "If they can describe the expected change\nand the test,"
         },
         {
-          "start": 16.732,
-          "end": 18.306,
+          "start": 16.248,
+          "end": 17.772,
           "text": "your brief is ready to use."
         }
       ]

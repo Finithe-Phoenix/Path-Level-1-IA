@@ -1,213 +1,202 @@
 1
-00:00:00,439 --> 00:00:03,378
+00:00:00,305 --> 00:00:04,698
 Imagine the whole prompt is “Fix
-validation.”
+validation.” Which input fails?
 
 2
-00:00:03,430 --> 00:00:05,031
-Which input fails?
-
-3
-00:00:05,084 --> 00:00:06,763
+00:00:05,453 --> 00:00:06,723
 What result should change?
 
-4
-00:00:06,815 --> 00:00:08,652
+3
+00:00:07,480 --> 00:00:08,783
 Which files are in scope?
 
-5
-00:00:08,731 --> 00:00:12,641
+4
+00:00:09,538 --> 00:00:13,960
 If those questions are unanswered, an
 agent can propose a broad refactor that
 
-6
-00:00:12,694 --> 00:00:13,682
+5
+00:00:13,960 --> 00:00:15,009
 sounds reasonable.
 
-7
-00:00:14,370 --> 00:00:19,015
+6
+00:00:15,431 --> 00:00:19,452
 Start in Copilot Plan and use the
 displayed prompt as a baseline.
 
-8
-00:00:19,093 --> 00:00:21,280
+7
+00:00:19,808 --> 00:00:21,824
 Then make each missing part explicit.
 
-9
-00:00:23,496 --> 00:00:27,406
+8
+00:00:23,574 --> 00:00:26,900
 We can replace the broad request with a
 precise observation.
 
-10
-00:00:27,458 --> 00:00:30,686
+9
+00:00:27,195 --> 00:00:30,039
 The order validator currently returns
 true for zero,
 
-11
-00:00:30,738 --> 00:00:32,354
+10
+00:00:30,228 --> 00:00:31,858
 but the issue requires false.
 
-12
-00:00:33,019 --> 00:00:36,719
+11
+00:00:32,369 --> 00:00:35,915
 Attach the validator and the tests from
 the training checkout.
 
-13
-00:00:36,798 --> 00:00:40,445
+12
+00:00:36,480 --> 00:00:39,465
 Ask Copilot to identify the condition
 responsible.
 
-14
-00:00:40,524 --> 00:00:43,938
+13
+00:00:39,964 --> 00:00:43,053
 Now you can open the named file and
 check the cause yourself.
 
-15
-00:00:45,919 --> 00:00:48,569
+14
+00:00:44,642 --> 00:00:46,666
 State what the change is allowed to
 touch.
 
-16
-00:00:48,648 --> 00:00:53,056
+15
+00:00:47,112 --> 00:00:51,740
 Keep the existing function signature,
 edit only the validator and the relevant
 
-17
-00:00:53,109 --> 00:00:57,614
+16
+00:00:51,740 --> 00:00:56,634
 test file, and preserve the behavior for
 one, five, and negative one.
 
-18
-00:00:58,237 --> 00:01:02,120
+17
+00:00:57,133 --> 00:01:00,649
 That gives the agent a boundary and a
 small set of examples.
 
-19
-00:01:02,199 --> 00:01:06,424
+18
+00:01:01,071 --> 00:01:03,107
 If it proposes to rename the function,
-you already know which requirement that
 
-20
-00:01:06,476 --> 00:01:07,207
+19
+00:01:03,453 --> 00:01:05,911
+you already know which requirement that
 violates.
 
-21
-00:01:09,435 --> 00:01:12,557
+20
+00:01:07,593 --> 00:01:10,179
 Request the output you can review before
 any edit.
 
-22
-00:01:12,636 --> 00:01:17,129
+21
+00:01:10,622 --> 00:01:15,024
 Ask for the cause, the files it would
 touch, the smallest proposed change,
 
-23
-00:01:17,181 --> 00:01:19,228
+22
+00:01:15,413 --> 00:01:17,486
 and one test that should expose the bug.
 
-24
-00:01:19,883 --> 00:01:23,872
+23
+00:01:18,051 --> 00:01:21,691
 Have it ask about missing requirements
 and stop after the plan.
 
-25
-00:01:23,950 --> 00:01:27,572
+24
+00:01:22,024 --> 00:01:26,351
 Then look for the line that explains why
 a test for zero should fail on the
 
-26
-00:01:27,624 --> 00:01:28,630
+25
+00:01:26,351 --> 00:01:27,145
 original code.
 
-27
-00:01:30,878 --> 00:01:34,263
+26
+00:01:28,889 --> 00:01:31,592
 Suppose the first plan introduces a new
 parameter.
 
-28
-00:01:34,342 --> 00:01:37,359
+27
+00:01:32,037 --> 00:01:34,822
 Tell Copilot which part conflicts with
 the issue.
 
-29
-00:01:37,412 --> 00:01:39,239
-“Preserve the existing signature.
+28
+00:01:35,132 --> 00:01:40,247
+“Preserve the existing signature. Revise
+only the comparison and the zero
 
-30
-00:01:39,872 --> 00:01:43,310
-Revise only the comparison and the zero
+29
+00:01:40,247 --> 00:01:40,897
 regression.”
 
-31
-00:01:43,389 --> 00:01:46,118
+30
+00:01:41,251 --> 00:01:46,106
 Check the updated plan for both points.
-
-32
-00:01:46,197 --> 00:01:49,660
 A precise correction lets you tell
-whether your next message fixed the
 
-33
-00:01:49,713 --> 00:01:50,769
+31
+00:01:46,318 --> 00:01:49,283
+whether your next message fixed the
 misunderstanding.
 
+32
+00:01:50,994 --> 00:01:55,436
+Add a line about evidence. Run the same
+test command in the approved runner
+
+33
+00:01:55,436 --> 00:01:57,231
+before and after the fix.
+
 34
-00:01:52,955 --> 00:01:54,975
-Add a line about evidence.
-
-35
-00:01:55,054 --> 00:01:58,413
-Run the same test command in the
-approved runner before and after the
-
-36
-00:01:58,491 --> 00:01:59,436
-fix.
-
-37
-00:01:59,515 --> 00:02:03,357
+00:01:57,864 --> 00:02:01,876
 Before the fix, the zero assertion
 should fail for the reported reason.
 
-38
-00:02:04,012 --> 00:02:07,171
+35
+00:02:02,343 --> 00:02:04,843
 After it, the new and existing tests
 should pass.
 
-39
-00:02:07,250 --> 00:02:11,002
+36
+00:02:05,399 --> 00:02:08,993
 Ask for the observed output and check it
 against the requirement.
 
-40
-00:02:11,081 --> 00:02:13,724
+37
+00:02:09,582 --> 00:02:11,972
 That makes the task's definition of done
 visible.
 
-41
-00:02:15,886 --> 00:02:19,586
+38
+00:02:13,699 --> 00:02:16,799
 Pick another synthetic issue and write
 four short lines.
 
-42
-00:02:19,691 --> 00:02:23,528
+39
+00:02:17,221 --> 00:02:20,969
 Say what happens, what may change, what
 the assistant should produce,
 
-43
-00:02:23,738 --> 00:02:25,132
+40
+00:02:21,336 --> 00:02:22,927
 and how you will verify it.
 
-44
-00:02:25,802 --> 00:02:29,030
+41
+00:02:23,238 --> 00:02:25,893
 Read them to a teammate without any
 other context.
 
-45
-00:02:29,109 --> 00:02:32,179
+42
+00:02:26,437 --> 00:02:29,408
 If they can describe the expected change
 and the test,
 
-46
-00:02:32,232 --> 00:02:33,806
+43
+00:02:29,665 --> 00:02:31,189
 your brief is ready to use.

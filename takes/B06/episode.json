@@ -14,47 +14,42 @@
       "result": "Missing: failing behavior, scope, and evidence.",
       "focus": "The vague prompt omits a failing example and a boundary",
       "action": "Enter the vague request and identify its missing details.",
-      "durationFrames": 513,
-      "duration": 21.375,
+      "durationFrames": 491,
+      "duration": 20.458333333333332,
       "cues": [
         {
-          "start": 0.418,
-          "end": 3.218,
-          "text": "Imagine the whole prompt is “Fix\nvalidation.”"
+          "start": 0.275,
+          "end": 4.242,
+          "text": "Imagine the whole prompt is “Fix\nvalidation.” Which input fails?"
         },
         {
-          "start": 3.268,
-          "end": 4.793,
-          "text": "Which input fails?"
-        },
-        {
-          "start": 4.843,
-          "end": 6.443,
+          "start": 4.924,
+          "end": 6.071,
           "text": "What result should change?"
         },
         {
-          "start": 6.493,
-          "end": 8.243,
+          "start": 6.754,
+          "end": 7.931,
           "text": "Which files are in scope?"
         },
         {
-          "start": 8.318,
-          "end": 12.043,
+          "start": 8.613,
+          "end": 12.606,
           "text": "If those questions are unanswered, an\nagent can propose a broad refactor that"
         },
         {
-          "start": 12.093,
-          "end": 13.035,
+          "start": 12.606,
+          "end": 13.553,
           "text": "sounds reasonable."
         },
         {
-          "start": 13.69,
-          "end": 18.115,
+          "start": 13.934,
+          "end": 17.565,
           "text": "Start in Copilot Plan and use the\ndisplayed prompt as a baseline."
         },
         {
-          "start": 18.19,
-          "end": 20.273,
+          "start": 17.886,
+          "end": 19.707,
           "text": "Then make each missing part explicit."
         }
       ]
@@ -70,37 +65,37 @@
       "result": "The comparison allows equality with zero.",
       "focus": "The report gives both the observed and required response",
       "action": "Add the zero input and attach the source and tests.",
-      "durationFrames": 503,
-      "duration": 20.958333333333332,
+      "durationFrames": 447,
+      "duration": 18.625,
       "cues": [
         {
-          "start": 0.393,
-          "end": 4.118,
+          "start": 0.255,
+          "end": 3.258,
           "text": "We can replace the broad request with a\nprecise observation."
         },
         {
-          "start": 4.168,
-          "end": 7.243,
+          "start": 3.524,
+          "end": 6.092,
           "text": "The order validator currently returns\ntrue for zero,"
         },
         {
-          "start": 7.293,
-          "end": 8.832,
+          "start": 6.263,
+          "end": 7.735,
           "text": "but the issue requires false."
         },
         {
-          "start": 9.466,
-          "end": 12.991,
+          "start": 8.196,
+          "end": 11.398,
           "text": "Attach the validator and the tests from\nthe training checkout."
         },
         {
-          "start": 13.066,
-          "end": 16.541,
+          "start": 11.909,
+          "end": 14.604,
           "text": "Ask Copilot to identify the condition\nresponsible."
         },
         {
-          "start": 16.616,
-          "end": 19.868,
+          "start": 15.055,
+          "end": 17.844,
           "text": "Now you can open the named file and\ncheck the cause yourself."
         }
       ]
@@ -116,38 +111,38 @@
       "result": "The acceptance criteria are testable.",
       "focus": "The signature and four cases constrain the plan",
       "action": "Add the permitted files and acceptance cases to the prompt.",
-      "durationFrames": 523,
-      "duration": 21.791666666666668,
+      "durationFrames": 485,
+      "duration": 20.208333333333332,
       "cues": [
         {
-          "start": 0.439,
-          "end": 2.964,
+          "start": 0.316,
+          "end": 2.144,
           "text": "State what the change is allowed to\ntouch."
         },
         {
-          "start": 3.039,
-          "end": 7.239,
+          "start": 2.546,
+          "end": 6.725,
           "text": "Keep the existing function signature,\nedit only the validator and the relevant"
         },
         {
-          "start": 7.289,
-          "end": 11.581,
+          "start": 6.725,
+          "end": 11.145,
           "text": "test file, and preserve the behavior for\none, five, and negative one."
         },
         {
-          "start": 12.174,
-          "end": 15.874,
+          "start": 11.595,
+          "end": 14.77,
           "text": "That gives the agent a boundary and a\nsmall set of examples."
         },
         {
-          "start": 15.949,
-          "end": 19.974,
-          "text": "If it proposes to rename the function,\nyou already know which requirement that"
+          "start": 15.151,
+          "end": 16.99,
+          "text": "If it proposes to rename the function,"
         },
         {
-          "start": 20.024,
-          "end": 20.72,
-          "text": "violates."
+          "start": 17.302,
+          "end": 19.522,
+          "text": "you already know which requirement that\nviolates."
         }
       ]
     },
@@ -162,37 +157,37 @@
       "result": "Review the plan before authorizing changes.",
       "focus": "The response names the cause, edit and regression",
       "action": "Ask for a plan and name the expected deliverable.",
-      "durationFrames": 475,
-      "duration": 19.791666666666668,
+      "durationFrames": 446,
+      "duration": 18.583333333333332,
       "cues": [
         {
-          "start": 0.414,
-          "end": 3.389,
+          "start": 0.235,
+          "end": 2.57,
           "text": "Request the output you can review before\nany edit."
         },
         {
-          "start": 3.464,
-          "end": 7.744,
+          "start": 2.97,
+          "end": 6.945,
           "text": "Ask for the cause, the files it would\ntouch, the smallest proposed change,"
         },
         {
-          "start": 7.794,
-          "end": 9.744,
+          "start": 7.296,
+          "end": 9.168,
           "text": "and one test that should expose the bug."
         },
         {
-          "start": 10.368,
-          "end": 14.168,
+          "start": 9.678,
+          "end": 12.965,
           "text": "Have it ask about missing requirements\nand stop after the plan."
         },
         {
-          "start": 14.243,
-          "end": 17.693,
+          "start": 13.266,
+          "end": 17.173,
           "text": "Then look for the line that explains why\na test for zero should fail on the"
         },
         {
-          "start": 17.743,
-          "end": 18.701,
+          "start": 17.173,
+          "end": 17.89,
           "text": "original code."
         }
       ]
@@ -208,43 +203,38 @@
       "result": "Check the updated plan against the issue.",
       "focus": "A revised plan preserves the public signature",
       "action": "Point to the incorrect change and request a specific revision.",
-      "durationFrames": 491,
-      "duration": 20.458333333333332,
+      "durationFrames": 465,
+      "duration": 19.375,
       "cues": [
         {
-          "start": 0.439,
-          "end": 3.664,
+          "start": 0.276,
+          "end": 2.717,
           "text": "Suppose the first plan introduces a new\nparameter."
         },
         {
-          "start": 3.739,
-          "end": 6.614,
+          "start": 3.119,
+          "end": 5.634,
           "text": "Tell Copilot which part conflicts with\nthe issue."
         },
         {
-          "start": 6.664,
-          "end": 8.405,
-          "text": "“Preserve the existing signature."
+          "start": 5.914,
+          "end": 10.532,
+          "text": "“Preserve the existing signature. Revise\nonly the comparison and the zero"
         },
         {
-          "start": 9.008,
-          "end": 12.283,
-          "text": "Revise only the comparison and the zero\nregression.”"
+          "start": 10.532,
+          "end": 11.078,
+          "text": "regression.”"
         },
         {
-          "start": 12.358,
-          "end": 14.958,
-          "text": "Check the updated plan for both points."
+          "start": 11.439,
+          "end": 15.823,
+          "text": "Check the updated plan for both points.\nA precise correction lets you tell"
         },
         {
-          "start": 15.033,
-          "end": 18.333,
-          "text": "A precise correction lets you tell\nwhether your next message fixed the"
-        },
-        {
-          "start": 18.383,
-          "end": 19.389,
-          "text": "misunderstanding."
+          "start": 16.014,
+          "end": 18.692,
+          "text": "whether your next message fixed the\nmisunderstanding."
         }
       ]
     },
@@ -259,42 +249,37 @@
       "result": "Ask for observed output and specific errors.",
       "focus": "Red and green runs provide the requested proof",
       "action": "Ask for the same approved test command on both revisions.",
-      "durationFrames": 510,
-      "duration": 21.25,
+      "durationFrames": 479,
+      "duration": 19.958333333333332,
       "cues": [
         {
-          "start": 0.393,
-          "end": 2.318,
-          "text": "Add a line about evidence."
+          "start": 0.295,
+          "end": 4.306,
+          "text": "Add a line about evidence. Run the same\ntest command in the approved runner"
         },
         {
-          "start": 2.393,
-          "end": 5.593,
-          "text": "Run the same test command in the\napproved runner before and after the"
+          "start": 4.306,
+          "end": 5.927,
+          "text": "before and after the fix."
         },
         {
-          "start": 5.668,
-          "end": 6.568,
-          "text": "fix."
-        },
-        {
-          "start": 6.643,
-          "end": 10.303,
+          "start": 6.499,
+          "end": 10.122,
           "text": "Before the fix, the zero assertion\nshould fail for the reported reason."
         },
         {
-          "start": 10.927,
-          "end": 13.937,
+          "start": 10.543,
+          "end": 12.801,
           "text": "After it, the new and existing tests\nshould pass."
         },
         {
-          "start": 14.012,
-          "end": 17.587,
+          "start": 13.303,
+          "end": 16.548,
           "text": "Ask for the observed output and check it\nagainst the requirement."
         },
         {
-          "start": 17.662,
-          "end": 20.18,
+          "start": 17.08,
+          "end": 19.238,
           "text": "That makes the task's definition of done\nvisible."
         }
       ]
@@ -310,37 +295,37 @@
       "result": "A clear brief ready for the next training task.",
       "focus": "The final brief contains goal, scope, output and evidence",
       "action": "Rewrite one training request as a four-part brief.",
-      "durationFrames": 455,
-      "duration": 18.958333333333332,
+      "durationFrames": 408,
+      "duration": 17.0,
       "cues": [
         {
-          "start": 0.368,
-          "end": 3.893,
+          "start": 0.255,
+          "end": 3.054,
           "text": "Pick another synthetic issue and write\nfour short lines."
         },
         {
-          "start": 3.993,
-          "end": 7.648,
+          "start": 3.435,
+          "end": 6.819,
           "text": "Say what happens, what may change, what\nthe assistant should produce,"
         },
         {
-          "start": 7.848,
-          "end": 9.176,
+          "start": 7.151,
+          "end": 8.587,
           "text": "and how you will verify it."
         },
         {
-          "start": 9.815,
-          "end": 12.89,
+          "start": 8.868,
+          "end": 11.266,
           "text": "Read them to a teammate without any\nother context."
         },
         {
-          "start": 12.965,
-          "end": 15.89,
+          "start": 11.757,
+          "end": 14.44,
           "text": "If they can describe the expected change\nand the test,"
         },
         {
-          "start": 15.94,
-          "end": 17.44,
+          "start": 14.672,
+          "end": 16.048,
           "text": "your brief is ready to use."
         }
       ]
@@ -359,6 +344,6 @@
   "fps": 24,
   "width": 1280,
   "height": 720,
-  "durationFrames": 3470,
-  "voiceBuild": "206f2a65b286014a525a527aac0ab71fefa0c73bdaf3a4e34d1e408af670ae36"
+  "durationFrames": 3221,
+  "voiceBuild": "72b292d26c84d038bb529f23c207b88d59984555a9148faa07bd9615e7c68285"
 }
